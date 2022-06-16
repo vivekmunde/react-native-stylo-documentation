@@ -2,18 +2,52 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  color: #1f2937;
+}
+
 h1 {
   font-size: 48px;
 }
+
 h2 {
   font-size: 40px;
 }
+
 h3 {
   font-size: 32px;
 }
+
 h4 {
   font-size: 24px;
 }
+
 h5 {
   font-size: 20px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+a {
+  color: #ec4899
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+small {
+  font-size: 80%;
+  line-height: 1.5;
+}
+
+.heading>a {
+  color: inherit;
 }

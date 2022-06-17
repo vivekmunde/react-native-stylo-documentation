@@ -6,7 +6,7 @@ const SectionHeading: React.FC<{
   level?: 1 | 2 | 3 | 4 | 5;
 }> = ({ children, id, level }) => {
   const renderAnchor = () => (
-    <a href={`#${id}`} className="font-semibold">
+    <a href={`#${id}`}>
       {children}
     </a>
   );

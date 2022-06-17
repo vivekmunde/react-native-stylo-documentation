@@ -11,7 +11,7 @@ const NavLink: React.FC<{
   return (
     <li>
       <Link href={href}>
-        <a className={router.pathname.toLowerCase() === href.toLowerCase() ? '' : 'text-gray-800'}>
+        <a className={router.pathname.toLowerCase() === href.toLowerCase() ? 'font-medium' : 'text-gray-800'}>
           {children}
         </a>
       </Link>

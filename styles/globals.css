@@ -43,6 +43,11 @@ p {
   margin-bottom: 1rem;
 }
 
+.no-vertical-margin-collapse {
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
+
 small {
   font-size: 80%;
   line-height: 1.5;

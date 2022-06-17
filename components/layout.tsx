@@ -24,8 +24,8 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 
   return (
     <div className="lg:container lg:mx-auto flex flex-col">
-      <div className="flex flex-row">
-        <nav className="p-4" style={{ minWidth: '240px' }}>
+      <div className="grid grid-cols-7 xl:grid-cols-5 grid-flow-col">
+        <nav className="p-4 col-span-2 xl:col-span-1">
           <ul className="mb-4">
             <li className="mt-4 mb-8">
               <Link href="/">
@@ -39,6 +39,9 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
             </NavLink>
             <NavLink href="/installation-configuration">
               Installation &amp; configuration
+            </NavLink>
+            <NavLink href="/theme">
+              Theme
             </NavLink>
             <NavLink href="/theme-provider">
               Theme provider
@@ -58,7 +61,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
           </ul>
           <footer>Footer</footer>
         </nav>
-        <main className="border-l p-4" style={{ minHeight: '90vh' }}>{children}</main>
+        <main className="border-l p-4 col-span-5 xl:col-span-4" style={{ minHeight: '90vh' }}>{children}</main>
       </div>
     </div>
   );

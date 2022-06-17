@@ -4,7 +4,7 @@ const InlineCode: React.FC<{
   children: React.ReactNode;
 }> = ({ children }) => (
   <small>
-    <code className="bg-gray-100 p-1 rounded">
+    <code className="text-blank bg-gray-100 p-1 rounded">
       {children}
     </code>
   </small>

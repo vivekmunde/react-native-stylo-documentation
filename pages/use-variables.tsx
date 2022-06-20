@@ -11,7 +11,7 @@ const CoreConcept: React.FC = () => (
       <link rel="icon" href="/favicon.ico" />
     </Head>
     <article>
-      <h2>useStyles()</h2>
+      <h2>useVariables()</h2>
     </article>
   </Layout>
 );

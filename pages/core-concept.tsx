@@ -14,12 +14,12 @@ const sections = {
     title: 'Styles only',
   },
   themes: {
-    id: 'themes',
-    title: 'Themes',
+    id: 'theme-stylename-namespace',
+    title: 'Theme, StyleName & Namespace',
   },
   stylesDetachedOwnedByApp: {
-    id: 'styles-detached-owned-by-app',
-    title: 'Styles completely detached & entirely owned by the app, not by the library',
+    id: 'detached-styles-owned-by-app',
+    title: 'Detached styles, owned by app, not by library',
   },
   stronglyTypedIntellisenseFriendlyStyles: {
     id: 'strongly-typed-intellisense-friendly-styles',
@@ -48,32 +48,32 @@ const CoreConcept: React.FC = () => (
       <nav className="p-4 mt-8 mb-4 bg-pink-50 rounded">
         <ul>
           <li>
-            <a href={`#${sections.stylesOnly.id}`} className="font-medium">
+            <a href={`#${sections.stylesOnly.id}`}>
               {sections.stylesOnly.title}
             </a>
           </li>
           <li>
-            <a href={`#${sections.themes.id}`} className="font-medium">
+            <a href={`#${sections.themes.id}`}>
               {sections.themes.title}
             </a>
           </li>
           <li>
-            <a href={`#${sections.stylesDetachedOwnedByApp.id}`} className="font-medium">
+            <a href={`#${sections.stylesDetachedOwnedByApp.id}`}>
               {sections.stylesDetachedOwnedByApp.title}
             </a>
           </li>
           <li>
-            <a href={`#${sections.stronglyTypedIntellisenseFriendlyStyles.id}`} className="font-medium">
+            <a href={`#${sections.stronglyTypedIntellisenseFriendlyStyles.id}`}>
               {sections.stronglyTypedIntellisenseFriendlyStyles.title}
             </a>
           </li>
           <li>
-            <a href={`#${sections.scalableStyles.id}`} className="font-medium">
+            <a href={`#${sections.scalableStyles.id}`}>
               {sections.scalableStyles.title}
             </a>
           </li>
           <li>
-            <a href={`#${sections.stylishReactNativeComponents.id}`} className="font-medium">
+            <a href={`#${sections.stylishReactNativeComponents.id}`}>
               {sections.stylishReactNativeComponents.title}
             </a>
           </li>
@@ -103,12 +103,23 @@ const CoreConcept: React.FC = () => (
           {sections.themes.title}
         </SectionHeading>
         <p>
-          Theme is nothing but a collection of styles defined using the React Native API <InlineCode>StyleSheet.create()</InlineCode>.
+          <strong className="font-semibold">Theme</strong> is nothing but a collection of styles defined using the <ExternalLink href="https://reactnative.dev/docs/stylesheet">React {`Native's`} <InlineCode>StyleSheet.create()</InlineCode> API</ExternalLink>.
           The theme is used by the library and its hooks/components to apply styles to the React Native components.
           There is no restriction on the format of the style names, these can be defined as per the needs.
         </p>
+        <p>
+          <strong className="font-semibold">StyleName</strong> is the name of a standard style definition provided to the <InlineCode>StyleSheet.create</InlineCode> API.
+          In the code snippet below <InlineCode>{`'Align.Center'`}</InlineCode>, <InlineCode>H1</InlineCode>, <InlineCode>{`'Size.Small'`}</InlineCode> are the style names.
+        </p>
+        <p>
+          <strong className="font-semibold">Namespaces</strong> are used to organize the style definitions by logically grouping them together.
+          This prevents the style name/style collisions, like <InlineCode>{`'Size.Small'`}</InlineCode> can have different style definitions for <InlineCode>Text</InlineCode> &amp; <InlineCode>View</InlineCode> components.
+          In the code snippet below <InlineCode>TextStyles</InlineCode>, <InlineCode>TextInputStyles</InlineCode>, <InlineCode>ViewStyles</InlineCode> are the Namespaces.
+          The library has default Namespaces defined per React Native component in its themes.
+          The app can define its own Namespaces, which will override the default ones.
+        </p>
         <CodeSnippet>
-          {`export const TextStyles = StyleSheet.create({
+          {`const TextStyles = StyleSheet.create({
   Default: { color: Colors.Font, fontSize: 16, fontWeight: '400', lineHeight: 24 },
   'Align.Center': { textAlign: 'center' },
   'Align.Right': { textAlign: 'right' },
@@ -117,10 +128,21 @@ const CoreConcept: React.FC = () => (
   H3: { fontSize: 24, fontWeight: '400', lineHeight: 32, marginBottom: 8 },
   'Size.Small': { fontSize: 12, lineHeight: 18 },
   'Size.Tiny': { fontSize: 8, lineHeight: 14 },
+  ...
 });
 
-export const TextInputStyles = StyleSheet.create({ ... });
-export const ViewStyles = StyleSheet.create({ ... });`}
+const TextInputStyles = StyleSheet.create({
+  Default: { borderRadius: 8, color: '#000000', fontSize: 16, paddingTop: 12, paddingBottom: 12, paddingLeft: 8, paddingRight: 8 },
+  'Size.Small': { fontSize: 12, paddingTop: 8, paddingBottom: 8 },
+  ...
+});
+const ViewStyles = StyleSheet.create({ ... });
+
+export const Theme = {
+  TextStyles,
+  TextInputStyles,
+  ViewStyles,
+};`}
         </CodeSnippet>
       </section>
 
@@ -131,8 +153,8 @@ export const ViewStyles = StyleSheet.create({ ... });`}
         <p>
           The style definitions or themes are completely detached from the Stylo library.
           The style types &amp; styles/themes reside inside the app not inside the library.
-          The library only provides a set of hooks and extended <ExternalLink href="https://reactnative.dev">React Native</ExternalLink> components.
-          <mark className="font-semibold bg-pink-100 rounded text-black"> The consumer application has the entire ownership &amp; liberty of defining the style types, styles &amp; their names (any naming pattern/convention). </mark>
+          The library only provides a set of hooks and extended React Native components.&nbsp;
+          <mark className="font-medium bg-pink-100 rounded text-black">&nbsp;The consumer application has the entire ownership &amp; liberty of defining the style types, styles &amp; their names (any naming pattern/convention).&nbsp;</mark>
         </p>
         <CodeSnippet>
           {`MobileApp
@@ -160,7 +182,7 @@ export const ViewStyles = StyleSheet.create({ ... });`}
         </CodeSnippet>
         <p>
           The library provides a set of predefined style types &amp; themes.
-          These can be used as is or can be considered as a guidelines or can be simply copied to the app &amp; can be customized easily as per the needs.
+          These can be used as is or can be considered as a guidelines or can be simply copied in to the app &amp; customized/modified easily as per the needs.
         </p>
       </section>
 
@@ -210,7 +232,7 @@ export type TViewStyle = TBackgroundColor | TPadding | TMargin | TBorder;`}
         </SectionHeading>
         <p>
           As both the style types &amp; the styles are defined by the consumer app &amp; not by the library, the app can add/remove/modify as many styles as it wants and they way it wants.
-          App can create {`it's`} own types &amp; styles as per the needs like <InlineCode>Card</InlineCode>, <InlineCode>Card.Header</InlineCode>, <InlineCode>Card.Body</InlineCode>, <InlineCode>Card.Footer</InlineCode>, <InlineCode>Picker</InlineCode>, <InlineCode>Picker.Header</InlineCode> &amp; so on.
+          App can keep adding {`it's`} own types &amp; styles as per the needs like <InlineCode>Card</InlineCode>, <InlineCode>Card.Header</InlineCode>, <InlineCode>Card.Body</InlineCode>, <InlineCode>Card.Footer</InlineCode>, <InlineCode>Picker</InlineCode>, <InlineCode>Picker.Header</InlineCode> &amp; so on.
           Create these style types and styles and just add them to the Theme. {`That's`} it.
         </p>
         <CodeSnippet>
@@ -250,14 +272,14 @@ export const Theme = {
           {sections.stylishReactNativeComponents.title}
         </SectionHeading>
         <p>
-          The library just adds a new property called <InlineCode>styleNames</InlineCode> to <ExternalLink href="https://reactnative.dev">React Native</ExternalLink> components.
+          The library just adds a new property called <InlineCode>styleNames</InlineCode> to the <ExternalLink href="https://reactnative.dev">React Native components</ExternalLink>.
           The property <InlineCode>styleNames</InlineCode> in React Native mobile app is just like <InlineCode>class</InlineCode> in web app.
           The style names are defined in the theme, e.g. <InlineCode>List</InlineCode>, <InlineCode>List.Item</InlineCode>, <InlineCode>Color.Primary</InlineCode>, <InlineCode>Border</InlineCode>, <InlineCode>Size.Large</InlineCode> etc.
           Just supply these names of the styles to the prop <InlineCode>styleNames</InlineCode> and it will pick the style definitions from theme and apply to the React Native component.
           The library does not add any other behavior or action to the React Native components.&nbsp;
-          <mark className="font-semibold bg-pink-100 rounded text-black">
-            This keeps the components as pure as they are defined by React Native.
-            After all, these are just React Native components.
+          <mark className="font-medium bg-pink-100 rounded text-black">
+            &nbsp;This keeps the React Native components as pure as they are defined by React Native.
+            After all, these are just React Native components.&nbsp;
           </mark>
         </p>
         <CodeSnippet>

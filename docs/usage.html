@@ -1,0 +1,155 @@
+<!DOCTYPE html><html><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><title>Usage | React Native Stylo</title><meta name="description" content="Completely detached and highly scalable React Native styles"/><link rel="icon" href="/favicon.ico"/><meta name="next-head-count" content="5"/><link rel="preload" href="/react-native-stylo-documentation/_next/static/css/ea3e3ea270ae371b.css" as="style"/><link rel="stylesheet" href="/react-native-stylo-documentation/_next/static/css/ea3e3ea270ae371b.css" data-n-g=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/react-native-stylo-documentation/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/react-native-stylo-documentation/_next/static/chunks/webpack-8877ae7e96bc9f97.js" defer=""></script><script src="/react-native-stylo-documentation/_next/static/chunks/framework-1f10003e17636e37.js" defer=""></script><script src="/react-native-stylo-documentation/_next/static/chunks/main-eb4e285232e25572.js" defer=""></script><script src="/react-native-stylo-documentation/_next/static/chunks/pages/_app-43ac001d99fedbd3.js" defer=""></script><script src="/react-native-stylo-documentation/_next/static/chunks/814-5321687895e5b29b.js" defer=""></script><script src="/react-native-stylo-documentation/_next/static/chunks/pages/usage-6e0f7fe2f27fcce7.js" defer=""></script><script src="/react-native-stylo-documentation/_next/static/XgP3UMmBag4KJMBBtFp5o/_buildManifest.js" defer=""></script><script src="/react-native-stylo-documentation/_next/static/XgP3UMmBag4KJMBBtFp5o/_ssgManifest.js" defer=""></script><script src="/react-native-stylo-documentation/_next/static/XgP3UMmBag4KJMBBtFp5o/_middlewareManifest.js" defer=""></script></head><body><div id="__next"><div class="lg:container lg:mx-auto flex flex-col"><div class="grid grid-cols-7 xl:grid-cols-5 grid-flow-col"><nav class="p-4 col-span-2 xl:col-span-1"><ul><li><ul class="mt-4 mb-8"><li><a class="font-bold" href="/react-native-stylo-documentation">React Native Stylo</a></li></ul></li><li><ul class="mb-8"><li><a class="text-gray-800" style="display:block" href="/react-native-stylo-documentation">Core concept</a></li><li><a class="font-medium" style="display:block" href="/react-native-stylo-documentation/usage">Usage</a></li></ul></li><li><h5 class="text-base" style="margin:0">Core members</h5><ul class="mb-8"><li><a class="text-gray-800" style="display:block" href="/react-native-stylo-documentation/use-styles">useStyles()</a></li><li><a class="text-gray-800" style="display:block" href="/react-native-stylo-documentation/styles">&lt;Styles /&gt;</a></li></ul></li><li><h5 class="text-base" style="margin:0">Hooks &amp; components</h5><ul class="mb-8"><li><a class="text-gray-800" style="display:block" href="/react-native-stylo-documentation/theme">Theme</a></li><li><a class="text-gray-800" style="display:block" href="/react-native-stylo-documentation/theme-provider">&lt;ThemeProvider /&gt;</a></li><li><a class="text-gray-800" style="display:block" href="/react-native-stylo-documentation/use-variables">useVariables()</a></li><li><a class="text-gray-800" style="display:block" href="/react-native-stylo-documentation/stylish">Stylish</a></li><li><a class="text-gray-800" style="display:block" href="/react-native-stylo-documentation/stylers">Stylers</a></li></ul></li><li><ul class="mb-8"><li><a class="text-gray-800" style="display:block" href="/react-native-stylo-documentation/tight-coupling">Tightly coupled</a></li></ul></li></ul></nav><main class="border-l p-4 col-span-5 xl:col-span-4" style="min-height:100vh"><article><h1 class="font-extralight">Usage</h1><nav class="p-4 mt-8 mb-4 bg-pink-50 rounded"><ul><li><a href="#installation">Installation</a></li><li><a href="#theme-definitions">Theme definitions</a></li><li><a href="#theme-provider">ThemeProvider setup</a></li><li><a href="#using-stylish-components">Using stylish components</a></li><li><a href="#stylers">Using stylers</a></li><li><a href="#using-variables">Using variables</a></li><li><a href="#style-names-sequence">StyleNames sequence</a></li><li><a href="#tight-coupling-styles">Tightly coupling the styles</a></li></ul></nav><section class="no-vertical-margin-collapse"><h4 class="heading" id="installation"><a href="#installation">Installation</a></h4><p class="mb-4 undefined"><small><code class="text-black bg-gray-100 p-1 rounded">npm install --save react-native-stylo</code></small></p><p class="mb-4 undefined"><small><code class="text-black bg-gray-100 p-1 rounded">yarn add react-native-stylo</code></small></p></section><section class="no-vertical-margin-collapse"><h4 class="heading" id="theme-definitions"><a href="#theme-definitions">Theme definitions</a></h4><p class="mb-4 undefined">Stylo provides a default theme &amp; its type definitions which are located at <!-- --><strong class="font-semibold">node_modules/react-native-stylo/lib/themes</strong>. Just copy the theme to your project and you can modify them as per your needs.<!-- --></p><p class="mb-4 undefined">E.g. <!-- --><small><code class="text-black bg-gray-100 p-1 rounded">cp -R [root]/node_modules/react-native-stylo/lib/themes/ [root]/app/themes/</code></small></p><p class="mb-4 undefined">Or you can create your own themes &amp; their type definitions right from scratch.</p><p class="mb-4 undefined">Please refer the <!-- --><a href="/react-native-stylo-documentation/theme">Theme</a> documentation for more details.<!-- --></p></section><section class="no-vertical-margin-collapse"><h4 class="heading" id="theme-provider"><a href="#theme-provider">ThemeProvider setup</a></h4><p class="mb-4 undefined">Wrap the application inside the <!-- --><small><code class="text-black bg-gray-100 p-1 rounded">ThemeProvider</code></small> and supply the theme to it. The theme is collection of variables &amp; and style definitions. ThemeProvider expects both variables &amp; styles to be supplied to it.<!-- --></p><p class="mb-4 p-4 bg-gray-100 rounded" style="overflow:auto"><small><code class="text-black" style="white-space:pre">import { ThemeProvider } from &#x27;react-native-stylo&#x27;;
+
+import { variables, styles } from &#x27;./themes/default&#x27;;
+
+const App = () =&gt; (
+  &lt;ThemeProvider variables={variables} styles={styles}&gt;
+    // Application components
+  &lt;/ThemeProvider&gt;
+);</code></small></p><p class="mb-4 undefined">Please refer the <!-- --><a href="/react-native-stylo-documentation/theme-provider">&lt;ThemeProvider /&gt;</a> documentation for more details.<!-- --></p></section><section class="no-vertical-margin-collapse"><h4 class="heading" id="using-stylish-components"><a href="#using-stylish-components">Using stylish components</a></h4><p class="mb-4 undefined"><strong class="font-semibold">Stylish</strong> components are nothing but enhanced React Native components with added properties called <!-- --><small><code class="text-black bg-gray-100 p-1 rounded">styleNamespace</code></small>(optional) &amp; <!-- --><small><code class="text-black bg-gray-100 p-1 rounded">StyleNames</code></small>. Property <!-- --><small><code class="text-black bg-gray-100 p-1 rounded">styleNames</code></small> accepts the eligible styles for the component which are defined in the theme. Property <!-- --><small><code class="text-black bg-gray-100 p-1 rounded">styleNamespace</code></small> is optional, and use only when you need to override the default namespaces.<!-- --></p><p class="mb-4 p-4 bg-gray-100 rounded" style="overflow:auto"><small><code class="text-black" style="white-space:pre">import React from &#x27;react&#x27;;
+import Stylo from &#x27;react-native-stylo&#x27;;
+
+import { TImageStyle, TTextStyle, TTouchableStyle, TViewStyle } from &#x27;../themes/types&#x27;;
+
+const Home = () =&gt; (
+  &lt;Stylo.View&lt;TViewStyle&gt; styleNames={[&#x27;Screen&#x27;]}&gt;
+    &lt;Stylo.View&lt;TViewStyle&gt; styleNames={[&#x27;Screen.Header&#x27;, &#x27;Flex.Column&#x27;, &#x27;Flex.AlignItems.Center&#x27;, &#x27;Flex.JustifyContent.Center&#x27;, &#x27;Padding&#x27;]}&gt;
+      &lt;Stylo.Text&lt;TTextStyle&gt; styleNames={[&#x27;H1&#x27;, &#x27;Align.Center&#x27;]}&gt;
+        React Native Stylo
+      &lt;/Stylo.Text&gt;
+      &lt;Stylo.Text&lt;TTextStyle&gt; styleNames={[&#x27;Align.Center&#x27;]}&gt;
+        Highly composable &amp; scalable themes
+      &lt;/Stylo.Text&gt;
+    &lt;/Stylo.View&gt;
+    &lt;Stylo.View&lt;TViewStyle&gt; styleNames={[&#x27;Screen.Body&#x27;]}&gt;
+      &lt;Stylo.View&lt;TViewStyle&gt; styleNames={[&#x27;List&#x27;, &#x27;Border&#x27;, &#x27;Border.Radius&#x27;, &#x27;Border.Color.Grey2&#x27;]}&gt;
+        &lt;Stylo.TouchableOpacity&lt;TTouchableStyle&gt; styleNames={[&#x27;List.Item&#x27;, &#x27;Border.Bottom&#x27;]} onPress={() =&gt; /*some action */}&gt;
+          &lt;Stylo.View&lt;TViewStyle&gt; styleNames={[&#x27;List.Item.Left&#x27;]}&gt;
+            &lt;Stylo.Image&lt;TImageStyle&gt; styleNames={[&#x27;Avatar&#x27;, &#x27;Avatar.Size.Small&#x27;]} source={...} /&gt;
+          &lt;/Stylo.View&gt;
+          &lt;Stylo.View&lt;TViewStyle&gt; styleNames={[&#x27;List.Item.Body&#x27;]}&gt;
+            &lt;Stylo.Text&lt;TTextStyle&gt;&gt;
+              Strongly typed &amp; intellisense friendly styles
+            &lt;/Stylo.Text&gt;
+          &lt;/Stylo.View&gt;
+        &lt;/Stylo.TouchableOpacity&gt;
+        &lt;Stylo.TouchableOpacity&lt;TTouchableStyle&gt; styleNames={[&#x27;List.Item&#x27;, &#x27;Border.Bottom&#x27;]} onPress={() =&gt; /*some action */}&gt;
+          &lt;Stylo.View&lt;TViewStyle&gt; styleNames={[&#x27;List.Item.Left&#x27;]}&gt;
+            &lt;Stylo.Image&lt;TImageStyle&gt; styleNames={[&#x27;Avatar&#x27;, &#x27;Avatar.Size.Small&#x27;]} source={...} /&gt;
+          &lt;/Stylo.View&gt;
+          &lt;Stylo.View&lt;TViewStyle&gt; styleNames={[&#x27;List.Item.Body&#x27;]}&gt;
+            &lt;Stylo.Text&lt;TTextStyle&gt;&gt;
+              Infinitely scalable
+            &lt;/Stylo.Text&gt;
+          &lt;/Stylo.View&gt;
+        &lt;/Stylo.TouchableOpacity&gt;
+      &lt;/Stylo.View&gt;
+    &lt;/Stylo.View&gt;
+  &lt;/Stylo.View&gt;
+);
+
+export default Home;</code></small></p><p class="mb-4 undefined">Please refer the <!-- --><a href="/react-native-stylo-documentation/stylish">Stylish</a> documentation for more details.<!-- --></p></section><section class="no-vertical-margin-collapse"><h4 class="heading" id="stylers"><a href="#stylers">Using stylers</a></h4><p class="mb-4 undefined"><strong class="font-semibold">Stylers</strong> are styling hooks which are used to define the styles for the components. Use these stylers in case you like to use the core React Native components instead of <!-- -->Stylo&#x27;s<!-- --> stylish components. The styler hooks accept two arguments <!-- --><small><code class="text-black bg-gray-100 p-1 rounded">styleNames</code></small> &amp;amp <!-- --><small><code class="text-black bg-gray-100 p-1 rounded">styleNamespace</code></small>(optional).; First argument <!-- --><small><code class="text-black bg-gray-100 p-1 rounded">styleNames</code></small> accepts the eligible styles for the component which are defined in the theme. Second argument <!-- --><small><code class="text-black bg-gray-100 p-1 rounded">styleNamespace</code></small> is optional, and use only when you need to override the default namespaces.<!-- --></p><p class="mb-4 p-4 bg-gray-100 rounded" style="overflow:auto"><small><code class="text-black" style="white-space:pre">import React, { useRef } from &#x27;react&#x27;;
+import { Image, Text, TouchableOpacity, View } from &#x27;react-native&#x27;;
+import { useImageStyles, useTextStyles, useTouchableStyles, useViewStyles } from &#x27;react-native-stylo&#x27;;
+
+import { TImageStyle, TTextStyle, TTouchableStyle, TViewStyle } from &#x27;../themes/types&#x27;;
+
+const Home = () =&gt; {
+  const styles = useRef({
+    screen: useViewStyles&lt;TViewStyle&gt;([&#x27;Screen&#x27;]),
+    screenHeader: useViewStyles&lt;TViewStyle&gt;([&#x27;Screen.Header&#x27;, &#x27;Flex.Column&#x27;, &#x27;Flex.AlignItems.Center&#x27;, &#x27;Flex.JustifyContent.Center&#x27;, &#x27;Padding&#x27;]),
+    screenBody: useViewStyles&lt;TViewStyle&gt;([&#x27;Screen.Body&#x27;]),
+    screenFooter: useViewStyles&lt;TViewStyle&gt;([&#x27;Screen.Footer&#x27;]),
+    screenTitle: useTextStyles&lt;TTextStyle&gt;([&#x27;H1&#x27;, &#x27;Align.Center&#x27;]),
+    screenSubTitle: useTextStyles&lt;TTextStyle&gt;([&#x27;Align.Center&#x27;]),
+    list: useViewStyles&lt;TViewStyle&gt;([&#x27;List&#x27;, &#x27;Border&#x27;, &#x27;Border.Radius&#x27;, &#x27;Border.Color.Grey2&#x27;]),
+    listItem: useTouchableStyles&lt;TTouchableStyle&gt;([&#x27;List.Item&#x27;, &#x27;Border.Bottom&#x27;]),
+    listLastItem: useTouchableStyles&lt;TTouchableStyle&gt;([&#x27;List.Item&#x27;]),
+    listItemLeft: useViewStyles&lt;TViewStyle&gt;([&#x27;List.Item.Left&#x27;]),
+    listItemBody: useViewStyles&lt;TViewStyle&gt;([&#x27;List.Item.Body&#x27;]),
+    listItemAvatar: useImageStyles&lt;TImageStyle&gt;([&#x27;Avatar&#x27;, &#x27;Avatar.Size.Small&#x27;]),
+  }).current;
+
+  return (
+    &lt;View style={styles.screen}&gt;
+      &lt;View style={styles.screenHeader}&gt;
+        &lt;Text style={styles.screenTitle}&gt;
+          React Native Stylo
+        &lt;/Text&gt;
+        &lt;Text style={styles.screenSubTitle}&gt;
+          Highly composable &amp; infinitely scalable themes
+        &lt;/Text&gt;
+      &lt;/View&gt;
+      &lt;View style={styles.screenBody}&gt;
+        &lt;View style={styles.list}&gt;
+          &lt;TouchableOpacity style={styles.listItem} onPress={()=&gt; /* some action */}&gt;
+            &lt;View style={styles.listItemLeft}&gt;
+              &lt;Image style={styles.listItemAvatar} source={...} /&gt;
+            &lt;/View&gt;
+            &lt;View style={styles.listItemBody}&gt;
+              &lt;Text&gt;
+                Strongly typed &amp; intellisense friendly styles
+              &lt;/Text&gt;
+            &lt;/View&gt;
+          &lt;/TouchableOpacity&gt;
+          &lt;TouchableOpacity style={styles.listLastItem} onPress={()=&gt; /* some action */}&gt;
+            &lt;View style={styles.listItemLeft}&gt;
+              &lt;Image style={styles.listItemAvatar} source={...} /&gt;
+            &lt;/View&gt;
+            &lt;View style={styles.listItemBody}&gt;
+              &lt;Text&gt;
+                Infinitely scalable
+              &lt;/Text&gt;
+            &lt;/View&gt;
+          &lt;/TouchableOpacity&gt;
+        &lt;/View&gt;
+      &lt;/View&gt;
+    &lt;/View&gt;
+  );
+};
+
+export default Home;</code></small></p><p class="mb-4 undefined">Please refer the <!-- --><a href="/react-native-stylo-documentation/stylers">Stylers</a> documentation for more details.<!-- --></p></section><section class="no-vertical-margin-collapse"><h4 class="heading" id="using-variables"><a href="#using-variables">Using variables</a></h4><p class="mb-4 undefined">Variables are the core configuration values which are used to define the themes. Like, colors, paddings, margins etc. <!-- --><strong class="font-semibold">useVariables()</strong> hook is used to access the theme configuration values to create your own custom page specific styles.<!-- --></p><p class="mb-4 p-4 bg-gray-100 rounded" style="overflow:auto"><small><code class="text-black" style="white-space:pre">import { Text, View } from &#x27;react-native&#x27;;
+import { useVariables } from &#x27;react-native-stylo&#x27;;
+
+import { TVariables } from &#x27;../themes/types&#x27;;
+
+const ComponentA = () =&gt; {
+  const [
+    paddingLarge,
+    borderRadius,
+    colorPink,
+    colorWhite,
+  ] = useVariables&lt;TVariables&gt;([
+    &#x27;Padding.Large&#x27;,
+    &#x27;Border.Radius&#x27;,
+    &#x27;Color.Pink&#x27;,
+    &#x27;Color.White&#x27;,
+  ]);
+  const styles = useRef(
+    StyleSheet.create({
+      card: {
+        padding: paddingLarge,
+        borderRadius,
+        backgroundColor: colorPink,
+        display: &#x27;flex&#x27;,
+        flexDirection: &#x27;column&#x27;,
+      },
+      cardTitle: {
+        fontSize: 24,
+        lineHeight: 32,
+        color: colorWhite,
+      },
+      ...,
+    }),
+  ).current;
+
+  return (
+    &lt;View style={styles.card}&gt;
+      &lt;Text style={styles.cardTitle}&gt;
+        {title goes here}
+      &lt;/Text&gt;
+      ...
+    &lt;/View&gt;
+  );</code></small></p><p class="mb-4 undefined">Please refer the <!-- --><a href="/react-native-stylo-documentation/use-variables">useVariables()</a> documentation for more details.<!-- --></p></section><section class="no-vertical-margin-collapse"><h4 class="heading" id="style-names-sequence"><a href="#style-names-sequence">StyleNames sequence</a></h4><p class="mb-4 undefined">The sequence of the <!-- --><small><code class="text-black bg-gray-100 p-1 rounded">styleNames</code></small> does matter. Similar to the React <!-- -->Native&#x27;s<!-- --> <!-- --><small><code class="text-black bg-gray-100 p-1 rounded">StyleSheet.create()</code></small> API, the later styles of styleNames override the styles of previous styleNames. As shown below, the <!-- --><small><code class="text-black bg-gray-100 p-1 rounded">&#x27;Padding.Left.Large&#x27;</code></small> will override the left padding applied by <!-- --><small><code class="text-black bg-gray-100 p-1 rounded">Padding</code></small> of the View component.<!-- --></p><p class="mb-4 p-4 bg-gray-100 rounded" style="overflow:auto"><small><code class="text-black" style="white-space:pre">&lt;View&lt;TViewStyle&gt; styleNames={[&#x27;Padding&#x27;, &#x27;Padding.Left.Large&#x27;, &#x27;Border.Radius&#x27;, &#x27;BackgroundColor.Primary&#x27;]}&gt;
+  {...}
+&lt;/View&gt;</code></small></p></section><section class="no-vertical-margin-collapse"><h4 class="heading" id="tight-coupling-styles"><a href="#tight-coupling-styles">Tightly coupling the styles</a></h4><p class="mb-4 undefined">Pleas refer <!-- --><a href="/react-native-stylo-documentation/tight-coupling">Tightly coupled</a> documentation.<!-- --></p></section></article></main></div></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{}},"page":"/usage","query":{},"buildId":"XgP3UMmBag4KJMBBtFp5o","assetPrefix":"/react-native-stylo-documentation","nextExport":true,"autoExport":true,"isFallback":false,"scriptLoader":[]}</script></body></html>

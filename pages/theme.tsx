@@ -117,7 +117,6 @@ const ComponentA = () => (
           So placing these different stye definitions with same StyleName <InlineCode>{`'Size.Small'`}</InlineCode> under separate namespaces <InlineCode>TextStyles</InlineCode> &amp; <InlineCode>ViewStyles</InlineCode> will avoid the collision or accidental overriding of style definitions.
         </Paragraph>
         <Paragraph>
-          Stylo provides default strongly typed Namespaces.
           Stylo considers each React Native component as one Namespace.
         </Paragraph>
         <CodeSnippet>
@@ -125,15 +124,11 @@ const ComponentA = () => (
   | 'IconStyles'
   | 'ImageBackgroundStyles'
   | 'ImageStyles'
-  | 'KeyboardAvoidingViewStyles'
-  | 'SafeAreaViewStyles'
-  | 'ScrollViewStyles'
   | 'TextInputStyles'
   | 'TextStyles'
   | 'TouchableStyles'
   | 'ViewStyles';`}
         </CodeSnippet>
-        <Paragraph><i><small>Note: New namespaces for remaining components will be added soon.</small></i></Paragraph>
         <Paragraph>
           The styles are defined and assigned to these namespaces. And then are used to define a theme.
         </Paragraph>
@@ -160,6 +155,29 @@ const Theme = {
           Apps can use any naming convention to define the Namespaces.
           If other naming convention is used, then just make sure to pass the correct namespace names to the <Link href="/stylers">Styler</Link> hooks &amp; <Link href="/stylish">Stylish</Link> components.
         </Paragraph>
+      </section>
+
+      <section className="no-vertical-margin-collapse">
+        <SectionHeading id="default-namespaces" level={4}>
+          Default namespaces
+        </SectionHeading>
+        <Paragraph>
+          Stylo provides default strongly typed Namespaces.
+        </Paragraph>
+        <CodeSnippet>
+          {`export type TStyleNamespace =
+  | 'IconStyles'
+  | 'ImageBackgroundStyles'
+  | 'ImageStyles'
+  | 'KeyboardAvoidingViewStyles'
+  | 'SafeAreaViewStyles'
+  | 'ScrollViewStyles'
+  | 'TextInputStyles'
+  | 'TextStyles'
+  | 'TouchableStyles'
+  | 'ViewStyles';`}
+        </CodeSnippet>
+        <Paragraph><i><small>Note: New namespaces for remaining components will be added soon.</small></i></Paragraph>
       </section>
 
       <section className="no-vertical-margin-collapse">

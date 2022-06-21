@@ -25,7 +25,7 @@ const CoreConcept: React.FC = () => (
       <Paragraph>
         <InlineCode><strong className="font-semibold">useStyles()</strong></InlineCode> is core hook which is used by the Stylo library to read styles from theme.
         It accepts <InlineCode>StyleNames</InlineCode> &amp; optional <InlineCode>StyleNamespace</InlineCode> as its arguments.
-        It then reads the styles defined for those StyleNames under that StyleNamespace in the theme, combines these styles into one &amp; returns the final style, a standard React Native style object.
+        It then reads the styles defined for those <InlineCode>StyleNames</InlineCode> under that <InlineCode>StyleNamespace</InlineCode> in the theme, combines these styles into one &amp; returns the final style, a standard React Native style object.
       </Paragraph>
 
       <Blockquote>
@@ -105,6 +105,15 @@ const CoreConcept: React.FC = () => (
             The <Link href="/theme#style-name">StyleNames</Link> which define the styles.
           </Paragraph>
         </section>
+      </section>
+
+      <section className="no-vertical-margin-collapse">
+        <SectionHeading id="return-value" level={4}>
+          Return value
+        </SectionHeading>
+        <Paragraph>
+          Standard React Native style object. E.g. <InlineCode>{`StyleProp<ViewStyle>`}</InlineCode>.
+        </Paragraph>
       </section>
 
       <section className="no-vertical-margin-collapse">

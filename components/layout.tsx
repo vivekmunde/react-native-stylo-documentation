@@ -80,7 +80,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
               </ul>
             </li>
           </ul>
-          <footer>Footer</footer>
+          {/* <footer>Footer</footer> */}
         </nav>
         <main className="border-l p-4 col-span-5 xl:col-span-4" style={{ minHeight: '100vh' }}>{children}</main>
       </div>

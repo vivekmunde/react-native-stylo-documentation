@@ -20,15 +20,18 @@ const CoreConcept: React.FC = () => (
     </Head>
     <article>
       <ArticleHeading>useStyles()</ArticleHeading>
+
       <p>
         <InlineCode><strong className="font-semibold">useStyles()</strong></InlineCode> is core hook which is used by the Stylo library to read styles from theme.
         It accepts <InlineCode>StyleNames</InlineCode> &amp; optional <InlineCode>StyleNamespace</InlineCode> as its arguments.
         It then reads the styles defined for those StyleNames under that StyleNamespace in the theme, combines these styles into one &amp; returns the final style, a standard React Native style object.
       </p>
+
       <Blockquote>
-        This hook is used inside all the <Link href="/stylers">Styler</Link> hooks &amp; <Link href="/stylish">Stylish</Link> components.
-        So technically, using only this <InlineCode>useStyles()</InlineCode> hook, any style definition defined in the theme can be accessed and applied to components.
-        However, using the <Link href="/stylers">Styler</Link> hooks &amp; <Link href="/stylish">Stylish</Link> components is more easy than using just the <InlineCode>useStyles()</InlineCode> hook.
+        The <InlineCode>useStyles()</InlineCode> hook is used inside all the <Link href="/stylers">Styler</Link> hooks &amp; <Link href="/stylish">Stylish</Link> components.
+        So technically, using only this <InlineCode>useStyles()</InlineCode> hook any style definition defined in the theme can be accessed &amp; applied to the components.
+        Practically, one do not need to use the <InlineCode>useStyles()</InlineCode> hook directly.
+        Using the <Link href="/stylers">Styler</Link> hooks &amp; <Link href="/stylish">Stylish</Link> components is more easy &amp; rather recommended than using the <InlineCode>useStyles()</InlineCode> hook.
       </Blockquote>
 
       <section className="no-vertical-margin-collapse">

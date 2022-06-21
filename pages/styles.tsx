@@ -27,7 +27,7 @@ const CoreConcept: React.FC = () => (
 
       <Blockquote>
         Practically, one do not need to use the <InlineCode>{`<Styles />`}</InlineCode> component directly.
-        Using the <Link href="/stylers">Styler</Link> hooks &amp; <Link href="/stylish">Stylish</Link> components is more easy &amp; rather recommended than using the <InlineCode>{`<Styles />`}</InlineCode> component.
+        Using the <Link href="/stylers">Styler</Link> hooks &amp; <Link href="/stylish">Stylish</Link> components is recommended &amp; more easy than using the <InlineCode>{`<Styles />`}</InlineCode> component.
       </Blockquote>
 
       <section className="no-vertical-margin-collapse">

@@ -31,7 +31,7 @@ const CoreConcept: React.FC = () => (
         The <InlineCode>useStyles()</InlineCode> hook is used inside all the <Link href="/stylers">Styler</Link> hooks &amp; <Link href="/stylish">Stylish</Link> components.
         So technically, using only this <InlineCode>useStyles()</InlineCode> hook any style definition defined in the theme can be accessed &amp; applied to the components.
         Practically, one do not need to use the <InlineCode>useStyles()</InlineCode> hook directly.
-        Using the <Link href="/stylers">Styler</Link> hooks &amp; <Link href="/stylish">Stylish</Link> components is more easy &amp; rather recommended than using the <InlineCode>useStyles()</InlineCode> hook.
+        Using the <Link href="/stylers">Styler</Link> hooks &amp; <Link href="/stylish">Stylish</Link> components is recommended &amp; more easy than using the <InlineCode>useStyles()</InlineCode> hook.
       </Blockquote>
 
       <section className="no-vertical-margin-collapse">

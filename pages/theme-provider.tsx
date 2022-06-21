@@ -7,6 +7,7 @@ import CodeSnippet from '../components/code-snippet';
 import ExternalLink from '../components/external-link';
 import InlineCode from '../components/inline-code';
 import Layout from '../components/layout';
+import Paragraph from '../components/paragraph';
 import RequiredTag from '../components/required-tag';
 import SectionHeading from '../components/section-heading';
 
@@ -19,14 +20,14 @@ const CoreConcept: React.FC = () => (
     </Head>
     <article>
       <ArticleHeading>{`<ThemeProvider />`}</ArticleHeading>
-      <p>
+      <Paragraph>
         As the name says, the <strong className="font-semibold">ThemeProvider</strong> is a component responsible for providing the theme values across the application.
         The <InlineCode>ThemeProvider</InlineCode> creates a <ExternalLink href="https://reactjs.org/docs/context.html">React Context</ExternalLink> to hold the theme values &amp; ideally sits at the root of the application layout.
-      </p>
+      </Paragraph>
 
-      <p>
+      <Paragraph>
         In the main file of the application, wrap the application inside the <InlineCode>ThemeProvider</InlineCode> &amp; supply the theme values to it.
-      </p>
+      </Paragraph>
       <CodeSnippet>
         {`import { ThemeProvider } from 'react-native-stylo';
 
@@ -47,19 +48,19 @@ const App = () => (
           <h5 className="text-lg">
             <InlineCode>variables</InlineCode> <RequiredTag />
           </h5>
-          <p>
+          <Paragraph>
             The <Link href="/theme#variables">variables</Link> defined in the theme.
             These variables can be accessed across the application using the hook <Link href="/use-variables">useVariables()</Link>.
-          </p>
+          </Paragraph>
         </section>
         <section>
           <h5 className="text-lg">
             <InlineCode>styles</InlineCode> <RequiredTag />
           </h5>
-          <p>
+          <Paragraph>
             The style definitions defined in the theme.
             These styles are used by the <Link href="/stylish">Stylish</Link> components &amp; <Link href="/stylers">Styler</Link> hooks to apply them to components.
-          </p>
+          </Paragraph>
         </section>
       </section>
     </article>

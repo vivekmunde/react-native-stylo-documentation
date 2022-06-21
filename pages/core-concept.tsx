@@ -6,6 +6,7 @@ import CodeSnippet from '../components/code-snippet';
 import ExternalLink from '../components/external-link';
 import InlineCode from '../components/inline-code';
 import Layout from '../components/layout';
+import Paragraph from '../components/paragraph';
 import SectionHeading from '../components/section-heading';
 
 const sections = {
@@ -84,40 +85,40 @@ const CoreConcept: React.FC = () => (
         <SectionHeading id={sections.stylesOnly.id} level={4}>
           {sections.stylesOnly.title}
         </SectionHeading>
-        <p>
+        <Paragraph>
           Each mobile app has its own requirements of components, so a set of predefined components, like Screen, Card, List, Form etc., cannot be completely suitable for mobiles apps.
           Also, having predefined components cannot be highly scalable or flexible enough to serve all requirements.
           These predefined components need to expose few props to add scalability &amp; behavioral flexibility, but again these extra props neither make them fully scalable nor completely suitable.
-        </p>
-        <p>
+        </Paragraph>
+        <Paragraph>
           <strong className="font-semibold">React Native Stylo</strong> only provides style definitions and does not provide any layout/behavioral/action components like Card, Badge, Picker etc.
           However, the library provides all the default style definitions needed to style &amp; build all kinds of components, right from simple Text to complicated Pickers &amp; Forms.
-        </p>
-        <p>
+        </Paragraph>
+        <Paragraph>
           Stylo library provides default pre-defined style types and styles. App can copy these and then can modify the style definitions.
-        </p>
+        </Paragraph>
       </section>
 
       <section className="no-vertical-margin-collapse">
         <SectionHeading id={sections.themes.id} level={4}>
           {sections.themes.title}
         </SectionHeading>
-        <p>
+        <Paragraph>
           <strong className="font-semibold">Theme</strong> is nothing but a collection of styles defined using the <ExternalLink href="https://reactnative.dev/docs/stylesheet">React {`Native's`} <InlineCode>StyleSheet.create()</InlineCode> API</ExternalLink>.
           The theme is used by the library and its hooks/components to apply styles to the React Native components.
           There is no restriction on the format of the style names, these can be defined as per the needs.
-        </p>
-        <p>
+        </Paragraph>
+        <Paragraph>
           <strong className="font-semibold">StyleName</strong> is the name of a standard style definition provided to the <InlineCode>StyleSheet.create</InlineCode> API.
           In the code snippet below <InlineCode>{`'Align.Center'`}</InlineCode>, <InlineCode>H1</InlineCode>, <InlineCode>{`'Size.Small'`}</InlineCode> are the style names.
-        </p>
-        <p>
+        </Paragraph>
+        <Paragraph>
           <strong className="font-semibold">Namespaces</strong> are used to organize the style definitions by logically grouping them together.
           This prevents the style name/style collisions, like <InlineCode>{`'Size.Small'`}</InlineCode> can have different style definitions for <InlineCode>Text</InlineCode> &amp; <InlineCode>View</InlineCode> components.
           In the code snippet below <InlineCode>TextStyles</InlineCode>, <InlineCode>TextInputStyles</InlineCode>, <InlineCode>ViewStyles</InlineCode> are the Namespaces.
           The library has default Namespaces defined per React Native component in its themes.
           The app can define its own Namespaces, which will override the default ones.
-        </p>
+        </Paragraph>
         <CodeSnippet>
           {`const TextStyles = StyleSheet.create({
   Default: { color: '#000000', fontSize: 16, fontWeight: '400', lineHeight: 24 },
@@ -150,12 +151,12 @@ export const Theme = {
         <SectionHeading id={sections.stylesDetachedOwnedByApp.id} level={4}>
           {sections.stylesDetachedOwnedByApp.title}
         </SectionHeading>
-        <p>
+        <Paragraph>
           The style definitions or themes are completely detached from the Stylo library.
           The style types &amp; styles/themes reside inside the app not inside the library.
           The library only provides a set of hooks and extended React Native components.&nbsp;
           <mark className="font-medium bg-pink-100 rounded text-black">&nbsp;The consumer application has the entire ownership &amp; liberty of defining the style types, styles &amp; their names (any naming pattern/convention).&nbsp;</mark>
-        </p>
+        </Paragraph>
         <CodeSnippet>
           {`MobileApp
   |- components
@@ -180,22 +181,22 @@ export const Theme = {
         |- view-styles.ts
         |- ...`}
         </CodeSnippet>
-        <p>
+        <Paragraph>
           The library provides a set of predefined style types &amp; themes.
           These can be used as is or can be considered as a guidelines or can be simply copied into the app &amp; customized/modified easily as per the needs.
-        </p>
+        </Paragraph>
       </section>
 
       <section className="no-vertical-margin-collapse">
         <SectionHeading id={sections.stronglyTypedIntellisenseFriendlyStyles.id} level={4}>
           {sections.stronglyTypedIntellisenseFriendlyStyles.title}
         </SectionHeading>
-        <p>
+        <Paragraph>
           The styles are strongly typed.
           So the accidental usage of using wrong style name is completely avoided out of the box.
           These style types are defined inside the consumer app and not inside the Stylo library.
           The app can use any naming convention to define these types.
-        </p>
+        </Paragraph>
         <CodeSnippet>
           {`export type TFontColor = 'Color.Primary' | 'Color.Secondary' | 'Color.Info' | 'Color.Success' | 'Color.Warning' | 'Color.Danger';
 export type TBackgroundColor = 'BackgroundColor.Primary' | 'BackgroundColor.Secondary' | 'BackgroundColor.Info' | 'BackgroundColor.Success' | 'BackgroundColor.Warning' | 'BackgroundColor.Danger';
@@ -207,34 +208,34 @@ export type TTextStyle = TFontColor | TBackgroundColor | 'Bold' | 'H1' | 'H2' | 
 export type TTextInputStyle = TFontColor | TBackgroundColor | TPadding | TMargin | TBorder | 'Align.Center' | 'Align.Right' | 'Size.Small' | 'Size.Tiny';
 export type TViewStyle = TBackgroundColor | TPadding | TMargin | TBorder;`}
         </CodeSnippet>
-        <p>
+        <Paragraph>
           On top of that, the style names are strongly typed per React Native component, like View, Text, TouchableOpacity etc.
           This adds an extra level of strong typing with which only the styles names which are intended for the component can be used.
-        </p>
-        <p>
+        </Paragraph>
+        <Paragraph>
           E.g. Alignment styles for Text &amp; View are different.
           As you start typing the alignment styles, the editor intellisense helps you choose correct styles for Text &amp; View.
-        </p>
-        <p className="border rounded p-1">
+        </Paragraph>
+        <Paragraph className="border rounded p-1">
           <img alt='Strongly typed styles: Text' src="../images/style-names-intellisense-1.png" />
-        </p>
-        <p className="border rounded p-1">
+        </Paragraph>
+        <Paragraph className="border rounded p-1">
           <img alt='Strongly typed styles: View' src="../images/style-names-intellisense-2.png" />
-        </p>
-        <p>
+        </Paragraph>
+        <Paragraph>
           The Stylo library provides default style types, which can be copied into the app and can be easily customized, if needed.
-        </p>
+        </Paragraph>
       </section>
 
       <section className="no-vertical-margin-collapse">
         <SectionHeading id={sections.scalableStyles.id} level={4}>
           {sections.scalableStyles.title}
         </SectionHeading>
-        <p>
+        <Paragraph>
           As both the style types &amp; the styles are defined by the consumer app &amp; not by the library, the app can add/remove/modify as many styles as it wants and they way it wants.
           App can keep adding {`it's`} own types &amp; styles as per the needs like <InlineCode>Card</InlineCode>, <InlineCode>Card.Header</InlineCode>, <InlineCode>Card.Body</InlineCode>, <InlineCode>Card.Footer</InlineCode>, <InlineCode>Picker</InlineCode>, <InlineCode>Picker.Header</InlineCode> &amp; so on.
           Create these style types and styles and just add them to the Theme. {`That's`} it.
-        </p>
+        </Paragraph>
         <CodeSnippet>
           {`//types.ts;
 export type TCard = 'Card' | 'Card.Header' | 'Card.Body' | 'Card.Footer';
@@ -262,16 +263,16 @@ export const Theme = {
 };
 `}
         </CodeSnippet>
-        <p>
+        <Paragraph>
           Stylo library provides predefined style types and styles. App can copy these and then extend them infinitely. It can add new types/styles, change names of existing types/styles or modify the style definitions.
-        </p>
+        </Paragraph>
       </section>
 
       <section className="no-vertical-margin-collapse">
         <SectionHeading id={sections.stylishReactNativeComponents.id} level={4}>
           {sections.stylishReactNativeComponents.title}
         </SectionHeading>
-        <p>
+        <Paragraph>
           The library just adds a new property called <InlineCode>styleNames</InlineCode> to the <ExternalLink href="https://reactnative.dev">React Native components</ExternalLink>.
           The property <InlineCode>styleNames</InlineCode> in React Native mobile app is just like <InlineCode>class</InlineCode> in web app.
           The style names are defined in the theme, e.g. <InlineCode>List</InlineCode>, <InlineCode>List.Item</InlineCode>, <InlineCode>Color.Primary</InlineCode>, <InlineCode>Border</InlineCode>, <InlineCode>Size.Large</InlineCode> etc.
@@ -281,7 +282,7 @@ export const Theme = {
             &nbsp;This keeps the React Native components as pure as they are defined by React Native.
             After all, these are just React Native components.&nbsp;
           </mark>
-        </p>
+        </Paragraph>
         <CodeSnippet>
           {`import { View, Text, TouchableOpacity } from 'react-native-stylo/stylish';
 

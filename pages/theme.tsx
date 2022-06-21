@@ -7,6 +7,7 @@ import CodeSnippet from '../components/code-snippet';
 import ExternalLink from '../components/external-link';
 import InlineCode from '../components/inline-code';
 import Layout from '../components/layout';
+import Paragraph from '../components/paragraph';
 import SectionHeading from '../components/section-heading';
 
 const Theme: React.FC = () => (
@@ -18,40 +19,40 @@ const Theme: React.FC = () => (
     </Head>
     <article>
       <ArticleHeading>Theme</ArticleHeading>
-      <p>
+      <Paragraph>
         <strong className="font-semibold">Theme</strong> at core is nothing but a collection of styles defined using the <ExternalLink href="https://reactnative.dev/docs/stylesheet">React {`Native's`} <InlineCode>StyleSheet.create()</InlineCode> API</ExternalLink>.
         The themes are defined inside the app and are completely owned by the app, not by the Stylo library.
         Stylo theme is based on two key concepts: StyleNames &amp; Namespaces.
-      </p>
+      </Paragraph>
 
       <section className="no-vertical-margin-collapse">
         <SectionHeading id="style-name" level={4}>
           StyleName
         </SectionHeading>
-        <p>
+        <Paragraph>
           StyleName is the name of a standard style definition provided to the <InlineCode>StyleSheet.create</InlineCode> API.
           A unified collection of StyleNames &amp; their style definitions results into a Theme.
           Any suitable naming convention can be used for the StyleNames.
           A common good practice is to group the style definitions per React Native component.
-        </p>
-        <p>
+        </Paragraph>
+        <Paragraph>
           In the code snippet below <InlineCode>{`'Align.Center'`}</InlineCode>, <InlineCode>H1</InlineCode>, <InlineCode>{`'Size.Small'`}</InlineCode> are the style names.
-        </p>
-        <p>
+        </Paragraph>
+        <Paragraph>
           <strong className="font-semibold">Type definition</strong>
-        </p>
+        </Paragraph>
         <CodeSnippet>
           {`type TTextStyle = 'Align.Center' | 'Align.Right' | 'H1' | 'H2' | 'H3' | 'Size.Small' | 'Size.Tiny';
 type TInputTextStyle = 'Align.Center' | 'Align.Right' | 'Size.Small' | 'Size.Tiny';`}
         </CodeSnippet>
-        <p>
+        <Paragraph>
           The document explains the significance &amp; usage of the type definitions in the theme in the later section.
           The StyleName type definitions are passed to &amp; used by <Link href="/stylers">Styler</Link> hooks &amp; <Link href="/stylish">Stylish</Link> components.
           They are not directly used in the <InlineCode>StyleSheet.create()</InlineCode> API.
-        </p>
-        <p>
+        </Paragraph>
+        <Paragraph>
           <strong className="font-semibold">Styles defined using the StyleNames</strong>
-        </p>
+        </Paragraph>
         <CodeSnippet>
           {`const TextStyles = StyleSheet.create({
   Default: { color: '#000000', fontSize: 16, fontWeight: '400', lineHeight: 24 },
@@ -78,14 +79,14 @@ const TextInputStyles = StyleSheet.create({
         <SectionHeading id="reserved-style-name" level={4}>
           Reserved StyleName <InlineCode>Default</InlineCode>
         </SectionHeading>
-        <p>
+        <Paragraph>
           <InlineCode>Default</InlineCode> is a reserved StyleName.
           {`It's`} used for the core React Native components like Text, View, TextInput, Image etc.
           Stylo applies the styles defined under <InlineCode>Default</InlineCode> StyleName as a default style to the components.
-        </p>
-        <p>
+        </Paragraph>
+        <Paragraph>
           In the code snipper below, the style defined as <InlineCode>Default</InlineCode> will get applied by default to <InlineCode>Text</InlineCode> component.
-        </p>
+        </Paragraph>
         <CodeSnippet>
           {`const TextStyles = StyleSheet.create({
   Default: { color: '#000000', fontSize: 16, fontWeight: '400', lineHeight: 24 },
@@ -108,17 +109,17 @@ const ComponentA = () => (
         <SectionHeading id="namespace" level={4}>
           Namespace
         </SectionHeading>
-        <p>
+        <Paragraph>
           Namespaces are used to organize the style definitions by logically grouping them together.
           Means, all style definitions for React {`Native's`} Text component can be grouped together under a namespace called <InlineCode>TextStyles</InlineCode>, likewise <InlineCode>ViewStyles</InlineCode>, <InlineCode>TouchableStyles</InlineCode>, <InlineCode>TextInputStyles</InlineCode> etc.
           This prevents collisions of the StyleName &amp; eventually the collisions of styles.
           For example, a StyleName <InlineCode>{`'Size.Small'`}</InlineCode> can exist for both Text &amp; View and can have different style definitions for each.
           So placing these different stye definitions with same StyleName <InlineCode>{`'Size.Small'`}</InlineCode> under separate namespaces <InlineCode>TextStyles</InlineCode> &amp; <InlineCode>ViewStyles</InlineCode> will avoid the collision or accidental overriding of style definitions.
-        </p>
-        <p>
+        </Paragraph>
+        <Paragraph>
           Stylo provides default strongly typed Namespaces.
           Stylo considers each React Native component as one Namespace.
-        </p>
+        </Paragraph>
         <CodeSnippet>
           {`export type TStyleNamespace =
   | 'IconStyles'
@@ -132,10 +133,10 @@ const ComponentA = () => (
   | 'TouchableStyles'
   | 'ViewStyles';`}
         </CodeSnippet>
-        <p><i><small>Note: New namespaces for remaining components will be added soon.</small></i></p>
-        <p>
+        <Paragraph><i><small>Note: New namespaces for remaining components will be added soon.</small></i></Paragraph>
+        <Paragraph>
           The styles are defined and assigned to these namespaces. And then are used to define a theme.
-        </p>
+        </Paragraph>
         <CodeSnippet>
           {`const TextStyles = StyleSheet.create({ ... });
 const IconStyles = StyleSheet.create({ ... });
@@ -149,43 +150,43 @@ const Theme = {
   ...
 };`}
         </CodeSnippet>
-        <p>
+        <Paragraph>
           The approach of <strong className="font-semibold">one namespace per React Native component</strong> makes it highly scalable &amp; easily manageable.
           New namespaces for remaining or new ReactNative components can be added without impacting existing onces.
           Stylo uses these namespaces by default.
-        </p>
-        <p>
+        </Paragraph>
+        <Paragraph>
           However, {`it's`} not mandatory for the apps to follow this naming convention.
           Apps can use any naming convention to define the Namespaces.
           If other naming convention is used, then just make sure to pass the correct namespace names to the <Link href="/stylers">Styler</Link> hooks &amp; <Link href="/stylish">Stylish</Link> components.
-        </p>
+        </Paragraph>
       </section>
 
       <section className="no-vertical-margin-collapse">
         <SectionHeading id="variables" level={4}>
           Variables
         </SectionHeading>
-        <p>
+        <Paragraph>
           Variables are the core configuration values which are used to define the styles.
           Like, colors, paddings, margins etc.
           These variable definitions can look like below.
-        </p>
-        <p>
+        </Paragraph>
+        <Paragraph>
           <strong className="font-semibold">Type definition</strong>
-        </p>
+        </Paragraph>
         <CodeSnippet>
           {`import { TBackgroundColor } from './background-colors';
 import { TFontColor } from './font-colors';
 
 export type TVariables = 'Color.Primary' | 'Color.Secondary' | 'Padding' | 'Padding.Small' | 'Padding.Large' | 'Border.Radius';`}
         </CodeSnippet>
-        <p>
+        <Paragraph>
           The document explains the significance &amp; usage of the type definitions in the theme in the later section.
           The variables type definitions are passed to &amp; used by <Link href="/use-variables">useVariables()</Link> hook.
-        </p>
-        <p>
+        </Paragraph>
+        <Paragraph>
           <strong className="font-semibold">Variable values</strong>
-        </p>
+        </Paragraph>
         <CodeSnippet>
           {`const variables = {
   'Color.Primary': '#000000',
@@ -202,16 +203,16 @@ export type TVariables = 'Color.Primary' | 'Color.Secondary' | 'Padding' | 'Padd
         <SectionHeading id="type-definitions" level={4}>
           Type definitions
         </SectionHeading>
-        <p>
+        <Paragraph>
           Thanks to <ExternalLink href="https://www.typescriptlang.org">TypeScript</ExternalLink>, the <InlineCode>StyleNames</InlineCode>, <InlineCode>Namespaces</InlineCode> &amp; <InlineCode>Variables</InlineCode> are strongly typed.
           The type definitions are passed to &amp; used by <Link href="/use-variables">useVariables()</Link> hook, <Link href="/stylers">Styler</Link> hooks &amp; <Link href="/stylish">Stylish</Link> components.
           This completely avoids accidental usage of wrong <InlineCode>StyleNames</InlineCode>, <InlineCode>Namespaces</InlineCode> &amp; <InlineCode>Variables</InlineCode>, out of the box.
           On top of that, the <InlineCode>StyleNames</InlineCode> &amp; <InlineCode>Namespaces</InlineCode> are strongly typed against each React Native component, like <InlineCode>View</InlineCode>, <InlineCode>Text</InlineCode>, <InlineCode>TouchableOpacity</InlineCode> etc.
           This adds an extra level of strong typing which forces to use only those values which are intended for a particular component.
-        </p>
-        <p>
+        </Paragraph>
+        <Paragraph>
           <strong className="font-semibold">Variables type definition</strong>
-        </p>
+        </Paragraph>
         <CodeSnippet>
           {`type TFontColor = 'Color.Primary' | 'Color.Secondary' | 'Color.Info' | 'Color.Warning' | 'Color.Danger' | 'Color.Border' | 'Color.Grey1' | 'Color.Grey2' | 'Color.Grey1' | ... ;
 type TBackgroundColor = 'BackgroundColor.Primary' | 'BackgroundColor.Secondary' | 'BackgroundColor.Info' | 'BackgroundColor.Warning' | 'BackgroundColor.Danger' | 'BackgroundColor.Grey1' | 'BackgroundColor.Grey2' | 'BackgroundColor.Grey1' | ... ;
@@ -222,15 +223,15 @@ type TBorder = 'Border.Radius' | 'Border.Radius.Small' | 'Border.Radius.Large';
 
 export type TVariables = TFontColor | TBackgroundColor | TPadding | TMargin | TBorder | ...;`}
         </CodeSnippet>
-        <p>
+        <Paragraph>
           <strong className="font-semibold">Namespaces type definition</strong>
-        </p>
+        </Paragraph>
         <CodeSnippet>
           {`export type TStyleNamespace = 'IconStyles' | 'ImageBackgroundStyles' | 'ImageStyles' | 'KeyboardAvoidingViewStyles' | 'SafeAreaViewStyles' | 'ScrollViewStyles' | 'TextInputStyles' | 'TextStyles' | 'TouchableStyles' | 'ViewStyles' | ...;`}
         </CodeSnippet>
-        <p>
+        <Paragraph>
           <strong className="font-semibold">StyleName type definition</strong>
-        </p>
+        </Paragraph>
         <CodeSnippet>
           {`type TBorderStyle = 'Border' | 'Border.Top' | 'Border.Right' | 'Border.Bottom' | 'Border.Left' | 'Border.Radius' | 'Border.Radius.Small' | 'Border.Radius.Large' | 'Border.Color.Primary' | 'Border.Color.Secondary' | 'Border.Color.Info' | 'Border.Color.Warning' | 'Border.Color.Danger' | 'Border.Color.Grey1' | 'Border.Color.Grey2' | ...;
   export type TTextStyle = TFontColor | 'Align.Center' | 'Align.Right' | 'Bold' | 'H1' | 'H2' | 'H3' | 'H4' | 'Small' | 'Large' | 'Paragraph' | 'Margin' | 'Margin.Top' | 'Margin.Right' | 'Margin.Bottom' | 'Margin.Left' | 'Margin.XSmall' | 'Margin.Small' | 'Margin.Large' | 'Margin.Top.Small' | 'Margin.Right.Small' | 'Margin.Bottom.Small' | 'Margin.Left.Small' | 'Margin.Top.XSmall' | 'Margin.Right.XSmall' | 'Margin.Bottom.XSmall' | 'Margin.Left.XSmall' | 'Margin.Top.Large' | 'Margin.Right.Large' | 'Margin.Bottom.Large' | 'Margin.Left.Large';
@@ -244,15 +245,15 @@ export type TVariables = TFontColor | TBackgroundColor | TPadding | TMargin | TB
               Intellisense friendly styles
             </a>
           </h5>
-          <p>
+          <Paragraph>
             The <InlineCode>Variables</InlineCode>, <InlineCode>StyleNames</InlineCode> &amp; <InlineCode>Namespaces</InlineCode> are intellisense friendly, it helps you choose correct styles &amp; values.
-          </p>
-          <p className="border rounded p-1">
+          </Paragraph>
+          <Paragraph className="border rounded p-1">
             <img alt='Strongly typed styles: Text' src="../images/style-names-intellisense-1.png" />
-          </p>
-          <p className="border rounded p-1">
+          </Paragraph>
+          <Paragraph className="border rounded p-1">
             <img alt='Strongly typed styles: View' src="../images/style-names-intellisense-2.png" />
-          </p>
+          </Paragraph>
         </section>
       </section>
 
@@ -260,11 +261,11 @@ export type TVariables = TFontColor | TBackgroundColor | TPadding | TMargin | TB
         <SectionHeading id="stylo-themes" level={4}>
           Stylo theme
         </SectionHeading>
-        <p>
+        <Paragraph>
           Stylo provides a default Theme which is located at <strong className="font-semibold">/node_modules/react-native-stylo/lib/themes</strong>.
           The theme can be simply copied into the app &amp; used as is or freely modified as per the needs.
           Or simply use the default theme just as a guideline &amp; create your own from scratch.
-        </p>
+        </Paragraph>
       </section>
 
       <section className="no-vertical-margin-collapse">
@@ -275,12 +276,12 @@ export type TVariables = TFontColor | TBackgroundColor | TPadding | TMargin | TB
           <h5 className="text-lg">
             1. Define types
           </h5>
-          <p>
+          <Paragraph>
             First things first, define the types for Variables, Namespaces &amp; StyleNames.
             {` It's`} very important to define these types clearly by using a thoughtful naming convention which can offer better scalability and easier maintenance ahead.
             {` It's`} not practically possible to define all the types at once, because the theme may keep growing as the app grows.
             So always follow the practice of defining the types first and then style definitions, when adding new styles to the theme.
-          </p>
+          </Paragraph>
           <CodeSnippet>
             {`// Variables
 type TFontColor = 'Color.Primary' | 'Color.Secondary' | 'Color.Info' | 'Color.Warning' | 'Color.Danger' | 'Color.Border' | 'Color.Grey1' | 'Color.Grey2' | 'Color.Grey1' | ... ;
@@ -305,10 +306,10 @@ export type TTouchableStyle = TBackgroundColor | TPadding | TMargin | TBorderSty
           <h5 className="text-lg">
             2. Define Variables
           </h5>
-          <p>
+          <Paragraph>
             Define the variables with their values.
             These will be used across the theme to maintain the consistency of style.
-          </p>
+          </Paragraph>
           <CodeSnippet>
             {`const variables {
   'Color.Primary': '#000000',
@@ -331,10 +332,10 @@ export type TTouchableStyle = TBackgroundColor | TPadding | TMargin | TBorderSty
           <h5 className="text-lg">
             3. Define styles
           </h5>
-          <p>
+          <Paragraph>
             A good practice is to define the common styles separately &amp; reuse them.
             Like, border related styles can be defined separately &amp; can be reused to define styles for View, TouchableOpacity, ScrollView etc.
-          </p>
+          </Paragraph>
           <CodeSnippet>
             {`const BorderStyles = StyleSheet.create({
   Border: {
@@ -427,10 +428,10 @@ export const TouchableStyles = StyleSheet.create({
           <h5 className="text-lg">
             4. Fuse them in a theme
           </h5>
-          <p>
+          <Paragraph>
             Collect all the style definitions into one object which will be used as the theme.
             {` It's`} important to use the same namespaces that have been defined in the types.
-          </p>
+          </Paragraph>
           <CodeSnippet>
             {`const Styles = {
   TextStyles,

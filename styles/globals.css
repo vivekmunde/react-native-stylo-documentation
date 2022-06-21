@@ -41,10 +41,6 @@ a {
   color: #ec4899
 }
 
-p {
-  margin-bottom: 1rem;
-}
-
 .no-vertical-margin-collapse {
   padding-top: 1px;
   padding-bottom: 1px;

@@ -8,6 +8,7 @@ import CodeSnippet from '../components/code-snippet';
 import ExternalLink from '../components/external-link';
 import InlineCode from '../components/inline-code';
 import Layout from '../components/layout';
+import Paragraph from '../components/paragraph';
 import RequiredTag from '../components/required-tag';
 import SectionHeading from '../components/section-heading';
 
@@ -21,17 +22,17 @@ const CoreConcept: React.FC = () => (
     <article>
       <ArticleHeading>useStyles()</ArticleHeading>
 
-      <p>
+      <Paragraph>
         <InlineCode><strong className="font-semibold">useStyles()</strong></InlineCode> is core hook which is used by the Stylo library to read styles from theme.
         It accepts <InlineCode>StyleNames</InlineCode> &amp; optional <InlineCode>StyleNamespace</InlineCode> as its arguments.
         It then reads the styles defined for those StyleNames under that StyleNamespace in the theme, combines these styles into one &amp; returns the final style, a standard React Native style object.
-      </p>
+      </Paragraph>
 
       <Blockquote>
+        Stylo recommends to use the <Link href="/stylers">Styler</Link> hooks &amp; <Link href="/stylish">Stylish</Link> components instead of <InlineCode>useStyles()</InlineCode> hook.
         The <InlineCode>useStyles()</InlineCode> hook is used inside all the <Link href="/stylers">Styler</Link> hooks &amp; <Link href="/stylish">Stylish</Link> components.
         So technically, using only this <InlineCode>useStyles()</InlineCode> hook any style definition defined in the theme can be accessed &amp; applied to the components.
-        Practically, one do not need to use the <InlineCode>useStyles()</InlineCode> hook directly.
-        Using the <Link href="/stylers">Styler</Link> hooks &amp; <Link href="/stylish">Stylish</Link> components is recommended &amp; more easy than using the <InlineCode>useStyles()</InlineCode> hook.
+        In practice, one may not need to use the <InlineCode>useStyles()</InlineCode> hook directly.
       </Blockquote>
 
       <section className="no-vertical-margin-collapse">
@@ -48,33 +49,33 @@ const CoreConcept: React.FC = () => (
           <h5 className="text-base">
             <InlineCode>TStyleProp</InlineCode>
           </h5>
-          <p>
+          <Paragraph>
             Standard React Native stye prop like <ExternalLink href="https://reactnative.dev/docs/text-style-props">TextStyle</ExternalLink>, <ExternalLink href="https://reactnative.dev/docs/view-style-props">ViewStyle</ExternalLink> etc.
-          </p>
+          </Paragraph>
         </section>
         <section>
           <h5 className="text-base">
             <InlineCode>TStyleName</InlineCode>
           </h5>
-          <p>
+          <Paragraph>
             <Link href="/theme#type-definitions">StyleName type</Link> defined in the theme.
-          </p>
+          </Paragraph>
         </section>
         <section>
           <h5 className="text-base">
             <InlineCode>TStyleNamespace</InlineCode>
           </h5>
-          <p>
+          <Paragraph>
             <Link href="/theme#type-definitions">StyleNamespace type</Link> defined in the theme.
-          </p>
+          </Paragraph>
         </section>
         <section>
           <h5 className="text-base">
             Return type
           </h5>
-          <p>
+          <Paragraph>
             Standard React Native style object. E.g. <InlineCode>{`StyleProp<ViewStyle>`}</InlineCode>.
-          </p>
+          </Paragraph>
         </section>
       </section>
 
@@ -92,17 +93,17 @@ const CoreConcept: React.FC = () => (
           <h5 className="text-lg">
             <InlineCode>styleNamespace</InlineCode> <RequiredTag />
           </h5>
-          <p>
+          <Paragraph>
             The <Link href="/theme#namespace">Namespace</Link> to be used which holds the style definitions for the <InlineCode>StyleNames</InlineCode> supplied to the hook.
-          </p>
+          </Paragraph>
         </section>
         <section>
           <h5 className="text-lg">
             <InlineCode>styleNames</InlineCode> <RequiredTag />
           </h5>
-          <p>
+          <Paragraph>
             The <Link href="/theme#style-name">StyleNames</Link> which define the styles.
-          </p>
+          </Paragraph>
         </section>
       </section>
 
@@ -110,9 +111,9 @@ const CoreConcept: React.FC = () => (
         <SectionHeading id="usage" level={4}>
           Usage
         </SectionHeading>
-        <p>
+        <Paragraph>
           Below example shows the use of <InlineCode>useStyles()</InlineCode> hook to create a styled card.
-        </p>
+        </Paragraph>
         <CodeSnippet>
           {`import React, { useRef } from 'react';
 import { Text, TextStyle, TouchableOpacity, View, ViewStyle } from 'react-native';

@@ -6,6 +6,7 @@ import ArticleHeading from '../components/article-heading';
 import CodeSnippet from '../components/code-snippet';
 import InlineCode from '../components/inline-code';
 import Layout from '../components/layout';
+import Paragraph from '../components/paragraph';
 import SectionHeading from '../components/section-heading';
 
 const sections = {
@@ -102,41 +103,41 @@ const CoreConcept: React.FC = () => (
         <SectionHeading id={sections.installation.id} level={4}>
           {sections.installation.title}
         </SectionHeading>
-        <p>
+        <Paragraph>
           <InlineCode>npm install --save react-native-stylo</InlineCode>
-        </p>
-        <p>
+        </Paragraph>
+        <Paragraph>
           <InlineCode>yarn add react-native-stylo</InlineCode>
-        </p>
+        </Paragraph>
       </section>
       <section className="no-vertical-margin-collapse">
         <SectionHeading id={sections.themeDefinitions.id} level={4}>
           {sections.themeDefinitions.title}
         </SectionHeading>
-        <p>
+        <Paragraph>
           Stylo provides a default theme &amp; its type definitions which are located at <strong className="font-semibold">node_modules/react-native-stylo/lib/themes</strong>.
           Just copy the theme to your project and you can modify them as per your needs.
-        </p>
-        <p>
+        </Paragraph>
+        <Paragraph>
           E.g. <InlineCode>cp -R [root]/node_modules/react-native-stylo/lib/themes/ [root]/app/themes/</InlineCode>
-        </p>
-        <p>
+        </Paragraph>
+        <Paragraph>
           Or you can create your own themes &amp; their type definitions right from scratch.
-        </p>
-        <p>
+        </Paragraph>
+        <Paragraph>
           Please refer the <Link href="/theme">Theme</Link> documentation for more details.
-        </p>
+        </Paragraph>
       </section>
 
       <section className="no-vertical-margin-collapse">
         <SectionHeading id={sections.themeProvider.id} level={4}>
           {sections.themeProvider.title}
         </SectionHeading>
-        <p>
+        <Paragraph>
           Wrap the application inside the <InlineCode>ThemeProvider</InlineCode> and supply the theme to it.
           The theme is collection of variables &amp; and style definitions.
           ThemeProvider expects both variables &amp; styles to be supplied to it.
-        </p>
+        </Paragraph>
         <CodeSnippet>
           {`import { ThemeProvider } from 'react-native-stylo';
 
@@ -148,20 +149,20 @@ const App = () => (
   </ThemeProvider>
 );`}
         </CodeSnippet>
-        <p>
+        <Paragraph>
           Please refer the <Link href="/theme-provider">{`<ThemeProvider />`}</Link> documentation for more details.
-        </p>
+        </Paragraph>
       </section>
 
       <section className="no-vertical-margin-collapse">
         <SectionHeading id={sections.stylishComponents.id} level={4}>
           {sections.stylishComponents.title}
         </SectionHeading>
-        <p>
+        <Paragraph>
           <strong className="font-semibold">Stylish</strong> components are nothing but enhanced React Native components with added properties called <InlineCode>styleNamespace</InlineCode>(optional) &amp; <InlineCode>StyleNames</InlineCode>.
           Property <InlineCode>styleNames</InlineCode> accepts the eligible styles for the component which are defined in the theme.
           Property <InlineCode>styleNamespace</InlineCode> is optional, and use only when you need to override the default namespaces.
-        </p>
+        </Paragraph>
         <CodeSnippet>
           {`import React from 'react';
 import Stylo from 'react-native-stylo';
@@ -207,22 +208,22 @@ const Home = () => (
 
 export default Home;`}
         </CodeSnippet>
-        <p>
+        <Paragraph>
           Please refer the <Link href="/stylish">Stylish</Link> documentation for more details.
-        </p>
+        </Paragraph>
       </section>
 
       <section className="no-vertical-margin-collapse">
         <SectionHeading id={sections.stylers.id} level={4}>
           {sections.stylers.title}
         </SectionHeading>
-        <p>
+        <Paragraph>
           <strong className="font-semibold">Stylers</strong> are styling hooks which are used to define the styles for the components.
           Use these stylers in case you like to use the core React Native components instead of {`Stylo's`} stylish components.
           The styler hooks accept two arguments <InlineCode>styleNames</InlineCode> &amp <InlineCode>styleNamespace</InlineCode>(optional).;
           First argument <InlineCode>styleNames</InlineCode> accepts the eligible styles for the component which are defined in the theme.
           Second argument <InlineCode>styleNamespace</InlineCode> is optional, and use only when you need to override the default namespaces.
-        </p>
+        </Paragraph>
         <CodeSnippet>
           {`import React, { useRef } from 'react';
 import { Image, Text, TouchableOpacity, View } from 'react-native';
@@ -286,19 +287,19 @@ const Home = () => {
 
 export default Home;`}
         </CodeSnippet>
-        <p>
+        <Paragraph>
           Please refer the <Link href="/stylers">Stylers</Link> documentation for more details.
-        </p>
+        </Paragraph>
       </section>
 
       <section className="no-vertical-margin-collapse">
         <SectionHeading id={sections.variables.id} level={4}>
           {sections.variables.title}
         </SectionHeading>
-        <p>
+        <Paragraph>
           Variables are the core configuration values which are used to define the themes. Like, colors, paddings, margins etc.&nbsp;
           <strong className="font-semibold">useVariables()</strong> hook is used to access the theme configuration values to create your own custom page specific styles.
-        </p>
+        </Paragraph>
         <CodeSnippet>
           {`import { Text, View } from 'react-native';
 import { useVariables } from 'react-native-stylo';
@@ -344,22 +345,22 @@ const ComponentA = () => {
     </View>
   );`}
         </CodeSnippet>
-        <p>
+        <Paragraph>
           Please refer the <Link href="/use-variables">useVariables()</Link> documentation for more details.
-        </p>
+        </Paragraph>
       </section>
 
       <section className="no-vertical-margin-collapse">
         <SectionHeading id={sections.tightlyCouplingStyles.id} level={4}>
           {sections.tightlyCouplingStyles.title}
         </SectionHeading>
-        <p>
+        <Paragraph>
           To avoid passing the style types each time, you can tightly couple the types to the <strong className="font-semibold">Stylish</strong> components &amp; <strong className="font-semibold">Stylers</strong> easily.
           Simply create wrapper components &amp; hooks which will internally pass the desired style type and then use these components &amp; hooks without need to pass the style types.
-        </p>
-        <p>
+        </Paragraph>
+        <Paragraph>
           <strong className="font-semibold">Text.tsx</strong>
-        </p>
+        </Paragraph>
         <CodeSnippet>
           {`import React from 'react';
 import { Text as StyloText, TTextProps } from 'react-native-stylo';
@@ -371,9 +372,9 @@ const View: React.FC<TTextProps<TTextStyle>> = props => <StyloText {...props} />
 export default Text;
 `}
         </CodeSnippet>
-        <p>
+        <Paragraph>
           <strong className="font-semibold">useTextStyles.ts</strong>
-        </p>
+        </Paragraph>
         <CodeSnippet>
           {`import { useTextStyles as useStyloTextStyles } from 'react-native-stylo';
 
@@ -387,11 +388,11 @@ const useTextStyles = (
 export default useTextStyles;
 `}
         </CodeSnippet>
-        <p>
+        <Paragraph>
           <strong className="font-semibold">ComponentA.tsx</strong>
-        </p>
+        </Paragraph>
         <CodeSnippet>
-{`import Text from '../stylish/Text';
+          {`import Text from '../stylish/Text';
 
 const ComponentA = () => (
   <Text styleNames={['H1', 'Bold', 'Align.Center']}>
@@ -417,23 +418,23 @@ const ComponentA = () => {
   );
 };`}
         </CodeSnippet>
-        <p>
+        <Paragraph>
           To save time &amp; effort, Stylo provides these wrapper hooks &amp; components, which are located at <strong className="font-semibold">/node_modules/react-native-stylo/lib/tightly-coupled/*.ts[x]</strong>.
           Simply copy these to you app.
           Please note, these wrapper hooks &amp; components import the types using a relative path <InlineCode>{`import { TTextStyle } from "../themes/types"`}</InlineCode>.
           If your theme types are defined at some other location then just change these type import paths in these hooks &amp; components.
-        </p>
+        </Paragraph>
       </section>
 
       <section className="no-vertical-margin-collapse">
         <SectionHeading id={sections.styleNamesSequence.id} level={4}>
           {sections.styleNamesSequence.title}
         </SectionHeading>
-        <p>
+        <Paragraph>
           The sequence of the <InlineCode>styleNames</InlineCode> does matter.
           Similar to the React {`Native's`} <InlineCode>StyleSheet.create()</InlineCode> API, the later styles of styleNames override the styles of previous styleNames.
           As shown below, the <InlineCode>{`'Padding.Left.Large'`}</InlineCode> will override the left padding applied by <InlineCode>Padding</InlineCode> of the View component.
-        </p>
+        </Paragraph>
         <CodeSnippet>
           {`<View<TViewStyle> styleNames={['Padding', 'Padding.Left.Large', 'Border.Radius', 'BackgroundColor.Primary']}>
   {...}

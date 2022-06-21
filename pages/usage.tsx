@@ -36,7 +36,7 @@ const sections = {
   },
   tightlyCouplingStyles: {
     id: 'tight-coupling-styles',
-    title: 'Tightly coupling styles',
+    title: 'Tightly coupling the styles',
   },
   styleNamesSequence: {
     id: 'style-names-sequence',
@@ -87,13 +87,13 @@ const CoreConcept: React.FC = () => (
             </a>
           </li>
           <li>
-            <a href={`#${sections.tightlyCouplingStyles.id}`}>
-              {sections.tightlyCouplingStyles.title}
+            <a href={`#${sections.styleNamesSequence.id}`}>
+              {sections.styleNamesSequence.title}
             </a>
           </li>
           <li>
-            <a href={`#${sections.styleNamesSequence.id}`}>
-              {sections.styleNamesSequence.title}
+            <a href={`#${sections.tightlyCouplingStyles.id}`}>
+              {sections.tightlyCouplingStyles.title}
             </a>
           </li>
         </ul>
@@ -351,82 +351,6 @@ const ComponentA = () => {
       </section>
 
       <section className="no-vertical-margin-collapse">
-        <SectionHeading id={sections.tightlyCouplingStyles.id} level={4}>
-          {sections.tightlyCouplingStyles.title}
-        </SectionHeading>
-        <Paragraph>
-          To avoid passing the style types each time, you can tightly couple the types to the <strong className="font-semibold">Stylish</strong> components &amp; <strong className="font-semibold">Stylers</strong> easily.
-          Simply create wrapper components &amp; hooks which will internally pass the desired style type and then use these components &amp; hooks without need to pass the style types.
-        </Paragraph>
-        <Paragraph>
-          <strong className="font-semibold">Text.tsx</strong>
-        </Paragraph>
-        <CodeSnippet>
-          {`import React from 'react';
-import { Text as StyloText, TTextProps } from 'react-native-stylo';
-
-import { TTextStyle } from '../themes/types';
-
-const View: React.FC<TTextProps<TTextStyle>> = props => <StyloText {...props} />;
-
-export default Text;
-`}
-        </CodeSnippet>
-        <Paragraph>
-          <strong className="font-semibold">useTextStyles.ts</strong>
-        </Paragraph>
-        <CodeSnippet>
-          {`import { useTextStyles as useStyloTextStyles } from 'react-native-stylo';
-
-import { TTextStyle } from '../themes/types';
-
-const useTextStyles = (
-  styleNames: TTextStyle[] | undefined,
-  styleNamespace?: string,
-) => useStyloTextStyles<TTextStyle>(styleNames, styleNamespace);
-
-export default useTextStyles;
-`}
-        </CodeSnippet>
-        <Paragraph>
-          <strong className="font-semibold">ComponentA.tsx</strong>
-        </Paragraph>
-        <CodeSnippet>
-          {`import Text from '../stylish/Text';
-
-const ComponentA = () => (
-  <Text styleNames={['H1', 'Bold', 'Align.Center']}>
-    {...}
-  </Text>
-);
-
-OR
-
-import useTextStyles from '../stylers/useTextStyles';
-
-const ComponentA = () => {
-  const styles = useRef(
-    StyleSheet.create({
-      text: useTextStyles(['H1', 'Bold', 'Align.Center']),
-    }),
-  ).current;
-
-  return (
-    <Text style={styles.text}>
-      {...}
-    </Text>
-  );
-};`}
-        </CodeSnippet>
-        <Paragraph>
-          To save time &amp; effort, Stylo provides these wrapper hooks &amp; components, which are located at <strong className="font-semibold">/node_modules/react-native-stylo/lib/tightly-coupled/*.ts[x]</strong>.
-          Simply copy these to you app.
-          Please note, these wrapper hooks &amp; components import the types using a relative path <InlineCode>{`import { TTextStyle } from "../themes/types"`}</InlineCode>.
-          If your theme types are defined at some other location then just change these type import paths in these hooks &amp; components.
-        </Paragraph>
-      </section>
-
-      <section className="no-vertical-margin-collapse">
         <SectionHeading id={sections.styleNamesSequence.id} level={4}>
           {sections.styleNamesSequence.title}
         </SectionHeading>
@@ -440,6 +364,15 @@ const ComponentA = () => {
   {...}
 </View>`}
         </CodeSnippet>
+      </section>
+
+      <section className="no-vertical-margin-collapse">
+        <SectionHeading id={sections.tightlyCouplingStyles.id} level={4}>
+          {sections.tightlyCouplingStyles.title}
+        </SectionHeading>
+        <Paragraph>
+          Pleas refer <Link href="/tight-coupling">Tightly coupled</Link> documentation.
+        </Paragraph>
       </section>
     </article>
   </Layout>

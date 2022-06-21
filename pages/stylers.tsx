@@ -21,7 +21,7 @@ const CoreConcept: React.FC = () => (
     <article>
       <ArticleHeading>Stylers</ArticleHeading>
       <Paragraph>
-        <strong className="font-semibold">Styler</strong> are styling hooks which accept <InlineCode>StyleNames</InlineCode> &amp; optional <InlineCode>StyleNamespace</InlineCode> as its arguments &amp; return the style object.
+        <strong className="font-semibold">Stylers</strong> are the styling hooks. Stylers accept <Link href="/theme#style-name">StyleNames</Link> &amp; optional <Link href="/theme#namespace">StyleNamespace</Link> as its arguments &amp; return the style object.
         They read the styles defined for the <InlineCode>StyleNames</InlineCode> under the <InlineCode>StyleNamespace</InlineCode> in the theme, combines these styles into one &amp; returns the final style, a standard React Native style object.
       </Paragraph>
       <Paragraph>
@@ -32,9 +32,6 @@ const CoreConcept: React.FC = () => (
         Each React Native component has its own style type.
         E.g. <InlineCode>Text</InlineCode> component needs style object of type <InlineCode>{`StyleProp<TextStyle>`}</InlineCode>,  <InlineCode>View</InlineCode> component needs style object of type <InlineCode>{`StyleProp<ViewStyle>`}</InlineCode> etc.
         So each styler is tightly coupled with a React Native component which returns a style object specific to that component.
-      </Paragraph>
-      <Paragraph>
-        <small><i>Note: New Stylers for remaining components will be added soon.</i></small>
       </Paragraph>
 
       <section className="no-vertical-margin-collapse">
@@ -324,6 +321,9 @@ const ComponentA = () => {
   });
 }`}
         </CodeSnippet>
+        <Paragraph>
+          The <InlineCode>useTouchableStyles()</InlineCode> hook can be used for <InlineCode>TouchableOpacity</InlineCode>, <InlineCode>TouchableHighlight</InlineCode> &amp; <InlineCode>Pressable</InlineCode> components;
+        </Paragraph>
         <CodeSnippet>
           {`import React, { useRef } from 'react';
 import { TouchableOpacity, StyleSheet } from 'react-native';
@@ -378,6 +378,10 @@ const ComponentA = () => {
 }`}
         </CodeSnippet>
       </section>
+
+      <Paragraph>
+        <i>Note: New Stylers for remaining React Native components will be added soon.</i>
+      </Paragraph>
     </article>
   </Layout>
 );

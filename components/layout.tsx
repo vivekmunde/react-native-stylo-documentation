@@ -52,30 +52,44 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
               </ul>
             </li>
             <li>
-              <h5 className="text-lg" style={{ margin: 0 }}>
-                Elements
+              <h5 className="text-base" style={{ margin: 0 }}>
+                Core members
               </h5>
-              <ul className="mb-4">
-                <NavLink href="/theme">
-                  Theme
-                </NavLink>
-                <NavLink href="/theme-provider">
-                  {`<ThemeProvider />`}
-                </NavLink>
+              <ul className="mb-8">
                 <NavLink href="/use-styles">
                   {`useStyles()`}
                 </NavLink>
                 <NavLink href="/styles">
                   {`<Styles />`}
                 </NavLink>
+              </ul>
+            </li>
+            <li>
+              <h5 className="text-base" style={{ margin: 0 }}>
+                Hooks &amp; components
+              </h5>
+              <ul className="mb-8">
+                <NavLink href="/theme">
+                  Theme
+                </NavLink>
+                <NavLink href="/theme-provider">
+                  {`<ThemeProvider />`}
+                </NavLink>
                 <NavLink href="/use-variables">
                   {`useVariables()`}
+                </NavLink>
+                <NavLink href="/stylish">
+                  Stylish
                 </NavLink>
                 <NavLink href="/stylers">
                   Stylers
                 </NavLink>
-                <NavLink href="/stylish">
-                  Stylish
+              </ul>
+            </li>
+            <li>
+              <ul className="mb-8">
+                <NavLink href="/tight-coupling">
+                  Tightly coupled
                 </NavLink>
               </ul>
             </li>

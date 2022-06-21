@@ -65,6 +65,9 @@ const CoreConcept: React.FC = () => (
         <SectionHeading id="use-image-background-styles" level={4}>
           <InlineCode>useImageBackgroundStyles()</InlineCode>
         </SectionHeading>
+        <Paragraph>
+          <strong className="font-semibold">Type definition</strong>
+        </Paragraph>
         <CodeSnippet>
           {`function useImageBackgroundStyles<TStyleName extends string, TStyleNamespace extends string>(
   styleNames: TStyleName[],
@@ -76,6 +79,9 @@ const CoreConcept: React.FC = () => (
   });
 }`}
         </CodeSnippet>
+        <Paragraph>
+          <strong className="font-semibold">Usage</strong>
+        </Paragraph>
         <CodeSnippet>
           {`import React, { useRef } from 'react';
 import { ImageBackground, StyleSheet } from 'react-native';
@@ -99,6 +105,9 @@ const ComponentA = () => {
         <SectionHeading id="use-image-styles" level={4}>
           <InlineCode>useImageStyles()</InlineCode>
         </SectionHeading>
+        <Paragraph>
+          <strong className="font-semibold">Type definition</strong>
+        </Paragraph>
         <CodeSnippet>
           {`function useImageStyles<TStyleName extends string, TStyleNamespace extends string>(
   styleNames: TStyleName[],
@@ -110,6 +119,9 @@ const ComponentA = () => {
   });
 }`}
         </CodeSnippet>
+        <Paragraph>
+          <strong className="font-semibold">Usage</strong>
+        </Paragraph>
         <CodeSnippet>
           {`import React, { useRef } from 'react';
 import { Image, StyleSheet } from 'react-native';
@@ -134,6 +146,9 @@ const ComponentA = () => {
         <SectionHeading id="use-safe-area-view-styles" level={4}>
           <InlineCode>useSafeAreaViewStyles()</InlineCode>
         </SectionHeading>
+        <Paragraph>
+          <strong className="font-semibold">Type definition</strong>
+        </Paragraph>
         <CodeSnippet>
           {`function useSafeAreaViewStyles<TStyleName extends string, TStyleNamespace extends string>(
   styleNames: TStyleName[],
@@ -145,6 +160,9 @@ const ComponentA = () => {
   });
 }`}
         </CodeSnippet>
+        <Paragraph>
+          <strong className="font-semibold">Usage</strong>
+        </Paragraph>
         <CodeSnippet>
           {`import React, { useRef } from 'react';
 import { SafeAreaView } from 'react-native';
@@ -169,6 +187,9 @@ const ComponentA = () => {
         <SectionHeading id="use-scroll-view-styles" level={4}>
           <InlineCode>useScrollViewStyles()</InlineCode>
         </SectionHeading>
+        <Paragraph>
+          <strong className="font-semibold">Type definition</strong>
+        </Paragraph>
         <CodeSnippet>
           {`function useScrollViewStyles<TStyleName extends string, TStyleNamespace extends string>(
   styleNames: TStyleName[],
@@ -180,6 +201,9 @@ const ComponentA = () => {
   });
 }`}
         </CodeSnippet>
+        <Paragraph>
+          <strong className="font-semibold">Usage</strong>
+        </Paragraph>
         <CodeSnippet>
           {`import React, { useRef } from 'react';
 import { ScrollView, StyleSheet } from 'react-native';
@@ -204,6 +228,9 @@ const ComponentA = () => {
         <SectionHeading id="use-scroll-view-content-container-styles" level={4}>
           <InlineCode>useScrollViewContentContainerStyles()</InlineCode>
         </SectionHeading>
+        <Paragraph>
+          <strong className="font-semibold">Type definition</strong>
+        </Paragraph>
         <CodeSnippet>
           {`function useScrollViewContentContainerStyles<TStyleName extends string, TStyleNamespace extends string>(
   styleNames: TStyleName[],
@@ -215,6 +242,9 @@ const ComponentA = () => {
   });
 }`}
         </CodeSnippet>
+        <Paragraph>
+          <strong className="font-semibold">Usage</strong>
+        </Paragraph>
         <CodeSnippet>
           {`import React, { useRef } from 'react';
 import { ScrollView, StyleSheet } from 'react-native';
@@ -240,6 +270,9 @@ const ComponentA = () => {
         <SectionHeading id="use-text-input-styles" level={4}>
           <InlineCode>useTextInputStyles()</InlineCode>
         </SectionHeading>
+        <Paragraph>
+          <strong className="font-semibold">Type definition</strong>
+        </Paragraph>
         <CodeSnippet>
           {`function useTextInputStyles<TStyleName extends string, TStyleNamespace extends string>(
   styleNames: TStyleName[],
@@ -251,6 +284,9 @@ const ComponentA = () => {
   });
 }`}
         </CodeSnippet>
+        <Paragraph>
+          <strong className="font-semibold">Usage</strong>
+        </Paragraph>
         <CodeSnippet>
           {`import React, { useRef } from 'react';
 import { TextInput, StyleSheet } from 'react-native';
@@ -275,6 +311,9 @@ const ComponentA = () => {
         <SectionHeading id="use-text-styles" level={4}>
           <InlineCode>useTextStyles()</InlineCode>
         </SectionHeading>
+        <Paragraph>
+          <strong className="font-semibold">Type definition</strong>
+        </Paragraph>
         <CodeSnippet>
           {`function useTextStyles<TStyleName extends string, TStyleNamespace extends string>(
   styleNames: TStyleName[],
@@ -286,6 +325,9 @@ const ComponentA = () => {
   });
 }`}
         </CodeSnippet>
+        <Paragraph>
+          <strong className="font-semibold">Usage</strong>
+        </Paragraph>
         <CodeSnippet>
           {`import React, { useRef } from 'react';
 import { Text, StyleSheet } from 'react-native';
@@ -310,6 +352,9 @@ const ComponentA = () => {
         <SectionHeading id="use-touchable-styles" level={4}>
           <InlineCode>useTouchableStyles()</InlineCode>
         </SectionHeading>
+        <Paragraph>
+          <strong className="font-semibold">Type definition</strong>
+        </Paragraph>
         <CodeSnippet>
           {`function useTouchableStyles<TStyleName extends string, TStyleNamespace extends string>(
   styleNames: TStyleName[],
@@ -348,6 +393,9 @@ const ComponentA = () => {
         <SectionHeading id="use-view-styles" level={4}>
           <InlineCode>useViewStyles()</InlineCode>
         </SectionHeading>
+        <Paragraph>
+          <strong className="font-semibold">Type definition</strong>
+        </Paragraph>
         <CodeSnippet>
           {`function useViewStyles<TStyleName extends string, TStyleNamespace extends string>(
   styleNames: TStyleName[],
@@ -359,6 +407,9 @@ const ComponentA = () => {
   });
 }`}
         </CodeSnippet>
+        <Paragraph>
+          <strong className="font-semibold">Usage</strong>
+        </Paragraph>
         <CodeSnippet>
           {`import React, { useRef } from 'react';
 import { View, StyleSheet } from 'react-native';

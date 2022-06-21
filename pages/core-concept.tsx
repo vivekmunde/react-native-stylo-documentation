@@ -120,7 +120,7 @@ const CoreConcept: React.FC = () => (
         </p>
         <CodeSnippet>
           {`const TextStyles = StyleSheet.create({
-  Default: { color: Colors.Font, fontSize: 16, fontWeight: '400', lineHeight: 24 },
+  Default: { color: '#000000', fontSize: 16, fontWeight: '400', lineHeight: 24 },
   'Align.Center': { textAlign: 'center' },
   'Align.Right': { textAlign: 'right' },
   H1: { fontSize: 32, fontWeight: '400', lineHeight: 40, marginBottom: 16 },
@@ -182,7 +182,7 @@ export const Theme = {
         </CodeSnippet>
         <p>
           The library provides a set of predefined style types &amp; themes.
-          These can be used as is or can be considered as a guidelines or can be simply copied in to the app &amp; customized/modified easily as per the needs.
+          These can be used as is or can be considered as a guidelines or can be simply copied into the app &amp; customized/modified easily as per the needs.
         </p>
       </section>
 
@@ -192,9 +192,9 @@ export const Theme = {
         </SectionHeading>
         <p>
           The styles are strongly typed.
-          These style types are defined inside the consumer app and not inside the Stylo library.
-          The style types can be defined the way the consumer app wants.
           So the accidental usage of using wrong style name is completely avoided out of the box.
+          These style types are defined inside the consumer app and not inside the Stylo library.
+          The app can use any naming convention to define these types.
         </p>
         <CodeSnippet>
           {`export type TFontColor = 'Color.Primary' | 'Color.Secondary' | 'Color.Info' | 'Color.Success' | 'Color.Warning' | 'Color.Danger';
@@ -216,10 +216,10 @@ export type TViewStyle = TBackgroundColor | TPadding | TMargin | TBorder;`}
           As you start typing the alignment styles, the editor intellisense helps you choose correct styles for Text &amp; View.
         </p>
         <p className="border rounded p-1">
-          <img alt='Strongly typed styles: Text' src="../images/core-concept-strongly-typed-styles-1.png" />
+          <img alt='Strongly typed styles: Text' src="../images/style-names-intellisense-1.png" />
         </p>
         <p className="border rounded p-1">
-          <img alt='Strongly typed styles: View' src="../images/core-concept-strongly-typed-styles-2.png" />
+          <img alt='Strongly typed styles: View' src="../images/style-names-intellisense-2.png" />
         </p>
         <p>
           The Stylo library provides default style types, which can be copied into the app and can be easily customized, if needed.

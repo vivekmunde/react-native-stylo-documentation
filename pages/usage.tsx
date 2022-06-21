@@ -296,7 +296,7 @@ export default Home;`}
           {sections.variables.title}
         </SectionHeading>
         <p>
-          Variables are the core configuration values which are used to define the themes. Like, colors, paddings, margins etc.
+          Variables are the core configuration values which are used to define the themes. Like, colors, paddings, margins etc.&nbsp;
           <strong className="font-semibold">useVariables()</strong> hook is used to access the theme configuration values to create your own custom page specific styles.
         </p>
         <CodeSnippet>
@@ -306,7 +306,17 @@ import { useVariables } from 'react-native-stylo';
 import { TVariables } from '../themes/types';
 
 const ComponentA = () => {
-  const [paddingLarge, borderRadius, colorPink, colorWhite] = useVariables<TVariables>(['Padding.Large', 'Border.Radius', 'Color.Pink', 'Color.White']);
+  const [
+    paddingLarge,
+    borderRadius,
+    colorPink,
+    colorWhite,
+  ] = useVariables<TVariables>([
+    'Padding.Large',
+    'Border.Radius',
+    'Color.Pink',
+    'Color.White',
+  ]);
   const styles = useRef(
     StyleSheet.create({
       card: {
@@ -391,7 +401,7 @@ const ComponentA = () => (
 
 OR
 
-import useTextStyles from '../stylish/useTextStyles';
+import useTextStyles from '../stylers/useTextStyles';
 
 const ComponentA = () => {
   const styles = useRef(
@@ -407,6 +417,12 @@ const ComponentA = () => {
   );
 };`}
         </CodeSnippet>
+        <p>
+          To save time &amp; effort, Stylo provides these wrapper hooks &amp; components, which are located at <strong className="font-semibold">/node_modules/react-native-stylo/lib/tightly-coupled/*.ts[x]</strong>.
+          Simply copy these to you app.
+          Please note, these wrapper hooks &amp; components import the types using a relative path <InlineCode>{`import { TTextStyle } from "../themes/types"`}</InlineCode>.
+          If your theme types are defined at some other location then just change these type import paths in these hooks &amp; components.
+        </p>
       </section>
 
       <section className="no-vertical-margin-collapse">

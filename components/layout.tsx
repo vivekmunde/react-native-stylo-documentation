@@ -43,7 +43,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
             </li>
             <li>
               <ul className="mb-8">
-                <NavLink href="/core-concept">
+                <NavLink href="/">
                   Core concept
                 </NavLink>
                 <NavLink href="/usage">

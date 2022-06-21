@@ -7,6 +7,7 @@ import CodeSnippet from '../components/code-snippet';
 import ExternalLink from '../components/external-link';
 import InlineCode from '../components/inline-code';
 import Layout from '../components/layout';
+import RequiredTag from '../components/required-tag';
 import SectionHeading from '../components/section-heading';
 
 const CoreConcept: React.FC = () => (
@@ -19,8 +20,8 @@ const CoreConcept: React.FC = () => (
     <article>
       <ArticleHeading>{`<ThemeProvider />`}</ArticleHeading>
       <p>
-        As the name says, the <strong className="font-semibold">ThemeProvider</strong> is a component responsible for providing the styling related values across the application.
-        The ThemeProvider creates a <ExternalLink href="https://reactjs.org/docs/context.html">React Context</ExternalLink> to hold the style related values &amp; ideally sits at the root of the application layout.
+        As the name says, the <strong className="font-semibold">ThemeProvider</strong> is a component responsible for providing the theme values across the application.
+        The <InlineCode>ThemeProvider</InlineCode> creates a <ExternalLink href="https://reactjs.org/docs/context.html">React Context</ExternalLink> to hold the theme values &amp; ideally sits at the root of the application layout.
       </p>
 
       <p>
@@ -44,7 +45,7 @@ const App = () => (
         </SectionHeading>
         <section>
           <h5 className="text-lg">
-            <InlineCode>variables</InlineCode> <small className="font-light text-red-400">(Required)</small>
+            <InlineCode>variables</InlineCode> <RequiredTag />
           </h5>
           <p>
             The <Link href="/theme#variables">variables</Link> defined in the theme.
@@ -53,7 +54,7 @@ const App = () => (
         </section>
         <section>
           <h5 className="text-lg">
-            <InlineCode>styles</InlineCode> <small className="font-light text-red-400">(Required)</small>
+            <InlineCode>styles</InlineCode> <RequiredTag />
           </h5>
           <p>
             The style definitions defined in the theme.

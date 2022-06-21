@@ -1,17 +1,192 @@
 import Head from 'next/head';
+import Link from 'next/link';
 import React from 'react';
 
+import ArticleHeading from '../components/article-heading';
+import Blockquote from '../components/blockquote';
+import CodeSnippet from '../components/code-snippet';
+import ExternalLink from '../components/external-link';
+import InlineCode from '../components/inline-code';
 import Layout from '../components/layout';
+import RequiredTag from '../components/required-tag';
+import SectionHeading from '../components/section-heading';
 
 const CoreConcept: React.FC = () => (
   <Layout>
     <Head>
-      <title>React Native Stylo</title>
+      <title>useStyles() | React Native Stylo</title>
       <meta name="description" content="Completely detached and highly scalable React Native styles" />
       <link rel="icon" href="/favicon.ico" />
     </Head>
     <article>
-      <h2>useStyles()</h2>
+      <ArticleHeading>useStyles()</ArticleHeading>
+      <p>
+        <InlineCode><strong className="font-semibold">useStyles()</strong></InlineCode> is core hook which is used by the Stylo library to read styles from theme.
+        It accepts <InlineCode>StyleNames</InlineCode> &amp; optional <InlineCode>StyleNamespace</InlineCode> as its arguments.
+        It then reads the styles defined for those StyleNames under that StyleNamespace in the theme, combines these styles into one &amp; returns the final style, a standard React Native style object.
+      </p>
+      <Blockquote>
+        This hook is used inside all the <Link href="/stylers">Styler</Link> hooks &amp; <Link href="/stylish">Stylish</Link> components.
+        So technically, using only this <InlineCode>useStyles()</InlineCode> hook, any style definition defined in the theme can be accessed and applied to components.
+        However, using the <Link href="/stylers">Styler</Link> hooks &amp; <Link href="/stylish">Stylish</Link> components is more easy than using just the <InlineCode>useStyles()</InlineCode> hook.
+      </Blockquote>
+
+      <section className="no-vertical-margin-collapse">
+        <SectionHeading id="type-definition" level={4}>
+          Type definition
+        </SectionHeading>
+        <CodeSnippet>
+          {`function useStyles<TStyleProp, TStyleName extends string, TStyleNamespace extends string>({ styleNamespace, styleNames }: {
+  styleNamespace: TStyleNamespace;
+  styleNames: TStyleName[];
+}): StyleProp<TStyleProp>`}
+        </CodeSnippet>
+        <section>
+          <h5 className="text-base">
+            <InlineCode>TStyleProp</InlineCode>
+          </h5>
+          <p>
+            Standard React Native stye prop like <ExternalLink href="https://reactnative.dev/docs/text-style-props">TextStyle</ExternalLink>, <ExternalLink href="https://reactnative.dev/docs/view-style-props">ViewStyle</ExternalLink> etc.
+          </p>
+        </section>
+        <section>
+          <h5 className="text-base">
+            <InlineCode>TStyleName</InlineCode>
+          </h5>
+          <p>
+            <Link href="/theme#type-definitions">StyleName type</Link> defined in the theme.
+          </p>
+        </section>
+        <section>
+          <h5 className="text-base">
+            <InlineCode>TStyleNamespace</InlineCode>
+          </h5>
+          <p>
+            <Link href="/theme#type-definitions">StyleNamespace type</Link> defined in the theme.
+          </p>
+        </section>
+        <section>
+          <h5 className="text-base">
+            Return type
+          </h5>
+          <p>
+            Standard React Native style object. E.g. <InlineCode>{`StyleProp<ViewStyle>`}</InlineCode>.
+          </p>
+        </section>
+      </section>
+
+      <section className="no-vertical-margin-collapse">
+        <SectionHeading id="arguments" level={4}>
+          Argument
+        </SectionHeading>
+        <CodeSnippet>
+          {`{
+  styleNamespace: TStyleNamespace;
+  styleNames: TStyleName[];
+}`}
+        </CodeSnippet>
+        <section>
+          <h5 className="text-lg">
+            <InlineCode>styleNamespace</InlineCode> <RequiredTag />
+          </h5>
+          <p>
+            The <Link href="/theme#namespace">Namespace</Link> to be used which holds the style definitions for the <InlineCode>StyleNames</InlineCode> supplied to the hook.
+          </p>
+        </section>
+        <section>
+          <h5 className="text-lg">
+            <InlineCode>styleNames</InlineCode> <RequiredTag />
+          </h5>
+          <p>
+            The <Link href="/theme#style-name">StyleNames</Link> which define the styles.
+          </p>
+        </section>
+      </section>
+
+      <section className="no-vertical-margin-collapse">
+        <SectionHeading id="usage" level={4}>
+          Usage
+        </SectionHeading>
+        <p>
+          Below example shows the use of <InlineCode>useStyles()</InlineCode> hook to create a styled card.
+        </p>
+        <CodeSnippet>
+          {`import React, { useRef } from 'react';
+import { Text, TextStyle, TouchableOpacity, View, ViewStyle } from 'react-native';
+import { useStyles } from 'react-native-stylo';
+
+import { TStyleNamespace, TTextStyle, TTouchableStyle, TViewStyle } from '../themes/types';
+
+const ComponentA:React.FC = () => {
+  const styles = useRef(
+    card: useStyles<ViewStyle, TViewStyle, TStyleNamespace>({
+      styleNamespace: 'ViewStyles',
+      styleNames: ['Border', 'Border.Radius', 'Border.Color.Primary', 'Flex', 'Flex.Column'],
+    }),
+    cardHeader: useStyles<ViewStyle, TViewStyle, TStyleNamespace>({
+      styleNamespace: 'ViewStyles',
+      styleNames: ['Padding', 'Background.Color.Primary1'],
+    }),
+    cardBody: useStyles<ViewStyle, TViewStyle, TStyleNamespace>({
+      styleNamespace: 'ViewStyles',
+      styleNames: ['Padding'],
+    }),
+    cardFooter: useStyles<ViewStyle, TViewStyle, TStyleNamespace>({
+      styleNamespace: 'ViewStyles',
+      styleNames: ['Padding', 'Border.Top', 'Border.Color.Primary1'],
+    }),
+    header: useStyles<TextStyle, TTextStyle, TStyleNamespace>({
+      styleNamespace: 'TextStyles',
+      styleNames: ['Color.Primary', 'H2'],
+    }),
+    description: useStyles<TextStyle, TTextStyle, TStyleNamespace>({
+      styleNamespace: 'TextStyles',
+      styleNames: ['Color.Secondary'],
+    }),
+    highlightedText: useStyles<TextStyle, TTextStyle, TStyleNamespace>({
+      styleNamespace: 'TextStyles',
+      styleNames: ['Bold'],
+    }),
+    footerButton: useStyles<ViewStyle, TTouchableStyle, TStyleNamespace>({
+      styleNamespace: 'TouchableStyles',
+      styleNames: ['Button', 'BackgroundColor.Primary'],
+    }),
+    footerButtonText: useStyles<TextStyle, TTextStyle, TStyleNamespace>({
+      styleNamespace: 'TextStyles',
+      styleNames: ['Color.Primary'],
+    }),
+  ).current;
+
+  return (
+    <View style={styles.card}>
+      <View style={styles.cardHeader}>
+        <Text style={styles.header}>
+          useStyles() hook
+        </Text>
+      </View>
+      <View style={styles.cardBody}>
+        <Text style={styles.highlightedText}>
+          useStyles()
+        </Text>
+        <Text style={styles.description}>
+          is main hook which is used by the Stylo library to read styles from theme.
+          It accepts StyleNames & optional StyleNamespace as its arguments.
+          It then reads the styles defined for those StyleNames under that StyleNamespace in the theme,
+          combines these styles into one & returns the final style.
+        </Text>
+      </View>
+      <View style={styles.cardFooter}>
+        <TouchableOpacity style={styles.footerButton} onPress={() => /* some action */}>
+          <Text style={styles.footerButtonText}>
+            Read more ...
+          </Text>
+        </TouchableOpacity>
+      </View>
+    </View>
+  );
+};`}
+        </CodeSnippet>
+      </section>
     </article>
   </Layout>
 );

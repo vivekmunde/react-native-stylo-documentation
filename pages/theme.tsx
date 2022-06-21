@@ -37,6 +37,21 @@ const Theme: React.FC = () => (
         <p>
           In the code snippet below <InlineCode>{`'Align.Center'`}</InlineCode>, <InlineCode>H1</InlineCode>, <InlineCode>{`'Size.Small'`}</InlineCode> are the style names.
         </p>
+        <p>
+          <strong className="font-semibold">Type definition</strong>
+        </p>
+        <CodeSnippet>
+          {`type TTextStyle = 'Align.Center' | 'Align.Right' | 'H1' | 'H2' | 'H3' | 'Size.Small' | 'Size.Tiny';
+type TInputTextStyle = 'Align.Center' | 'Align.Right' | 'Size.Small' | 'Size.Tiny';`}
+        </CodeSnippet>
+        <p>
+          The document explains the significance &amp; usage of the type definitions in the theme in the later section.
+          The StyleName type definitions are passed to &amp; used by <Link href="/stylers">Styler</Link> hooks &amp; <Link href="/stylish">Stylish</Link> components.
+          They are not directly used in the <InlineCode>StyleSheet.create()</InlineCode> API.
+        </p>
+        <p>
+          <strong className="font-semibold">Styles defined using the StyleNames</strong>
+        </p>
         <CodeSnippet>
           {`const TextStyles = StyleSheet.create({
   Default: { color: '#000000', fontSize: 16, fontWeight: '400', lineHeight: 24 },
@@ -165,6 +180,10 @@ import { TFontColor } from './font-colors';
 export type TVariables = 'Color.Primary' | 'Color.Secondary' | 'Padding' | 'Padding.Small' | 'Padding.Large' | 'Border.Radius';`}
         </CodeSnippet>
         <p>
+          The document explains the significance &amp; usage of the type definitions in the theme in the later section.
+          The variables type definitions are passed to &amp; used by <Link href="/use-variables">useVariables()</Link> hook.
+        </p>
+        <p>
           <strong className="font-semibold">Variable values</strong>
         </p>
         <CodeSnippet>
@@ -180,22 +199,61 @@ export type TVariables = 'Color.Primary' | 'Color.Secondary' | 'Padding' | 'Padd
       </section>
 
       <section className="no-vertical-margin-collapse">
-        <SectionHeading id="strongly-typed-styles" level={4}>
-          Strongly typed &amp; intellisense friendly styles
+        <SectionHeading id="type-definitions" level={4}>
+          Type definitions
         </SectionHeading>
         <p>
           Thanks to <ExternalLink href="https://www.typescriptlang.org">TypeScript</ExternalLink>, the <InlineCode>StyleNames</InlineCode>, <InlineCode>Namespaces</InlineCode> &amp; <InlineCode>Variables</InlineCode> are strongly typed.
-          This completely avoids accidental usage of wrong StyleNames/Namespaces, out of the box.
-          On top of that, the Namespaces &amp; StyleNames are strongly typed against each React Native component, like View, Text, TouchableOpacity etc.
-          This adds an extra level of strong typing which forces to use only the styles names which are intended for a component.
-          As the StyleNames &amp; Namespaces are intellisense friendly, it helps you choose correct styles.
+          The type definitions are passed to &amp; used by <Link href="/use-variables">useVariables()</Link> hook, <Link href="/stylers">Styler</Link> hooks &amp; <Link href="/stylish">Stylish</Link> components.
+          This completely avoids accidental usage of wrong <InlineCode>StyleNames</InlineCode>, <InlineCode>Namespaces</InlineCode> &amp; <InlineCode>Variables</InlineCode>, out of the box.
+          On top of that, the <InlineCode>StyleNames</InlineCode> &amp; <InlineCode>Namespaces</InlineCode> are strongly typed against each React Native component, like <InlineCode>View</InlineCode>, <InlineCode>Text</InlineCode>, <InlineCode>TouchableOpacity</InlineCode> etc.
+          This adds an extra level of strong typing which forces to use only those values which are intended for a particular component.
         </p>
-        <p className="border rounded p-1">
-          <img alt='Strongly typed styles: Text' src="../images/style-names-intellisense-1.png" />
+        <p>
+          <strong className="font-semibold">Variables type definition</strong>
         </p>
-        <p className="border rounded p-1">
-          <img alt='Strongly typed styles: View' src="../images/style-names-intellisense-2.png" />
+        <CodeSnippet>
+          {`type TFontColor = 'Color.Primary' | 'Color.Secondary' | 'Color.Info' | 'Color.Warning' | 'Color.Danger' | 'Color.Border' | 'Color.Grey1' | 'Color.Grey2' | 'Color.Grey1' | ... ;
+type TBackgroundColor = 'BackgroundColor.Primary' | 'BackgroundColor.Secondary' | 'BackgroundColor.Info' | 'BackgroundColor.Warning' | 'BackgroundColor.Danger' | 'BackgroundColor.Grey1' | 'BackgroundColor.Grey2' | 'BackgroundColor.Grey1' | ... ;
+type TPadding = 'Padding' | 'Padding.Small' | 'Padding.Large';
+type TMargin = 'Margin' | 'Margin.Small' | 'Margin.Large';
+type TBorder = 'Border.Radius' | 'Border.Radius.Small' | 'Border.Radius.Large';
+...
+
+export type TVariables = TFontColor | TBackgroundColor | TPadding | TMargin | TBorder | ...;`}
+        </CodeSnippet>
+        <p>
+          <strong className="font-semibold">Namespaces type definition</strong>
         </p>
+        <CodeSnippet>
+          {`export type TStyleNamespace = 'IconStyles' | 'ImageBackgroundStyles' | 'ImageStyles' | 'KeyboardAvoidingViewStyles' | 'SafeAreaViewStyles' | 'ScrollViewStyles' | 'TextInputStyles' | 'TextStyles' | 'TouchableStyles' | 'ViewStyles' | ...;`}
+        </CodeSnippet>
+        <p>
+          <strong className="font-semibold">StyleName type definition</strong>
+        </p>
+        <CodeSnippet>
+          {`type TBorderStyle = 'Border' | 'Border.Top' | 'Border.Right' | 'Border.Bottom' | 'Border.Left' | 'Border.Radius' | 'Border.Radius.Small' | 'Border.Radius.Large' | 'Border.Color.Primary' | 'Border.Color.Secondary' | 'Border.Color.Info' | 'Border.Color.Warning' | 'Border.Color.Danger' | 'Border.Color.Grey1' | 'Border.Color.Grey2' | ...;
+  export type TTextStyle = TFontColor | 'Align.Center' | 'Align.Right' | 'Bold' | 'H1' | 'H2' | 'H3' | 'H4' | 'Small' | 'Large' | 'Paragraph' | 'Margin' | 'Margin.Top' | 'Margin.Right' | 'Margin.Bottom' | 'Margin.Left' | 'Margin.XSmall' | 'Margin.Small' | 'Margin.Large' | 'Margin.Top.Small' | 'Margin.Right.Small' | 'Margin.Bottom.Small' | 'Margin.Left.Small' | 'Margin.Top.XSmall' | 'Margin.Right.XSmall' | 'Margin.Bottom.XSmall' | 'Margin.Left.XSmall' | 'Margin.Top.Large' | 'Margin.Right.Large' | 'Margin.Bottom.Large' | 'Margin.Left.Large';
+  export type TViewStyle = TBackgroundColor | TPadding | TMargin | TBorderStyle | ...;
+  export type TTouchableStyle = TBackgroundColor | TPadding | TMargin | TBorderStyle | 'Button' | 'Button.Small' | 'Button.Large' | 'Button.Round' | 'Button.Circle' | ...;
+...`}
+        </CodeSnippet>
+        <section>
+          <h5 id="intellisense-friendly-styles" className="heading text-lg">
+            <a href="#intellisense-friendly-styles">
+              Intellisense friendly styles
+            </a>
+          </h5>
+          <p>
+            The <InlineCode>Variables</InlineCode>, <InlineCode>StyleNames</InlineCode> &amp; <InlineCode>Namespaces</InlineCode> are intellisense friendly, it helps you choose correct styles &amp; values.
+          </p>
+          <p className="border rounded p-1">
+            <img alt='Strongly typed styles: Text' src="../images/style-names-intellisense-1.png" />
+          </p>
+          <p className="border rounded p-1">
+            <img alt='Strongly typed styles: View' src="../images/style-names-intellisense-2.png" />
+          </p>
+        </section>
       </section>
 
       <section className="no-vertical-margin-collapse">

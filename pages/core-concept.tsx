@@ -217,10 +217,10 @@ export type TViewStyle = TBackgroundColor | TPadding | TMargin | TBorder;`}
           As you start typing the alignment styles, the editor intellisense helps you choose correct styles for Text &amp; View.
         </Paragraph>
         <Paragraph className="border rounded p-1">
-          <img alt='Strongly typed styles: Text' src={`${process.env.ASSET_PREFIX ?? '..'}/images/style-names-intellisense-1.png`} />
+          <img alt='Strongly typed styles: Text' src={`${process.env.NEXT_PUBLIC_ASSET_PREFIX}/images/style-names-intellisense-1.png`} />
         </Paragraph>
         <Paragraph className="border rounded p-1">
-          <img alt='Strongly typed styles: View' src={`${process.env.ASSET_PREFIX ?? '..'}/images/style-names-intellisense-2.png`} />
+          <img alt='Strongly typed styles: View' src={`${process.env.NEXT_PUBLIC_ASSET_PREFIX}/images/style-names-intellisense-2.png`} />
         </Paragraph>
         <Paragraph>
           The Stylo library provides default style types, which can be copied into the app and can be easily customized, if needed.

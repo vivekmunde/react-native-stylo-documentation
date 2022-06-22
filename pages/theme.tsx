@@ -267,10 +267,10 @@ export type TVariables = TFontColor | TBackgroundColor | TPadding | TMargin | TB
             The <InlineCode>Variables</InlineCode>, <InlineCode>StyleNames</InlineCode> &amp; <InlineCode>Namespaces</InlineCode> are intellisense friendly, it helps you choose correct styles &amp; values.
           </Paragraph>
           <Paragraph className="border rounded p-1">
-            <img alt='Strongly typed styles: Text' src={`${process.env.ASSET_PREFIX ?? '..'}/images/style-names-intellisense-1.png`} />
+            <img alt='Strongly typed styles: Text' src={`${process.env.NEXT_PUBLIC_ASSET_PREFIX}/images/style-names-intellisense-1.png`} />
           </Paragraph>
           <Paragraph className="border rounded p-1">
-            <img alt='Strongly typed styles: View' src={`${process.env.ASSET_PREFIX ?? '..'}/images/style-names-intellisense-2.png`} />
+            <img alt='Strongly typed styles: View' src={`${process.env.NEXT_PUBLIC_ASSET_PREFIX}/images/style-names-intellisense-2.png`} />
           </Paragraph>
         </section>
       </section>

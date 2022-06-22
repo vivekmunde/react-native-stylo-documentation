@@ -86,7 +86,7 @@ const ComponentA = () => {
           Stylo at your help
         </SectionHeading>
         <Paragraph>
-          To save time &amp; effort, Stylo provides these wrapper hooks &amp; components, which are located at <strong className="font-semibold">/node_modules/react-native-stylo/lib/stylo/stylers</strong> &amp;  <strong className="font-semibold">/node_modules/react-native-stylo/lib/stylo/stylish</strong>.
+          To save time &amp; effort, Stylo provides these wrapper hooks &amp; components, which are located at <strong className="font-semibold">/node_modules/react-native-stylo/lib/stylo</strong>.
           Simply copy these to you app.
           Please note, these wrapper hooks &amp; components import the types using a relative path <InlineCode>{`import { TTextStyle } from '../themes/types'`}</InlineCode>.
           If your theme types are defined at some other location then just change these type import paths in these hooks &amp; components.
@@ -106,6 +106,7 @@ const ComponentA = () => {
             |- types
             |- default`}
         </CodeSnippet>
+
         <Paragraph>
           Copy them to your app like below.
         </Paragraph>
@@ -121,8 +122,9 @@ const ComponentA = () => {
         |- types
         |- default`}
         </CodeSnippet>
+
         <Paragraph>
-          Usage
+          <strong className="font-semibold">Usage</strong>
         </Paragraph>
         <CodeSnippet>
           {`import React from 'react';

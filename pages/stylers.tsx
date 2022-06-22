@@ -3,6 +3,7 @@ import Link from 'next/link';
 import React from 'react';
 
 import ArticleHeading from '../components/article-heading';
+import Blockquote from '../components/blockquote';
 import CodeSnippet from '../components/code-snippet';
 import InlineCode from '../components/inline-code';
 import Layout from '../components/layout';
@@ -31,6 +32,9 @@ const CoreConcept: React.FC = () => (
         E.g. <InlineCode>Text</InlineCode> component needs style object of type <InlineCode>{`StyleProp<TextStyle>`}</InlineCode>,  <InlineCode>View</InlineCode> component needs style object of type <InlineCode>{`StyleProp<ViewStyle>`}</InlineCode> etc.
         So each styler is tightly coupled with a React Native component which returns a style object specific to that component.
       </Paragraph>
+      <Blockquote>
+        All styler hooks use the <Link href="/use-styles">useStyles()</Link> hook internally to create &amp; return the style object from <InlineCode>styleNames</InlineCode> &amp; <InlineCode>styleNamespace</InlineCode> supplied to them as arguments.
+      </Blockquote>
 
       <section className="no-vertical-margin-collapse">
         <SectionHeading id="styler-arguments" level={4}>
@@ -68,15 +72,12 @@ const CoreConcept: React.FC = () => (
         </Paragraph>
         <CodeSnippet>
           {`function useImageBackgroundStyles<TStyleName extends string, TStyleNamespace extends string>(
-  styleNames: TStyleName[],
-  styleNamespace?: TStyleNamespace,
-): StyleProp<ViewStyle> {
-  return useStyles<ViewStyle, T>({
-    styleNamespace: styleNamespace ?? 'ImageBackgroundStyles',
-    styleNames,
-  });
-}`}
+  styleNames: TStyleName[], styleNamespace?: TStyleNamespace
+): StyleProp<ViewStyle>`}
         </CodeSnippet>
+        <Paragraph>
+          <strong className="font-semibold">Default StyleNamespace:</strong> <InlineCode>ImageBackgroundStyles</InlineCode>
+        </Paragraph>
         <Paragraph>
           <strong className="font-semibold">Usage</strong>
         </Paragraph>
@@ -108,15 +109,12 @@ const ComponentA = () => {
         </Paragraph>
         <CodeSnippet>
           {`function useImageStyles<TStyleName extends string, TStyleNamespace extends string>(
-  styleNames: TStyleName[],
-  styleNamespace?: TStyleNamespace,
-): StyleProp<ImageStyle> {
-  return useStyles<ImageStyle, T>({
-    styleNamespace: styleNamespace ?? 'ImageStyles',
-    styleNames,
-  });
-}`}
+  styleNames: TStyleName[], styleNamespace?: TStyleNamespace
+): StyleProp<ImageStyle>`}
         </CodeSnippet>
+        <Paragraph>
+          <strong className="font-semibold">Default StyleNamespace:</strong> <InlineCode>ImageStyles</InlineCode>
+        </Paragraph>
         <Paragraph>
           <strong className="font-semibold">Usage</strong>
         </Paragraph>
@@ -149,15 +147,12 @@ const ComponentA = () => {
         </Paragraph>
         <CodeSnippet>
           {`function useSafeAreaViewStyles<TStyleName extends string, TStyleNamespace extends string>(
-  styleNames: TStyleName[],
-  styleNamespace?: TStyleNamespace,
-): StyleProp<ViewStyle> {
-  return useStyles<ViewStyle, T>({
-    styleNamespace: styleNamespace ?? 'SafeAreaViewStylesStyles',
-    styleNames,
-  });
-}`}
+  styleNames: TStyleName[], styleNamespace?: TStyleNamespace
+): StyleProp<ViewStyle>`}
         </CodeSnippet>
+        <Paragraph>
+          <strong className="font-semibold">Default StyleNamespace:</strong> <InlineCode>SafeAreaViewStyles</InlineCode>
+        </Paragraph>
         <Paragraph>
           <strong className="font-semibold">Usage</strong>
         </Paragraph>
@@ -189,16 +184,13 @@ const ComponentA = () => {
           <strong className="font-semibold">Type definition</strong>
         </Paragraph>
         <CodeSnippet>
-          {`function useScrollViewStyles<TStyleName extends string, TStyleNamespace extends string>(
-  styleNames: TStyleName[],
-  styleNamespace?: TStyleNamespace,
-): StyleProp<ViewStyle> {
-  return useStyles<ViewStyle, T>({
-    styleNamespace: styleNamespace ?? 'ScrollViewStyles',
-    styleNames,
-  });
-}`}
+          {`export function useScrollViewStyles<TStyleName extends string, TStyleNamespace extends string>(
+  styleNames: TStyleName[], styleNamespace?: TStyleNamespace
+): StyleProp<ViewStyle>`}
         </CodeSnippet>
+        <Paragraph>
+          <strong className="font-semibold">Default StyleNamespace:</strong> <InlineCode>ScrollViewStyles</InlineCode>
+        </Paragraph>
         <Paragraph>
           <strong className="font-semibold">Usage</strong>
         </Paragraph>
@@ -230,16 +222,13 @@ const ComponentA = () => {
           <strong className="font-semibold">Type definition</strong>
         </Paragraph>
         <CodeSnippet>
-          {`function useScrollViewContentContainerStyles<TStyleName extends string, TStyleNamespace extends string>(
-  styleNames: TStyleName[],
-  styleNamespace?: TStyleNamespace,
-): StyleProp<ViewStyle> {
-  return useStyles<ViewStyle, T>({
-    styleNamespace: styleNamespace ?? 'ScrollViewContentContainerStyles',
-    styleNames,
-  });
-}`}
+          {`export function useScrollViewContentContainerStyles<TStyleName extends string, TStyleNamespace extends string>(
+  styleNames: TStyleName[], styleNamespace?: TStyleNamespace
+): StyleProp<ViewStyle>`}
         </CodeSnippet>
+        <Paragraph>
+          <strong className="font-semibold">Default StyleNamespace:</strong> <InlineCode>ScrollViewContentContainerStyles</InlineCode>
+        </Paragraph>
         <Paragraph>
           <strong className="font-semibold">Usage</strong>
         </Paragraph>
@@ -272,16 +261,13 @@ const ComponentA = () => {
           <strong className="font-semibold">Type definition</strong>
         </Paragraph>
         <CodeSnippet>
-          {`function useTextInputStyles<TStyleName extends string, TStyleNamespace extends string>(
-  styleNames: TStyleName[],
-  styleNamespace?: TStyleNamespace,
-): StyleProp<TextStyle> {
-  return useStyles<TextStyle, T>({
-    styleNamespace: styleNamespace ?? 'TextInputStyles',
-    styleNames,
-  });
-}`}
+          {`function useImageStyles<TStyleName extends string, TStyleNamespace extends string>(
+  styleNames: TStyleName[], styleNamespace?: TStyleNamespace
+): StyleProp<TextStyle>`}
         </CodeSnippet>
+        <Paragraph>
+          <strong className="font-semibold">Default StyleNamespace:</strong> <InlineCode>TextInputStyles</InlineCode>
+        </Paragraph>
         <Paragraph>
           <strong className="font-semibold">Usage</strong>
         </Paragraph>
@@ -314,15 +300,12 @@ const ComponentA = () => {
         </Paragraph>
         <CodeSnippet>
           {`function useTextStyles<TStyleName extends string, TStyleNamespace extends string>(
-  styleNames: TStyleName[],
-  styleNamespace?: TStyleNamespace,
-): StyleProp<TextStyle> {
-  return useStyles<TextStyle, T>({
-    styleNamespace: styleNamespace ?? 'TextStyles',
-    styleNames,
-  });
-}`}
+  styleNames: TStyleName[], styleNamespace?: TStyleNamespace
+): StyleProp<TextStyle>`}
         </CodeSnippet>
+        <Paragraph>
+          <strong className="font-semibold">Default StyleNamespace:</strong> <InlineCode>TextStyles</InlineCode>
+        </Paragraph>
         <Paragraph>
           <strong className="font-semibold">Usage</strong>
         </Paragraph>
@@ -355,17 +338,14 @@ const ComponentA = () => {
         </Paragraph>
         <CodeSnippet>
           {`function useTouchableStyles<TStyleName extends string, TStyleNamespace extends string>(
-  styleNames: TStyleName[],
-  styleNamespace?: TStyleNamespace,
-): StyleProp<ViewStyle> {
-  return useStyles<ViewStyle, T>({
-    styleNamespace: styleNamespace ?? 'TouchableStyles',
-    styleNames,
-  });
-}`}
+  styleNames: TStyleName[], styleNamespace?: TStyleNamespace
+): StyleProp<ViewStyle>`}
         </CodeSnippet>
         <Paragraph>
-          The <InlineCode>useTouchableStyles()</InlineCode> hook can be used for <InlineCode>TouchableOpacity</InlineCode>, <InlineCode>TouchableHighlight</InlineCode> &amp; <InlineCode>Pressable</InlineCode> components;
+          <strong className="font-semibold">Default StyleNamespace:</strong> <InlineCode>TouchableStyles</InlineCode>
+        </Paragraph>
+        <Paragraph>
+          The <InlineCode>useTouchableStyles()</InlineCode> hook can be used for <InlineCode>TouchableOpacity</InlineCode>, <InlineCode>TouchableHighlight</InlineCode> &amp; <InlineCode>Pressable</InlineCode> component.
         </Paragraph>
         <CodeSnippet>
           {`import React, { useRef } from 'react';
@@ -396,15 +376,12 @@ const ComponentA = () => {
         </Paragraph>
         <CodeSnippet>
           {`function useViewStyles<TStyleName extends string, TStyleNamespace extends string>(
-  styleNames: TStyleName[],
-  styleNamespace?: TStyleNamespace,
-): StyleProp<ViewStyle> {
-  return useStyles<ViewStyle, T>({
-    styleNamespace: styleNamespace ?? 'ViewStyles',
-    styleNames,
-  });
-}`}
+  styleNames: TStyleName[], styleNamespace?: TStyleNamespace
+): StyleProp<ViewStyle>`}
         </CodeSnippet>
+        <Paragraph>
+          <strong className="font-semibold">Default StyleNamespace:</strong> <InlineCode>ViewStyles</InlineCode>
+        </Paragraph>
         <Paragraph>
           <strong className="font-semibold">Usage</strong>
         </Paragraph>

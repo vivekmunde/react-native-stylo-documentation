@@ -3,13 +3,13 @@ import Link from 'next/link';
 import React from 'react';
 
 import ArticleHeading from '../components/article-heading';
+import Blockquote from '../components/blockquote';
 import CodeSnippet from '../components/code-snippet';
 import ExternalLink from '../components/external-link';
 import InlineCode from '../components/inline-code';
 import Layout from '../components/layout';
 import OptionalTag from '../components/optional-tag';
 import Paragraph from '../components/paragraph';
-import RequiredTag from '../components/required-tag';
 import SectionHeading from '../components/section-heading';
 
 const CoreConcept: React.FC = () => (
@@ -34,6 +34,9 @@ const CoreConcept: React.FC = () => (
         E.g. <InlineCode>Text</InlineCode> component needs style object of type <InlineCode>{`StyleProp<TextStyle>`}</InlineCode>,  <InlineCode>View</InlineCode> component needs style object of type <InlineCode>{`StyleProp<ViewStyle>`}</InlineCode> etc.
         So each stylish component is tightly coupled with a React Native component which applies the style object specific to that component.
       </Paragraph>
+      <Blockquote>
+        All stylish components use a matching <Link href="/stylers">Styler</Link> hook internally to create the style object from <InlineCode>styleNames</InlineCode> &amp; <InlineCode>styleNamespace</InlineCode> supplied to them as props.
+      </Blockquote>
 
       <section className="no-vertical-margin-collapse">
         <SectionHeading id="stylish-props" level={4}>
@@ -41,10 +44,11 @@ const CoreConcept: React.FC = () => (
         </SectionHeading>
         <Paragraph>
           All stylish components have two extra props other than the default props provided by React Native.
+          Both of these props are purposefully made optional, so that these Stylish components can still be used as plain React Native components.
         </Paragraph>
         <section>
           <h5 className="text-lg">
-            <InlineCode>styleNames</InlineCode> <RequiredTag />
+            <InlineCode>styleNames</InlineCode> <OptionalTag />
           </h5>
           <Paragraph>
             The <Link href="/theme#style-name">StyleNames</Link> which define the styles.
@@ -67,34 +71,15 @@ const CoreConcept: React.FC = () => (
           <InlineCode>{`<ImageBackground />`}</InlineCode>
         </SectionHeading>
         <Paragraph>
-          <strong className="font-semibold">Type definition</strong>
+          <strong className="font-semibold">Props type definition</strong>
         </Paragraph>
         <CodeSnippet>
-          {`import React from 'react';
-import { ImageBackground as ReactNativeImageBackground, ImageBackgroundProps } from 'react-native';
-import { useImageBackgroundStyles } from '../stylers';
-
-export type TImageBackgroundProps<TStyleName extends string, TStyleNamespace extends string> = ImageBackgroundProps &
-  {
-    styleNamespace?: TStyleNamespace;
-    styleNames?: TStyleName[];
-  };
-
-const ImageBackground = <TStyleName extends string, TStyleNamespace extends string>({
-  styleNamespace,
-  styleNames,
-  style,
-  ...props
-}: TImageBackgroundProps<TStyleName, TStyleNamespace>) => {
-  const imageBackgroundStyle = useImageBackgroundStyles<T>(
-    styleNames,
-    styleNamespace ?? 'ImageBackgroundStyles',
-  );
-  return <ReactNativeImageBackground {...props} style={[imageBackgroundStyle, style]} />;
-};
-
-export default ImageBackground;`}
+          {`export type TImageBackgroundProps<TStyleName extends string, TStyleNamespace extends string> 
+ = ReactNative.ImageBackgroundProps & { styleNamespace?: TStyleNamespace; styleNames?: TStyleName[]; }`}
         </CodeSnippet>
+        <Paragraph>
+          <strong className="font-semibold">Default StyleNamespace:</strong> <InlineCode>ImageBackgroundStyles</InlineCode>
+        </Paragraph>
         <Paragraph>
           <strong className="font-semibold">Usage</strong>
         </Paragraph>
@@ -116,34 +101,15 @@ const ComponentA = () => {
           <InlineCode>{`<Image />`}</InlineCode>
         </SectionHeading>
         <Paragraph>
-          <strong className="font-semibold">Type definition</strong>
+          <strong className="font-semibold">Props type definition</strong>
         </Paragraph>
         <CodeSnippet>
-          {`import React from 'react';
-import { Image as ReactNativeImage, ImageProps } from 'react-native';
-import { useImageStyles } from '../stylers';
-
-export type TImageProps<TStyleName extends string, TStyleNamespace extends string> = ImageProps &
-  {
-    styleNamespace?: TStyleNamespace;
-    styleNames?: TStyleName[];
-  };
-
-const Image = <TStyleName extends string, TStyleNamespace extends string>({
-  styleNamespace,
-  styleNames,
-  style,
-  ...props
-}: TImageProps<TStyleName, TStyleNamespace>) => {
-  const imageStyle = useImageStyles<T>(
-    styleNames,
-    styleNamespace ?? 'ImageStyles',
-  );
-  return <ReactNativeImage {...props} style={[imageStyle, style]} />;
-};
-
-export default Image;`}
+          {`export type TImageProps<TStyleName extends string, TStyleNamespace extends string> 
+ = ReactNative.ImageProps & { styleNamespace?: TStyleNamespace; styleNames?: TStyleName[]; }`}
         </CodeSnippet>
+        <Paragraph>
+          <strong className="font-semibold">Default StyleNamespace:</strong> <InlineCode>ImageStyles</InlineCode>
+        </Paragraph>
         <Paragraph>
           <strong className="font-semibold">Usage</strong>
         </Paragraph>
@@ -165,34 +131,15 @@ const ComponentA = () => {
           <InlineCode>{`<SafeAreaView />`}</InlineCode>
         </SectionHeading>
         <Paragraph>
-          <strong className="font-semibold">Type definition</strong>
+          <strong className="font-semibold">Props type definition</strong>
         </Paragraph>
         <CodeSnippet>
-          {`import React from 'react';
-import { SafeAreaView as ReactNativeSafeAreaView, ViewProps } from 'react-native';
-import { useSafeAreaViewStyles } from '../stylers';
-
-export type TSafeAreaViewProps<TStyleName extends string, TStyleNamespace extends string> = ViewProps &
-  {
-    styleNamespace?: TStyleNamespace;
-    styleNames?: TStyleName[];
-  };
-
-const SafeAreaView = <TStyleName extends string, TStyleNamespace extends string>({
-  styleNamespace,
-  styleNames,
-  style,
-  ...props
-}: TSafeAreaViewProps<TStyleName, TStyleNamespace>) => {
-  const safeAreaViewStyle = useSafeAreaViewStyles<T>(
-    styleNames,
-    styleNamespace ?? 'SafeAreaViewStyles',
-  );
-  return <ReactNativeSafeAreaView {...props} style={[safeAreaViewStyle, style]} />;
-};
-
-export default SafeAreaView;`}
+          {`export type TSafeAreaViewProps<TStyleName extends string, TStyleNamespace extends string> 
+ = ReactNative.ViewProps & { styleNamespace?: TStyleNamespace; styleNames?: TStyleName[]; }`}
         </CodeSnippet>
+        <Paragraph>
+          <strong className="font-semibold">Default StyleNamespace:</strong> <InlineCode>SafeAreaViewStyles</InlineCode>
+        </Paragraph>
         <Paragraph>
           <strong className="font-semibold">Usage</strong>
         </Paragraph>
@@ -214,68 +161,24 @@ const ComponentA = () => {
           <InlineCode>{`<ScrollView />`}</InlineCode>
         </SectionHeading>
         <Paragraph>
-          <strong className="font-semibold">Type definition</strong>
+          <strong className="font-semibold">Props type definition</strong>
         </Paragraph>
         <CodeSnippet>
-          {`import React from 'react';
-import { ScrollView as ReactNativeScrollView, ScrollViewProps } from 'react-native';
-import {
-  TStylesProps,
-  useScrollViewStyles,
-  useScrollViewContentContainerStyles,
-} from '../stylers';
-
-export type TScrollViewProps<
-  TScrollViewStyle extends string,
-  TScrollViewContentContainerStyle extends string,
+          {`export type TScrollViewProps<
+  TScrollViewStyleName extends string,
   TScrollViewStyleNamespace extends string,
-  TScrollViewContentContainerStyleNamespace extends string,
-> = ScrollViewProps & {
-  styleNamespace?: TScrollViewStyleNamespace | undefined;
-  styleNames?: TScrollViewStyle[] | undefined;
-  contentContainerStyleNamespace?: TScrollViewContentContainerStyleNamespace | undefined;
-  contentContainerStyleNames?: TScrollViewContentContainerStyle[] | undefined;
-};
-
-const ScrollView = <
-  TScrollViewStyle extends string,
-  TScrollViewContentContainerStyle extends string,
-  TScrollViewStyleNamespace extends string,
-  TScrollViewContentContainerStyleNamespace extends string,
->({
-  styleNamespace,
-  styleNames,
-  style,
-  contentContainerStyleNamespace,
-  contentContainerStyleNames,
-  contentContainerStyle,
-  ...props
-}: TScrollViewProps<TScrollViewStyle, TScrollViewContentContainerStyle, TScrollViewStyleNamespace, TScrollViewContentContainerStyleNamespace>) => {
-  const scrollViewStyle = useScrollViewStyles<TScrollViewStyle>(
-    styleNames,
-    styleNamespace ?? 'ScrollViewStyles',
-  );
-
-  const scrollViewContentContainerStyle =
-    useScrollViewContentContainerStyles<TScrollViewContentContainerStyle>(
-      contentContainerStyleNames,
-      contentContainerStyleNamespace ?? 'ScrollViewContentContainerStyles',
-    );
-
-  return (
-    <ReactNativeScrollView
-      {...props}
-      style={[scrollViewStyle, style]}
-      contentContainerStyle={[
-        scrollViewContentContainerStyle,
-        contentContainerStyle,
-      ]}
-    />
-  );
-};
-
-export default ScrollView;`}
+  TScrollViewContentContainerStyleName extends string,
+  TScrollViewContentContainerStyleNamespace extends string
+> = ReactNative.ViewProps & {
+  styleNamespace?: TScrollViewStyleNamespace;
+  styleNames?: TScrollViewStyleName[];
+  contentContainerStyleNamespace?: TScrollViewStyleNamespace;
+  contentContainerStyleNames?: TScrollViewStyleName[];
+}`}
         </CodeSnippet>
+        <Paragraph>
+          <strong className="font-semibold">Default StyleNamespaces:</strong> <InlineCode>ScrollViewStyles</InlineCode> &amp; <InlineCode>ScrollViewContentContainerStyles</InlineCode>
+        </Paragraph>
         <Paragraph>
           <strong className="font-semibold">Usage</strong>
         </Paragraph>
@@ -301,34 +204,15 @@ const ComponentA = () => {
           <InlineCode>{`<TextInput />`}</InlineCode>
         </SectionHeading>
         <Paragraph>
-          <strong className="font-semibold">Type definition</strong>
+          <strong className="font-semibold">Props type definition</strong>
         </Paragraph>
         <CodeSnippet>
-          {`import React from 'react';
-import { TextInput as ReactNativeTextInput, TextInputProps } from 'react-native';
-import { useTextInputStyles } from '../stylers';
-
-export type TTextInputProps<TStyleName extends string, TStyleNamespace extends string> = TextInputProps &
-  {
-    styleNamespace?: TStyleNamespace;
-    styleNames?: TStyleName[];
-  };
-
-const TextInput = <TStyleName extends string, TStyleNamespace extends string>({
-  styleNamespace,
-  styleNames,
-  style,
-  ...props
-}: TTextInputProps<TStyleName, TStyleNamespace>) => {
-  const textInputStyle = useTextInputStyles<T>(
-    styleNames,
-    styleNamespace ?? 'TextInputStyles',
-  );
-  return <ReactNativeTextInput {...props} style={[textInputStyle, style]} />;
-};
-
-export default TextInput;`}
+          {`export type TTextInputProps<TStyleName extends string, TStyleNamespace extends string> 
+ = ReactNative.TextInputProps & { styleNamespace?: TStyleNamespace; styleNames?: TStyleName[]; }`}
         </CodeSnippet>
+        <Paragraph>
+          <strong className="font-semibold">Default StyleNamespace:</strong> <InlineCode>TextInputStyles</InlineCode>
+        </Paragraph>
         <Paragraph>
           <strong className="font-semibold">Usage</strong>
         </Paragraph>
@@ -350,34 +234,15 @@ const ComponentA = () => {
           <InlineCode>{`<Text />`}</InlineCode>
         </SectionHeading>
         <Paragraph>
-          <strong className="font-semibold">Type definition</strong>
+          <strong className="font-semibold">Props type definition</strong>
         </Paragraph>
         <CodeSnippet>
-          {`import React from 'react';
-import { Text as ReactNativeText, TextProps } from 'react-native';
-import { useTextStyles } from '../stylers';
-
-export type TTextProps<TStyleName extends string, TStyleNamespace extends string> = TextProps &
-  {
-    styleNamespace?: TStyleNamespace;
-    styleNames?: TStyleName[];
-  };
-
-const Text = <TStyleName extends string, TStyleNamespace extends string>({
-  styleNamespace,
-  styleNames,
-  style,
-  ...props
-}: TTextProps<TStyleName, TStyleNamespace>) => {
-  const textStyle = useTextStyles<T>(
-    styleNames,
-    styleNamespace ?? 'TextStyles',
-  );
-  return <ReactNativeText {...props} style={[textStyle, style]} />;
-};
-
-export default Text;`}
+          {`export type TTextProps<TStyleName extends string, TStyleNamespace extends string> 
+ = ReactNative.TextProps & { styleNamespace?: TStyleNamespace; styleNames?: TStyleName[]; }`}
         </CodeSnippet>
+        <Paragraph>
+          <strong className="font-semibold">Default StyleNamespace:</strong> <InlineCode>TextStyles</InlineCode>
+        </Paragraph>
         <Paragraph>
           <strong className="font-semibold">Usage</strong>
         </Paragraph>
@@ -399,56 +264,15 @@ const ComponentA = () => {
           <InlineCode>{`<Pressable />`}</InlineCode>
         </SectionHeading>
         <Paragraph>
-          <strong className="font-semibold">Type definition</strong>
+          <strong className="font-semibold">Props type definition</strong>
         </Paragraph>
         <CodeSnippet>
-          {`import React from 'react';
-import {
-  Pressable as RNPressable,
-  PressableProps,
-  StyleProp,
-  PressableStateCallbackType,
-  ViewStyle,
-} from 'react-native';
-import { TStylesProps, useTouchableStyles } from '../stylers';
-
-export type TPressableProps<TStyleName extends string, TStyleNamespace extends string> = PressableProps &
-  {
-    styleNamespace?: TStyleNamespace;
-    styleNames?: TStyleName[];
-  };
-
-const Pressable = <TStyleName extends string, TStyleNamespace extends string>({
-  styleNamespace,
-  styleNames,
-  style,
-  ...props
-}: TPressableProps<TStyleName extends string, TStyleNamespace extends string>) => {
-  const viewStyle = useTouchableStyles<T>(
-    styleNames,
-    styleNamespace ?? 'TouchableStyles',
-  );
-
-  const pressableFunctionStyle =
-    typeof style === 'function'
-      ? (args: PressableStateCallbackType) => style(args)
-      : undefined;
-
-  return (
-    <RNPressable
-      {...props}
-      style={[
-        viewStyle,
-        pressableFunctionStyle !== undefined
-          ? (pressableFunctionStyle as StyleProp<ViewStyle>)
-          : (style as StyleProp<ViewStyle>),
-      ]}
-    />
-  );
-};
-
-export default Pressable;`}
+          {`export type TPressableProps<TStyleName extends string, TStyleNamespace extends string> 
+ = ReactNative.PressableProps & { styleNamespace?: TStyleNamespace; styleNames?: TStyleName[]; }`}
         </CodeSnippet>
+        <Paragraph>
+          <strong className="font-semibold">Default StyleNamespace:</strong> <InlineCode>TouchableStyles</InlineCode>
+        </Paragraph>
         <Paragraph>
           <strong className="font-semibold">Usage</strong>
         </Paragraph>
@@ -470,38 +294,15 @@ const ComponentA = () => {
           <InlineCode>{`<TouchableHighlight />`}</InlineCode>
         </SectionHeading>
         <Paragraph>
-          <strong className="font-semibold">Type definition</strong>
+          <strong className="font-semibold">Props type definition</strong>
         </Paragraph>
         <CodeSnippet>
-          {`import React from 'react';
-import {
-  TouchableHighlight as RNTouchableHighlight,
-  TouchableHighlightProps,
-  ViewStyle,
-} from 'react-native';
-import { TStylesProps, useTouchableStyles } from '../stylers';
-
-export type TTouchableHighlightProps<TStyleName extends string, TStyleNamespace extends string> =
-  TouchableHighlightProps & {
-    styleNamespace?: TStyleNamespace;
-    styleNames?: TStyleName[];
-  };
-
-export const TouchableHighlight = <TStyleName extends string, TStyleNamespace extends string>({
-  styleNamespace,
-  styleNames,
-  style,
-  ...props
-}: TTouchableHighlightProps<TStyleName extends string, TStyleNamespace extends string>) => {
-  const viewStyle = useTouchableStyles<T>(
-    styleNames,
-    styleNamespace ?? 'TouchableStyles',
-  );
-  return <RNTouchableHighlight {...props} style={[viewStyle, style]} />;
-};
-
-export default TouchableHighlight;`}
+          {`export type TTouchableHighlightProps<TStyleName extends string, TStyleNamespace extends string> 
+ = ReactNative.TouchableHighlightProps & { styleNamespace?: TStyleNamespace; styleNames?: TStyleName[]; }`}
         </CodeSnippet>
+        <Paragraph>
+          <strong className="font-semibold">Default StyleNamespace:</strong> <InlineCode>TouchableStyles</InlineCode>
+        </Paragraph>
         <Paragraph>
           <strong className="font-semibold">Usage</strong>
         </Paragraph>
@@ -523,38 +324,15 @@ const ComponentA = () => {
           <InlineCode>{`<TouchableOpacity />`}</InlineCode>
         </SectionHeading>
         <Paragraph>
-          <strong className="font-semibold">Type definition</strong>
+          <strong className="font-semibold">Props type definition</strong>
         </Paragraph>
         <CodeSnippet>
-          {`import React from 'react';
-import {
-  TouchableOpacity as RNTouchableOpacity,
-  TouchableOpacityProps,
-  ViewStyle,
-} from 'react-native';
-import { TStylesProps, useTouchableStyles } from '../stylers';
-
-export type TTouchableOpacityProps<TStyleName extends string, TStyleNamespace extends string> = TouchableOpacityProps &
-  {
-    styleNamespace?: TStyleNamespace;
-    styleNames?: TStyleName[];
-  };
-
-const TouchableOpacity = <TStyleName extends string, TStyleNamespace extends string>({
-  styleNamespace,
-  styleNames,
-  style,
-  ...props
-}: TTouchableOpacityProps<TStyleName extends string, TStyleNamespace extends string>) => {
-  const viewStyle = useTouchableStyles<T>(
-    styleNames,
-    styleNamespace ?? 'TouchableStyles',
-  );
-  return <RNTouchableOpacity {...props} style={[viewStyle, style]} />;
-};
-
-export default TouchableOpacity;`}
+          {`export type TTouchableOpacityProps<TStyleName extends string, TStyleNamespace extends string> 
+ = ReactNative.TouchableOpacityProps & { styleNamespace?: TStyleNamespace; styleNames?: TStyleName[]; }`}
         </CodeSnippet>
+        <Paragraph>
+          <strong className="font-semibold">Default StyleNamespace:</strong> <InlineCode>TouchableStyles</InlineCode>
+        </Paragraph>
         <Paragraph>
           <strong className="font-semibold">Usage</strong>
         </Paragraph>
@@ -576,38 +354,15 @@ const ComponentA = () => {
           <InlineCode>{`<View />`}</InlineCode>
         </SectionHeading>
         <Paragraph>
-          <strong className="font-semibold">Type definition</strong>
+          <strong className="font-semibold">Props type definition</strong>
         </Paragraph>
         <CodeSnippet>
-          {`import React from 'react';
-import {
-  View as RNView,
-  ViewProps,
-  ViewStyle,
-} from 'react-native';
-import { TStylesProps, useViewStyles } from '../stylers';
-
-export type TViewProps<TStyleName extends string, TStyleNamespace extends string> = ViewProps &
-  {
-    styleNamespace?: TStyleNamespace;
-    styleNames?: TStyleName[];
-  };
-
-const View = <TStyleName extends string, TStyleNamespace extends string>({
-  styleNamespace,
-  styleNames,
-  style,
-  ...props
-}: TViewProps<TStyleName extends string, TStyleNamespace extends string>) => {
-  const viewStyle = useViewStyles<T>(
-    styleNames,
-    styleNamespace ?? 'ViewStyles',
-  );
-  return <RNView {...props} style={[viewStyle, style]} />;
-};
-
-export default View;`}
+          {`export type TViewProps<TStyleName extends string, TStyleNamespace extends string> 
+ = ReactNative.ViewProps & { styleNamespace?: TStyleNamespace; styleNames?: TStyleName[]; }`}
         </CodeSnippet>
+        <Paragraph>
+          <strong className="font-semibold">Default StyleNamespace:</strong> <InlineCode>ViewStyles</InlineCode>
+        </Paragraph>
         <Paragraph>
           <strong className="font-semibold">Usage</strong>
         </Paragraph>
@@ -623,6 +378,10 @@ const ComponentA = () => {
 }`}
         </CodeSnippet>
       </section>
+
+      <Paragraph>
+        <i>Note: New Stylish components for remaining React Native components will be added soon.</i>
+      </Paragraph>
     </article>
   </Layout>
 );

@@ -12,8 +12,6 @@ const CoreConcept: React.FC = () => (
   <Layout>
     <Head>
       <title>Tightly coupled | React Native Stylo</title>
-      <meta name="description" content="Completely detached and highly scalable React Native styles" />
-      <link rel="icon" href="/favicon.ico" />
     </Head>
     <article>
       <ArticleHeading>Tightly coupled</ArticleHeading>

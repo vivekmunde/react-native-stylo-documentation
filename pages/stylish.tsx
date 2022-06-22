@@ -16,8 +16,6 @@ const CoreConcept: React.FC = () => (
   <Layout>
     <Head>
       <title>Stylish | React Native Stylo</title>
-      <meta name="description" content="Completely detached and highly scalable React Native styles" />
-      <link rel="icon" href="/favicon.ico" />
     </Head>
     <article>
       <ArticleHeading>Stylish</ArticleHeading>

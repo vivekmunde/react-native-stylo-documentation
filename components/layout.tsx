@@ -112,6 +112,12 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
               </li>
               <li>
                 <ul className="mb-8">
+                  <NavLink href="/default-styles">
+                    Default styles
+                  </NavLink>
+                  <NavLink href="/style-names-sequence">
+                    StyleNames sequence
+                  </NavLink>
                   <NavLink href="/tight-coupling">
                     Tightly coupled
                   </NavLink>

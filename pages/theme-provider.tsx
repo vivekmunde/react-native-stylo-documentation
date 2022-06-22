@@ -11,7 +11,7 @@ import Paragraph from '../components/paragraph';
 import RequiredTag from '../components/required-tag';
 import SectionHeading from '../components/section-heading';
 
-const CoreConcept: React.FC = () => (
+const ThemeProvider: React.FC = () => (
   <Layout>
     <Head>
       <title>{`<ThemeProvider />`} | React Native Stylo</title>
@@ -65,4 +65,4 @@ const App = () => (
   </Layout>
 );
 
-export default CoreConcept;
+export default ThemeProvider;

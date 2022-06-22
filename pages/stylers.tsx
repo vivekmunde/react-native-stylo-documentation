@@ -12,7 +12,7 @@ import Paragraph from '../components/paragraph';
 import RequiredTag from '../components/required-tag';
 import SectionHeading from '../components/section-heading';
 
-const CoreConcept: React.FC = () => (
+const Stylers: React.FC = () => (
   <Layout>
     <Head>
       <title>Stylers | React Native Stylo</title>
@@ -412,4 +412,4 @@ const ComponentA = () => {
   </Layout>
 );
 
-export default CoreConcept;
+export default Stylers;

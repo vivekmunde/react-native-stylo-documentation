@@ -79,7 +79,7 @@ const TextInputStyles = StyleSheet.create({
         </SectionHeading>
         <Paragraph>
           <InlineCode>Default</InlineCode> is a reserved StyleName.
-          {`It's`} used for the core React Native components like Text, View, TextInput, Image etc.
+          {` It's`} used for the core React Native components like Text, View, TextInput, Image etc.
           Stylo applies the styles defined under <InlineCode>Default</InlineCode> StyleName as a default style to the components.
         </Paragraph>
         <Paragraph>

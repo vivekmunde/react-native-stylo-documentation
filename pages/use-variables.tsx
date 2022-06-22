@@ -10,7 +10,7 @@ import Layout from '../components/layout';
 import Paragraph from '../components/paragraph';
 import SectionHeading from '../components/section-heading';
 
-const CoreConcept: React.FC = () => (
+const UseVariables: React.FC = () => (
   <Layout>
     <Head>
       <title>useVariables() | React Native Stylo</title>
@@ -96,4 +96,4 @@ export default CardTitle;`}
   </Layout>
 );
 
-export default CoreConcept;
+export default UseVariables;

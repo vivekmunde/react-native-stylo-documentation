@@ -12,7 +12,7 @@ import OptionalTag from '../components/optional-tag';
 import Paragraph from '../components/paragraph';
 import SectionHeading from '../components/section-heading';
 
-const CoreConcept: React.FC = () => (
+const Stylish: React.FC = () => (
   <Layout>
     <Head>
       <title>Stylish | React Native Stylo</title>
@@ -386,4 +386,4 @@ const ComponentA = () => {
   </Layout>
 );
 
-export default CoreConcept;
+export default Stylish;

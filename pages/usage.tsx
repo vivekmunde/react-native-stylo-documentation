@@ -44,7 +44,7 @@ const sections = {
   },
 };
 
-const CoreConcept: React.FC = () => (
+const Usage: React.FC = () => (
   <Layout>
     <Head>
       <title>Usage | React Native Stylo</title>
@@ -376,4 +376,4 @@ const ComponentA = () => {
   </Layout>
 );
 
-export default CoreConcept;
+export default Usage;

@@ -12,7 +12,7 @@ import Paragraph from '../components/paragraph';
 import RequiredTag from '../components/required-tag';
 import SectionHeading from '../components/section-heading';
 
-const CoreConcept: React.FC = () => (
+const Styles: React.FC = () => (
   <Layout>
     <Head>
       <title>{`<Styles />`} | React Native Stylo</title>
@@ -127,4 +127,4 @@ export default Title;`}
   </Layout>
 );
 
-export default CoreConcept;
+export default Styles;

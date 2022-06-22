@@ -8,7 +8,7 @@ import Layout from '../components/layout';
 import Paragraph from '../components/paragraph';
 import SectionHeading from '../components/section-heading';
 
-const CoreConcept: React.FC = () => (
+const TightCoupling: React.FC = () => (
   <Layout>
     <Head>
       <title>Tightly coupled | React Native Stylo</title>
@@ -123,4 +123,4 @@ export default useTextStyles;`}
   </Layout>
 );
 
-export default CoreConcept;
+export default TightCoupling;

@@ -16,7 +16,7 @@ const sections = {
   },
   themes: {
     id: 'theme-stylename-namespace',
-    title: 'Theme, StyleName & Namespace',
+    title: 'Theme, StyleName & StyleNamespace',
   },
   stylesDetachedOwnedByApp: {
     id: 'detached-styles-owned-by-app',
@@ -111,11 +111,11 @@ const CoreConcept: React.FC = () => (
           In the code snippet below <InlineCode>{`'Align.Center'`}</InlineCode>, <InlineCode>H1</InlineCode>, <InlineCode>{`'Size.Small'`}</InlineCode> are the style names.
         </Paragraph>
         <Paragraph>
-          <strong className="font-semibold">Namespaces</strong> are used to organize the style definitions by logically grouping them together.
+          <strong className="font-semibold">StyleNamespaces</strong> are used to organize the style definitions by logically grouping them together.
           This prevents the style name/style collisions, like <InlineCode>{`'Size.Small'`}</InlineCode> can have different style definitions for <InlineCode>Text</InlineCode> &amp; <InlineCode>View</InlineCode> components.
-          In the code snippet below <InlineCode>TextStyles</InlineCode>, <InlineCode>TextInputStyles</InlineCode>, <InlineCode>ViewStyles</InlineCode> are the Namespaces.
-          The library has default Namespaces defined per React Native component in its themes.
-          The app can define its own Namespaces, which will override the default ones.
+          In the code snippet below <InlineCode>TextStyles</InlineCode>, <InlineCode>TextInputStyles</InlineCode>, <InlineCode>ViewStyles</InlineCode> are the StyleNamespaces.
+          The library has default StyleNamespaces defined per React Native component in its themes.
+          The app can define its own StyleNamespaces, which will override the default ones.
         </Paragraph>
         <CodeSnippet>
           {`const TextStyles = StyleSheet.create({
@@ -282,9 +282,9 @@ export const Theme = {
           </mark>
         </Paragraph>
         <CodeSnippet>
-          {`import { View, Text, TouchableOpacity } from 'react-native-stylo/stylish';
+          {`import { View, Text, TouchableOpacity } from 'react-native-stylo';
 
-// style types defined inside the consumer app & not inside the React Native Stylo library
+// styles defined inside your app
 import { TViewStyle, TTextStyle, TTouchableStyle } from '../themes/types';
 
 const List = React.FC = () => (

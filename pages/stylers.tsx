@@ -56,9 +56,9 @@ const Stylers: React.FC = () => (
             <InlineCode>styleNamespace</InlineCode> <OptionalTag />
           </h5>
           <Paragraph>
-            The <Link href="/theme#namespace">Namespace</Link> to be used which holds the style definitions for the <InlineCode>StyleNames</InlineCode> supplied to the hook.
+            The <Link href="/theme#namespace">StyleNamespace</Link> to be used which holds the style definitions for the <InlineCode>StyleNames</InlineCode> supplied to the hook.
             <br />
-            If not provided then the styler hook uses a matching default namespace from the collection of {`it's`} <Link href="/theme#default-namespaces">Default Namespaces</Link>.
+            If not provided then the styler hook uses a matching default namespace from the collection of {`it's`} <Link href="/theme#default-namespaces">Default StyleNamespaces</Link>.
           </Paragraph>
         </section>
       </section>

@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Link from 'next/link';
 import React from 'react';
 
 import ArticleHeading from '../components/article-heading';
@@ -16,7 +17,7 @@ const TightCoupling: React.FC = () => (
     <article>
       <ArticleHeading>Tightly coupled</ArticleHeading>
       <Paragraph>
-        To avoid passing the <InlineCode>StyleNames</InlineCode> &amp; <InlineCode>Namespaces</InlineCode> each time, you can tightly couple the types to the <strong className="font-semibold">Stylish</strong> components &amp; <strong className="font-semibold">Stylers</strong> easily.
+        To avoid passing the <Link href="/theme#style-name">StyleNames</Link> &amp; <Link href="theme#namespace">StyleNamespace</Link> each time to the <Link href="/stylish">Stylish</Link> components &amp; <Link href="/stylers">Styler</Link> hooks, you can tightly couple the types to the <strong className="font-semibold">Stylish</strong> components &amp; <strong className="font-semibold">Styler</strong> hooks easily.
         Simply create wrapper components &amp; hooks which will internally pass the desired style type and then use these components &amp; hooks without need to pass the style types.
       </Paragraph>
       <Paragraph>
@@ -85,38 +86,84 @@ const ComponentA = () => {
           Stylo at your help
         </SectionHeading>
         <Paragraph>
-          To save time &amp; effort, Stylo provides these wrapper hooks &amp; components, which are located at <strong className="font-semibold">/node_modules/react-native-stylo/lib/tightly-coupled/*.ts[x]</strong>.
+          To save time &amp; effort, Stylo provides these wrapper hooks &amp; components, which are located at <strong className="font-semibold">/node_modules/react-native-stylo/lib/stylo/stylers</strong> &amp;  <strong className="font-semibold">/node_modules/react-native-stylo/lib/stylo/stylish</strong>.
           Simply copy these to you app.
-          Please note, these wrapper hooks &amp; components import the types using a relative path <InlineCode>{`import { TTextStyle } from "../themes/types"`}</InlineCode>.
+          Please note, these wrapper hooks &amp; components import the types using a relative path <InlineCode>{`import { TTextStyle } from '../themes/types'`}</InlineCode>.
           If your theme types are defined at some other location then just change these type import paths in these hooks &amp; components.
         </Paragraph>
         <Paragraph>
-          <strong className="font-semibold">E.g. Tightly coupled stylish Text component from the library</strong>
+          Wrappers for <InlineCode>Styler</InlineCode> hooks &amp; <InlineCode>Stylish</InlineCode> components are located as below.
+        </Paragraph>
+        <CodeSnippet>
+          {`[root]
+  |- node_modules
+    |- react-native-stylo
+      |- lib
+        |- stylo
+          |- stylers
+          |- stylish
+          |- themes
+            |- types
+            |- default`}
+        </CodeSnippet>
+        <Paragraph>
+          Copy them to your app like below.
+        </Paragraph>
+        <CodeSnippet>
+          {`[root]
+  |- app
+    |- components
+    |- screens
+    |- stylo
+      |- stylers
+      |- stylish
+      |- themes
+        |- types
+        |- default`}
+        </CodeSnippet>
+        <Paragraph>
+          Usage
         </Paragraph>
         <CodeSnippet>
           {`import React from 'react';
-import { Text as StyloText, TTextProps } from '../../stylo';
-import { TTextStyle } from '../themes/types';
+import Stylish from '../stylo/stylish';
+import { styles, variables } from './stylo/themes/default';
 
-const Text:React.FC<TTextProps<TTextStyle>> = props => (
-  <StyloText {...props} />;
-};
-
-export default Text;`}
+const ComponentA = () => {
+  return (
+    <Stylish.View styleNames={['Border', 'Border.Radius', 'Border.Color.Primary']}>
+      <Stylish.View styleNames={['Padding', 'Border.Bottom', 'Border.Color.Primary']}>
+        <Stylish.Text styleNames={['H2']}>
+          Stylish component
+        </Stylish.Text>
+      </Stylish.View>
+      <Stylish.View>
+        <Stylish.Text styleNames={['Bold']}>
+          Stylish components are nothing but enhanced React Native components.
+          Stylo adds two extra properties styleNames & styleNamespace to the React Native components,
+          on top of core properties provided by React Native.
+        </Stylish.Text>
+      </Stylish.View>
+    </Stylish.View>
+  );
+};`}
         </CodeSnippet>
-        <Paragraph>
-          <strong className="font-semibold">E.g. Tightly coupled useTextStyles() styler hook from the library</strong>
-        </Paragraph>
         <CodeSnippet>
-          {`import { useTextStyles as rnsUseTextStyles } from 'react-native-stylo';
-import { TTextStyle } from '../themes/types';
+          {`import React, { useRef } from 'react';
+import { Text, StyleSheet } from 'react-native';
+import { useTextStyles } from '../stylo/stylers';
 
-const useTextStyles = (
-  styleNames: TTextStyle[] | undefined,
-  styleNamespace?: string,
-) => rnsUseTextStyles<TTextStyle>(styleNames, styleNamespace);
+const ComponentA = () => {
+  const styles = useRef(
+    StyleSheet.create({
+      textStyle: useTextStyles(['H1', 'Bold', 'Color.Primary']),
+    })
+  ).current;
 
-export default useTextStyles;`}
+  return (
+    <Text style={styles.textStyle} {...otherProps} />
+  );
+}`}
         </CodeSnippet>
       </section>
     </article>

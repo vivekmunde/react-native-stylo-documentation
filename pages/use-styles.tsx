@@ -92,7 +92,7 @@ const UseStyles: React.FC = () => (
             <InlineCode>styleNamespace</InlineCode> <RequiredTag />
           </h5>
           <Paragraph>
-            The <Link href="/theme#namespace">Namespace</Link> to be used which holds the style definitions for the <InlineCode>StyleNames</InlineCode> supplied to the hook.
+            The <Link href="/theme#namespace">StyleNamespace</Link> to be used which holds the style definitions for the <InlineCode>StyleNames</InlineCode> supplied to the hook.
           </Paragraph>
         </section>
         <section>

@@ -21,7 +21,7 @@ const Stylish: React.FC = () => (
       <ArticleHeading>Stylish</ArticleHeading>
       <Paragraph>
         <strong className="font-semibold">Stylish</strong> components are nothing but enhanced <ExternalLink href="https://reactnative.dev/docs/components-and-apis">React Native components</ExternalLink>.
-        Stylo adds two extra properties <InlineCode>styleNames</InlineCode>(ref: <Link href="/theme/style-name">StyleName</Link>) &amp; <InlineCode>styleNamespace</InlineCode>(ref: <Link href="/theme/namespace">Namespace</Link>) to the React Native components, on top of core properties provided by React Native.
+        Stylo adds two extra properties <InlineCode>styleNames</InlineCode>(ref: <Link href="/theme/style-name">StyleName</Link>) &amp; <InlineCode>styleNamespace</InlineCode>(ref: <Link href="/theme/namespace">StyleNamespace</Link>) to the React Native components, on top of core properties provided by React Native.
         Stylo does not make any behavioral changes to these enhanced stylish components and keeps them as pure as they are defined by React Native.
         Stylish component reads the styles defined for the <InlineCode>styleNames</InlineCode> under the <InlineCode>styleNamespace</InlineCode> in the theme, combines these styles into one to create a standard React Native style object &amp; applies this style to the React Native component.
       </Paragraph>
@@ -59,9 +59,9 @@ const Stylish: React.FC = () => (
             <InlineCode>styleNamespace</InlineCode> <OptionalTag />
           </h5>
           <Paragraph>
-            The <Link href="/theme#namespace">Namespace</Link> to be used which holds the style definitions for the <InlineCode>StyleNames</InlineCode> supplied to the hook.
+            The <Link href="/theme#namespace">StyleNamespace</Link> to be used which holds the style definitions for the <InlineCode>StyleNames</InlineCode> supplied to the hook.
             <br />
-            If not provided then the styler hook uses a matching default namespace from the collection of {`it's`} <Link href="/theme#default-namespaces">Default Namespaces</Link>.
+            If not provided then the styler hook uses a matching default namespace from the collection of {`it's`} <Link href="/theme#default-namespaces">Default StyleNamespaces</Link>.
           </Paragraph>
         </section>
       </section>

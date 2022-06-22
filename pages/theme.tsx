@@ -20,7 +20,7 @@ const Theme: React.FC = () => (
       <Paragraph>
         <strong className="font-semibold">Theme</strong> at core is nothing but a collection of styles defined using the <ExternalLink href="https://reactnative.dev/docs/stylesheet">React {`Native's`} <InlineCode>StyleSheet.create()</InlineCode> API</ExternalLink>.
         The themes are defined inside the app and are completely owned by the app, not by the Stylo library.
-        Stylo theme is based on two key concepts: StyleNames &amp; Namespaces.
+        Stylo theme is based on two key concepts: StyleName &amp; StyleNamespace.
       </Paragraph>
 
       <section className="no-vertical-margin-collapse">
@@ -105,17 +105,17 @@ const ComponentA = () => (
 
       <section className="no-vertical-margin-collapse">
         <SectionHeading id="namespace" level={4}>
-          Namespace
+          StyleNamespace
         </SectionHeading>
         <Paragraph>
-          Namespaces are used to organize the style definitions by logically grouping them together.
+          StyleNamespaces are used to organize the style definitions by logically grouping them together.
           Means, all style definitions for React {`Native's`} Text component can be grouped together under a namespace called <InlineCode>TextStyles</InlineCode>, likewise <InlineCode>ViewStyles</InlineCode>, <InlineCode>TouchableStyles</InlineCode>, <InlineCode>TextInputStyles</InlineCode> etc.
           This prevents collisions of the StyleName &amp; eventually the collisions of styles.
           For example, a StyleName <InlineCode>{`'Size.Small'`}</InlineCode> can exist for both Text &amp; View and can have different style definitions for each.
           So placing these different stye definitions with same StyleName <InlineCode>{`'Size.Small'`}</InlineCode> under separate namespaces <InlineCode>TextStyles</InlineCode> &amp; <InlineCode>ViewStyles</InlineCode> will avoid the collision or accidental overriding of style definitions.
         </Paragraph>
         <Paragraph>
-          Stylo considers each React Native component as one Namespace.
+          Stylo considers each React Native component as one StyleNamespace.
         </Paragraph>
         <CodeSnippet>
           {`export type TStyleNamespace =
@@ -150,7 +150,7 @@ const Theme = {
         </Paragraph>
         <Paragraph>
           However, {`it's`} not mandatory for the apps to follow this naming convention.
-          Apps can use any naming convention to define the Namespaces.
+          Apps can use any naming convention to define the StyleNamespaces.
           If other naming convention is used, then just make sure to pass the correct namespace names to the <Link href="/stylers">Styler</Link> hooks &amp; <Link href="/stylish">Stylish</Link> components.
         </Paragraph>
       </section>
@@ -160,7 +160,7 @@ const Theme = {
           Default namespaces
         </SectionHeading>
         <Paragraph>
-          Stylo provides default strongly typed Namespaces.
+          Stylo provides default strongly typed StyleNamespaces.
         </Paragraph>
         <CodeSnippet>
           {`export type TStyleNamespace =
@@ -220,10 +220,10 @@ export type TVariables = 'Color.Primary' | 'Color.Secondary' | 'Padding' | 'Padd
           Type definitions
         </SectionHeading>
         <Paragraph>
-          Thanks to <ExternalLink href="https://www.typescriptlang.org">TypeScript</ExternalLink>, the <InlineCode>StyleNames</InlineCode>, <InlineCode>Namespaces</InlineCode> &amp; <InlineCode>Variables</InlineCode> are strongly typed.
+          Thanks to <ExternalLink href="https://www.typescriptlang.org">TypeScript</ExternalLink>, the <InlineCode>StyleNames</InlineCode>, <InlineCode>StyleNamespaces</InlineCode> &amp; <InlineCode>Variables</InlineCode> are strongly typed.
           The type definitions are passed to &amp; used by <Link href="/use-variables">useVariables()</Link> hook, <Link href="/stylers">Styler</Link> hooks &amp; <Link href="/stylish">Stylish</Link> components.
-          This completely avoids accidental usage of wrong <InlineCode>StyleNames</InlineCode>, <InlineCode>Namespaces</InlineCode> &amp; <InlineCode>Variables</InlineCode>, out of the box.
-          On top of that, the <InlineCode>StyleNames</InlineCode> &amp; <InlineCode>Namespaces</InlineCode> are strongly typed against each React Native component, like <InlineCode>View</InlineCode>, <InlineCode>Text</InlineCode>, <InlineCode>TouchableOpacity</InlineCode> etc.
+          This completely avoids accidental usage of wrong <InlineCode>StyleNames</InlineCode>, <InlineCode>StyleNamespaces</InlineCode> &amp; <InlineCode>Variables</InlineCode>, out of the box.
+          On top of that, the <InlineCode>StyleNames</InlineCode> &amp; <InlineCode>StyleNamespaces</InlineCode> are strongly typed against each React Native component, like <InlineCode>View</InlineCode>, <InlineCode>Text</InlineCode>, <InlineCode>TouchableOpacity</InlineCode> etc.
           This adds an extra level of strong typing which forces to use only those values which are intended for a particular component.
         </Paragraph>
         <Paragraph>
@@ -240,7 +240,7 @@ type TBorder = 'Border.Radius' | 'Border.Radius.Small' | 'Border.Radius.Large';
 export type TVariables = TFontColor | TBackgroundColor | TPadding | TMargin | TBorder | ...;`}
         </CodeSnippet>
         <Paragraph>
-          <strong className="font-semibold">Namespaces type definition</strong>
+          <strong className="font-semibold">StyleNamespaces type definition</strong>
         </Paragraph>
         <CodeSnippet>
           {`export type TStyleNamespace = 'IconStyles' | 'ImageBackgroundStyles' | 'ImageStyles' | 'KeyboardAvoidingViewStyles' | 'SafeAreaViewStyles' | 'ScrollViewStyles' | 'TextInputStyles' | 'TextStyles' | 'TouchableStyles' | 'ViewStyles' | ...;`}
@@ -262,7 +262,7 @@ export type TVariables = TFontColor | TBackgroundColor | TPadding | TMargin | TB
             </a>
           </h5>
           <Paragraph>
-            The <InlineCode>Variables</InlineCode>, <InlineCode>StyleNames</InlineCode> &amp; <InlineCode>Namespaces</InlineCode> are intellisense friendly, it helps you choose correct styles &amp; values.
+            The <InlineCode>Variables</InlineCode>, <InlineCode>StyleNames</InlineCode> &amp; <InlineCode>StyleNamespaces</InlineCode> are intellisense friendly, it helps you choose correct styles &amp; values.
           </Paragraph>
           <Paragraph className="border rounded p-1">
             <img alt='Strongly typed styles: Text' src={`${process.env.NEXT_PUBLIC_ASSET_PREFIX}/images/style-names-intellisense-1.png`} />
@@ -278,7 +278,7 @@ export type TVariables = TFontColor | TBackgroundColor | TPadding | TMargin | TB
           Stylo theme
         </SectionHeading>
         <Paragraph>
-          Stylo provides a default Theme which is located at <strong className="font-semibold">/node_modules/react-native-stylo/lib/themes</strong>.
+          Stylo provides a default Theme which is located at <strong className="font-semibold">/node_modules/react-native-stylo/lib/stylo/themes</strong>.
           The theme can be simply copied into the app &amp; used as is or freely modified as per the needs.
           Or simply use the default theme just as a guideline &amp; create your own from scratch.
         </Paragraph>
@@ -293,7 +293,7 @@ export type TVariables = TFontColor | TBackgroundColor | TPadding | TMargin | TB
             1. Define types
           </h5>
           <Paragraph>
-            First things first, define the types for Variables, Namespaces &amp; StyleNames.
+            First things first, define the types for Variables, StyleNamespaces &amp; StyleNames.
             {` It's`} very important to define these types clearly by using a thoughtful naming convention which can offer better scalability and easier maintenance ahead.
             {` It's`} not practically possible to define all the types at once, because the theme may keep growing as the app grows.
             So always follow the practice of defining the types first and then style definitions, when adding new styles to the theme.
@@ -307,7 +307,7 @@ type TMargin = 'Margin' | 'Margin.Small' | 'Margin.Large';
 type TBorder = 'Border.Radius' | 'Border.Radius.Small' | 'Border.Radius.Large';
 export type TVariables = TFontColor | TBackgroundColor | TPadding | TMargin | TBorder;
 
-// Namespaces
+// StyleNamespaces
 export type TStyleNamespace = 'IconStyles' | 'ImageBackgroundStyles' | 'ImageStyles' | 'KeyboardAvoidingViewStyles' | 'SafeAreaViewStyles' | 'ScrollViewStyles' | 'TextInputStyles' | 'TextStyles' | 'TouchableStyles' | 'ViewStyles';
   
 // StyleNames

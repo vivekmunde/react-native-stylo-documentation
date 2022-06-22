@@ -14,9 +14,9 @@ const sections = {
     id: 'installation',
     title: 'Installation',
   },
-  themeDefinitions: {
-    id: 'theme-definitions',
-    title: 'Theme definitions',
+  styloConfiguration: {
+    id: 'configure-themes-hooks-components',
+    title: 'Configure themes and styled hooks & components',
   },
   themeProvider: {
     id: 'theme-provider',
@@ -33,14 +33,6 @@ const sections = {
   variables: {
     id: 'using-variables',
     title: 'Using variables',
-  },
-  tightlyCouplingStyles: {
-    id: 'tight-coupling-styles',
-    title: 'Tightly coupling the styles',
-  },
-  styleNamesSequence: {
-    id: 'style-names-sequence',
-    title: 'StyleNames sequence',
   },
 };
 
@@ -60,8 +52,8 @@ const Usage: React.FC = () => (
             </a>
           </li>
           <li>
-            <a href={`#${sections.themeDefinitions.id}`}>
-              {sections.themeDefinitions.title}
+            <a href={`#${sections.styloConfiguration.id}`}>
+              {sections.styloConfiguration.title}
             </a>
           </li>
           <li>
@@ -84,16 +76,6 @@ const Usage: React.FC = () => (
               {sections.variables.title}
             </a>
           </li>
-          <li>
-            <a href={`#${sections.styleNamesSequence.id}`}>
-              {sections.styleNamesSequence.title}
-            </a>
-          </li>
-          <li>
-            <a href={`#${sections.tightlyCouplingStyles.id}`}>
-              {sections.tightlyCouplingStyles.title}
-            </a>
-          </li>
         </ul>
       </nav>
 
@@ -109,21 +91,36 @@ const Usage: React.FC = () => (
         </Paragraph>
       </section>
       <section className="no-vertical-margin-collapse">
-        <SectionHeading id={sections.themeDefinitions.id} level={4}>
-          {sections.themeDefinitions.title}
+        <SectionHeading id={sections.styloConfiguration.id} level={4}>
+          {sections.styloConfiguration.title}
         </SectionHeading>
         <Paragraph>
-          Stylo provides a default theme &amp; its type definitions which are located at <strong className="font-semibold">node_modules/react-native-stylo/lib/themes</strong>.
-          Just copy the theme to your project and you can modify them as per your needs.
+          Stylo provides a default theme &amp; its <Link href="/tight-coupling">tightly coupled</Link> hooks &amp; components, which are located at <strong className="font-semibold">node_modules/react-native-stylo/lib/stylo</strong>.
+          Just copy the these to your project.
+          You can freely modify the copied theme as per your needs.
         </Paragraph>
         <Paragraph>
-          E.g. <InlineCode>cp -R [root]/node_modules/react-native-stylo/lib/themes/ [root]/app/themes/</InlineCode>
+          E.g. <InlineCode>cp -R [root]/node_modules/react-native-stylo/lib/stylo [root]/app/stylo</InlineCode>
         </Paragraph>
+        <CodeSnippet>
+          {`[root]
+  |- app
+    |- components
+    |- screens
+    |- stylo
+      |- stylers
+      |- stylish
+      |- themes
+        |- types
+        |- default`}
+        </CodeSnippet>
         <Paragraph>
-          Or you can create your own themes &amp; their type definitions right from scratch.
-        </Paragraph>
-        <Paragraph>
+          You can create your own themes right from scratch.
           Please refer the <Link href="/theme">Theme</Link> documentation for more details.
+        </Paragraph>
+        <Paragraph>
+          Need to copy the <InlineCode>stylers</InlineCode> &amp; <InlineCode>stylish</InlineCode> directories is explained it the document <Link href="/tight-coupling">Tightly coupled</Link>.
+          To better understand the tight coupling, we recommend you to first go through the <Link href="/core-concept">Core concept</Link>, <Link href="/theme">Theme</Link>, <Link href="/stylish">Stylish</Link> &amp; <Link href="/stylers">Stylers</Link> documents.
         </Paragraph>
       </section>
 
@@ -157,51 +154,49 @@ const App = () => (
           {sections.stylishComponents.title}
         </SectionHeading>
         <Paragraph>
-          <strong className="font-semibold">Stylish</strong> components are nothing but enhanced React Native components with added properties called <InlineCode>styleNamespace</InlineCode>(optional) &amp; <InlineCode>StyleNames</InlineCode>.
+          <strong className="font-semibold">Stylish</strong> components are nothing but enhanced React Native components with added properties called <InlineCode>styleNames</InlineCode> &amp; <InlineCode>styleNamespace</InlineCode>.
           Property <InlineCode>styleNames</InlineCode> accepts the eligible styles for the component which are defined in the theme.
-          Property <InlineCode>styleNamespace</InlineCode> is optional, and use only when you need to override the default namespaces.
+          Property <InlineCode>styleNamespace</InlineCode> is optional and use only when you need to override the <Link href="/theme#default-namespaces">default StyleNamespaces</Link>.
         </Paragraph>
         <CodeSnippet>
           {`import React from 'react';
-import Stylo from 'react-native-stylo';
-
-import { TImageStyle, TTextStyle, TTouchableStyle, TViewStyle } from '../themes/types';
+import Stylish from '../stylo/stylish';
 
 const Home = () => (
-  <Stylo.View<TViewStyle> styleNames={['Screen']}>
-    <Stylo.View<TViewStyle> styleNames={['Screen.Header', 'Flex.Column', 'Flex.AlignItems.Center', 'Flex.JustifyContent.Center', 'Padding']}>
-      <Stylo.Text<TTextStyle> styleNames={['H1', 'Align.Center']}>
+  <Stylish.View styleNames={['Screen']}>
+    <Stylish.View styleNames={['Screen.Header', 'Flex.Column', 'Flex.AlignItems.Center', 'Flex.JustifyContent.Center', 'Padding']}>
+      <Stylish.Text styleNames={['H1', 'Align.Center']}>
         React Native Stylo
-      </Stylo.Text>
-      <Stylo.Text<TTextStyle> styleNames={['Align.Center']}>
+      </Stylish.Text>
+      <Stylish.Text styleNames={['Align.Center']}>
         Highly composable & scalable themes
-      </Stylo.Text>
-    </Stylo.View>
-    <Stylo.View<TViewStyle> styleNames={['Screen.Body']}>
-      <Stylo.View<TViewStyle> styleNames={['List', 'Border', 'Border.Radius', 'Border.Color.Grey2']}>
-        <Stylo.TouchableOpacity<TTouchableStyle> styleNames={['List.Item', 'Border.Bottom']} onPress={() => /*some action */}>
-          <Stylo.View<TViewStyle> styleNames={['List.Item.Left']}>
-            <Stylo.Image<TImageStyle> styleNames={['Avatar', 'Avatar.Size.Small']} source={...} />
-          </Stylo.View>
-          <Stylo.View<TViewStyle> styleNames={['List.Item.Body']}>
-            <Stylo.Text<TTextStyle>>
+      </Stylish.Text>
+    </Stylish.View>
+    <Stylish.View styleNames={['Screen.Body']}>
+      <Stylish.View styleNames={['List', 'Border', 'Border.Radius', 'Border.Color.Grey2']}>
+        <Stylish.TouchableOpacity styleNames={['List.Item', 'Border.Bottom']} onPress={() => /*some action */}>
+          <Stylish.View styleNames={['List.Item.Left']}>
+            <Stylish.Image styleNames={['Avatar', 'Avatar.Size.Small']} source={...} />
+          </Stylish.View>
+          <Stylish.View styleNames={['List.Item.Body']}>
+            <Stylish.Text>
               Strongly typed & intellisense friendly styles
-            </Stylo.Text>
-          </Stylo.View>
-        </Stylo.TouchableOpacity>
-        <Stylo.TouchableOpacity<TTouchableStyle> styleNames={['List.Item', 'Border.Bottom']} onPress={() => /*some action */}>
-          <Stylo.View<TViewStyle> styleNames={['List.Item.Left']}>
-            <Stylo.Image<TImageStyle> styleNames={['Avatar', 'Avatar.Size.Small']} source={...} />
-          </Stylo.View>
-          <Stylo.View<TViewStyle> styleNames={['List.Item.Body']}>
-            <Stylo.Text<TTextStyle>>
+            </Stylish.Text>
+          </Stylish.View>
+        </Stylish.TouchableOpacity>
+        <Stylish.TouchableOpacity styleNames={['List.Item', 'Border.Bottom']} onPress={() => /*some action */}>
+          <Stylish.View styleNames={['List.Item.Left']}>
+            <Stylish.Image styleNames={['Avatar', 'Avatar.Size.Small']} source={...} />
+          </Stylish.View>
+          <Stylish.View styleNames={['List.Item.Body']}>
+            <Stylish.Text>
               Infinitely scalable
-            </Stylo.Text>
-          </Stylo.View>
-        </Stylo.TouchableOpacity>
-      </Stylo.View>
-    </Stylo.View>
-  </Stylo.View>
+            </Stylish.Text>
+          </Stylish.View>
+        </Stylish.TouchableOpacity>
+      </Stylish.View>
+    </Stylish.View>
+  </Stylish.View>
 );
 
 export default Home;`}
@@ -225,24 +220,22 @@ export default Home;`}
         <CodeSnippet>
           {`import React, { useRef } from 'react';
 import { Image, Text, TouchableOpacity, View } from 'react-native';
-import { useImageStyles, useTextStyles, useTouchableStyles, useViewStyles } from 'react-native-stylo';
-
-import { TImageStyle, TTextStyle, TTouchableStyle, TViewStyle } from '../themes/types';
+import { useImageStyles, useTextStyles, useTouchableStyles, useViewStyles } from '../stylo/stylers';
 
 const Home = () => {
   const styles = useRef({
-    screen: useViewStyles<TViewStyle>(['Screen']),
-    screenHeader: useViewStyles<TViewStyle>(['Screen.Header', 'Flex.Column', 'Flex.AlignItems.Center', 'Flex.JustifyContent.Center', 'Padding']),
-    screenBody: useViewStyles<TViewStyle>(['Screen.Body']),
-    screenFooter: useViewStyles<TViewStyle>(['Screen.Footer']),
-    screenTitle: useTextStyles<TTextStyle>(['H1', 'Align.Center']),
-    screenSubTitle: useTextStyles<TTextStyle>(['Align.Center']),
-    list: useViewStyles<TViewStyle>(['List', 'Border', 'Border.Radius', 'Border.Color.Grey2']),
-    listItem: useTouchableStyles<TTouchableStyle>(['List.Item', 'Border.Bottom']),
-    listLastItem: useTouchableStyles<TTouchableStyle>(['List.Item']),
-    listItemLeft: useViewStyles<TViewStyle>(['List.Item.Left']),
-    listItemBody: useViewStyles<TViewStyle>(['List.Item.Body']),
-    listItemAvatar: useImageStyles<TImageStyle>(['Avatar', 'Avatar.Size.Small']),
+    screen: useViewStyles(['Screen']),
+    screenHeader: useViewStyles(['Screen.Header', 'Flex.Column', 'Flex.AlignItems.Center', 'Flex.JustifyContent.Center', 'Padding']),
+    screenBody: useViewStyles(['Screen.Body']),
+    screenFooter: useViewStyles(['Screen.Footer']),
+    screenTitle: useTextStyles(['H1', 'Align.Center']),
+    screenSubTitle: useTextStyles(['Align.Center']),
+    list: useViewStyles(['List', 'Border', 'Border.Radius', 'Border.Color.Grey2']),
+    listItem: useTouchableStyles(['List.Item', 'Border.Bottom']),
+    listLastItem: useTouchableStyles(['List.Item']),
+    listItemLeft: useViewStyles(['List.Item.Left']),
+    listItemBody: useViewStyles(['List.Item.Body']),
+    listItemAvatar: useImageStyles(['Avatar', 'Avatar.Size.Small']),
   }).current;
 
   return (
@@ -300,9 +293,7 @@ export default Home;`}
         </Paragraph>
         <CodeSnippet>
           {`import { Text, View } from 'react-native';
-import { useVariables } from 'react-native-stylo';
-
-import { TVariables } from '../themes/types';
+import { useVariables } from '../stylo/stylers';
 
 const ComponentA = () => {
   const [
@@ -310,7 +301,7 @@ const ComponentA = () => {
     borderRadius,
     colorPink,
     colorWhite,
-  ] = useVariables<TVariables>([
+  ] = useVariables([
     'Padding.Large',
     'Border.Radius',
     'Color.Pink',
@@ -345,31 +336,6 @@ const ComponentA = () => {
         </CodeSnippet>
         <Paragraph>
           Please refer the <Link href="/use-variables">useVariables()</Link> documentation for more details.
-        </Paragraph>
-      </section>
-
-      <section className="no-vertical-margin-collapse">
-        <SectionHeading id={sections.styleNamesSequence.id} level={4}>
-          {sections.styleNamesSequence.title}
-        </SectionHeading>
-        <Paragraph>
-          The sequence of the <InlineCode>styleNames</InlineCode> does matter.
-          Similar to the React {`Native's`} <InlineCode>StyleSheet.create()</InlineCode> API, the later styles of styleNames override the styles of previous styleNames.
-          As shown below, the <InlineCode>{`'Padding.Left.Large'`}</InlineCode> will override the left padding applied by <InlineCode>Padding</InlineCode> of the View component.
-        </Paragraph>
-        <CodeSnippet>
-          {`<View<TViewStyle> styleNames={['Padding', 'Padding.Left.Large', 'Border.Radius', 'BackgroundColor.Primary']}>
-  {...}
-</View>`}
-        </CodeSnippet>
-      </section>
-
-      <section className="no-vertical-margin-collapse">
-        <SectionHeading id={sections.tightlyCouplingStyles.id} level={4}>
-          {sections.tightlyCouplingStyles.title}
-        </SectionHeading>
-        <Paragraph>
-          Pleas refer <Link href="/tight-coupling">Tightly coupled</Link> documentation.
         </Paragraph>
       </section>
     </article>

@@ -7,82 +7,86 @@ import Blockquote from '../components/blockquote';
 import CodeSnippet from '../components/code-snippet';
 import InlineCode from '../components/inline-code';
 import Layout from '../components/layout';
+import MainNavigation from '../components/main-navigation';
 import OptionalTag from '../components/optional-tag';
 import Paragraph from '../components/paragraph';
 import RequiredTag from '../components/required-tag';
 import SectionHeading from '../components/section-heading';
 
 const Stylers: React.FC = () => (
-  <Layout>
-    <Head>
-      <title>Stylers | React Native Stylo</title>
-    </Head>
-    <article>
-      <ArticleHeading>Stylers</ArticleHeading>
-      <Paragraph>
-        <strong className="font-semibold">Stylers</strong> are the styling hooks. Stylers accept <Link href="/theme#style-name">StyleNames</Link> &amp; optional <Link href="/theme#namespace">StyleNamespace</Link> as its arguments &amp; return the style object.
-        They read the styles defined for the <InlineCode>StyleNames</InlineCode> under the <InlineCode>StyleNamespace</InlineCode> in the theme, combines these styles into one &amp; returns the final style, a standard React Native style object.
-      </Paragraph>
-      <Paragraph>
-        {`Stylo's`} objective is to provide a styling hook for each React Native component.
-        This way it plans to cover the styling requirements of all the components.
-      </Paragraph>
-      <Paragraph>
-        Each React Native component has its own style type.
-        E.g. <InlineCode>Text</InlineCode> component needs style object of type <InlineCode>{`StyleProp<TextStyle>`}</InlineCode>,  <InlineCode>View</InlineCode> component needs style object of type <InlineCode>{`StyleProp<ViewStyle>`}</InlineCode> etc.
-        So each styler is tightly coupled with a React Native component which returns a style object specific to that component.
-      </Paragraph>
-      <Blockquote>
-        All styler hooks use the <Link href="/use-styles">useStyles()</Link> hook internally to create &amp; return the style object from <InlineCode>styleNames</InlineCode> &amp; <InlineCode>styleNamespace</InlineCode> supplied to them as arguments.
-      </Blockquote>
-
-      <section className="no-vertical-margin-collapse">
-        <SectionHeading id="styler-arguments" level={4}>
-          Styler arguments
-        </SectionHeading>
-        <Paragraph>
-          All stylers accept two arguments.
-        </Paragraph>
-        <section>
-          <h5 className="text-lg">
-            <InlineCode>styleNames</InlineCode> <RequiredTag />
-          </h5>
+  <Layout
+    renderNavigation={() => <MainNavigation />}
+    renderContent={() => (
+      <React.Fragment>
+        <Head>
+          <title>Stylers | React Native Stylo</title>
+        </Head>
+        <article>
+          <ArticleHeading>Stylers</ArticleHeading>
           <Paragraph>
-            The <Link href="/theme#style-name">StyleNames</Link> which define the styles.
+            <strong className="font-semibold">Stylers</strong> are the styling hooks. Stylers accept <Link href="/theme#style-name">StyleNames</Link> &amp; optional <Link href="/theme#namespace">StyleNamespace</Link> as its arguments &amp; return the style object.
+            They read the styles defined for the <InlineCode>StyleNames</InlineCode> under the <InlineCode>StyleNamespace</InlineCode> in the theme, combines these styles into one &amp; returns the final style, a standard React Native style object.
           </Paragraph>
-        </section>
-        <section>
-          <h5 className="text-lg">
-            <InlineCode>styleNamespace</InlineCode> <OptionalTag />
-          </h5>
           <Paragraph>
-            The <Link href="/theme#namespace">StyleNamespace</Link> to be used which holds the style definitions for the <InlineCode>StyleNames</InlineCode> supplied to the hook.
-            <br />
-            If not provided then the styler hook uses a matching default namespace from the collection of {`it's`} <Link href="/theme#default-namespaces">Default StyleNamespaces</Link>.
+            {`Stylo's`} objective is to provide a styling hook for each React Native component.
+            This way it plans to cover the styling requirements of all the components.
           </Paragraph>
-        </section>
-      </section>
+          <Paragraph>
+            Each React Native component has its own style type.
+            E.g. <InlineCode>Text</InlineCode> component needs style object of type <InlineCode>{`StyleProp<TextStyle>`}</InlineCode>,  <InlineCode>View</InlineCode> component needs style object of type <InlineCode>{`StyleProp<ViewStyle>`}</InlineCode> etc.
+            So each styler is tightly coupled with a React Native component which returns a style object specific to that component.
+          </Paragraph>
+          <Blockquote>
+            All styler hooks use the <Link href="/use-styles">useStyles()</Link> hook internally to create &amp; return the style object from <InlineCode>styleNames</InlineCode> &amp; <InlineCode>styleNamespace</InlineCode> supplied to them as arguments.
+          </Blockquote>
 
-      <section className="no-vertical-margin-collapse">
-        <SectionHeading id="use-image-background-styles" level={4}>
-          <InlineCode>useImageBackgroundStyles()</InlineCode>
-        </SectionHeading>
-        <Paragraph>
-          <strong className="font-semibold">Type definition</strong>
-        </Paragraph>
-        <CodeSnippet>
-          {`function useImageBackgroundStyles<TStyleName extends string, TStyleNamespace extends string>(
+          <section className="no-vertical-margin-collapse">
+            <SectionHeading id="styler-arguments" level={4}>
+              Styler arguments
+            </SectionHeading>
+            <Paragraph>
+              All stylers accept two arguments.
+            </Paragraph>
+            <section>
+              <h5 className="text-lg">
+                <InlineCode>styleNames</InlineCode> <RequiredTag />
+              </h5>
+              <Paragraph>
+                The <Link href="/theme#style-name">StyleNames</Link> which define the styles.
+              </Paragraph>
+            </section>
+            <section>
+              <h5 className="text-lg">
+                <InlineCode>styleNamespace</InlineCode> <OptionalTag />
+              </h5>
+              <Paragraph>
+                The <Link href="/theme#namespace">StyleNamespace</Link> to be used which holds the style definitions for the <InlineCode>StyleNames</InlineCode> supplied to the hook.
+                <br />
+                If not provided then the styler hook uses a matching default namespace from the collection of {`it's`} <Link href="/theme#default-namespaces">Default StyleNamespaces</Link>.
+              </Paragraph>
+            </section>
+          </section>
+
+          <section className="no-vertical-margin-collapse">
+            <SectionHeading id="use-image-background-styles" level={4}>
+              <InlineCode>useImageBackgroundStyles()</InlineCode>
+            </SectionHeading>
+            <Paragraph>
+              <strong className="font-semibold">Type definition</strong>
+            </Paragraph>
+            <CodeSnippet>
+              {`function useImageBackgroundStyles<TStyleName extends string, TStyleNamespace extends string>(
   styleNames: TStyleName[], styleNamespace?: TStyleNamespace
 ): StyleProp<ViewStyle>`}
-        </CodeSnippet>
-        <Paragraph>
-          <strong className="font-semibold">Default StyleNamespace:</strong> <InlineCode>ImageBackgroundStyles</InlineCode>
-        </Paragraph>
-        <Paragraph>
-          <strong className="font-semibold">Usage</strong>
-        </Paragraph>
-        <CodeSnippet>
-          {`import React, { useRef } from 'react';
+            </CodeSnippet>
+            <Paragraph>
+              <strong className="font-semibold">Default StyleNamespace:</strong> <InlineCode>ImageBackgroundStyles</InlineCode>
+            </Paragraph>
+            <Paragraph>
+              <strong className="font-semibold">Usage</strong>
+            </Paragraph>
+            <CodeSnippet>
+              {`import React, { useRef } from 'react';
 import { ImageBackground, StyleSheet } from 'react-native';
 import { TImageBackgroundStyle } from '../themes/types';
 
@@ -97,29 +101,29 @@ const ComponentA = () => {
     <ImageBackground style={styles.imageBackgroundStyle} {...otherProps} />
   );
 }`}
-        </CodeSnippet>
-      </section>
+            </CodeSnippet>
+          </section>
 
-      <section className="no-vertical-margin-collapse">
-        <SectionHeading id="use-image-styles" level={4}>
-          <InlineCode>useImageStyles()</InlineCode>
-        </SectionHeading>
-        <Paragraph>
-          <strong className="font-semibold">Type definition</strong>
-        </Paragraph>
-        <CodeSnippet>
-          {`function useImageStyles<TStyleName extends string, TStyleNamespace extends string>(
+          <section className="no-vertical-margin-collapse">
+            <SectionHeading id="use-image-styles" level={4}>
+              <InlineCode>useImageStyles()</InlineCode>
+            </SectionHeading>
+            <Paragraph>
+              <strong className="font-semibold">Type definition</strong>
+            </Paragraph>
+            <CodeSnippet>
+              {`function useImageStyles<TStyleName extends string, TStyleNamespace extends string>(
   styleNames: TStyleName[], styleNamespace?: TStyleNamespace
 ): StyleProp<ImageStyle>`}
-        </CodeSnippet>
-        <Paragraph>
-          <strong className="font-semibold">Default StyleNamespace:</strong> <InlineCode>ImageStyles</InlineCode>
-        </Paragraph>
-        <Paragraph>
-          <strong className="font-semibold">Usage</strong>
-        </Paragraph>
-        <CodeSnippet>
-          {`import React, { useRef } from 'react';
+            </CodeSnippet>
+            <Paragraph>
+              <strong className="font-semibold">Default StyleNamespace:</strong> <InlineCode>ImageStyles</InlineCode>
+            </Paragraph>
+            <Paragraph>
+              <strong className="font-semibold">Usage</strong>
+            </Paragraph>
+            <CodeSnippet>
+              {`import React, { useRef } from 'react';
 import { Image, StyleSheet } from 'react-native';
 import { useImageStyles } from 'react-native-stylo';
 import { TImageStyle } from '../themes/types';
@@ -135,29 +139,29 @@ const ComponentA = () => {
     <Image style={styles.imageStyle} {...otherProps} />
   );
 }`}
-        </CodeSnippet>
-      </section>
+            </CodeSnippet>
+          </section>
 
-      <section className="no-vertical-margin-collapse">
-        <SectionHeading id="use-safe-area-view-styles" level={4}>
-          <InlineCode>useSafeAreaViewStyles()</InlineCode>
-        </SectionHeading>
-        <Paragraph>
-          <strong className="font-semibold">Type definition</strong>
-        </Paragraph>
-        <CodeSnippet>
-          {`function useSafeAreaViewStyles<TStyleName extends string, TStyleNamespace extends string>(
+          <section className="no-vertical-margin-collapse">
+            <SectionHeading id="use-safe-area-view-styles" level={4}>
+              <InlineCode>useSafeAreaViewStyles()</InlineCode>
+            </SectionHeading>
+            <Paragraph>
+              <strong className="font-semibold">Type definition</strong>
+            </Paragraph>
+            <CodeSnippet>
+              {`function useSafeAreaViewStyles<TStyleName extends string, TStyleNamespace extends string>(
   styleNames: TStyleName[], styleNamespace?: TStyleNamespace
 ): StyleProp<ViewStyle>`}
-        </CodeSnippet>
-        <Paragraph>
-          <strong className="font-semibold">Default StyleNamespace:</strong> <InlineCode>SafeAreaViewStyles</InlineCode>
-        </Paragraph>
-        <Paragraph>
-          <strong className="font-semibold">Usage</strong>
-        </Paragraph>
-        <CodeSnippet>
-          {`import React, { useRef } from 'react';
+            </CodeSnippet>
+            <Paragraph>
+              <strong className="font-semibold">Default StyleNamespace:</strong> <InlineCode>SafeAreaViewStyles</InlineCode>
+            </Paragraph>
+            <Paragraph>
+              <strong className="font-semibold">Usage</strong>
+            </Paragraph>
+            <CodeSnippet>
+              {`import React, { useRef } from 'react';
 import { SafeAreaView } from 'react-native';
 import { useSafeAreaViewStyles } from 'react-native-stylo';
 import { TViewStyle } from '../themes/types';
@@ -173,29 +177,29 @@ const ComponentA = () => {
     <SafeAreaView style={styles.safeAreaViewStyle} {...otherProps} />
   );
 }`}
-        </CodeSnippet>
-      </section>
+            </CodeSnippet>
+          </section>
 
-      <section className="no-vertical-margin-collapse">
-        <SectionHeading id="use-scroll-view-styles" level={4}>
-          <InlineCode>useScrollViewStyles()</InlineCode>
-        </SectionHeading>
-        <Paragraph>
-          <strong className="font-semibold">Type definition</strong>
-        </Paragraph>
-        <CodeSnippet>
-          {`export function useScrollViewStyles<TStyleName extends string, TStyleNamespace extends string>(
+          <section className="no-vertical-margin-collapse">
+            <SectionHeading id="use-scroll-view-styles" level={4}>
+              <InlineCode>useScrollViewStyles()</InlineCode>
+            </SectionHeading>
+            <Paragraph>
+              <strong className="font-semibold">Type definition</strong>
+            </Paragraph>
+            <CodeSnippet>
+              {`export function useScrollViewStyles<TStyleName extends string, TStyleNamespace extends string>(
   styleNames: TStyleName[], styleNamespace?: TStyleNamespace
 ): StyleProp<ViewStyle>`}
-        </CodeSnippet>
-        <Paragraph>
-          <strong className="font-semibold">Default StyleNamespace:</strong> <InlineCode>ScrollViewStyles</InlineCode>
-        </Paragraph>
-        <Paragraph>
-          <strong className="font-semibold">Usage</strong>
-        </Paragraph>
-        <CodeSnippet>
-          {`import React, { useRef } from 'react';
+            </CodeSnippet>
+            <Paragraph>
+              <strong className="font-semibold">Default StyleNamespace:</strong> <InlineCode>ScrollViewStyles</InlineCode>
+            </Paragraph>
+            <Paragraph>
+              <strong className="font-semibold">Usage</strong>
+            </Paragraph>
+            <CodeSnippet>
+              {`import React, { useRef } from 'react';
 import { ScrollView, StyleSheet } from 'react-native';
 import { useScrollViewStyles } from 'react-native-stylo';
 import { TViewStyle } from '../themes/types';
@@ -211,29 +215,29 @@ const ComponentA = () => {
     <ScrollView style={styles.scrollViewStyle} {...otherProps} />
   );
 }`}
-        </CodeSnippet>
-      </section>
+            </CodeSnippet>
+          </section>
 
-      <section className="no-vertical-margin-collapse">
-        <SectionHeading id="use-scroll-view-content-container-styles" level={4}>
-          <InlineCode>useScrollViewContentContainerStyles()</InlineCode>
-        </SectionHeading>
-        <Paragraph>
-          <strong className="font-semibold">Type definition</strong>
-        </Paragraph>
-        <CodeSnippet>
-          {`export function useScrollViewContentContainerStyles<TStyleName extends string, TStyleNamespace extends string>(
+          <section className="no-vertical-margin-collapse">
+            <SectionHeading id="use-scroll-view-content-container-styles" level={4}>
+              <InlineCode>useScrollViewContentContainerStyles()</InlineCode>
+            </SectionHeading>
+            <Paragraph>
+              <strong className="font-semibold">Type definition</strong>
+            </Paragraph>
+            <CodeSnippet>
+              {`export function useScrollViewContentContainerStyles<TStyleName extends string, TStyleNamespace extends string>(
   styleNames: TStyleName[], styleNamespace?: TStyleNamespace
 ): StyleProp<ViewStyle>`}
-        </CodeSnippet>
-        <Paragraph>
-          <strong className="font-semibold">Default StyleNamespace:</strong> <InlineCode>ScrollViewContentContainerStyles</InlineCode>
-        </Paragraph>
-        <Paragraph>
-          <strong className="font-semibold">Usage</strong>
-        </Paragraph>
-        <CodeSnippet>
-          {`import React, { useRef } from 'react';
+            </CodeSnippet>
+            <Paragraph>
+              <strong className="font-semibold">Default StyleNamespace:</strong> <InlineCode>ScrollViewContentContainerStyles</InlineCode>
+            </Paragraph>
+            <Paragraph>
+              <strong className="font-semibold">Usage</strong>
+            </Paragraph>
+            <CodeSnippet>
+              {`import React, { useRef } from 'react';
 import { ScrollView, StyleSheet } from 'react-native';
 import { useScrollViewStyles, useScrollViewContentContainerStyles } from 'react-native-stylo';
 import { TViewStyle } from '../themes/types';
@@ -250,29 +254,29 @@ const ComponentA = () => {
     <ScrollView style={styles.scrollViewStyle} contentContainerStyle={styles.scrollViewContentContainerStyle} {...otherProps} />
   );
 }`}
-        </CodeSnippet>
-      </section>
+            </CodeSnippet>
+          </section>
 
-      <section className="no-vertical-margin-collapse">
-        <SectionHeading id="use-text-input-styles" level={4}>
-          <InlineCode>useTextInputStyles()</InlineCode>
-        </SectionHeading>
-        <Paragraph>
-          <strong className="font-semibold">Type definition</strong>
-        </Paragraph>
-        <CodeSnippet>
-          {`function useImageStyles<TStyleName extends string, TStyleNamespace extends string>(
+          <section className="no-vertical-margin-collapse">
+            <SectionHeading id="use-text-input-styles" level={4}>
+              <InlineCode>useTextInputStyles()</InlineCode>
+            </SectionHeading>
+            <Paragraph>
+              <strong className="font-semibold">Type definition</strong>
+            </Paragraph>
+            <CodeSnippet>
+              {`function useImageStyles<TStyleName extends string, TStyleNamespace extends string>(
   styleNames: TStyleName[], styleNamespace?: TStyleNamespace
 ): StyleProp<TextStyle>`}
-        </CodeSnippet>
-        <Paragraph>
-          <strong className="font-semibold">Default StyleNamespace:</strong> <InlineCode>TextInputStyles</InlineCode>
-        </Paragraph>
-        <Paragraph>
-          <strong className="font-semibold">Usage</strong>
-        </Paragraph>
-        <CodeSnippet>
-          {`import React, { useRef } from 'react';
+            </CodeSnippet>
+            <Paragraph>
+              <strong className="font-semibold">Default StyleNamespace:</strong> <InlineCode>TextInputStyles</InlineCode>
+            </Paragraph>
+            <Paragraph>
+              <strong className="font-semibold">Usage</strong>
+            </Paragraph>
+            <CodeSnippet>
+              {`import React, { useRef } from 'react';
 import { TextInput, StyleSheet } from 'react-native';
 import { useTextInputStyles } from 'react-native-stylo';
 import { TTextInputStyle } from '../themes/types';
@@ -288,29 +292,29 @@ const ComponentA = () => {
     <TextInput style={styles.textInputStyle} {...otherProps} />
   );
 }`}
-        </CodeSnippet>
-      </section>
+            </CodeSnippet>
+          </section>
 
-      <section className="no-vertical-margin-collapse">
-        <SectionHeading id="use-text-styles" level={4}>
-          <InlineCode>useTextStyles()</InlineCode>
-        </SectionHeading>
-        <Paragraph>
-          <strong className="font-semibold">Type definition</strong>
-        </Paragraph>
-        <CodeSnippet>
-          {`function useTextStyles<TStyleName extends string, TStyleNamespace extends string>(
+          <section className="no-vertical-margin-collapse">
+            <SectionHeading id="use-text-styles" level={4}>
+              <InlineCode>useTextStyles()</InlineCode>
+            </SectionHeading>
+            <Paragraph>
+              <strong className="font-semibold">Type definition</strong>
+            </Paragraph>
+            <CodeSnippet>
+              {`function useTextStyles<TStyleName extends string, TStyleNamespace extends string>(
   styleNames: TStyleName[], styleNamespace?: TStyleNamespace
 ): StyleProp<TextStyle>`}
-        </CodeSnippet>
-        <Paragraph>
-          <strong className="font-semibold">Default StyleNamespace:</strong> <InlineCode>TextStyles</InlineCode>
-        </Paragraph>
-        <Paragraph>
-          <strong className="font-semibold">Usage</strong>
-        </Paragraph>
-        <CodeSnippet>
-          {`import React, { useRef } from 'react';
+            </CodeSnippet>
+            <Paragraph>
+              <strong className="font-semibold">Default StyleNamespace:</strong> <InlineCode>TextStyles</InlineCode>
+            </Paragraph>
+            <Paragraph>
+              <strong className="font-semibold">Usage</strong>
+            </Paragraph>
+            <CodeSnippet>
+              {`import React, { useRef } from 'react';
 import { Text, StyleSheet } from 'react-native';
 import { useTextStyles } from 'react-native-stylo';
 import { TTextStyle } from '../themes/types';
@@ -326,29 +330,29 @@ const ComponentA = () => {
     <Text style={styles.textStyle} {...otherProps} />
   );
 }`}
-        </CodeSnippet>
-      </section>
+            </CodeSnippet>
+          </section>
 
-      <section className="no-vertical-margin-collapse">
-        <SectionHeading id="use-touchable-styles" level={4}>
-          <InlineCode>useTouchableStyles()</InlineCode>
-        </SectionHeading>
-        <Paragraph>
-          <strong className="font-semibold">Type definition</strong>
-        </Paragraph>
-        <CodeSnippet>
-          {`function useTouchableStyles<TStyleName extends string, TStyleNamespace extends string>(
+          <section className="no-vertical-margin-collapse">
+            <SectionHeading id="use-touchable-styles" level={4}>
+              <InlineCode>useTouchableStyles()</InlineCode>
+            </SectionHeading>
+            <Paragraph>
+              <strong className="font-semibold">Type definition</strong>
+            </Paragraph>
+            <CodeSnippet>
+              {`function useTouchableStyles<TStyleName extends string, TStyleNamespace extends string>(
   styleNames: TStyleName[], styleNamespace?: TStyleNamespace
 ): StyleProp<ViewStyle>`}
-        </CodeSnippet>
-        <Paragraph>
-          <strong className="font-semibold">Default StyleNamespace:</strong> <InlineCode>TouchableStyles</InlineCode>
-        </Paragraph>
-        <Paragraph>
-          The <InlineCode>useTouchableStyles()</InlineCode> hook can be used for <InlineCode>TouchableOpacity</InlineCode>, <InlineCode>TouchableHighlight</InlineCode> &amp; <InlineCode>Pressable</InlineCode> component.
-        </Paragraph>
-        <CodeSnippet>
-          {`import React, { useRef } from 'react';
+            </CodeSnippet>
+            <Paragraph>
+              <strong className="font-semibold">Default StyleNamespace:</strong> <InlineCode>TouchableStyles</InlineCode>
+            </Paragraph>
+            <Paragraph>
+              The <InlineCode>useTouchableStyles()</InlineCode> hook can be used for <InlineCode>TouchableOpacity</InlineCode>, <InlineCode>TouchableHighlight</InlineCode> &amp; <InlineCode>Pressable</InlineCode> component.
+            </Paragraph>
+            <CodeSnippet>
+              {`import React, { useRef } from 'react';
 import { TouchableOpacity, StyleSheet } from 'react-native';
 import { useTouchableStyles } from 'react-native-stylo';
 import { TTouchableStyle } from '../themes/types';
@@ -364,29 +368,29 @@ const ComponentA = () => {
     <TouchableOpacity style={styles.buttonStyle} {...otherProps} />
   );
 }`}
-        </CodeSnippet>
-      </section>
+            </CodeSnippet>
+          </section>
 
-      <section className="no-vertical-margin-collapse">
-        <SectionHeading id="use-view-styles" level={4}>
-          <InlineCode>useViewStyles()</InlineCode>
-        </SectionHeading>
-        <Paragraph>
-          <strong className="font-semibold">Type definition</strong>
-        </Paragraph>
-        <CodeSnippet>
-          {`function useViewStyles<TStyleName extends string, TStyleNamespace extends string>(
+          <section className="no-vertical-margin-collapse">
+            <SectionHeading id="use-view-styles" level={4}>
+              <InlineCode>useViewStyles()</InlineCode>
+            </SectionHeading>
+            <Paragraph>
+              <strong className="font-semibold">Type definition</strong>
+            </Paragraph>
+            <CodeSnippet>
+              {`function useViewStyles<TStyleName extends string, TStyleNamespace extends string>(
   styleNames: TStyleName[], styleNamespace?: TStyleNamespace
 ): StyleProp<ViewStyle>`}
-        </CodeSnippet>
-        <Paragraph>
-          <strong className="font-semibold">Default StyleNamespace:</strong> <InlineCode>ViewStyles</InlineCode>
-        </Paragraph>
-        <Paragraph>
-          <strong className="font-semibold">Usage</strong>
-        </Paragraph>
-        <CodeSnippet>
-          {`import React, { useRef } from 'react';
+            </CodeSnippet>
+            <Paragraph>
+              <strong className="font-semibold">Default StyleNamespace:</strong> <InlineCode>ViewStyles</InlineCode>
+            </Paragraph>
+            <Paragraph>
+              <strong className="font-semibold">Usage</strong>
+            </Paragraph>
+            <CodeSnippet>
+              {`import React, { useRef } from 'react';
 import { View, StyleSheet } from 'react-native';
 import { useViewStyles } from 'react-native-stylo';
 import { TViewStyle } from '../themes/types';
@@ -402,14 +406,16 @@ const ComponentA = () => {
     <View style={styles.cardStyle} {...otherProps} />
   );
 }`}
-        </CodeSnippet>
-      </section>
+            </CodeSnippet>
+          </section>
 
-      <Paragraph>
-        <i>Note: New Stylers for remaining React Native components will be added soon.</i>
-      </Paragraph>
-    </article>
-  </Layout>
+          <Paragraph>
+            <i>Note: New Stylers for remaining React Native components will be added soon.</i>
+          </Paragraph>
+        </article>
+      </React.Fragment>
+    )}
+  />
 );
 
 export default Stylers;

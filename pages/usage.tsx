@@ -6,8 +6,10 @@ import ArticleHeading from '../components/article-heading';
 import CodeSnippet from '../components/code-snippet';
 import InlineCode from '../components/inline-code';
 import Layout from '../components/layout';
+import MainNavigation from '../components/main-navigation';
 import Paragraph from '../components/paragraph';
 import SectionHeading from '../components/section-heading';
+import { STYLO_THEME_STYLERS_STYLISH_LOCATION } from '../constants/stylo-locations';
 
 const sections = {
   installation: {
@@ -15,8 +17,8 @@ const sections = {
     title: 'Installation',
   },
   styloConfiguration: {
-    id: 'configure-themes-hooks-components',
-    title: 'Configure themes and styled hooks & components',
+    id: 'configure-theme-hooks-components',
+    title: 'Configure theme, styled hooks & components',
   },
   themeProvider: {
     id: 'theme-provider',
@@ -37,73 +39,76 @@ const sections = {
 };
 
 const Usage: React.FC = () => (
-  <Layout>
-    <Head>
-      <title>Usage | React Native Stylo</title>
-    </Head>
-    <article>
-      <ArticleHeading>Usage</ArticleHeading>
+  <Layout
+    renderNavigation={() => <MainNavigation />}
+    renderContent={() => (
+      <React.Fragment>
+        <Head>
+          <title>Usage | React Native Stylo</title>
+        </Head>
+        <article>
+          <ArticleHeading>Usage</ArticleHeading>
 
-      <nav className="p-4 mt-8 mb-4 bg-pink-50 rounded">
-        <ul>
-          <li>
-            <a href={`#${sections.installation.id}`}>
+          <nav className="p-4 mt-8 mb-4 bg-pink-50 rounded">
+            <ul>
+              <li>
+                <a href={`#${sections.installation.id}`}>
+                  {sections.installation.title}
+                </a>
+              </li>
+              <li>
+                <a href={`#${sections.styloConfiguration.id}`}>
+                  {sections.styloConfiguration.title}
+                </a>
+              </li>
+              <li>
+                <a href={`#${sections.themeProvider.id}`}>
+                  {sections.themeProvider.title}
+                </a>
+              </li>
+              <li>
+                <a href={`#${sections.stylishComponents.id}`}>
+                  {sections.stylishComponents.title}
+                </a>
+              </li>
+              <li>
+                <a href={`#${sections.stylers.id}`}>
+                  {sections.stylers.title}
+                </a>
+              </li>
+              <li>
+                <a href={`#${sections.variables.id}`}>
+                  {sections.variables.title}
+                </a>
+              </li>
+            </ul>
+          </nav>
+
+          <section className="no-vertical-margin-collapse">
+            <SectionHeading id={sections.installation.id} level={4}>
               {sections.installation.title}
-            </a>
-          </li>
-          <li>
-            <a href={`#${sections.styloConfiguration.id}`}>
+            </SectionHeading>
+            <Paragraph>
+              <InlineCode>npm install --save react-native-stylo</InlineCode>
+            </Paragraph>
+            <Paragraph>
+              <InlineCode>yarn add react-native-stylo</InlineCode>
+            </Paragraph>
+          </section>
+          <section className="no-vertical-margin-collapse">
+            <SectionHeading id={sections.styloConfiguration.id} level={4}>
               {sections.styloConfiguration.title}
-            </a>
-          </li>
-          <li>
-            <a href={`#${sections.themeProvider.id}`}>
-              {sections.themeProvider.title}
-            </a>
-          </li>
-          <li>
-            <a href={`#${sections.stylishComponents.id}`}>
-              {sections.stylishComponents.title}
-            </a>
-          </li>
-          <li>
-            <a href={`#${sections.stylers.id}`}>
-              {sections.stylers.title}
-            </a>
-          </li>
-          <li>
-            <a href={`#${sections.variables.id}`}>
-              {sections.variables.title}
-            </a>
-          </li>
-        </ul>
-      </nav>
-
-      <section className="no-vertical-margin-collapse">
-        <SectionHeading id={sections.installation.id} level={4}>
-          {sections.installation.title}
-        </SectionHeading>
-        <Paragraph>
-          <InlineCode>npm install --save react-native-stylo</InlineCode>
-        </Paragraph>
-        <Paragraph>
-          <InlineCode>yarn add react-native-stylo</InlineCode>
-        </Paragraph>
-      </section>
-      <section className="no-vertical-margin-collapse">
-        <SectionHeading id={sections.styloConfiguration.id} level={4}>
-          {sections.styloConfiguration.title}
-        </SectionHeading>
-        <Paragraph>
-          Stylo provides a default theme &amp; its <Link href="/tight-coupling">tightly coupled</Link> hooks &amp; components, which are located at <strong className="font-semibold">node_modules/react-native-stylo/lib/stylo</strong>.
-          Just copy the these to your project.
-          You can freely modify the copied theme as per your needs.
-        </Paragraph>
-        <Paragraph>
-          E.g. <InlineCode>cp -R [root]/node_modules/react-native-stylo/lib/stylo [root]/app/stylo</InlineCode>
-        </Paragraph>
-        <CodeSnippet>
-          {`[root]
+            </SectionHeading>
+            <Paragraph>
+              Stylo provides a default theme &amp; its <Link href="/tight-coupling">tightly coupled</Link> styling elements, <Link href="/stylish">Stylish</Link> components &amp; <Link href="/stylers">Styler</Link> hooks, which are located at <strong className="font-semibold">{STYLO_THEME_STYLERS_STYLISH_LOCATION}</strong>.
+              Just copy the these to your project.
+              You can freely modify the theme as per your needs.
+            </Paragraph>
+            <Paragraph>
+              E.g. <InlineCode>cp -R [root]{STYLO_THEME_STYLERS_STYLISH_LOCATION} [root]/app/stylo</InlineCode>
+            </Paragraph>
+            <CodeSnippet>
+              {`[root]
   |- app
     |- components
     |- screens
@@ -113,28 +118,28 @@ const Usage: React.FC = () => (
       |- themes
         |- types
         |- default`}
-        </CodeSnippet>
-        <Paragraph>
-          You can create your own themes right from scratch.
-          Please refer the <Link href="/theme">Theme</Link> documentation for more details.
-        </Paragraph>
-        <Paragraph>
-          Need to copy the <InlineCode>stylers</InlineCode> &amp; <InlineCode>stylish</InlineCode> directories is explained it the document <Link href="/tight-coupling">Tightly coupled</Link>.
-          To better understand the tight coupling, we recommend you to first go through the <Link href="/core-concept">Core concept</Link>, <Link href="/theme">Theme</Link>, <Link href="/stylish">Stylish</Link> &amp; <Link href="/stylers">Stylers</Link> documents.
-        </Paragraph>
-      </section>
+            </CodeSnippet>
+            <Paragraph>
+              You can create your own themes right from scratch.
+              Please refer the <Link href="/theme">Theme</Link> documentation for more details.
+            </Paragraph>
+            <Paragraph>
+              Need to copy the <InlineCode>stylers</InlineCode> &amp; <InlineCode>stylish</InlineCode> directories is explained it the document <Link href="/tight-coupling">Tightly coupled</Link>.
+              To better understand the tight coupling, we recommend you to first go through the <Link href="/core-concept">Core concept</Link>, <Link href="/theme">Theme</Link>, <Link href="/stylish">Stylish</Link> &amp; <Link href="/stylers">Stylers</Link> documents.
+            </Paragraph>
+          </section>
 
-      <section className="no-vertical-margin-collapse">
-        <SectionHeading id={sections.themeProvider.id} level={4}>
-          {sections.themeProvider.title}
-        </SectionHeading>
-        <Paragraph>
-          Wrap the application inside the <InlineCode>ThemeProvider</InlineCode> and supply the theme to it.
-          The theme is collection of variables &amp; and style definitions.
-          ThemeProvider expects both variables &amp; styles to be supplied to it.
-        </Paragraph>
-        <CodeSnippet>
-          {`import { ThemeProvider } from 'react-native-stylo';
+          <section className="no-vertical-margin-collapse">
+            <SectionHeading id={sections.themeProvider.id} level={4}>
+              {sections.themeProvider.title}
+            </SectionHeading>
+            <Paragraph>
+              Wrap the application inside the <InlineCode>ThemeProvider</InlineCode> and supply the theme to it.
+              The theme is collection of variables &amp; and style definitions.
+              ThemeProvider expects both variables &amp; styles to be supplied to it.
+            </Paragraph>
+            <CodeSnippet>
+              {`import { ThemeProvider } from 'react-native-stylo';
 
 import { variables, styles } from './themes/default';
 
@@ -143,23 +148,23 @@ const App = () => (
     // Application components
   </ThemeProvider>
 );`}
-        </CodeSnippet>
-        <Paragraph>
-          Please refer the <Link href="/theme-provider">{`<ThemeProvider />`}</Link> documentation for more details.
-        </Paragraph>
-      </section>
+            </CodeSnippet>
+            <Paragraph>
+              Please refer the <Link href="/theme-provider">{`<ThemeProvider />`}</Link> documentation for more details.
+            </Paragraph>
+          </section>
 
-      <section className="no-vertical-margin-collapse">
-        <SectionHeading id={sections.stylishComponents.id} level={4}>
-          {sections.stylishComponents.title}
-        </SectionHeading>
-        <Paragraph>
-          <strong className="font-semibold">Stylish</strong> components are nothing but enhanced React Native components with added properties called <InlineCode>styleNames</InlineCode> &amp; <InlineCode>styleNamespace</InlineCode>.
-          Property <InlineCode>styleNames</InlineCode> accepts the eligible styles for the component which are defined in the theme.
-          Property <InlineCode>styleNamespace</InlineCode> is optional and use only when you need to override the <Link href="/theme#default-namespaces">default StyleNamespaces</Link>.
-        </Paragraph>
-        <CodeSnippet>
-          {`import React from 'react';
+          <section className="no-vertical-margin-collapse">
+            <SectionHeading id={sections.stylishComponents.id} level={4}>
+              {sections.stylishComponents.title}
+            </SectionHeading>
+            <Paragraph>
+              <strong className="font-semibold">Stylish</strong> components are nothing but enhanced React Native components with added properties called <InlineCode>styleNames</InlineCode> &amp; <InlineCode>styleNamespace</InlineCode>.
+              Property <InlineCode>styleNames</InlineCode> accepts the eligible styles for the component which are defined in the theme.
+              Property <InlineCode>styleNamespace</InlineCode> is optional and use only when you need to override the <Link href="/theme#default-namespaces">default StyleNamespaces</Link>.
+            </Paragraph>
+            <CodeSnippet>
+              {`import React from 'react';
 import Stylish from '../stylo/stylish';
 
 const Home = () => (
@@ -200,25 +205,25 @@ const Home = () => (
 );
 
 export default Home;`}
-        </CodeSnippet>
-        <Paragraph>
-          Please refer the <Link href="/stylish">Stylish</Link> documentation for more details.
-        </Paragraph>
-      </section>
+            </CodeSnippet>
+            <Paragraph>
+              Please refer the <Link href="/stylish">Stylish</Link> documentation for more details.
+            </Paragraph>
+          </section>
 
-      <section className="no-vertical-margin-collapse">
-        <SectionHeading id={sections.stylers.id} level={4}>
-          {sections.stylers.title}
-        </SectionHeading>
-        <Paragraph>
-          <strong className="font-semibold">Stylers</strong> are styling hooks which are used to define the styles for the components.
-          Use these stylers in case you like to use the core React Native components instead of {`Stylo's`} stylish components.
-          The styler hooks accept two arguments <InlineCode>styleNames</InlineCode> &amp <InlineCode>styleNamespace</InlineCode>(optional).;
-          First argument <InlineCode>styleNames</InlineCode> accepts the eligible styles for the component which are defined in the theme.
-          Second argument <InlineCode>styleNamespace</InlineCode> is optional, and use only when you need to override the default namespaces.
-        </Paragraph>
-        <CodeSnippet>
-          {`import React, { useRef } from 'react';
+          <section className="no-vertical-margin-collapse">
+            <SectionHeading id={sections.stylers.id} level={4}>
+              {sections.stylers.title}
+            </SectionHeading>
+            <Paragraph>
+              <strong className="font-semibold">Stylers</strong> are styling hooks which are used to define the styles for the components.
+              Use these stylers in case you like to use the core React Native components instead of {`Stylo's`} stylish components.
+              The styler hooks accept two arguments <InlineCode>styleNames</InlineCode> &amp <InlineCode>styleNamespace</InlineCode>(optional).;
+              First argument <InlineCode>styleNames</InlineCode> accepts the eligible styles for the component which are defined in the theme.
+              Second argument <InlineCode>styleNamespace</InlineCode> is optional, and use only when you need to override the default namespaces.
+            </Paragraph>
+            <CodeSnippet>
+              {`import React, { useRef } from 'react';
 import { Image, Text, TouchableOpacity, View } from 'react-native';
 import { useImageStyles, useTextStyles, useTouchableStyles, useViewStyles } from '../stylo/stylers';
 
@@ -277,22 +282,22 @@ const Home = () => {
 };
 
 export default Home;`}
-        </CodeSnippet>
-        <Paragraph>
-          Please refer the <Link href="/stylers">Stylers</Link> documentation for more details.
-        </Paragraph>
-      </section>
+            </CodeSnippet>
+            <Paragraph>
+              Please refer the <Link href="/stylers">Stylers</Link> documentation for more details.
+            </Paragraph>
+          </section>
 
-      <section className="no-vertical-margin-collapse">
-        <SectionHeading id={sections.variables.id} level={4}>
-          {sections.variables.title}
-        </SectionHeading>
-        <Paragraph>
-          Variables are the core configuration values which are used to define the themes. Like, colors, paddings, margins etc.&nbsp;
-          <strong className="font-semibold">useVariables()</strong> hook is used to access the theme configuration values to create your own custom page specific styles.
-        </Paragraph>
-        <CodeSnippet>
-          {`import { Text, View } from 'react-native';
+          <section className="no-vertical-margin-collapse">
+            <SectionHeading id={sections.variables.id} level={4}>
+              {sections.variables.title}
+            </SectionHeading>
+            <Paragraph>
+              Variables are the core configuration values which are used to define the themes. Like, colors, paddings, margins etc.&nbsp;
+              <strong className="font-semibold">useVariables()</strong> hook is used to access the theme configuration values to create your own custom page specific styles.
+            </Paragraph>
+            <CodeSnippet>
+              {`import { Text, View } from 'react-native';
 import { useVariables } from '../stylo/stylers';
 
 const ComponentA = () => {
@@ -333,13 +338,15 @@ const ComponentA = () => {
       ...
     </View>
   );`}
-        </CodeSnippet>
-        <Paragraph>
-          Please refer the <Link href="/use-variables">useVariables()</Link> documentation for more details.
-        </Paragraph>
-      </section>
-    </article>
-  </Layout>
+            </CodeSnippet>
+            <Paragraph>
+              Please refer the <Link href="/use-variables">useVariables()</Link> documentation for more details.
+            </Paragraph>
+          </section>
+        </article>
+      </React.Fragment>
+    )}
+  />
 );
 
 export default Usage;

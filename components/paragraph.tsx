@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { CSSProperties } from 'react';
 
 const Paragraph: React.FC<{
   children: React.ReactNode;
   className?: string;
-}> = ({ children, className }) => (
-  <p className={`mb-4 ${className}`}>
+  style?: CSSProperties;
+}> = ({ children, className, style }) => (
+  <p className={`mb-4 ${className}`} style={style}>
     {children}
   </p>
 );

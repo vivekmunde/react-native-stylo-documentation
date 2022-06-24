@@ -15,29 +15,29 @@ export const opaqueColor = '#ffffff';
 export const whiteColor = '#ffffff';
 
 export const alphaColors: TColor = {
-  Alpha1: 'rgba(255,255,255,0.1)',
-  Alpha2: 'rgba(255,255,255,0.2)',
-  Alpha3: 'rgba(255,255,255,0.3)',
-  Alpha4: 'rgba(255,255,255,0.4)',
-  Alpha5: 'rgba(255,255,255,0.5)',
-  Alpha6: 'rgba(255,255,255,0.6)',
-  Alpha7: 'rgba(255,255,255,0.7)',
-  Alpha8: 'rgba(255,255,255,0.8)',
-  Alpha9: 'rgba(255,255,255,0.9)',
-  Alpha10: 'rgba(255,255,255,1)',
+  Alpha1: 'rgba(255, 255 ,255, 0.1)',
+  Alpha2: 'rgba(255, 255 ,255, 0.2)',
+  Alpha3: 'rgba(255, 255 ,255, 0.3)',
+  Alpha4: 'rgba(255, 255 ,255, 0.4)',
+  Alpha5: 'rgba(255, 255 ,255, 0.5)',
+  Alpha6: 'rgba(255, 255 ,255, 0.6)',
+  Alpha7: 'rgba(255, 255 ,255, 0.7)',
+  Alpha8: 'rgba(255, 255 ,255, 0.8)',
+  Alpha9: 'rgba(255, 255 ,255, 0.9)',
+  Alpha10: 'rgba(255, 255 ,255, 1)',
 };
 
 export const alphaInvertedColors: TColor = {
-  AlphaInverted1: 'rgba(0,0,0,0.1)',
-  AlphaInverted2: 'rgba(0,0,0,0.2)',
-  AlphaInverted3: 'rgba(0,0,0,0.3)',
-  AlphaInverted4: 'rgba(0,0,0,0.4)',
-  AlphaInverted5: 'rgba(0,0,0,0.5)',
-  AlphaInverted6: 'rgba(0,0,0,0.6)',
-  AlphaInverted7: 'rgba(0,0,0,0.7)',
-  AlphaInverted8: 'rgba(0,0,0,0.8)',
-  AlphaInverted9: 'rgba(0,0,0,0.9)',
-  AlphaInverted10: 'rgba(0,0,0,1)',
+  AlphaInverted1: 'rgba(0, 0, 0, 0.1)',
+  AlphaInverted2: 'rgba(0, 0, 0, 0.2)',
+  AlphaInverted3: 'rgba(0, 0, 0, 0.3)',
+  AlphaInverted4: 'rgba(0, 0, 0, 0.4)',
+  AlphaInverted5: 'rgba(0, 0, 0, 0.5)',
+  AlphaInverted6: 'rgba(0, 0, 0, 0.6)',
+  AlphaInverted7: 'rgba(0, 0, 0, 0.7)',
+  AlphaInverted8: 'rgba(0, 0, 0, 0.8)',
+  AlphaInverted9: 'rgba(0, 0, 0, 0.9)',
+  AlphaInverted10: 'rgba(0, 0, 0, 1)',
 };
 
 export const blueColors: TColor = {

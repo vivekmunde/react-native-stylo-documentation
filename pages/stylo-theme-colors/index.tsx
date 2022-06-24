@@ -8,8 +8,8 @@ import SectionHeading from '../../components/section-heading';
 import StyloThemeNavigation from '../../components/stylo-theme-navigation';
 import {
   blueColors, bodyColor, borderColor, cyanColors, dangerColor, dangerColors, fontColor, goldColors, greenColors, greyColors,
-  infoColor, infoColors, limeColors, magentaColors, orangeColors, primaryColor, primaryColors,
-  purpleColors, redColors, secondaryColor, volcanoColors, warningColor, warningColors, yellowColors
+  infoColor, infoColors, limeColors, magentaColors, opaqueColor, orangeColors, primaryColor, primaryColors,
+  purpleColors, redColors, secondaryColor, volcanoColors, warningColor, warningColors, whiteColor, yellowColors
 } from '../../constants/stylo-theme-colors';
 import StyloThemeAlphaColors from './stylo-theme-alpha-colors';
 import StyloThemeAlphaInvertedColors from './stylo-theme-alpha-inverted-colors';
@@ -42,6 +42,17 @@ const StyloThemeColors: React.FC = () => (
                 </span>
               </StyloThemeColorBox>
 
+              <StyloThemeColorBox color={whiteColor}>
+                <span style={{ color: '#000' }}>
+                  White
+                </span>
+                <span style={{ color: '#000', textTransform: 'uppercase' }}>
+                  {whiteColor}
+                </span>
+              </StyloThemeColorBox>
+            </div>
+
+            <div className="grid grid-cols-4 mb-4">
               <StyloThemeColorBox color={fontColor}>
                 <span style={{ color: '#FFF' }}>
                   Font
@@ -51,21 +62,21 @@ const StyloThemeColors: React.FC = () => (
                 </span>
               </StyloThemeColorBox>
 
-              <StyloThemeColorBox color={borderColor}>
-                <span style={{ color: '#000' }}>
-                  Border
-                </span>
-                <span style={{ color: '#000', textTransform: 'uppercase' }}>
-                  {borderColor}
-                </span>
-              </StyloThemeColorBox>
-
               <StyloThemeColorBox color={secondaryColor}>
                 <span style={{ color: '#FFF' }}>
                   Secondary
                 </span>
                 <span style={{ color: '#FFF', textTransform: 'uppercase' }}>
                   {secondaryColor}
+                </span>
+              </StyloThemeColorBox>
+
+              <StyloThemeColorBox color={borderColor}>
+                <span style={{ color: '#000' }}>
+                  Border
+                </span>
+                <span style={{ color: '#000', textTransform: 'uppercase' }}>
+                  {borderColor}
                 </span>
               </StyloThemeColorBox>
             </div>

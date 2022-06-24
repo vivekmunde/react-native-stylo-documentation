@@ -89,6 +89,11 @@ const MainNavigation: React.FC = () => {
           </ul>
         </li>
         <li>
+          <NavLink href="/showcase">
+            Showcase
+          </NavLink>
+        </li>
+        <li>
           <NavLink href="/stylo-theme">
             Stylo theme
           </NavLink>

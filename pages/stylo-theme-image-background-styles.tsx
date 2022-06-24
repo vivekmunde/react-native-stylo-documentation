@@ -2,13 +2,13 @@ import Head from 'next/head';
 import React from 'react';
 
 import ArticleHeading from '../components/article-heading';
-import DefaultStyleNamespacesCodeSnippet from '../components/default-style-namespaces-code-snippet';
+import CodeSnippet from '../components/code-snippet';
 import Layout from '../components/layout';
-import Paragraph from '../components/paragraph';
 import SectionHeading from '../components/section-heading';
 import StyloThemeNavigation from '../components/stylo-theme-navigation';
+import StyloThemeTypeDefinitionReferences from '../components/stylo-theme-type-definition-references';
 
-const StyloThemeStyleNamespaces: React.FC = () => (
+const StyloThemeImageBackground: React.FC = () => (
   <Layout
     renderNavigation={() => (
       <StyloThemeNavigation />
@@ -16,16 +16,25 @@ const StyloThemeStyleNamespaces: React.FC = () => (
     renderContent={() => (
       <React.Fragment>
         <Head>
-          <title>StyleNamespaces | Stylo theme | React Native Stylo</title>
+          <title>ImageBackground | Stylo theme | React Native Stylo</title>
         </Head>
         <article>
-          <ArticleHeading>StyleNamespaces</ArticleHeading>
+          <ArticleHeading>ImageBackground</ArticleHeading>
 
           <section className="no-vertical-margin-collapse">
             <SectionHeading id="type-definition" level={5}>
               Type definition
             </SectionHeading>
-            <DefaultStyleNamespacesCodeSnippet />
+            <StyloThemeTypeDefinitionReferences
+              display={['TBackgroundColor', 'TBorderStyle', 'TMarginStyle', 'TPaddingStyle']}
+            />
+            <CodeSnippet>
+              {`export type TImageBackgroundStyle =
+  | TBackgroundColor
+  | TBorderStyle
+  | TMarginStyle
+  | TPaddingStyle;`}
+            </CodeSnippet>
           </section>
         </article>
       </React.Fragment>
@@ -33,4 +42,4 @@ const StyloThemeStyleNamespaces: React.FC = () => (
   />
 );
 
-export default StyloThemeStyleNamespaces;
+export default StyloThemeImageBackground;

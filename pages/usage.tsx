@@ -124,7 +124,7 @@ const Usage: React.FC = () => (
               Please refer the <Link href="/theme">Theme</Link> documentation for more details.
             </Paragraph>
             <Paragraph>
-              Need to copy the <InlineCode>stylers</InlineCode> &amp; <InlineCode>stylish</InlineCode> directories is explained it the document <Link href="/tight-coupling">Tightly coupled</Link>.
+              The need for coping the <InlineCode>stylers</InlineCode> &amp; <InlineCode>stylish</InlineCode> directories is explained it the document <Link href="/tight-coupling">Tightly coupled</Link>.
               To better understand the tight coupling, we recommend you to first go through the <Link href="/core-concept">Core concept</Link>, <Link href="/theme">Theme</Link>, <Link href="/stylish">Stylish</Link> &amp; <Link href="/stylers">Stylers</Link> documents.
             </Paragraph>
           </section>

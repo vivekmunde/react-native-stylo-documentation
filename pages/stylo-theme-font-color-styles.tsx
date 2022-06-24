@@ -1,13 +1,16 @@
 import Head from 'next/head';
+import Link from 'next/link';
 import React from 'react';
 
 import ArticleHeading from '../components/article-heading';
 import CodeSnippet from '../components/code-snippet';
+import InlineCode from '../components/inline-code';
 import Layout from '../components/layout';
 import Paragraph from '../components/paragraph';
+import SectionHeading from '../components/section-heading';
 import StyloThemeNavigation from '../components/stylo-theme-navigation';
 
-const StyloThemeColors: React.FC = () => (
+const StyloThemeFontColors: React.FC = () => (
   <Layout
     renderNavigation={() => (
       <StyloThemeNavigation />
@@ -20,11 +23,19 @@ const StyloThemeColors: React.FC = () => (
         <article>
           <ArticleHeading>Font colors</ArticleHeading>
 
-          <Paragraph>
-            <strong className="font-semibold">Type definition</strong>
-          </Paragraph>
-          <CodeSnippet>
-            {`export type TFontColor = 
+          <section className="no-vertical-margin-collapse">
+            <SectionHeading id="type-definition" level={5}>
+              Type definition
+            </SectionHeading>
+            <Paragraph>
+              Ref:
+              {' '}
+              <Link href="/stylo-theme-colors">Colors</Link>
+              {' '}
+              for <InlineCode>Font.[Color]</InlineCode>
+            </Paragraph>
+            <CodeSnippet>
+              {`export type TFontColor = 
   | 'Color.Alpha1' | 'Color.Alpha2' | 'Color.Alpha3' | 'Color.Alpha4' | 'Color.Alpha5' | 'Color.Alpha6' | 'Color.Alpha7' | 'Color.Alpha8' | 'Color.Alpha9' | 'Color.Alpha10'
   | 'Color.Blue1' | 'Color.Blue2' | 'Color.Blue3' | 'Color.Blue4' | 'Color.Blue5' | 'Color.Blue6' | 'Color.Blue7' | 'Color.Blue8' | 'Color.Blue9' | 'Color.Blue10'
   | 'Color.Cyan1' | 'Color.Cyan2' | 'Color.Cyan3' | 'Color.Cyan4' | 'Color.Cyan5' | 'Color.Cyan6' | 'Color.Cyan7' | 'Color.Cyan8' | 'Color.Cyan9' | 'Color.Cyan10'
@@ -37,7 +48,6 @@ const StyloThemeColors: React.FC = () => (
   | 'Color.Info1' | 'Color.Info2' | 'Color.Info3' | 'Color.Info4' | 'Color.Info5' | 'Color.Info6' | 'Color.Info7' | 'Color.Info8' | 'Color.Info9' | 'Color.Info10'
   | 'Color.Lime1' | 'Color.Lime2' | 'Color.Lime3' | 'Color.Lime4' | 'Color.Lime5' | 'Color.Lime6' | 'Color.Lime7' | 'Color.Lime8' | 'Color.Lime9' | 'Color.Lime10'
   | 'Color.Magenta1' | 'Color.Magenta2' | 'Color.Magenta3' | 'Color.Magenta4' | 'Color.Magenta5' | 'Color.Magenta6' | 'Color.Magenta7' | 'Color.Magenta8' | 'Color.Magenta9' | 'Color.Magenta10'
-  | 'Color.Opaque'
   | 'Color.Orange1' | 'Color.Orange2' | 'Color.Orange3' | 'Color.Orange4' | 'Color.Orange5' | 'Color.Orange6' | 'Color.Orange7' | 'Color.Orange8' | 'Color.Orange9' | 'Color.Orange10'
   | 'Color.Primary'
   | 'Color.Primary1' | 'Color.Primary2' | 'Color.Primary3' | 'Color.Primary4' | 'Color.Primary5' | 'Color.Primary6' | 'Color.Primary7' | 'Color.Primary8' | 'Color.Primary9' | 'Color.Primary10'
@@ -51,11 +61,12 @@ const StyloThemeColors: React.FC = () => (
   | 'Color.Warning1' | 'Color.Warning2' | 'Color.Warning3' | 'Color.Warning4' | 'Color.Warning5' | 'Color.Warning6' | 'Color.Warning7' | 'Color.Warning8' | 'Color.Warning9' | 'Color.Warning10'
   | 'Color.White'
   | 'Color.Yellow1' | 'Color.Yellow2' | 'Color.Yellow3' | 'Color.Yellow4' | 'Color.Yellow5' | 'Color.Yellow6' | 'Color.Yellow7' | 'Color.Yellow8' | 'Color.Yellow9' | 'Color.Yellow10';`}
-          </CodeSnippet>
+            </CodeSnippet>
+          </section>
         </article>
       </React.Fragment>
     )}
   />
 );
 
-export default StyloThemeColors;
+export default StyloThemeFontColors;

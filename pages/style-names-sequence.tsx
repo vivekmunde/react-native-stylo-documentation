@@ -9,8 +9,6 @@ import Layout from '../components/layout';
 import MainNavigation from '../components/main-navigation';
 import Paragraph from '../components/paragraph';
 
-const defaultStyledComponents = ['ImageBackground', 'Image', 'SafeAreaView', 'ScrollView', 'TextInput', 'Text', 'Pressable', 'TouchableHighlight', 'TouchableOpacity', 'View'];
-
 const StyleNamesSequence: React.FC = () => (
   <Layout
     renderNavigation={() => <MainNavigation />}

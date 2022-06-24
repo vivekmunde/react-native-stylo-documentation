@@ -57,21 +57,27 @@ const StyloTheme: React.FC = () => (
               <div className="bg-pink-50 rounded p-4">
                 <h5 className="m-0">
                   <Link href="/stylo-theme-colors">
-                    Colors
+                    <a style={{ display: 'block' }}>
+                      Colors
+                    </a>
                   </Link>
                 </h5>
               </div>
               <div className="bg-pink-50 rounded p-4">
                 <h5 className="m-0">
                   <Link href="/stylo-theme-variables">
-                    Variables
+                    <a style={{ display: 'block' }}>
+                      Variables
+                    </a>
                   </Link>
                 </h5>
               </div>
               <div className="bg-pink-50 rounded p-4">
                 <h5 className="m-0">
                   <Link href="/stylo-theme-style-namespaces">
-                    StyleNamespaces
+                    <a style={{ display: 'block' }}>
+                      StyleNamespaces
+                    </a>
                   </Link>
                 </h5>
               </div>
@@ -82,38 +88,52 @@ const StyloTheme: React.FC = () => (
             <div className="bg-pink-50 rounded pl-4 pr-4 pb-4 pt-[1px]">
               <h5>
                 <Link href="/stylo-theme-generic-styles">
-                  Generic styles
+                  <a style={{ display: 'block' }}>
+                    Generic styles
+                  </a>
                 </Link>
               </h5>
               <ul>
                 <li>
                   <Link href="/stylo-theme-background-color-styles">
-                    Background colors
+                    <a style={{ display: 'block' }}>
+                      Background colors
+                    </a>
                   </Link>
                 </li>
                 <li>
                   <Link href="/stylo-theme-border-styles">
-                    Border
+                    <a style={{ display: 'block' }}>
+                      Border
+                    </a>
                   </Link>
                 </li>
                 <li>
                   <Link href="/stylo-theme-flex-styles">
-                    Flex
+                    <a style={{ display: 'block' }}>
+                      Flex
+                    </a>
                   </Link>
                 </li>
                 <li>
                   <Link href="/stylo-theme-font-color-styles">
-                    Font colors
+                    <a style={{ display: 'block' }}>
+                      Font colors
+                    </a>
                   </Link>
                 </li>
                 <li>
                   <Link href="/stylo-theme-margin-styles">
-                    Margin
+                    <a style={{ display: 'block' }}>
+                      Margin
+                    </a>
                   </Link>
                 </li>
                 <li>
                   <Link href="/stylo-theme-padding-styles">
-                    Padding
+                    <a style={{ display: 'block' }}>
+                      Padding
+                    </a>
                   </Link>
                 </li>
               </ul>
@@ -122,53 +142,73 @@ const StyloTheme: React.FC = () => (
             <div className="bg-pink-50 rounded pl-4 pr-4 pb-4 pt-[1px]">
               <h5>
                 <Link href="/stylo-theme-component-styles">
-                  Component styles
+                  <a style={{ display: 'block' }}>
+                    Component styles
+                  </a>
                 </Link>
               </h5>
               <ul>
                 <li>
                   <Link href="/stylo-theme-image-styles">
-                    Image
+                    <a style={{ display: 'block' }}>
+                      Image
+                    </a>
                   </Link>
                 </li>
                 <li>
                   <Link href="/stylo-theme-image-background-styles">
-                    ImageBackground
+                    <a style={{ display: 'block' }}>
+                      ImageBackground
+                    </a>
                   </Link>
                 </li>
                 <li>
                   <Link href="/stylo-theme-pressable-styles">
-                    Pressable
+                    <a style={{ display: 'block' }}>
+                      Pressable
+                    </a>
                   </Link>
                 </li>
                 <li>
                   <Link href="/stylo-theme-scroll-view-styles">
-                    ScrollView
+                    <a style={{ display: 'block' }}>
+                      ScrollView
+                    </a>
                   </Link>
                 </li>
                 <li>
                   <Link href="/stylo-theme-text-styles">
-                    Text
+                    <a style={{ display: 'block' }}>
+                      Text
+                    </a>
                   </Link>
                 </li>
                 <li>
                   <Link href="/stylo-theme-text-input-styles">
-                    TextInput
+                    <a style={{ display: 'block' }}>
+                      TextInput
+                    </a>
                   </Link>
                 </li>
                 <li>
                   <Link href="/stylo-theme-touchable-opacity-styles">
-                    TouchableOpacity
+                    <a style={{ display: 'block' }}>
+                      TouchableOpacity
+                    </a>
                   </Link>
                 </li>
                 <li>
                   <Link href="/stylo-theme-touchable-highlight-styles">
-                    TouchableHighlight
+                    <a style={{ display: 'block' }}>
+                      TouchableHighlight
+                    </a>
                   </Link>
                 </li>
                 <li>
                   <Link href="/stylo-theme-view-styles">
-                    View
+                    <a style={{ display: 'block' }}>
+                      View
+                    </a>
                   </Link>
                 </li>
               </ul>
@@ -177,48 +217,66 @@ const StyloTheme: React.FC = () => (
             <div className="bg-pink-50 rounded pl-4 pr-4 pb-4 pt-[1px]">
               <h5>
                 <Link href="/stylo-theme-assorted-styles">
-                  Assorted styles
+                  <a style={{ display: 'block' }}>
+                    Assorted styles
+                  </a>
                 </Link>
               </h5>
               <ul>
                 <li>
                   <Link href="/stylo-theme-avatar-styles">
-                    Avatar
+                    <a style={{ display: 'block' }}>
+                      Avatar
+                    </a>
                   </Link>
                 </li>
                 <li>
                   <Link href="/stylo-theme-badge-styles">
-                    Badge
+                    <a style={{ display: 'block' }}>
+                      Badge
+                    </a>
                   </Link>
                 </li>
                 <li>
                   <Link href="/stylo-theme-button-styles">
-                    Button
+                    <a style={{ display: 'block' }}>
+                      Button
+                    </a>
                   </Link>
                 </li>
                 <li>
                   <Link href="/stylo-theme-form-styles">
-                    Form
+                    <a style={{ display: 'block' }}>
+                      Form
+                    </a>
                   </Link>
                 </li>
                 <li>
                   <Link href="/stylo-theme-horizontal-styles">
-                    Horizontal
+                    <a style={{ display: 'block' }}>
+                      Horizontal
+                    </a>
                   </Link>
                 </li>
                 <li>
                   <Link href="/stylo-theme-list-styles">
-                    List
+                    <a style={{ display: 'block' }}>
+                      List
+                    </a>
                   </Link>
                 </li>
                 <li>
                   <Link href="/stylo-theme-screen-styles">
-                    Screen
+                    <a style={{ display: 'block' }}>
+                      Screen
+                    </a>
                   </Link>
                 </li>
                 <li>
                   <Link href="/stylo-theme-tag-styles">
-                    Tag
+                    <a style={{ display: 'block' }}>
+                      Tag
+                    </a>
                   </Link>
                 </li>
               </ul>

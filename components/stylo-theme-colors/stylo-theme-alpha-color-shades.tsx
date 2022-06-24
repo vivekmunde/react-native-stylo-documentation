@@ -1,5 +1,4 @@
 import React from 'react';
-import Paragraph from '../../components/paragraph';
 
 import {
   dangerColor, infoColor, primaryColor, warningColor

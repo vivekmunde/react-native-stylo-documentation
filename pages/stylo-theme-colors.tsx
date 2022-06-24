@@ -1,20 +1,20 @@
 import Head from 'next/head';
 import React from 'react';
 
-import ArticleHeading from '../../components/article-heading';
-import Layout from '../../components/layout';
-import Paragraph from '../../components/paragraph';
-import SectionHeading from '../../components/section-heading';
-import StyloThemeNavigation from '../../components/stylo-theme-navigation';
+import ArticleHeading from '../components/article-heading';
+import Layout from '../components/layout';
+import SectionHeading from '../components/section-heading';
+import StyloThemeAlphaColors from '../components/stylo-theme-colors/stylo-theme-alpha-colors';
+import StyloThemeAlphaInvertedColors from '../components/stylo-theme-colors/stylo-theme-alpha-inverted-colors';
+import StyloThemeColorBox from '../components/stylo-theme-colors/stylo-theme-color-box';
+import StyloThemeColorShadesSection from '../components/stylo-theme-colors/stylo-theme-color-shades-section';
+import StyloThemeNavigation from '../components/stylo-theme-navigation';
 import {
-  blueColors, bodyColor, borderColor, cyanColors, dangerColor, dangerColors, fontColor, goldColors, greenColors, greyColors,
-  infoColor, infoColors, limeColors, magentaColors, opaqueColor, orangeColors, primaryColor, primaryColors,
-  purpleColors, redColors, secondaryColor, volcanoColors, warningColor, warningColors, whiteColor, yellowColors
-} from '../../constants/stylo-theme-colors';
-import StyloThemeAlphaColors from './stylo-theme-alpha-colors';
-import StyloThemeAlphaInvertedColors from './stylo-theme-alpha-inverted-colors';
-import StyloThemeColorBox from './stylo-theme-color-box';
-import StyloThemeColorShadesSection from './stylo-theme-color-shades-section';
+  blueColors, bodyColor, borderColor, cyanColors, dangerColor, dangerColors, fontColor,
+  goldColors, greenColors, greyColors, infoColor, infoColors, limeColors, magentaColors,
+  orangeColors, primaryColor, primaryColors, purpleColors, redColors, secondaryColor,
+  volcanoColors, warningColor, warningColors, whiteColor, yellowColors
+} from '../constants/stylo-theme-colors';
 
 const StyloThemeColors: React.FC = () => (
   <Layout

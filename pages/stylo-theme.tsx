@@ -57,7 +57,7 @@ const StyloTheme: React.FC = () => (
               <div className="bg-pink-50 rounded p-4">
                 <h5 className="m-0">
                   <Link href="/stylo-theme-colors">
-                    <a style={{ display: 'block' }}>
+                    <a className="font-medium" style={{ display: 'block' }}>
                       Colors
                     </a>
                   </Link>
@@ -66,7 +66,7 @@ const StyloTheme: React.FC = () => (
               <div className="bg-pink-50 rounded p-4">
                 <h5 className="m-0">
                   <Link href="/stylo-theme-variables">
-                    <a style={{ display: 'block' }}>
+                    <a className="font-medium" style={{ display: 'block' }}>
                       Variables
                     </a>
                   </Link>
@@ -75,7 +75,7 @@ const StyloTheme: React.FC = () => (
               <div className="bg-pink-50 rounded p-4">
                 <h5 className="m-0">
                   <Link href="/stylo-theme-style-namespaces">
-                    <a style={{ display: 'block' }}>
+                    <a className="font-medium" style={{ display: 'block' }}>
                       StyleNamespaces
                     </a>
                   </Link>
@@ -88,7 +88,7 @@ const StyloTheme: React.FC = () => (
             <div className="bg-pink-50 rounded pl-4 pr-4 pb-4 pt-[1px]">
               <h5>
                 <Link href="/stylo-theme-generic-styles">
-                  <a style={{ display: 'block' }}>
+                  <a className="font-medium" style={{ display: 'block' }}>
                     Generic styles
                   </a>
                 </Link>
@@ -142,7 +142,7 @@ const StyloTheme: React.FC = () => (
             <div className="bg-pink-50 rounded pl-4 pr-4 pb-4 pt-[1px]">
               <h5>
                 <Link href="/stylo-theme-component-styles">
-                  <a style={{ display: 'block' }}>
+                  <a className="font-medium" style={{ display: 'block' }}>
                     Component styles
                   </a>
                 </Link>
@@ -217,7 +217,7 @@ const StyloTheme: React.FC = () => (
             <div className="bg-pink-50 rounded pl-4 pr-4 pb-4 pt-[1px]">
               <h5>
                 <Link href="/stylo-theme-assorted-styles">
-                  <a style={{ display: 'block' }}>
+                  <a className="font-medium" style={{ display: 'block' }}>
                     Assorted styles
                   </a>
                 </Link>

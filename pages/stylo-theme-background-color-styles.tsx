@@ -18,10 +18,10 @@ const StyloThemeBackgroundColors: React.FC = () => (
     renderContent={() => (
       <React.Fragment>
         <Head>
-          <title>Background colors | Stylo theme | React Native Stylo</title>
+          <title>BackgroundColor | Stylo theme | React Native Stylo</title>
         </Head>
         <article>
-          <ArticleHeading>Background colors</ArticleHeading>
+          <ArticleHeading>BackgroundColor</ArticleHeading>
 
           <section className="no-vertical-margin-collapse">
             <SectionHeading id="type-definition" level={5}>
@@ -35,7 +35,7 @@ const StyloThemeBackgroundColors: React.FC = () => (
               for <InlineCode>Background.[Color]</InlineCode>
             </Paragraph>
             <CodeSnippet>
-              {`export type TBackgroundColor = 
+              {`export type TBackgroundColorStyle = 
   | 'BackgroundColor.Alpha1' | 'BackgroundColor.Alpha2' | 'BackgroundColor.Alpha3' | 'BackgroundColor.Alpha4' | 'BackgroundColor.Alpha5' | 'BackgroundColor.Alpha6' | 'BackgroundColor.Alpha7' | 'BackgroundColor.Alpha8' | 'BackgroundColor.Alpha9' | 'BackgroundColor.Alpha10'
   | 'BackgroundColor.AlphaInverted1' | 'BackgroundColor.AlphaInverted2' | 'BackgroundColor.AlphaInverted3' | 'BackgroundColor.AlphaInverted4' | 'BackgroundColor.AlphaInverted5' | 'BackgroundColor.AlphaInverted6' | 'BackgroundColor.AlphaInverted7' | 'BackgroundColor.AlphaInverted8' | 'BackgroundColor.AlphaInverted9' | 'BackgroundColor.AlphaInverted10'
   | 'BackgroundColor.Blue1' | 'BackgroundColor.Blue2' | 'BackgroundColor.Blue3' | 'BackgroundColor.Blue4' | 'BackgroundColor.Blue5' | 'BackgroundColor.Blue6' | 'BackgroundColor.Blue7' | 'BackgroundColor.Blue8' | 'BackgroundColor.Blue9' | 'BackgroundColor.Blue10'

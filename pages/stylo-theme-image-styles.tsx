@@ -30,7 +30,7 @@ const StyloThemeImage: React.FC = () => (
             />
             <CodeSnippet>
               {`export type TImageStyle =
-  | TBorder
+  | TBorderStyle
   | TAvatarImage
   | TTagAvatarImageStyle;`}
             </CodeSnippet>

@@ -27,13 +27,13 @@ const StyloThemeView: React.FC = () => (
             </SectionHeading>
             <StyloThemeTypeDefinitionReferences
               display={[
-                'TBackgroundColor', 'TBorderStyle', 'TFlexStyle', 'TMarginStyle', 'TPaddingStyle',
+                'TBackgroundColorStyle', 'TBorderStyle', 'TFlexStyle', 'TMarginStyle', 'TPaddingStyle',
                 'TBadgeStyle', 'TFormStyle', 'THorizontalStyle', 'TListStyle', 'TScreenStyle', 'TTagStyle',
               ]}
             />
             <CodeSnippet>
               {`export type TViewStyle =
-  | TBackgroundColor
+  | TBackgroundColorStyle
   | TBorderStyle
   | TFlexStyle
   | TMarginStyle

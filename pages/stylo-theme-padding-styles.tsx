@@ -25,7 +25,7 @@ const StyloThemePadding: React.FC = () => (
               Type definition
             </SectionHeading>
             <CodeSnippet>
-              {`export type TPadding =
+              {`export type TPaddingStyle =
   | 'Padding'
   | 'Padding.Top'
   | 'Padding.Right'

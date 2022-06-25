@@ -25,7 +25,7 @@ const StyloThemeFlex: React.FC = () => (
               Type definition
             </SectionHeading>
             <CodeSnippet>
-              {`export type TFlex =
+              {`export type TFlexStyle =
   | 'Flex.Column'
   | 'Flex.Row'
   | 'Flex.Wrap'

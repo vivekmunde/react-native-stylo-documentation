@@ -35,7 +35,7 @@ const StyloThemeBorder: React.FC = () => (
               for <InlineCode>Border.Color.[Color]</InlineCode>
             </Paragraph>
             <CodeSnippet>
-              {`export type TBorderColor = 
+              {`type TBorderColorStyle = 
   | 'Border.Color.Blue1' | 'Border.Color.Blue2' | 'Border.Color.Blue3' | 'Border.Color.Blue4' | 'Border.Color.Blue5' | 'Border.Color.Blue6' | 'Border.Color.Blue7' | 'Border.Color.Blue8' | 'Border.Color.Blue9' | 'Border.Color.Blue10'
   | 'Border.Color.Cyan1' | 'Border.Color.Cyan2' | 'Border.Color.Cyan3' | 'Border.Color.Cyan4' | 'Border.Color.Cyan5' | 'Border.Color.Cyan6' | 'Border.Color.Cyan7' | 'Border.Color.Cyan8' | 'Border.Color.Cyan9' | 'Border.Color.Cyan10' | 'Border.Color.Danger'
   | 'Border.Color.Danger1' | 'Border.Color.Danger2' | 'Border.Color.Danger3' | 'Border.Color.Danger4' | 'Border.Color.Danger5' | 'Border.Color.Danger6' | 'Border.Color.Danger7' | 'Border.Color.Danger8' | 'Border.Color.Danger9' | 'Border.Color.Danger10'
@@ -62,8 +62,8 @@ const StyloThemeBorder: React.FC = () => (
             </CodeSnippet>
 
             <CodeSnippet>
-              {`export type TBorder =
-  | TBorderColor
+              {`export type TBorderStyle =
+  | TBorderColorStyle
   | 'Border'
   | 'Border.Top'
   | 'Border.Right'

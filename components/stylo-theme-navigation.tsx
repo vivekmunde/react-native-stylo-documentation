@@ -40,7 +40,7 @@ const StyloThemeNavigation: React.FC = () => (
             <ul className="mb-4">
               <li>
                 <NavLink href="/stylo-theme-background-color-styles">
-                  Background colors
+                  BackgroundColor
                 </NavLink>
               </li>
               <li>
@@ -55,7 +55,7 @@ const StyloThemeNavigation: React.FC = () => (
               </li>
               <li>
                 <NavLink href="/stylo-theme-font-color-styles">
-                  Font colors
+                  FontColor
                 </NavLink>
               </li>
               <li>

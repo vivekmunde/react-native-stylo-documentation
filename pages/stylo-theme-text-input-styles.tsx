@@ -26,12 +26,12 @@ const StyloThemeTextInput: React.FC = () => (
               Type definition
             </SectionHeading>
             <StyloThemeTypeDefinitionReferences
-              display={['TBackgroundColor', 'TFontColor']}
+              display={['TBackgroundColorStyle', 'TFontColorStyle']}
             />
             <CodeSnippet>
               {`export type TTextInputStyle =
-  | TBackgroundColor
-  | TFontColor
+  | TBackgroundColorStyle
+  | TFontColorStyle
   | 'Align.Center'
   | 'Align.Right'
   | 'Bold'

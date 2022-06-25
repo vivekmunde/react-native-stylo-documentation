@@ -28,38 +28,40 @@ const StyloThemeGenericStyles: React.FC = () => (
             So the theme has categorized them as generic styles &amp; has defined them separately for better reusability.
           </Paragraph>
 
-          <ul className="bg-pink-50 rounded p-4 mb-4">
-            <li>
+          <div className="pt-[1px]">
+            <div className="grid grid-cols-3 gap-4 mt-4">
               <Link href="/stylo-theme-background-color-styles">
-                Background colors
+                <a className="bg-pink-50 rounded p-4" style={{ display: 'block' }}>
+                  Background colors
+                </a>
               </Link>
-            </li>
-            <li>
               <Link href="/stylo-theme-border-styles">
-                Border
+                <a className="bg-pink-50 rounded p-4" style={{ display: 'block' }}>
+                  Border
+                </a>
               </Link>
-            </li>
-            <li>
               <Link href="/stylo-theme-flex-styles">
-                Flex
+                <a className="bg-pink-50 rounded p-4" style={{ display: 'block' }}>
+                  Flex
+                </a>
               </Link>
-            </li>
-            <li>
               <Link href="/stylo-theme-font-color-styles">
-                Font colors
+                <a className="bg-pink-50 rounded p-4" style={{ display: 'block' }}>
+                  Font colors
+                </a>
               </Link>
-            </li>
-            <li>
               <Link href="/stylo-theme-margin-styles">
-                Margin
+                <a className="bg-pink-50 rounded p-4" style={{ display: 'block' }}>
+                  Margin
+                </a>
               </Link>
-            </li>
-            <li>
               <Link href="/stylo-theme-padding-styles">
-                Padding
+                <a className="bg-pink-50 rounded p-4" style={{ display: 'block' }}>
+                  Padding
+                </a>
               </Link>
-            </li>
-          </ul>
+            </div>
+          </div>
         </article>
       </React.Fragment>
     )}

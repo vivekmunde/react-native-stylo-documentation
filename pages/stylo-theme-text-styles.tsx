@@ -26,11 +26,11 @@ const StyloThemeText: React.FC = () => (
               Type definition
             </SectionHeading>
             <StyloThemeTypeDefinitionReferences
-              display={['TFontColor', 'TMarginStyle', 'TBadgeStyle', 'TButtonStyle', 'TTagStyle']}
+              display={['TFontColorStyle', 'TMarginStyle', 'TBadgeStyle', 'TButtonStyle', 'TTagStyle']}
             />
             <CodeSnippet>
               {`export type TTextStyle =
-  | TFontColor
+  | TFontColorStyle
   | TMarginStyle
   | TBadgeTextStyle
   | TButtonTextStyle

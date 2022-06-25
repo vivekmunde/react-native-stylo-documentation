@@ -184,10 +184,13 @@ const Theme = {
               <strong className="font-semibold">Type definition</strong>
             </Paragraph>
             <CodeSnippet>
-              {`import { TBackgroundColor } from './background-colors';
-import { TFontColor } from './font-colors';
-
-export type TVariables = 'Color.Primary' | 'Color.Secondary' | 'Padding' | 'Padding.Small' | 'Padding.Large' | 'Border.Radius';`}
+              {`export type TVariable = 
+  | 'Color.Primary'
+  | 'Color.Secondary'
+  | 'Padding'
+  | 'Padding.Small'
+  | 'Padding.Large'
+  | 'Border.Radius';`}
             </CodeSnippet>
             <Paragraph>
               The document explains the significance &amp; usage of the type definitions in the theme in the later section.
@@ -223,14 +226,14 @@ export type TVariables = 'Color.Primary' | 'Color.Secondary' | 'Padding' | 'Padd
               <strong className="font-semibold">Variables type definition</strong>
             </Paragraph>
             <CodeSnippet>
-              {`type TFontColor = 'Color.Primary' | 'Color.Secondary' | 'Color.Info' | 'Color.Warning' | 'Color.Danger' | 'Color.Border' | 'Color.Grey1' | 'Color.Grey2' | 'Color.Grey1' | ... ;
-type TBackgroundColor = 'BackgroundColor.Primary' | 'BackgroundColor.Secondary' | 'BackgroundColor.Info' | 'BackgroundColor.Warning' | 'BackgroundColor.Danger' | 'BackgroundColor.Grey1' | 'BackgroundColor.Grey2' | 'BackgroundColor.Grey1' | ... ;
-type TPadding = 'Padding' | 'Padding.Small' | 'Padding.Large';
-type TMargin = 'Margin' | 'Margin.Small' | 'Margin.Large';
-type TBorder = 'Border.Radius' | 'Border.Radius.Small' | 'Border.Radius.Large';
+              {`type TFontColorStyle = 'Color.Primary' | 'Color.Secondary' | 'Color.Info' | 'Color.Warning' | 'Color.Danger' | 'Color.Border' | 'Color.Grey1' | 'Color.Grey2' | 'Color.Grey1' | ... ;
+type TBackgroundColorStyle = 'BackgroundColor.Primary' | 'BackgroundColor.Secondary' | 'BackgroundColor.Info' | 'BackgroundColor.Warning' | 'BackgroundColor.Danger' | 'BackgroundColor.Grey1' | 'BackgroundColor.Grey2' | 'BackgroundColor.Grey1' | ... ;
+type TPaddingStyle = 'Padding' | 'Padding.Small' | 'Padding.Large';
+type TMarginStyle = 'Margin' | 'Margin.Small' | 'Margin.Large';
+type TBorderStyle = 'Border.Radius' | 'Border.Radius.Small' | 'Border.Radius.Large';
 ...
 
-export type TVariables = TFontColor | TBackgroundColor | TPadding | TMargin | TBorder | ...;`}
+export type TVariable = TFontColorStyle | TBackgroundColorStyle | TPaddingStyle | TMarginStyle | TBorderStyle | ...;`}
             </CodeSnippet>
             <Paragraph>
               <strong className="font-semibold">StyleNamespaces type definition</strong>
@@ -243,9 +246,9 @@ export type TVariables = TFontColor | TBackgroundColor | TPadding | TMargin | TB
             </Paragraph>
             <CodeSnippet>
               {`type TBorderStyle = 'Border' | 'Border.Top' | 'Border.Right' | 'Border.Bottom' | 'Border.Left' | 'Border.Radius' | 'Border.Radius.Small' | 'Border.Radius.Large' | 'Border.Color.Primary' | 'Border.Color.Secondary' | 'Border.Color.Info' | 'Border.Color.Warning' | 'Border.Color.Danger' | 'Border.Color.Grey1' | 'Border.Color.Grey2' | ...;
-  export type TTextStyle = TFontColor | 'Align.Center' | 'Align.Right' | 'Bold' | 'H1' | 'H2' | 'H3' | 'H4' | 'Small' | 'Large' | 'Paragraph' | 'Margin' | 'Margin.Top' | 'Margin.Right' | 'Margin.Bottom' | 'Margin.Left' | 'Margin.XSmall' | 'Margin.Small' | 'Margin.Large' | 'Margin.Top.Small' | 'Margin.Right.Small' | 'Margin.Bottom.Small' | 'Margin.Left.Small' | 'Margin.Top.XSmall' | 'Margin.Right.XSmall' | 'Margin.Bottom.XSmall' | 'Margin.Left.XSmall' | 'Margin.Top.Large' | 'Margin.Right.Large' | 'Margin.Bottom.Large' | 'Margin.Left.Large';
-  export type TViewStyle = TBackgroundColor | TPadding | TMargin | TBorderStyle | ...;
-  export type TTouchableStyle = TBackgroundColor | TPadding | TMargin | TBorderStyle | 'Button' | 'Button.Small' | 'Button.Large' | 'Button.Round' | 'Button.Circle' | ...;
+export type TTextStyle = TFontColorStyle | 'Align.Center' | 'Align.Right' | 'Bold' | 'H1' | 'H2' | 'H3' | 'H4' | 'Small' | 'Large' | 'Paragraph' | 'Margin' | 'Margin.Top' | 'Margin.Right' | 'Margin.Bottom' | 'Margin.Left' | 'Margin.XSmall' | 'Margin.Small' | 'Margin.Large' | 'Margin.Top.Small' | 'Margin.Right.Small' | 'Margin.Bottom.Small' | 'Margin.Left.Small' | 'Margin.Top.XSmall' | 'Margin.Right.XSmall' | 'Margin.Bottom.XSmall' | 'Margin.Left.XSmall' | 'Margin.Top.Large' | 'Margin.Right.Large' | 'Margin.Bottom.Large' | 'Margin.Left.Large';
+export type TViewStyle = TBackgroundColorStyle | TPaddingStyle | TMarginStyle | TBorderStyle | ...;
+export type TTouchableStyle = TBackgroundColorStyle | TPaddingStyle | TMarginStyle | TBorderStyle | 'Button' | 'Button.Small' | 'Button.Large' | 'Button.Round' | 'Button.Circle' | ...;
 ...`}
             </CodeSnippet>
             <section>
@@ -271,7 +274,7 @@ export type TVariables = TFontColor | TBackgroundColor | TPadding | TMargin | TB
               Stylo theme
             </SectionHeading>
             <Paragraph>
-              Stylo provides a default Theme which is located at <strong className="font-semibold">{STYLO_THEME_LOCATION}</strong>.
+              Stylo provides a <Link href="/stylo-theme">default theme</Link> which is located at <strong className="font-semibold">{STYLO_THEME_LOCATION}</strong>.
               The theme can be simply copied into the app &amp; used as is or freely modified as per the needs.
               Or simply use the default theme just as a guideline &amp; create your own from scratch.
             </Paragraph>
@@ -293,21 +296,21 @@ export type TVariables = TFontColor | TBackgroundColor | TPadding | TMargin | TB
               </Paragraph>
               <CodeSnippet>
                 {`// Variables
-type TFontColor = 'Color.Primary' | 'Color.Secondary' | 'Color.Info' | 'Color.Warning' | 'Color.Danger' | 'Color.Border' | 'Color.Grey1' | 'Color.Grey2' | 'Color.Grey1' | ... ;
-type TBackgroundColor = 'BackgroundColor.Primary' | 'BackgroundColor.Secondary' | 'BackgroundColor.Info' | 'BackgroundColor.Warning' | 'BackgroundColor.Danger' | 'BackgroundColor.Grey1' | 'BackgroundColor.Grey2' | 'BackgroundColor.Grey1' | ... ;
-type TPadding = 'Padding' | 'Padding.Small' | 'Padding.Large';
-type TMargin = 'Margin' | 'Margin.Small' | 'Margin.Large';
-type TBorder = 'Border.Radius' | 'Border.Radius.Small' | 'Border.Radius.Large';
-export type TVariables = TFontColor | TBackgroundColor | TPadding | TMargin | TBorder;
+type TFontColorStyle = 'Color.Primary' | 'Color.Secondary' | 'Color.Info' | 'Color.Warning' | 'Color.Danger' | 'Color.Border' | 'Color.Grey1' | 'Color.Grey2' | 'Color.Grey1' | ... ;
+type TBackgroundColorStyle = 'BackgroundColor.Primary' | 'BackgroundColor.Secondary' | 'BackgroundColor.Info' | 'BackgroundColor.Warning' | 'BackgroundColor.Danger' | 'BackgroundColor.Grey1' | 'BackgroundColor.Grey2' | 'BackgroundColor.Grey1' | ... ;
+type TPaddingStyle = 'Padding' | 'Padding.Small' | 'Padding.Large';
+type TMarginStyle = 'Margin' | 'Margin.Small' | 'Margin.Large';
+type TBorderStyle = 'Border.Radius' | 'Border.Radius.Small' | 'Border.Radius.Large';
+export type TVariable = TFontColorStyle | TBackgroundColorStyle | TPaddingStyle | TMarginStyle | TBorderStyle;
 
 // StyleNamespaces
 export type TStyleNamespace = 'IconStyles' | 'ImageBackgroundStyles' | 'ImageStyles' | 'KeyboardAvoidingViewStyles' | 'SafeAreaViewStyles' | 'ScrollViewStyles' | 'TextInputStyles' | 'TextStyles' | 'TouchableStyles' | 'ViewStyles';
   
 // StyleNames
 type TBorderStyle = 'Border' | 'Border.Top' | 'Border.Right' | 'Border.Bottom' | 'Border.Left' | 'Border.Radius' | 'Border.Radius.Small' | 'Border.Radius.Large' | 'Border.Color.Primary' | 'Border.Color.Secondary' | 'Border.Color.Info' | 'Border.Color.Warning' | 'Border.Color.Danger' | 'Border.Color.Grey1' | 'Border.Color.Grey2' | ...;
-export type TTextStyle = TFontColor | 'Align.Center' | 'Align.Right' | 'Bold' | 'H1' | 'H2' | 'H3' | 'H4' | 'Small' | 'Large' | 'Paragraph' | 'Margin' | 'Margin.Top' | 'Margin.Right' | 'Margin.Bottom' | 'Margin.Left' | 'Margin.XSmall' | 'Margin.Small' | 'Margin.Large' | 'Margin.Top.Small' | 'Margin.Right.Small' | 'Margin.Bottom.Small' | 'Margin.Left.Small' | 'Margin.Top.XSmall' | 'Margin.Right.XSmall' | 'Margin.Bottom.XSmall' | 'Margin.Left.XSmall' | 'Margin.Top.Large' | 'Margin.Right.Large' | 'Margin.Bottom.Large' | 'Margin.Left.Large';
-export type TViewStyle = TBackgroundColor | TPadding | TMargin | TBorderStyle | ...;
-export type TTouchableStyle = TBackgroundColor | TPadding | TMargin | TBorderStyle | 'Button' | 'Button.Small' | 'Button.Large' | 'Button.Round' | 'Button.Circle' | ...;
+export type TTextStyle = TFontColorStyle | 'Align.Center' | 'Align.Right' | 'Bold' | 'H1' | 'H2' | 'H3' | 'H4' | 'Small' | 'Large' | 'Paragraph' | 'Margin' | 'Margin.Top' | 'Margin.Right' | 'Margin.Bottom' | 'Margin.Left' | 'Margin.XSmall' | 'Margin.Small' | 'Margin.Large' | 'Margin.Top.Small' | 'Margin.Right.Small' | 'Margin.Bottom.Small' | 'Margin.Left.Small' | 'Margin.Top.XSmall' | 'Margin.Right.XSmall' | 'Margin.Bottom.XSmall' | 'Margin.Left.XSmall' | 'Margin.Top.Large' | 'Margin.Right.Large' | 'Margin.Bottom.Large' | 'Margin.Left.Large';
+export type TViewStyle = TBackgroundColorStyle | TPaddingStyle | TMarginStyle | TBorderStyle | ...;
+export type TTouchableStyle = TBackgroundColorStyle | TPaddingStyle | TMarginStyle | TBorderStyle | 'Button' | 'Button.Small' | 'Button.Large' | 'Button.Round' | 'Button.Circle' | ...;
 // & so on ...`}
               </CodeSnippet>
             </section>

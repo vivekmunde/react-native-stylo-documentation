@@ -25,7 +25,7 @@ const StyloThemeMargin: React.FC = () => (
               Type definition
             </SectionHeading>
             <CodeSnippet>
-              {`export type TMargin =
+              {`export type TMarginStyle =
   | 'Margin'
   | 'Margin.Top'
   | 'Margin.Right'

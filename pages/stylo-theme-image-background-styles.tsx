@@ -26,11 +26,11 @@ const StyloThemeImageBackground: React.FC = () => (
               Type definition
             </SectionHeading>
             <StyloThemeTypeDefinitionReferences
-              display={['TBackgroundColor', 'TBorderStyle', 'TMarginStyle', 'TPaddingStyle']}
+              display={['TBackgroundColorStyle', 'TBorderStyle', 'TMarginStyle', 'TPaddingStyle']}
             />
             <CodeSnippet>
               {`export type TImageBackgroundStyle =
-  | TBackgroundColor
+  | TBackgroundColorStyle
   | TBorderStyle
   | TMarginStyle
   | TPaddingStyle;`}

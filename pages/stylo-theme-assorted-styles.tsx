@@ -22,8 +22,9 @@ const StyloThemeAssortedStyles: React.FC = () => (
           <ArticleHeading>Assorted styles</ArticleHeading>
 
           <Paragraph>
-            <strong className="font-semibold">Assorted styles</strong> are nothing but logically grouped styles which are required to style the components like <InlineCode>Avatar</InlineCode>, <InlineCode>Button</InlineCode>, <InlineCode>Form</InlineCode> etc.
-            {`Stylo's`} follows a philosophy called <Link href="/#styles-only">Styles only</Link> using which one can make any component.
+            <strong className="font-semibold">Assorted styles</strong> are nothing but logically grouped styles.
+            Like the styles required to style the components like <InlineCode>Avatar</InlineCode>, <InlineCode>Button</InlineCode>, <InlineCode>Form</InlineCode> etc.
+            {` Stylo's`} follows a philosophy called <Link href="/#styles-only">Styles only</Link> using which one can make any component.
             The members of the assorted styles can be infinite, like <InlineCode>Card</InlineCode>, <InlineCode>Picker</InlineCode>, <InlineCode>Legend</InlineCode> &amp; so on.
           </Paragraph>
 
@@ -31,48 +32,50 @@ const StyloThemeAssortedStyles: React.FC = () => (
             The theme currently offers following classification of the styles. It will keep adding new members in the upcoming releases.
           </Paragraph>
 
-          <ul className="bg-pink-50 rounded p-4 mb-4">
-            <li>
+          <div className="pt-[1px]">
+            <div className="grid grid-cols-4 gap-4 mt-4">
               <Link href="/stylo-theme-avatar-styles">
-                Avatar
+                <a className="bg-pink-50 rounded p-4" style={{ display: 'block' }}>
+                  Avatar
+                </a>
               </Link>
-            </li>
-            <li>
               <Link href="/stylo-theme-badge-styles">
-                Badge
+                <a className="bg-pink-50 rounded p-4" style={{ display: 'block' }}>
+                  Badge
+                </a>
               </Link>
-            </li>
-            <li>
               <Link href="/stylo-theme-button-styles">
-                Button
+                <a className="bg-pink-50 rounded p-4" style={{ display: 'block' }}>
+                  Button
+                </a>
               </Link>
-            </li>
-            <li>
               <Link href="/stylo-theme-form-styles">
-                Form
+                <a className="bg-pink-50 rounded p-4" style={{ display: 'block' }}>
+                  Form
+                </a>
               </Link>
-            </li>
-            <li>
               <Link href="/stylo-theme-horizontal-styles">
-                Horizontal
+                <a className="bg-pink-50 rounded p-4" style={{ display: 'block' }}>
+                  Horizontal
+                </a>
               </Link>
-            </li>
-            <li>
               <Link href="/stylo-theme-list-styles">
-                List
+                <a className="bg-pink-50 rounded p-4" style={{ display: 'block' }}>
+                  List
+                </a>
               </Link>
-            </li>
-            <li>
               <Link href="/stylo-theme-screen-styles">
-                Screen
+                <a className="bg-pink-50 rounded p-4" style={{ display: 'block' }}>
+                  Screen
+                </a>
               </Link>
-            </li>
-            <li>
               <Link href="/stylo-theme-tag-styles">
-                Tag
+                <a className="bg-pink-50 rounded p-4" style={{ display: 'block' }}>
+                  Tag
+                </a>
               </Link>
-            </li>
-          </ul>
+            </div>
+          </div>
         </article>
       </React.Fragment>
     )}

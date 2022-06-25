@@ -76,10 +76,10 @@ const UseVariables: React.FC = () => (
 import { Text, StyleSheet } from 'react-native';
 import { useVariables } from 'react-native-stylo';
 
-import { TVariables } from '../themes/types';
+import { TVariable } from '../themes/types';
 
 const CardTitle:React.FC<{ title: string; }> = ({ title }) => {
-  const [margin, colorPrimary] = useVariables<TVariables>([Margin, 'Color.Primary']);
+  const [margin, colorPrimary] = useVariables<TVariable>([Margin, 'Color.Primary']);
 
   const styles = useRef(
     StyleSheet.create({

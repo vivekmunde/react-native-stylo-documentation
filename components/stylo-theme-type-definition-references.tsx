@@ -4,7 +4,7 @@ import React from 'react';
 import Paragraph from './paragraph';
 
 type TTypeDefinition =
-  | 'TBackgroundColor' | 'TBorderStyle' | 'TFlexStyle' | 'TFontColor' | 'TMarginStyle' | 'TPaddingStyle'
+  | 'TBackgroundColorStyle' | 'TBorderStyle' | 'TFlexStyle' | 'TFontColorStyle' | 'TMarginStyle' | 'TPaddingStyle'
   | 'TImageStyle' | 'TImageBackgroundStyle' | 'TScrollViewStyle' | 'TTextStyle' | 'TTextInputStyle' | 'TTouchableStyle' | 'TViewStyle'
   | 'TAvatarStyle' | 'TBadgeStyle' | 'TButtonStyle' | 'TFormStyle' | 'THorizontalStyle' | 'TListStyle' | 'TScreenStyle' | 'TTagStyle';
 
@@ -12,10 +12,10 @@ const typeDefinitions: {
   type: TTypeDefinition;
   route: string;
 }[] = [
-    { type: 'TBackgroundColor', route: 'background-color' },
+    { type: 'TBackgroundColorStyle', route: 'background-color' },
     { type: 'TBorderStyle', route: 'border' },
     { type: 'TFlexStyle', route: 'flex' },
-    { type: 'TFontColor', route: 'font-color' },
+    { type: 'TFontColorStyle', route: 'font-color' },
     { type: 'TMarginStyle', route: 'margin' },
     { type: 'TPaddingStyle', route: 'padding' },
     { type: 'TImageStyle', route: 'image' },

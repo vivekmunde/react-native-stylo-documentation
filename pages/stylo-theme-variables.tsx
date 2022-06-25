@@ -28,13 +28,12 @@ const StyloThemeVariables: React.FC = () => (
               Type definition
             </SectionHeading>
             <Paragraph>
-              Ref: <Link href="/stylo-theme-font-colors">TFontColor</Link>, <Link href="/stylo-theme-background-colors">TBackgroundColor</Link>
+              Ref: <Link href="/stylo-theme-colors#type-definition">TColor</Link>
             </Paragraph>
             <CodeSnippet>
               {`export type TVariable = 
-  | TFontColor
+  | TColor
   | 'Font.Color'
-  | TBackgroundColor
   | 'Padding'
   | 'Padding.XSmall'
   | 'Padding.Small'

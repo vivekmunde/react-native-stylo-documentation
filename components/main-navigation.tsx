@@ -98,6 +98,11 @@ const MainNavigation: React.FC = () => {
             Stylo theme
           </NavLink>
         </li>
+        <li>
+          <NavLink href="/how-to-build-components">
+            How to build components?
+          </NavLink>
+        </li>
       </ul>
     </nav>
   );

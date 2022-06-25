@@ -26,53 +26,59 @@ const StyloThemeComponentStyles: React.FC = () => (
             These styles are defined by combining the <Link href="/generic-styles">Generic styles</Link> &amp; <Link href="assorted-styles">Assorted styles</Link>.
           </Paragraph>
 
-          <ul className="bg-pink-50 rounded p-4 mb-4">
-            <li>
+          <div className="pt-[1px] mb-4">
+            <div className="grid grid-cols-3 gap-4 mt-4">
               <Link href="/stylo-theme-image-styles">
-                Image
+                <a className="bg-pink-50 rounded p-4" style={{ display: 'block' }}>
+                  Image
+                </a>
               </Link>
-            </li>
-            <li>
               <Link href="/stylo-theme-image-background-styles">
-                ImageBackground
+                <a className="bg-pink-50 rounded p-4" style={{ display: 'block' }}>
+                  ImageBackground
+                </a>
               </Link>
-            </li>
-            <li>
               <Link href="/stylo-theme-pressable-styles">
-                Pressable
+                <a className="bg-pink-50 rounded p-4" style={{ display: 'block' }}>
+                  Pressable
+                </a>
               </Link>
-            </li>
-            <li>
               <Link href="/stylo-theme-scroll-view-styles">
-                ScrollView
+                <a className="bg-pink-50 rounded p-4" style={{ display: 'block' }}>
+                  ScrollView
+                </a>
               </Link>
-            </li>
-            <li>
               <Link href="/stylo-theme-text-styles">
-                Text
+                <a className="bg-pink-50 rounded p-4" style={{ display: 'block' }}>
+                  Text
+                </a>
               </Link>
-            </li>
-            <li>
               <Link href="/stylo-theme-text-input-styles">
-                TextInput
+                <a className="bg-pink-50 rounded p-4" style={{ display: 'block' }}>
+                  TextInput
+                </a>
               </Link>
-            </li>
-            <li>
               <Link href="/stylo-theme-touchable-opacity-styles">
-                TouchableOpacity
+                <a className="bg-pink-50 rounded p-4" style={{ display: 'block' }}>
+                  TouchableOpacity
+                </a>
               </Link>
-            </li>
-            <li>
               <Link href="/stylo-theme-touchable-highlight-styles">
-                TouchableHighlight
+                <a className="bg-pink-50 rounded p-4" style={{ display: 'block' }}>
+                  TouchableHighlight
+                </a>
               </Link>
-            </li>
-            <li>
               <Link href="/stylo-theme-view-styles">
-                View
+                <a className="bg-pink-50 rounded p-4" style={{ display: 'block' }}>
+                  View
+                </a>
               </Link>
-            </li>
-          </ul>
+            </div>
+          </div>
+
+          <Paragraph>
+            <i>Note: Remaining React Native components will be added in the upcoming releases.</i>
+          </Paragraph>
         </article>
       </React.Fragment>
     )}

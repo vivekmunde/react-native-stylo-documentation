@@ -18,10 +18,10 @@ const StyloThemeFontColors: React.FC = () => (
     renderContent={() => (
       <React.Fragment>
         <Head>
-          <title>Font colors | Stylo theme | React Native Stylo</title>
+          <title>FontColor | Stylo theme | React Native Stylo</title>
         </Head>
         <article>
-          <ArticleHeading>Font colors</ArticleHeading>
+          <ArticleHeading>FontColor</ArticleHeading>
 
           <section className="no-vertical-margin-collapse">
             <SectionHeading id="type-definition" level={5}>
@@ -35,7 +35,7 @@ const StyloThemeFontColors: React.FC = () => (
               for <InlineCode>Font.[Color]</InlineCode>
             </Paragraph>
             <CodeSnippet>
-              {`export type TFontColor = 
+              {`export type TFontColorStyle = 
   | 'Color.Alpha1' | 'Color.Alpha2' | 'Color.Alpha3' | 'Color.Alpha4' | 'Color.Alpha5' | 'Color.Alpha6' | 'Color.Alpha7' | 'Color.Alpha8' | 'Color.Alpha9' | 'Color.Alpha10'
   | 'Color.Blue1' | 'Color.Blue2' | 'Color.Blue3' | 'Color.Blue4' | 'Color.Blue5' | 'Color.Blue6' | 'Color.Blue7' | 'Color.Blue8' | 'Color.Blue9' | 'Color.Blue10'
   | 'Color.Cyan1' | 'Color.Cyan2' | 'Color.Cyan3' | 'Color.Cyan4' | 'Color.Cyan5' | 'Color.Cyan6' | 'Color.Cyan7' | 'Color.Cyan8' | 'Color.Cyan9' | 'Color.Cyan10'

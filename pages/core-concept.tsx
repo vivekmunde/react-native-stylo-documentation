@@ -200,15 +200,15 @@ export const Theme = {
               The app can use any naming convention to define these types.
             </Paragraph>
             <CodeSnippet>
-              {`export type TFontColor = 'Color.Primary' | 'Color.Secondary' | 'Color.Info' | 'Color.Success' | 'Color.Warning' | 'Color.Danger';
-export type TBackgroundColor = 'BackgroundColor.Primary' | 'BackgroundColor.Secondary' | 'BackgroundColor.Info' | 'BackgroundColor.Success' | 'BackgroundColor.Warning' | 'BackgroundColor.Danger';
-export type TPadding = 'Padding' | 'Padding.Top' | 'Padding.Right' | 'Padding.Bottom' | 'Padding.left';
-export type TMargin = 'Margin' | 'Margin.Top' | 'Margin.Right' | 'Margin.Bottom' | 'Margin.left';
-export type TBorder = 'Border' | 'Border.Radius' | 'Border.Radius.Small' | 'Border.Radius.Large';
+              {`export type TFontColorStyle = 'Color.Primary' | 'Color.Secondary' | 'Color.Info' | 'Color.Success' | 'Color.Warning' | 'Color.Danger';
+export type TBackgroundColorStyle = 'BackgroundColor.Primary' | 'BackgroundColor.Secondary' | 'BackgroundColor.Info' | 'BackgroundColor.Success' | 'BackgroundColor.Warning' | 'BackgroundColor.Danger';
+export type TPaddingStyle = 'Padding' | 'Padding.Top' | 'Padding.Right' | 'Padding.Bottom' | 'Padding.left';
+export type TMarginStyle = 'Margin' | 'Margin.Top' | 'Margin.Right' | 'Margin.Bottom' | 'Margin.left';
+export type TBorderStyle = 'Border' | 'Border.Radius' | 'Border.Radius.Small' | 'Border.Radius.Large';
 
-export type TTextStyle = TFontColor | TBackgroundColor | 'Bold' | 'H1' | 'H2' | 'H3' | 'H4' | 'Size.Small' | 'Size.Tiny';
-export type TTextInputStyle = TFontColor | TBackgroundColor | TPadding | TMargin | TBorder | 'Align.Center' | 'Align.Right' | 'Size.Small' | 'Size.Tiny';
-export type TViewStyle = TBackgroundColor | TPadding | TMargin | TBorder;`}
+export type TTextStyle = TFontColorStyle | TBackgroundColorStyle | 'Bold' | 'H1' | 'H2' | 'H3' | 'H4' | 'Size.Small' | 'Size.Tiny';
+export type TTextInputStyle = TFontColorStyle | TBackgroundColorStyle | TPaddingStyle | TMarginStyle | TBorderStyle | 'Align.Center' | 'Align.Right' | 'Size.Small' | 'Size.Tiny';
+export type TViewStyle = TBackgroundColorStyle | TPaddingStyle | TMarginStyle | TBorderStyle;`}
             </CodeSnippet>
             <Paragraph>
               On top of that, the style names are strongly typed per React Native component, like View, Text, TouchableOpacity etc.
@@ -240,9 +240,9 @@ export type TViewStyle = TBackgroundColor | TPadding | TMargin | TBorder;`}
             </Paragraph>
             <CodeSnippet>
               {`//types.ts;
-export type TCard = 'Card' | 'Card.Header' | 'Card.Body' | 'Card.Footer';
-export type TViewStyle = TBackgroundColor | TPadding | TMargin | TBorder | TCard;
-export type TTouchableStyle = TBackgroundColor | TPadding | TMargin | TBorder | TCard;
+export type TCardStyle = 'Card' | 'Card.Header' | 'Card.Body' | 'Card.Footer';
+export type TViewStyle = TBackgroundColorStyle | TPaddingStyle | TMarginStyle | TBorderStyle | TCard;
+export type TTouchableStyle = TBackgroundColorStyle | TPaddingStyle | TMarginStyle | TBorderStyle | TCard;
 
 //card-styles.ts
 export const CardStyles = StyleSheet.create({

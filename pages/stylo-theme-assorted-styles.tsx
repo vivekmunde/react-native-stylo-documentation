@@ -24,7 +24,7 @@ const StyloThemeAssortedStyles: React.FC = () => (
           <Paragraph>
             <strong className="font-semibold">Assorted styles</strong> are nothing but logically grouped styles.
             Like the styles required to style the components like <InlineCode>Avatar</InlineCode>, <InlineCode>Button</InlineCode>, <InlineCode>Form</InlineCode> etc.
-            {` Stylo's`} follows a philosophy called <Link href="/#styles-only">Styles only</Link> using which one can make any component.
+            Stylo follows a philosophy called <Link href="/#styles-only">Styles only</Link> using which one can create &amp; beautify any component.
             The members of the assorted styles can be infinite, like <InlineCode>Card</InlineCode>, <InlineCode>Picker</InlineCode>, <InlineCode>Legend</InlineCode> &amp; so on.
           </Paragraph>
 

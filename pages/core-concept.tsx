@@ -93,11 +93,11 @@ const CoreConcept: React.FC = () => (
               These predefined components need to expose few props to add scalability &amp; behavioral flexibility, but again these extra props neither make them fully scalable nor completely suitable.
             </Paragraph>
             <Paragraph>
-              <strong className="font-semibold">React Native Stylo</strong> only provides style definitions and does not provide any layout/behavioral/action components like Card, Badge, Picker etc.
+              <strong className="font-semibold">Stylo</strong> only provides style definitions &amp; does not provide any layout/behavioral/action components like Card, Badge, Picker etc.
               However, the library provides all the default style definitions needed to style &amp; build all kinds of components, right from simple Text to complicated Pickers &amp; Forms.
             </Paragraph>
             <Paragraph>
-              Stylo library provides default pre-defined style types and styles. App can copy these and then can modify the style definitions.
+              Stylo provides a default theme with pre-defined style types and styles. App can copy these &amp; then can modify the style definitions.
             </Paragraph>
           </section>
 

@@ -21,7 +21,7 @@ const MainNavigation: React.FC = () => {
           </ul>
         </li>
         <li>
-          <h5 className="text-base" style={{ margin: 0 }}>
+          <h5 className="text-base m-0">
             Core members
           </h5>
           <ul className="mb-8">
@@ -38,7 +38,7 @@ const MainNavigation: React.FC = () => {
           </ul>
         </li>
         <li>
-          <h5 className="text-base" style={{ margin: 0 }}>
+          <h5 className="text-base m-0">
             Hooks &amp; components
           </h5>
           <ul className="mb-8">
@@ -86,22 +86,19 @@ const MainNavigation: React.FC = () => {
                 Tightly coupled
               </NavLink>
             </li>
+            <li>
+              <NavLink href="/showcase">
+                Showcase
+              </NavLink>
+            </li>
           </ul>
         </li>
         <li>
-          <NavLink href="/showcase">
-            Showcase
-          </NavLink>
-        </li>
-        <li>
-          <NavLink href="/stylo-theme">
-            Stylo theme
-          </NavLink>
-        </li>
-        <li>
-          <NavLink href="/how-to-build-components">
-            How to build components?
-          </NavLink>
+          <h5 className="text-base m-0">
+            <NavLink href="/stylo-theme">
+              Stylo theme
+            </NavLink>
+          </h5>
         </li>
       </ul>
     </nav>

@@ -9,7 +9,7 @@ import MainNavigation from '../components/main-navigation';
 import Paragraph from '../components/paragraph';
 import SectionHeading from '../components/section-heading';
 
-const defaultStyledComponents = ['ImageBackground', 'Image', 'SafeAreaView', 'ScrollView', 'TextInput', 'Text', 'Pressable', 'TouchableHighlight', 'TouchableOpacity', 'View'];
+const defaultStyledComponents = ['ImageBackground', 'Image', 'SafeAreaView', 'ScrollView', 'TextInput', 'Text', 'Pressable', 'TouchableHighlight', 'TouchableOpacity', 'View'].sort();
 
 const DefaultStyles: React.FC = () => (
   <Layout
@@ -38,9 +38,6 @@ const DefaultStyles: React.FC = () => (
     fontWeight: '400',
     lineHeight: 24,
   },
-  H1: {
-    fontSize: 32,
-    fontWeight: '500',
   ...
 };`}
           </CodeSnippet>
@@ -52,10 +49,10 @@ const DefaultStyles: React.FC = () => (
             <Paragraph>
               Default styles can be applied to following components:
             </Paragraph>
-            <ul className="m-4">
+            <ul>
               {defaultStyledComponents.map((it, index) => (
                 <li key={it}>
-                  {index + 1}. {it}
+                 <span className="text-right" style={{display:'inline-block', width:'24px'}}>{index + 1}.</span> {it}
                 </li>
               ))}
             </ul>

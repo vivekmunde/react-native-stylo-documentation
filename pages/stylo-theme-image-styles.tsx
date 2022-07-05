@@ -5,6 +5,7 @@ import ArticleHeading from '../components/article-heading';
 import CodeSnippet from '../components/code-snippet';
 import Layout from '../components/layout';
 import SectionHeading from '../components/section-heading';
+import ImageShowCase from '../components/showcase/image-showcase';
 import StyloThemeNavigation from '../components/stylo-theme-navigation';
 import StyloThemeTypeDefinitionReferences from '../components/stylo-theme-type-definition-references';
 
@@ -35,6 +36,13 @@ const StyloThemeImage: React.FC = () => (
   | TAvatarStyle
   | TTagAvatarImageStyle;`}
             </CodeSnippet>
+          </section>
+
+          <section className="no-vertical-margin-collapse">
+            <SectionHeading id="usage" level={5}>
+              Usage
+            </SectionHeading>
+            <ImageShowCase />
           </section>
         </article>
       </React.Fragment>

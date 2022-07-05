@@ -8,6 +8,7 @@ import InlineCode from '../components/inline-code';
 import Layout from '../components/layout';
 import Paragraph from '../components/paragraph';
 import SectionHeading from '../components/section-heading';
+import BorderShowCase from '../components/showcase/border-showcase';
 import StyloThemeNavigation from '../components/stylo-theme-navigation';
 
 const StyloThemeBorder: React.FC = () => (
@@ -242,6 +243,13 @@ const StyloThemeBorder: React.FC = () => (
   | 'Border.Radius.BottomLeft.Large'
   | 'Border.Radius.BottomRight.Large';`}
             </CodeSnippet>
+          </section>
+
+          <section className="no-vertical-margin-collapse">
+            <SectionHeading id="usage" level={5}>
+              Usage
+            </SectionHeading>
+            <BorderShowCase />
           </section>
         </article>
       </React.Fragment >

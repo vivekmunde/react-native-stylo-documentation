@@ -27,7 +27,7 @@ const StyloThemeTagStyles: React.FC = () => (
             <CodeSnippet>
               {`type TTagStyle = 'Tag' | 'Tag.Small' | 'Tag.Large';
 
-type TTagTextStyle = 'Tag.Text';
+export type TTagTextStyle = 'Tag.Text' | 'Tag.Text.Left' | 'Tag.Text.Right';
 
 type TTagIconStyle = 'Tag.Icon.Left' | 'Tag.Icon.Right';
 

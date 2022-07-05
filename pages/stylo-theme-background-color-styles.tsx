@@ -8,6 +8,7 @@ import InlineCode from '../components/inline-code';
 import Layout from '../components/layout';
 import Paragraph from '../components/paragraph';
 import SectionHeading from '../components/section-heading';
+import BackgroundColorShowCase from '../components/showcase/background-color-showcase';
 import StyloThemeNavigation from '../components/stylo-theme-navigation';
 
 const StyloThemeBackgroundColors: React.FC = () => (
@@ -236,6 +237,13 @@ const StyloThemeBackgroundColors: React.FC = () => (
   | 'BackgroundColor.Yellow9'
   | 'BackgroundColor.Yellow10';`}
             </CodeSnippet>
+          </section>
+
+          <section className="no-vertical-margin-collapse">
+            <SectionHeading id="usage" level={5}>
+              Usage
+            </SectionHeading>
+            <BackgroundColorShowCase />
           </section>
         </article>
       </React.Fragment>

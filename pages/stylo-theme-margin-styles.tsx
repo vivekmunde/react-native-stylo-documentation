@@ -5,6 +5,7 @@ import ArticleHeading from '../components/article-heading';
 import CodeSnippet from '../components/code-snippet';
 import Layout from '../components/layout';
 import SectionHeading from '../components/section-heading';
+import MarginShowCase from '../components/showcase/margin-showcase';
 import StyloThemeNavigation from '../components/stylo-theme-navigation';
 
 const StyloThemeMargin: React.FC = () => (
@@ -47,6 +48,13 @@ const StyloThemeMargin: React.FC = () => (
   | 'Margin.Bottom.Large'
   | 'Margin.Left.Large';`}
             </CodeSnippet>
+          </section>
+
+          <section className="no-vertical-margin-collapse">
+            <SectionHeading id="usage" level={5}>
+              Usage
+            </SectionHeading>
+            <MarginShowCase />
           </section>
         </article>
       </React.Fragment>

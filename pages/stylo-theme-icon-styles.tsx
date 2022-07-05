@@ -5,6 +5,7 @@ import ArticleHeading from '../components/article-heading';
 import CodeSnippet from '../components/code-snippet';
 import Layout from '../components/layout';
 import SectionHeading from '../components/section-heading';
+import IconShowCase from '../components/showcase/icon-showcase';
 import StyloThemeNavigation from '../components/stylo-theme-navigation';
 import StyloThemeTypeDefinitionReferences from '../components/stylo-theme-type-definition-references';
 
@@ -34,10 +35,16 @@ const StyloThemeIcon: React.FC = () => (
   | TMarginStyle
   | TButtonIconStyle
   | TTagIconStyle
-  | 'Bold'
   | 'Small'
   | 'Large';`}
             </CodeSnippet>
+          </section>
+
+          <section className="no-vertical-margin-collapse">
+            <SectionHeading id="usage" level={5}>
+              Usage
+            </SectionHeading>
+            <IconShowCase />
           </section>
         </article>
       </React.Fragment>

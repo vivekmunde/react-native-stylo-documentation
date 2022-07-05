@@ -5,6 +5,7 @@ import ArticleHeading from '../components/article-heading';
 import CodeSnippet from '../components/code-snippet';
 import Layout from '../components/layout';
 import SectionHeading from '../components/section-heading';
+import FlexShowCase from '../components/showcase/flex-showcase';
 import StyloThemeNavigation from '../components/stylo-theme-navigation';
 
 const StyloThemeFlex: React.FC = () => (
@@ -46,6 +47,13 @@ const StyloThemeFlex: React.FC = () => (
   | 'Flex.JustifyContent.SpaceBetween'
   | 'Flex.JustifyContent.SpaceEvenly';`}
             </CodeSnippet>
+          </section>
+
+          <section className="no-vertical-margin-collapse">
+            <SectionHeading id="usage" level={5}>
+              Usage
+            </SectionHeading>
+            <FlexShowCase />
           </section>
         </article>
       </React.Fragment>

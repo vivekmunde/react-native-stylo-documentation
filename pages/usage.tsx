@@ -4,6 +4,7 @@ import React from 'react';
 
 import ArticleHeading from '../components/article-heading';
 import CodeSnippet from '../components/code-snippet';
+import ExternalLink from '../components/external-link';
 import InlineCode from '../components/inline-code';
 import Layout from '../components/layout';
 import MainNavigation from '../components/main-navigation';
@@ -89,10 +90,15 @@ const Usage: React.FC = () => (
               {sections.installation.title}
             </SectionHeading>
             <Paragraph>
-              <InlineCode>npm install --save react-native-stylo</InlineCode>
+              <strong className="font-semibold">Peer dependency:</strong>
+              <br />
+              Stylo uses <ExternalLink href="https://www.npmjs.com/package/react-native-vector-icons">Vector Icons</ExternalLink>, so it has a peer dependency of <InlineCode>react-native-vector-icons</InlineCode>@^9.1.0.
             </Paragraph>
             <Paragraph>
-              <InlineCode>yarn add react-native-stylo</InlineCode>
+              <InlineCode>npm install --save react-native-stylo react-native-vector-icons@^9.1.0</InlineCode>
+            </Paragraph>
+            <Paragraph>
+              <InlineCode>yarn add react-native-stylo react-native-vector-icons@^9.1.0</InlineCode>
             </Paragraph>
           </section>
           <section className="no-vertical-margin-collapse">

@@ -68,6 +68,45 @@ const Stylers: React.FC = () => (
           </section>
 
           <section className="no-vertical-margin-collapse">
+            <SectionHeading id="use-icon-styles" level={4}>
+              <InlineCode>useIconStyles()</InlineCode>
+            </SectionHeading>
+            <Paragraph>
+              <strong className="font-semibold">Type definition</strong>
+            </Paragraph>
+            <CodeSnippet>
+              {`function useIconStyles<TStyleName extends string, TStyleNamespace extends string>(
+  styleNames: TStyleName[], styleNamespace?: TStyleNamespace
+): StyleProp<TextStyle>`}
+            </CodeSnippet>
+            <Paragraph>
+              <strong className="font-semibold">Default StyleNamespace:</strong> <InlineCode>IconStyles</InlineCode>
+            </Paragraph>
+            <Paragraph>
+              <strong className="font-semibold">Usage</strong>
+            </Paragraph>
+            <CodeSnippet>
+              {`import React, { useRef } from 'react';
+import { StyleSheet } from 'react-native';
+import AntDesign from 'react-native-vector-icons/AntDesign';
+import { useIconStyles } from 'react-native-stylo';
+import { TIconStyle } from '../themes/types';
+
+const ComponentA = () => {
+  const styles = useRef(
+    StyleSheet.create({
+      iconStyle: useIconStyles<TIconStyle>(['Color.Primary', 'Large']),
+    })
+  ).current;
+
+  return (
+    <AntDesign style={styles.iconStyle} name="home" {...otherProps} />
+  );
+}`}
+            </CodeSnippet>
+          </section>
+
+          <section className="no-vertical-margin-collapse">
             <SectionHeading id="use-image-background-styles" level={4}>
               <InlineCode>useImageBackgroundStyles()</InlineCode>
             </SectionHeading>
@@ -88,6 +127,7 @@ const Stylers: React.FC = () => (
             <CodeSnippet>
               {`import React, { useRef } from 'react';
 import { ImageBackground, StyleSheet } from 'react-native';
+import { useImageBackgroundStyles } from 'react-native-stylo';
 import { TImageBackgroundStyle } from '../themes/types';
 
 const ComponentA = () => {

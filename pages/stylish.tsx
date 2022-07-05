@@ -71,6 +71,47 @@ const Stylish: React.FC = () => (
           </section>
 
           <section className="no-vertical-margin-collapse">
+            <SectionHeading id="icon" level={4}>
+              <InlineCode>{`<Icon />`}</InlineCode>
+            </SectionHeading>
+            <Paragraph>
+              <strong className="font-semibold">Props type definition</strong>
+            </Paragraph>
+            <CodeSnippet>
+              {`type TIconProps<TStyleName extends string, TStyleNamespace extends string>
+  = TStylesProps<TStyleName, TStyleNamespace> & {
+    name: string;
+    size?: number | undefined;
+    color?: string | undefined;
+    style?: Omit<StyleProp<TextStyle>, 'color'>;
+  };`}
+            </CodeSnippet>
+            <Paragraph>
+              Stylo uses <ExternalLink href="https://www.npmjs.com/package/react-native-vector-icons">Vector Icons</ExternalLink>,
+              so it has a peer dependency of <InlineCode>react-native-vector-icons</InlineCode>@^9.1.0.
+              Vector {`Icon's`} all components are available as static members of the <InlineCode>Icon</InlineCode> component.
+              Like, <InlineCode>Icon.AntDesign</InlineCode>, <InlineCode>Icon.FontAwesome</InlineCode> etc.
+            </Paragraph>
+            <Paragraph>
+              <strong className="font-semibold">Default StyleNamespace:</strong> <InlineCode>IconStyles</InlineCode>
+            </Paragraph>
+            <Paragraph>
+              <strong className="font-semibold">Usage</strong>
+            </Paragraph>
+            <CodeSnippet>
+              {`import React from 'react';
+import { Icon } from 'react-native-stylo';
+import { TIconStyle } from '../themes/types';
+
+const ComponentA = () => {
+  return (
+    <Icon.AntDesign<TIconStyle> styleNames={['Color.Grey2', 'Large]} name="home" {...otherProps} />
+  );
+}`}
+            </CodeSnippet>
+          </section>
+
+          <section className="no-vertical-margin-collapse">
             <SectionHeading id="image-background" level={4}>
               <InlineCode>{`<ImageBackground />`}</InlineCode>
             </SectionHeading>
@@ -78,7 +119,7 @@ const Stylish: React.FC = () => (
               <strong className="font-semibold">Props type definition</strong>
             </Paragraph>
             <CodeSnippet>
-              {`export type TImageBackgroundProps<TStyleName extends string, TStyleNamespace extends string> 
+              {`type TImageBackgroundProps<TStyleName extends string, TStyleNamespace extends string> 
  = ReactNative.ImageBackgroundProps & { styleNamespace?: TStyleNamespace; styleNames?: TStyleName[]; }`}
             </CodeSnippet>
             <Paragraph>
@@ -108,7 +149,7 @@ const ComponentA = () => {
               <strong className="font-semibold">Props type definition</strong>
             </Paragraph>
             <CodeSnippet>
-              {`export type TImageProps<TStyleName extends string, TStyleNamespace extends string> 
+              {`type TImageProps<TStyleName extends string, TStyleNamespace extends string> 
  = ReactNative.ImageProps & { styleNamespace?: TStyleNamespace; styleNames?: TStyleName[]; }`}
             </CodeSnippet>
             <Paragraph>
@@ -138,7 +179,7 @@ const ComponentA = () => {
               <strong className="font-semibold">Props type definition</strong>
             </Paragraph>
             <CodeSnippet>
-              {`export type TSafeAreaViewProps<TStyleName extends string, TStyleNamespace extends string> 
+              {`type TSafeAreaViewProps<TStyleName extends string, TStyleNamespace extends string> 
  = ReactNative.ViewProps & { styleNamespace?: TStyleNamespace; styleNames?: TStyleName[]; }`}
             </CodeSnippet>
             <Paragraph>
@@ -168,7 +209,7 @@ const ComponentA = () => {
               <strong className="font-semibold">Props type definition</strong>
             </Paragraph>
             <CodeSnippet>
-              {`export type TScrollViewProps<
+              {`type TScrollViewProps<
   TScrollViewStyleName extends string,
   TScrollViewStyleNamespace extends string,
   TScrollViewContentContainerStyleName extends string,
@@ -211,7 +252,7 @@ const ComponentA = () => {
               <strong className="font-semibold">Props type definition</strong>
             </Paragraph>
             <CodeSnippet>
-              {`export type TTextInputProps<TStyleName extends string, TStyleNamespace extends string> 
+              {`type TTextInputProps<TStyleName extends string, TStyleNamespace extends string> 
  = ReactNative.TextInputProps & { styleNamespace?: TStyleNamespace; styleNames?: TStyleName[]; }`}
             </CodeSnippet>
             <Paragraph>
@@ -241,7 +282,7 @@ const ComponentA = () => {
               <strong className="font-semibold">Props type definition</strong>
             </Paragraph>
             <CodeSnippet>
-              {`export type TTextProps<TStyleName extends string, TStyleNamespace extends string> 
+              {`type TTextProps<TStyleName extends string, TStyleNamespace extends string> 
  = ReactNative.TextProps & { styleNamespace?: TStyleNamespace; styleNames?: TStyleName[]; }`}
             </CodeSnippet>
             <Paragraph>
@@ -271,7 +312,7 @@ const ComponentA = () => {
               <strong className="font-semibold">Props type definition</strong>
             </Paragraph>
             <CodeSnippet>
-              {`export type TPressableProps<TStyleName extends string, TStyleNamespace extends string> 
+              {`type TPressableProps<TStyleName extends string, TStyleNamespace extends string> 
  = ReactNative.PressableProps & { styleNamespace?: TStyleNamespace; styleNames?: TStyleName[]; }`}
             </CodeSnippet>
             <Paragraph>
@@ -301,7 +342,7 @@ const ComponentA = () => {
               <strong className="font-semibold">Props type definition</strong>
             </Paragraph>
             <CodeSnippet>
-              {`export type TTouchableHighlightProps<TStyleName extends string, TStyleNamespace extends string> 
+              {`type TTouchableHighlightProps<TStyleName extends string, TStyleNamespace extends string> 
  = ReactNative.TouchableHighlightProps & { styleNamespace?: TStyleNamespace; styleNames?: TStyleName[]; }`}
             </CodeSnippet>
             <Paragraph>
@@ -331,7 +372,7 @@ const ComponentA = () => {
               <strong className="font-semibold">Props type definition</strong>
             </Paragraph>
             <CodeSnippet>
-              {`export type TTouchableOpacityProps<TStyleName extends string, TStyleNamespace extends string> 
+              {`type TTouchableOpacityProps<TStyleName extends string, TStyleNamespace extends string> 
  = ReactNative.TouchableOpacityProps & { styleNamespace?: TStyleNamespace; styleNames?: TStyleName[]; }`}
             </CodeSnippet>
             <Paragraph>
@@ -361,7 +402,7 @@ const ComponentA = () => {
               <strong className="font-semibold">Props type definition</strong>
             </Paragraph>
             <CodeSnippet>
-              {`export type TViewProps<TStyleName extends string, TStyleNamespace extends string> 
+              {`type TViewProps<TStyleName extends string, TStyleNamespace extends string> 
  = ReactNative.ViewProps & { styleNamespace?: TStyleNamespace; styleNames?: TStyleName[]; }`}
             </CodeSnippet>
             <Paragraph>

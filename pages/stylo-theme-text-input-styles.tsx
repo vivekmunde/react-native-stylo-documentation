@@ -29,12 +29,13 @@ const StyloThemeTextInput: React.FC = () => (
               display={['TBackgroundColorStyle', 'TFontColorStyle']}
             />
             <CodeSnippet>
-              {`export type TTextInputStyle =
+              {`type TTextInputStyle =
   | TBackgroundColorStyle
   | TFontColorStyle
   | 'Align.Center'
   | 'Align.Right'
   | 'Bold'
+  | 'Bold.Semi'
   | 'Small'
   | 'Large';`}
             </CodeSnippet>

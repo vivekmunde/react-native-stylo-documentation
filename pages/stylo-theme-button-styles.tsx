@@ -25,7 +25,7 @@ const StyloThemeButtonStyles: React.FC = () => (
               Type definition
             </SectionHeading>
             <CodeSnippet>
-              {`export type TButtonStyle =
+              {`type TButtonStyle =
   | 'Button'
   | 'Button.Circle'
   | 'Button.Small'
@@ -33,13 +33,26 @@ const StyloThemeButtonStyles: React.FC = () => (
   | 'Button.Round'
   | 'Button.Transparent';
 
-export type TButtonTextStyle = 'Button.Text';
+type TButtonTextStyle = 'Button.Text';
 
-export type TButtonIconStyle =
+type TButtonIconStyle =
   | 'Button.Icon'
+  | 'Button.Icon.Left'
+  | 'Button.Icon.Right'
   | 'Button.Circle.Icon'
   | 'Button.Circle.Icon.Small'
   | 'Button.Circle.Icon.Large';`}
+            </CodeSnippet>
+          </section>
+
+          <section className="no-vertical-margin-collapse">
+            <SectionHeading id="style-names-hierarchy" level={5}>
+              StyleNames hierarchy
+            </SectionHeading>
+            <CodeSnippet>
+              {`'Button'
+  |- 'Button.Icon'
+  |- 'Button.Text';`}
             </CodeSnippet>
           </section>
 

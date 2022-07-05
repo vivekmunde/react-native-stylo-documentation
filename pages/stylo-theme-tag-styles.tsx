@@ -25,11 +25,13 @@ const StyloThemeTagStyles: React.FC = () => (
               Type definition
             </SectionHeading>
             <CodeSnippet>
-              {`export type TTagStyle = 'Tag' | 'Tag.Small' | 'Tag.Large';
+              {`type TTagStyle = 'Tag' | 'Tag.Small' | 'Tag.Large';
 
-export type TTagTextStyle = 'Tag.Text';
+type TTagTextStyle = 'Tag.Text';
 
-export type TTagAvatarImageStyle =
+type TTagIconStyle = 'Tag.Icon.Left' | 'Tag.Icon.Right';
+
+type TTagAvatarImageStyle =
   | 'Tag.Avatar'
   | 'Tag.Avatar.Left'
   | 'Tag.Avatar.Right';`}
@@ -42,6 +44,7 @@ export type TTagAvatarImageStyle =
             </SectionHeading>
             <CodeSnippet>
               {`'Tag'
+  |- 'Tag.Icon'
   |- 'Tag.Text'
   |- 'Tag.Avatar';`}
             </CodeSnippet>

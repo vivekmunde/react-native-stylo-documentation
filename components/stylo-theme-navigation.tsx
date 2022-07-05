@@ -78,6 +78,11 @@ const StyloThemeNavigation: React.FC = () => (
             </NavLink>
             <ul className="mb-4">
               <li>
+                <NavLink href="/stylo-theme-icon-styles">
+                  Icon
+                </NavLink>
+              </li>
+              <li>
                 <NavLink href="/stylo-theme-image-styles">
                   Image
                 </NavLink>

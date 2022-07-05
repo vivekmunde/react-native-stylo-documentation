@@ -29,14 +29,14 @@ const StyloThemeScrollView: React.FC = () => (
               display={['TBackgroundColorStyle', 'TBorderStyle', 'TFlexStyle', 'TMarginStyle', 'TPaddingStyle']}
             />
             <CodeSnippet>
-              {`export type TScrollViewStyle =
+              {`type TScrollViewStyle =
   | TBackgroundColorStyle
   | TBorderStyle
   | TFlexStyle
   | TMarginStyle
   | TPaddingStyle;
 
-export type TScrollViewContentContainerStyle =
+type TScrollViewContentContainerStyle =
   | TBackgroundColorStyle
   | TBorderStyle
   | TFlexStyle

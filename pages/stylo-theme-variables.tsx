@@ -31,22 +31,31 @@ const StyloThemeVariables: React.FC = () => (
               Ref: <Link href="/stylo-theme-colors#type-definition">TColor</Link>
             </Paragraph>
             <CodeSnippet>
-              {`export type TVariable = 
+              {`type TVariable = 
   | TColor
+  | 'Body.Color'
   | 'Font.Color'
-  | 'Padding'
-  | 'Padding.XSmall'
-  | 'Padding.Small'
-  | 'Padding.Large'
-  | 'Margin'
-  | 'Margin.XSmall'
-  | 'Margin.Small'
-  | 'Margin.Large'
+  | 'Font.Size'
+  | 'Font.Size.Small'
+  | 'Font.Size.Large'
+  | 'Font.Weight'
+  | 'Font.Weight.Bold'
   | 'Border.Color'
   | 'Border.Width'
   | 'Border.Radius'
   | 'Border.Radius.Small'
-  | 'Border.Radius.Large';`}
+  | 'Border.Radius.Large'
+  | 'Margin'
+  | 'Margin.Mini'
+  | 'Margin.Small'
+  | 'Margin.Large'
+  | 'Padding'
+  | 'Padding.Mini'
+  | 'Padding.Small'
+  | 'Padding.Large'
+  | 'Avatar.Size'
+  | 'Avatar.Size.Small'
+  | 'Avatar.Size.Large';`}
             </CodeSnippet>
           </section>
 
@@ -264,20 +273,29 @@ const StyloThemeVariables: React.FC = () => (
             <CodeSnippet>
               {`const Variables = 
   ...Colors,
+  'Body.Color': '#FFFFFF',
   'Font.Color': '${fontColor.toUpperCase()}',
-  Padding: 12,
-  'Padding.XSmall': 4,
-  'Padding.Small': 8,
-  'Padding.Large': 24,
-  Margin: 12,
-  'Margin.XSmall': 4,
-  'Margin.Small': 8,
-  'Margin.Large': 24,
+  'Font.Size': 16,
+  'Font.Size.Small': 12,
+  'Font.Size.Large': 20,
+  'Font.Weight': '400',
+  'Font.Weight.Bold': '700',
   'Border.Color': '${borderColor.toUpperCase()}',
   'Border.Width': 1,
-  'Border.Radius': 6,
-  'Border.Radius.Small': 4,
-  'Border.Radius.Large': 12'
+  'Border.Radius': 4,
+  'Border.Radius.Small': 8,
+  'Border.Radius.Large': 12,
+  Margin: 12,
+  'Margin.Mini': 4,
+  'Margin.Small': 8,
+  'Margin.Large': 24,
+  Padding: 12,
+  'Padding.Mini': 4,
+  'Padding.Small': 8,
+  'Padding.Large': 24,
+  'Avatar.Size': 40,
+  'Avatar.Size.Small': 24,
+  'Avatar.Size.Large': 64,
 };`}
             </CodeSnippet>
           </section>

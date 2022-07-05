@@ -10,14 +10,24 @@ const StyloThemeTouchableStyleTypeDefinition: React.FC = () => (
       Type definition
     </SectionHeading>
     <StyloThemeTypeDefinitionReferences
-      display={['TViewStyle', 'TAvatarStyle', 'TButtonStyle', 'TListStyle', 'TTagStyle']}
+      display={[
+        'TBackgroundColorStyle', 'TBorderStyle', 'TPaddingStyle', 'TMarginStyle', 'TFlexStyle', 'THorizontalStyle',
+        'TBadgeStyle', 'TListStyle', 'TFormStyle', 'TScreenStyle', 'TTagStyle', 'TButtonStyle']}
     />
     <CodeSnippet>
-      {`export type TTouchableStyle =
-  | TViewStyle
-  | TAvatarViewStyle
+      {`type TTouchableStyle =
+  | TBackgroundColorStyle
+  | TBorderStyle
+  | TFlexStyle
+  | TMarginStyle
+  | TPaddingStyle
+  | TAvatarJacketStyle
+  | TBadgeStyle
   | TButtonStyle
+  | TFormStyle
+  | THorizontalStyle
   | TListStyle
+  | TScreenStyle
   | TTagStyle;`}
     </CodeSnippet>
   </section>

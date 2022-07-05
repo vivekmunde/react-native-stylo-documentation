@@ -25,9 +25,9 @@ const StyloThemeBadgeStyles: React.FC = () => (
               Type definition
             </SectionHeading>
             <CodeSnippet>
-              {`export type TBadgeStyle = 'Badge' | 'Badge.Small' | 'Badge.Large';
+              {`type TBadgeStyle = 'Badge' | 'Badge.Small' | 'Badge.Large';
 
-export type TBadgeTextStyle =
+type TBadgeTextStyle =
   | 'Badge.Text'
   | 'Badge.Text.Small'
   | 'Badge.Text.Large';`}

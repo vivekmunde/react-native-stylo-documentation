@@ -25,19 +25,19 @@ const StyloThemePadding: React.FC = () => (
               Type definition
             </SectionHeading>
             <CodeSnippet>
-              {`export type TPaddingStyle =
+              {`type TPaddingStyle =
   | 'Padding'
-  | 'Padding.Top'
-  | 'Padding.Right'
   | 'Padding.Bottom'
   | 'Padding.Left'
-  | 'Padding.XSmall'
+  | 'Padding.Right'
+  | 'Padding.Top'
+  | 'Padding.Mini'
   | 'Padding.Small'
   | 'Padding.Large'
-  | 'Padding.Top.XSmall'
-  | 'Padding.Right.XSmall'
-  | 'Padding.Bottom.XSmall'
-  | 'Padding.Left.XSmall'
+  | 'Padding.Top.Mini'
+  | 'Padding.Right.Mini'
+  | 'Padding.Bottom.Mini'
+  | 'Padding.Left.Mini'
   | 'Padding.Top.Small'
   | 'Padding.Right.Small'
   | 'Padding.Bottom.Small'

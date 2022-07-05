@@ -25,7 +25,7 @@ const StyloThemeFormStyles: React.FC = () => (
               Type definition
             </SectionHeading>
             <CodeSnippet>
-              {`export type TFormStyle = 
+              {`type TFormStyle =
   | 'Form'
   | 'Form.Item'
   | 'Form.Item.Label'

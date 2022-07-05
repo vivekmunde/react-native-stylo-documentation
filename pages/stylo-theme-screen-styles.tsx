@@ -25,7 +25,7 @@ const StyloThemeScreenStyles: React.FC = () => (
               Type definition
             </SectionHeading>
             <CodeSnippet>
-              {`export type TScreenStyle = 
+              {`type TScreenStyle = 
   | 'Screen'
   | 'Screen.Header'
   | 'Screen.Header.Left'

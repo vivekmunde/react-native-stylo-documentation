@@ -29,7 +29,7 @@ const StyloThemeText: React.FC = () => (
               display={['TFontColorStyle', 'TMarginStyle', 'TBadgeStyle', 'TButtonStyle', 'TTagStyle']}
             />
             <CodeSnippet>
-              {`export type TTextStyle =
+              {`type TTextStyle =
   | TFontColorStyle
   | TMarginStyle
   | TBadgeTextStyle
@@ -38,6 +38,7 @@ const StyloThemeText: React.FC = () => (
   | 'Align.Center'
   | 'Align.Right'
   | 'Bold'
+  | 'Bold.Semi'
   | 'H1'
   | 'H2'
   | 'H3'

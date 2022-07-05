@@ -3,7 +3,9 @@ import React from 'react';
 
 import ArticleHeading from '../components/article-heading';
 import CodeSnippet from '../components/code-snippet';
+import InlineCode from '../components/inline-code';
 import Layout from '../components/layout';
+import Paragraph from '../components/paragraph';
 import SectionHeading from '../components/section-heading';
 import StyloThemeNavigation from '../components/stylo-theme-navigation';
 
@@ -25,11 +27,33 @@ const StyloThemeAvatarStyles: React.FC = () => (
               Type definition
             </SectionHeading>
             <CodeSnippet>
-              {`export type TAvatarImageStyle =
+              {`type TAvatarStyle =
   | 'Avatar'
   | 'Avatar.Square'
   | 'Avatar.Small'
-  | 'Avatar.Large';`}
+  | 'Avatar.Large';
+
+type TAvatarJacketStyle =
+  | 'Avatar.Jacket'
+  | 'Avatar.Jacket.Border'
+  | 'Avatar.Jacket.Square'
+  | 'Avatar.Jacket.Small'
+  | 'Avatar.Jacket.Small.Border'
+  | 'Avatar.Jacket.Large'
+  | 'Avatar.Jacket.Large.Border';`}
+            </CodeSnippet>
+          </section>
+
+          <section className="no-vertical-margin-collapse">
+            <SectionHeading id="style-names-hierarchy" level={5}>
+              StyleNames hierarchy
+            </SectionHeading>
+            <Paragraph>
+              When <InlineCode>Avatar.Jacket</InlineCode> is used.
+            </Paragraph>
+            <CodeSnippet>
+              {`'Avatar.Jacket'
+  |- 'Avatar';`}
             </CodeSnippet>
           </section>
 

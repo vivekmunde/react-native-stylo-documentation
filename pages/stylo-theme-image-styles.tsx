@@ -26,12 +26,13 @@ const StyloThemeImage: React.FC = () => (
               Type definition
             </SectionHeading>
             <StyloThemeTypeDefinitionReferences
-              display={['TBorderStyle', 'TAvatarStyle', 'TTagStyle']}
+              display={['TMarginStyle', 'TBorderStyle', 'TAvatarStyle', 'TTagStyle']}
             />
             <CodeSnippet>
-              {`export type TImageStyle =
+              {`type TImageStyle =
+  | TMarginStyle
   | TBorderStyle
-  | TAvatarImage
+  | TAvatarStyle
   | TTagAvatarImageStyle;`}
             </CodeSnippet>
           </section>

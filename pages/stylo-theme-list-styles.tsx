@@ -25,7 +25,7 @@ const StyloThemeListStyles: React.FC = () => (
               Type definition
             </SectionHeading>
             <CodeSnippet>
-              {`export type TListStyle = 
+              {`type TListStyle = 
   | 'List'
   | 'List.Item'
   | 'List.Item.Left'

@@ -25,19 +25,19 @@ const StyloThemeMargin: React.FC = () => (
               Type definition
             </SectionHeading>
             <CodeSnippet>
-              {`export type TMarginStyle =
+              {`type TMarginStyle =
   | 'Margin'
   | 'Margin.Top'
   | 'Margin.Right'
   | 'Margin.Bottom'
   | 'Margin.Left'
-  | 'Margin.XSmall'
+  | 'Margin.Mini'
   | 'Margin.Small'
   | 'Margin.Large'
-  | 'Margin.Top.XSmall'
-  | 'Margin.Right.XSmall'
-  | 'Margin.Bottom.XSmall'
-  | 'Margin.Left.XSmall'
+  | 'Margin.Top.Mini'
+  | 'Margin.Right.Mini'
+  | 'Margin.Bottom.Mini'
+  | 'Margin.Left.Mini'
   | 'Margin.Top.Small'
   | 'Margin.Right.Small'
   | 'Margin.Bottom.Small'

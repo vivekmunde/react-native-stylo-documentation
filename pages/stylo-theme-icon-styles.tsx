@@ -6,8 +6,9 @@ import CodeSnippet from '../components/code-snippet';
 import Layout from '../components/layout';
 import SectionHeading from '../components/section-heading';
 import StyloThemeNavigation from '../components/stylo-theme-navigation';
+import StyloThemeTypeDefinitionReferences from '../components/stylo-theme-type-definition-references';
 
-const StyloThemeFlex: React.FC = () => (
+const StyloThemeIcon: React.FC = () => (
   <Layout
     renderNavigation={() => (
       <StyloThemeNavigation />
@@ -15,36 +16,27 @@ const StyloThemeFlex: React.FC = () => (
     renderContent={() => (
       <React.Fragment>
         <Head>
-          <title>Flex | Stylo theme | React Native Stylo</title>
+          <title>Icon | Stylo theme | React Native Stylo</title>
         </Head>
         <article>
-          <ArticleHeading>Flex</ArticleHeading>
+          <ArticleHeading>Icon</ArticleHeading>
 
           <section className="no-vertical-margin-collapse">
             <SectionHeading id="type-definition" level={5}>
               Type definition
             </SectionHeading>
+            <StyloThemeTypeDefinitionReferences
+              display={['TFontColorStyle', 'TMarginStyle', 'TButtonStyle', 'TTagStyle']}
+            />
             <CodeSnippet>
-              {`type TFlexStyle =
-  | 'Flex.Column'
-  | 'Flex.Row'
-  | 'Flex.Wrap'
-  | 'Flex.AlignContent.Start'
-  | 'Flex.AlignContent.Center'
-  | 'Flex.AlignContent.End'
-  | 'Flex.AlignContent.SpaceAround'
-  | 'Flex.AlignContent.SpaceBetween'
-  | 'Flex.AlignContent.Stretch'
-  | 'Flex.AlignItems.Start'
-  | 'Flex.AlignItems.Center'
-  | 'Flex.AlignItems.End'
-  | 'Flex.AlignItems.Stretch'
-  | 'Flex.JustifyContent.Start'
-  | 'Flex.JustifyContent.Center'
-  | 'Flex.JustifyContent.End'
-  | 'Flex.JustifyContent.SpaceAround'
-  | 'Flex.JustifyContent.SpaceBetween'
-  | 'Flex.JustifyContent.SpaceEvenly';`}
+              {`type TIconStyle =
+  | TFontColorStyle
+  | TMarginStyle
+  | TButtonIconStyle
+  | TTagIconStyle
+  | 'Bold'
+  | 'Small'
+  | 'Large';`}
             </CodeSnippet>
           </section>
         </article>
@@ -53,4 +45,4 @@ const StyloThemeFlex: React.FC = () => (
   />
 );
 
-export default StyloThemeFlex;
+export default StyloThemeIcon;

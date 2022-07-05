@@ -25,7 +25,7 @@ const StyloThemeHorizontalStyles: React.FC = () => (
               Type definition
             </SectionHeading>
             <CodeSnippet>
-              {`export type THorizontalStyle = 
+              {`type THorizontalStyle = 
   | 'Horizontal'
   | 'Horizontal.Left'
   | 'Horizontal.Body'

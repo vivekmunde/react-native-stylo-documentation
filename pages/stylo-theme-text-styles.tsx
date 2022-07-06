@@ -5,6 +5,7 @@ import ArticleHeading from '../components/article-heading';
 import CodeSnippet from '../components/code-snippet';
 import Layout from '../components/layout';
 import SectionHeading from '../components/section-heading';
+import TextShowCase from '../components/showcase/text-showcase';
 import StyloThemeNavigation from '../components/stylo-theme-navigation';
 import StyloThemeTypeDefinitionReferences from '../components/stylo-theme-type-definition-references';
 
@@ -47,6 +48,13 @@ const StyloThemeText: React.FC = () => (
   | 'Large'
   | 'Paragraph';`}
             </CodeSnippet>
+          </section>
+
+          <section className="no-vertical-margin-collapse">
+            <SectionHeading id="usage" level={5}>
+              Usage
+            </SectionHeading>
+            <TextShowCase />
           </section>
         </article>
       </React.Fragment>

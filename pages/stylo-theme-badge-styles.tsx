@@ -5,6 +5,7 @@ import ArticleHeading from '../components/article-heading';
 import CodeSnippet from '../components/code-snippet';
 import Layout from '../components/layout';
 import SectionHeading from '../components/section-heading';
+import BadgeShowCase from '../components/showcase/badge-showcase';
 import StyloThemeNavigation from '../components/stylo-theme-navigation';
 
 const StyloThemeBadgeStyles: React.FC = () => (
@@ -48,15 +49,7 @@ type TBadgeTextStyle =
             <SectionHeading id="usage" level={5}>
               Usage
             </SectionHeading>
-            <CodeSnippet>
-              {`import { Text, View } from '../stylo/stylish';
-
-<View styleNames={['Badge', 'BackgroundColor.Primary']}>
-  <Text styleNames={['Badge.Text', 'Color.White']}>
-    4
-  </Text>
-</View>;`}
-            </CodeSnippet>
+            <BadgeShowCase />
           </section>
         </article>
       </React.Fragment>

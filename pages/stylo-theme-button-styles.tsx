@@ -5,6 +5,7 @@ import ArticleHeading from '../components/article-heading';
 import CodeSnippet from '../components/code-snippet';
 import Layout from '../components/layout';
 import SectionHeading from '../components/section-heading';
+import ButtonShowCase from '../components/showcase/button-showcase';
 import StyloThemeNavigation from '../components/stylo-theme-navigation';
 
 const StyloThemeButtonStyles: React.FC = () => (
@@ -60,15 +61,7 @@ type TButtonIconStyle =
             <SectionHeading id="usage" level={5}>
               Usage
             </SectionHeading>
-            <CodeSnippet>
-              {`import { Text, TouchableOpacity } from '../stylo/stylish';
-
-<TouchableOpacity styleNames={['Button', 'Button.Round', 'BackgroundColor.Primary']}>
-  <Text styleNames={['Button.Text', 'Color.White']}>
-    Submit
-  </Text>
-</TouchableOpacity>;`}
-            </CodeSnippet>
+            <ButtonShowCase />
           </section>
         </article>
       </React.Fragment>

@@ -5,6 +5,7 @@ import ArticleHeading from '../components/article-heading';
 import CodeSnippet from '../components/code-snippet';
 import Layout from '../components/layout';
 import SectionHeading from '../components/section-heading';
+import ScrollViewShowCase from '../components/showcase/scroll-view-showcase';
 import StyloThemeNavigation from '../components/stylo-theme-navigation';
 import StyloThemeTypeDefinitionReferences from '../components/stylo-theme-type-definition-references';
 
@@ -43,6 +44,13 @@ type TScrollViewContentContainerStyle =
   | TMarginStyle
   | TPaddingStyle;`}
             </CodeSnippet>
+          </section>
+
+          <section className="no-vertical-margin-collapse">
+            <SectionHeading id="usage" level={5}>
+              Usage
+            </SectionHeading>
+            <ScrollViewShowCase />
           </section>
         </article>
       </React.Fragment>

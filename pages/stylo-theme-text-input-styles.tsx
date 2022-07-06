@@ -5,6 +5,7 @@ import ArticleHeading from '../components/article-heading';
 import CodeSnippet from '../components/code-snippet';
 import Layout from '../components/layout';
 import SectionHeading from '../components/section-heading';
+import TextInputShowCase from '../components/showcase/text-input-showcase';
 import StyloThemeNavigation from '../components/stylo-theme-navigation';
 import StyloThemeTypeDefinitionReferences from '../components/stylo-theme-type-definition-references';
 
@@ -26,12 +27,15 @@ const StyloThemeTextInput: React.FC = () => (
               Type definition
             </SectionHeading>
             <StyloThemeTypeDefinitionReferences
-              display={['TBackgroundColorStyle', 'TFontColorStyle']}
+              display={['TBackgroundColorStyle', 'TFontColorStyle', 'TMarginStyle', 'TPaddingStyle', 'TBorderStyle']}
             />
             <CodeSnippet>
               {`type TTextInputStyle =
   | TBackgroundColorStyle
   | TFontColorStyle
+  | TMarginStyle
+  | TPaddingStyle
+  | TBorderStyle
   | 'Align.Center'
   | 'Align.Right'
   | 'Bold'
@@ -39,6 +43,13 @@ const StyloThemeTextInput: React.FC = () => (
   | 'Small'
   | 'Large';`}
             </CodeSnippet>
+          </section>
+
+          <section className="no-vertical-margin-collapse">
+            <SectionHeading id="usage" level={5}>
+              Usage
+            </SectionHeading>
+            <TextInputShowCase />
           </section>
         </article>
       </React.Fragment>

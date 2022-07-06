@@ -7,6 +7,7 @@ import InlineCode from '../components/inline-code';
 import Layout from '../components/layout';
 import Paragraph from '../components/paragraph';
 import SectionHeading from '../components/section-heading';
+import AvatarShowCase from '../components/showcase/avatar-showcase';
 import StyloThemeNavigation from '../components/stylo-theme-navigation';
 
 const StyloThemeAvatarStyles: React.FC = () => (
@@ -61,11 +62,7 @@ type TAvatarJacketStyle =
             <SectionHeading id="usage" level={5}>
               Usage
             </SectionHeading>
-            <CodeSnippet>
-              {`import { Image } from '../stylo/stylish';
-
-<Image styleNames={['Avatar', 'Avatar.Large']} ... />;`}
-            </CodeSnippet>
+            <AvatarShowCase />
           </section>
         </article>
       </React.Fragment>

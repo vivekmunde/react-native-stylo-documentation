@@ -4,7 +4,7 @@ import ShowCaseBox from '../showcase-box';
 
 const BackgroundColorsShowCase: React.FC = () => (
   <ShowCaseBox
-    renderCode={() => `  <Stylish.View
+    renderCode={() => `<Stylish.View
   styleNames={[
     'BackgroundColor.Primary',
     'Padding',

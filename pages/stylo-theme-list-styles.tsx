@@ -5,6 +5,7 @@ import ArticleHeading from '../components/article-heading';
 import CodeSnippet from '../components/code-snippet';
 import Layout from '../components/layout';
 import SectionHeading from '../components/section-heading';
+import ListShowCase from '../components/showcase/list-showcase';
 import StyloThemeNavigation from '../components/stylo-theme-navigation';
 
 const StyloThemeListStyles: React.FC = () => (
@@ -51,39 +52,7 @@ const StyloThemeListStyles: React.FC = () => (
             <SectionHeading id="usage" level={5}>
               Usage
             </SectionHeading>
-            <CodeSnippet>
-              {`import { Text, View } from '../stylo/stylish';
-
-<View styleNames={['List', 'BackgroundColor.Grey1', 'Border.Radius']}>
-  <View styleNames={['List.Item']}>
-    <View styleNames={['List.Item.Left']}>
-      <Text>1.</Text>
-    </View>
-    <View styleNames={['List.Item.Body']}>
-      <Text>One</Text>
-    </View>
-    <View styleNames={['List.Item.Right']}>
-      <Text>✓</Text>
-    </View>
-  </View>
-  <View styleNames={['List.Item']}>
-    <View styleNames={['List.Item.Left']}>
-      <Text>2.</Text>
-    </View>
-    <View styleNames={['List.Item.Body']}>
-      <Text>Two</Text>
-    </View>
-  </View>
-  <View styleNames={['List.Item']}>
-    <View styleNames={['List.Item.Left']}>
-      <Text>3.</Text>
-    </View>
-    <View styleNames={['List.Item.Body']}>
-      <Text>Three</Text>
-    </View>
-  </View>
-</View>;`}
-            </CodeSnippet>
+            <ListShowCase />
           </section>
         </article>
       </React.Fragment>

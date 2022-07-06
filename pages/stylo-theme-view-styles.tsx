@@ -28,7 +28,7 @@ const StyloThemeView: React.FC = () => (
             <StyloThemeTypeDefinitionReferences
               display={[
                 'TBackgroundColorStyle', 'TBorderStyle', 'TFlexStyle', 'TMarginStyle', 'TPaddingStyle',
-                'THorizontalStyle', 'TAvatarStyle', 'TBadgeStyle', 'TListStyle', 'TFormStyle', 'TScreenStyle', 'TTagStyle',
+                'THorizontalStyle', 'TBadgeStyle', 'TListStyle', 'TFormStyle', 'TScreenStyle', 'TTagStyle',
               ]}
             />
             <CodeSnippet>
@@ -38,7 +38,6 @@ const StyloThemeView: React.FC = () => (
   | TFlexStyle
   | TMarginStyle
   | TPaddingStyle
-  | TAvatarJacketStyle
   | TBadgeStyle
   | TFormStyle
   | THorizontalStyle

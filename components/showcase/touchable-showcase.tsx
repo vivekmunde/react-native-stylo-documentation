@@ -96,7 +96,7 @@ const TouchableShowCase: React.FC<{
     Submit
   </Stylish.Text>
 </Stylish.Touchable>`.replace(/Touchable/ig, type)}
-    imageAlt="Padding"
+    imageAlt="Touchable"
     imageUrl="showcase-touchable.png"
   />
 );

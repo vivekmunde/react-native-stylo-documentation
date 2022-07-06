@@ -5,6 +5,7 @@ import ArticleHeading from '../components/article-heading';
 import CodeSnippet from '../components/code-snippet';
 import Layout from '../components/layout';
 import SectionHeading from '../components/section-heading';
+import ScreenShowCase from '../components/showcase/screen-showcase';
 import StyloThemeNavigation from '../components/stylo-theme-navigation';
 
 const StyloThemeScreenStyles: React.FC = () => (
@@ -55,29 +56,7 @@ const StyloThemeScreenStyles: React.FC = () => (
             <SectionHeading id="usage" level={5}>
               Usage
             </SectionHeading>
-            <CodeSnippet>
-              {`import { View } from '../stylo/stylish';
-
-<View styleNames={['Screen']}>
-  <View styleNames={['Screen.Header']}>
-    <View styleNames={['Screen.Header.Left']}>
-      <Text>Left</Text>
-    </View>
-    <View styleNames={['Screen.Header.Body']}>
-      <Text>Title</Text>
-    </View>
-    <View styleNames={['Screen.Header.Right']}>
-      <Text>Right</Text>
-    </View>
-  </View>
-  <View styleNames={['Screen.Body']}>
-    <Text>Body</Text>
-  </View>
-  <View styleNames={['Screen.Footer']}>
-    <Text>Footer</Text>
-  </View>
-</View>`}
-            </CodeSnippet>
+            <ScreenShowCase />
           </section>
         </article>
       </React.Fragment>

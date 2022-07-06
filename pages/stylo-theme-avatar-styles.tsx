@@ -9,6 +9,7 @@ import Paragraph from '../components/paragraph';
 import SectionHeading from '../components/section-heading';
 import AvatarShowCase from '../components/showcase/avatar-showcase';
 import StyloThemeNavigation from '../components/stylo-theme-navigation';
+import StyloThemeTypeDefinitionReferences from '../components/stylo-theme-type-definition-references';
 
 const StyloThemeAvatarStyles: React.FC = () => (
   <Layout
@@ -27,8 +28,12 @@ const StyloThemeAvatarStyles: React.FC = () => (
             <SectionHeading id="type-definition" level={5}>
               Type definition
             </SectionHeading>
+            <StyloThemeTypeDefinitionReferences
+              display={['TBorderStyle']}
+            />
             <CodeSnippet>
               {`type TAvatarStyle =
+  | TBorderStyle
   | 'Avatar'
   | 'Avatar.Square'
   | 'Avatar.Small'
@@ -36,12 +41,9 @@ const StyloThemeAvatarStyles: React.FC = () => (
 
 type TAvatarJacketStyle =
   | 'Avatar.Jacket'
-  | 'Avatar.Jacket.Border'
   | 'Avatar.Jacket.Square'
   | 'Avatar.Jacket.Small'
-  | 'Avatar.Jacket.Small.Border'
-  | 'Avatar.Jacket.Large'
-  | 'Avatar.Jacket.Large.Border';`}
+  | 'Avatar.Jacket.Large';`}
             </CodeSnippet>
           </section>
 

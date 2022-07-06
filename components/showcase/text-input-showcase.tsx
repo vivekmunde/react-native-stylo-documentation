@@ -35,7 +35,7 @@ const TextInputShowCase: React.FC = () => (
 <Stylish.TextInput
   styleNames={['Border', 'BackgroundColor.White', 'Padding.Large', 'Margin.Bottom.Large']}
   value="A relaxed input" />`}
-    imageAlt="Text"
+    imageAlt="TextInput"
     imageUrl="showcase-text-input.png"
   />
 );

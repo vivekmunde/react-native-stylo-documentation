@@ -5,6 +5,7 @@ import ArticleHeading from '../components/article-heading';
 import CodeSnippet from '../components/code-snippet';
 import Layout from '../components/layout';
 import SectionHeading from '../components/section-heading';
+import HorizontalShowCase from '../components/showcase/horizontal-showcase';
 import StyloThemeNavigation from '../components/stylo-theme-navigation';
 
 const StyloThemeHorizontalStyles: React.FC = () => (
@@ -49,21 +50,7 @@ const StyloThemeHorizontalStyles: React.FC = () => (
             <SectionHeading id="usage" level={5}>
               Usage
             </SectionHeading>
-            <CodeSnippet>
-              {`import { Text, View } from '../stylo/stylish';
-
-<View styleNames={['Horizontal', 'Border', 'Border.Radius']}>
-  <View styleNames={['Horizontal.Left', 'Border.Right', 'Padding.Small']}>
-    <Text>Left</Text>
-  </View>
-  <View styleNames={['Horizontal.Body', 'Border.Right', 'Padding.Small']}>
-    <Text>Body</Text>
-  </View>
-  <View styleNames={['Horizontal.Right', 'Padding.Small']}>
-    <Text>Right</Text>
-  </View>
-</View>;`}
-            </CodeSnippet>
+            <HorizontalShowCase />
           </section>
         </article>
       </React.Fragment>

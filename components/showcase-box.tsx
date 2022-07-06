@@ -15,7 +15,7 @@ const ShowCaseBox: React.FC<{
     </div>
     <div className="pl-4 pr-4 col-span-4">
       <img
-        className="rounded-xl border-4 border-pink-200"
+        className="rounded-3xl border-4 border-pink-200"
         alt={imageAlt}
         src={`${process.env.NEXT_PUBLIC_ASSET_PREFIX}/images/${imageUrl}`} />
     </div>

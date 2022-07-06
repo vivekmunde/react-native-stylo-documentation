@@ -44,7 +44,7 @@ const ImageShowCase: React.FC = () => (
     </Stylish.Text>
   </Stylish.View>
 </Stylish.View>`}
-    imageAlt="Icon"
+    imageAlt="Image"
     imageUrl="showcase-image.png"
   />
 );

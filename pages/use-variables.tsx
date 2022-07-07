@@ -4,7 +4,6 @@ import React from 'react';
 
 import ArticleHeading from '../components/article-heading';
 import CodeSnippet from '../components/code-snippet';
-import ExternalLink from '../components/external-link';
 import InlineCode from '../components/inline-code';
 import Layout from '../components/layout';
 import MainNavigation from '../components/main-navigation';
@@ -23,7 +22,7 @@ const UseVariables: React.FC = () => (
           <ArticleHeading>useVariables()</ArticleHeading>
 
           <p>
-            The <strong className="font-semibold">useVariables()</strong> is used to access the <Link href="/theme#variables">Theme Variables</Link>.
+            The <strong className="font-semibold">useVariables()</strong> hook is used to access the <Link href="/theme#variables">Theme Variables</Link>.
             A practical use of the <InlineCode>useVariables()</InlineCode> hook can be accessing &amp; using the theme variable values to define styles inside the <InlineCode>StyleSheet.create({ })</InlineCode> API.
           </p>
 

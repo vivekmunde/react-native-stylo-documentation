@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Link from 'next/link';
 import React from 'react';
 
 import ArticleHeading from '../components/article-heading';
@@ -9,6 +10,7 @@ import Layout from '../components/layout';
 import MainNavigation from '../components/main-navigation';
 import Paragraph from '../components/paragraph';
 import SectionHeading from '../components/section-heading';
+import ShowCaseBox from '../components/showcase-box';
 
 const sections = {
   stylesOnly: {
@@ -97,7 +99,7 @@ const CoreConcept: React.FC = () => (
               The library provides extensive style definitions enough to style/create all kinds of components, right from simple Text to complicated Pickers &amp; Forms.
             </Paragraph>
             <Paragraph>
-              Stylo provides a default theme with pre-defined style types and styles. App can copy these &amp; then can immediately start using it or even modify them as per needs.
+              Stylo provides a <Link href="/stylo-theme">default theme</Link> with pre-defined style types and styles. App can copy these &amp; then can immediately start using it or even modify them as per needs.
             </Paragraph>
           </section>
 
@@ -112,11 +114,11 @@ const CoreConcept: React.FC = () => (
             </Paragraph>
             <Paragraph>
               <strong className="font-semibold">StyleName</strong> is the name of a standard style definition provided to the <InlineCode>StyleSheet.create</InlineCode> API.
-              In the code snippet below <InlineCode>{`'Align.Center'`}</InlineCode>, <InlineCode>H1</InlineCode>, <InlineCode>{`'Size.Small'`}</InlineCode> are the style names.
+              In the code snippet below <InlineCode>{`'Align.Center'`}</InlineCode>, <InlineCode>H1</InlineCode>, <InlineCode>Small</InlineCode> are the style names.
             </Paragraph>
             <Paragraph>
               <strong className="font-semibold">StyleNamespaces</strong> are used to organize the style definitions by logically grouping them together.
-              This prevents the style name/style collisions, like <InlineCode>{`'Size.Small'`}</InlineCode> can have different style definitions for <InlineCode>Text</InlineCode> &amp; <InlineCode>View</InlineCode> components.
+              This prevents the style name/style collisions, like <InlineCode>Small</InlineCode> can have different style definitions for <InlineCode>Text</InlineCode> &amp; <InlineCode>View</InlineCode> components.
               In the code snippet below <InlineCode>TextStyles</InlineCode>, <InlineCode>TextInputStyles</InlineCode>, <InlineCode>ViewStyles</InlineCode> are the StyleNamespaces.
               The library has default StyleNamespaces defined per React Native component in its themes.
               The app can define its own StyleNamespaces, which will override the default ones.
@@ -129,14 +131,14 @@ const CoreConcept: React.FC = () => (
   H1: { fontSize: 32, fontWeight: '400', lineHeight: 40, marginBottom: 16 },
   H2: { fontSize: 28, fontWeight: '400', lineHeight: 36, marginBottom: 16 },
   H3: { fontSize: 24, fontWeight: '400', lineHeight: 32, marginBottom: 8 },
-  'Size.Small': { fontSize: 12, lineHeight: 18 },
+  Small: { fontSize: 12, lineHeight: 18 },
   'Size.Tiny': { fontSize: 8, lineHeight: 14 },
   ...
 });
 
 const TextInputStyles = StyleSheet.create({
   Default: { borderRadius: 8, color: '#000000', fontSize: 16, paddingTop: 12, paddingBottom: 12, paddingLeft: 8, paddingRight: 8 },
-  'Size.Small': { fontSize: 12, paddingTop: 8, paddingBottom: 8 },
+  Small: { fontSize: 12, paddingTop: 8, paddingBottom: 8 },
   ...
 });
 const ViewStyles = StyleSheet.create({ ... });
@@ -206,8 +208,8 @@ export type TPaddingStyle = 'Padding' | 'Padding.Top' | 'Padding.Right' | 'Paddi
 export type TMarginStyle = 'Margin' | 'Margin.Top' | 'Margin.Right' | 'Margin.Bottom' | 'Margin.left';
 export type TBorderStyle = 'Border' | 'Border.Radius' | 'Border.Radius.Small' | 'Border.Radius.Large';
 
-export type TTextStyle = TFontColorStyle | TBackgroundColorStyle | 'Bold' | 'H1' | 'H2' | 'H3' | 'H4' | 'Size.Small' | 'Size.Tiny';
-export type TTextInputStyle = TFontColorStyle | TBackgroundColorStyle | TPaddingStyle | TMarginStyle | TBorderStyle | 'Align.Center' | 'Align.Right' | 'Size.Small' | 'Size.Tiny';
+export type TTextStyle = TFontColorStyle | TBackgroundColorStyle | 'Bold' | 'H1' | 'H2' | 'H3' | 'H4' | 'Small' | 'Size.Tiny';
+export type TTextInputStyle = TFontColorStyle | TBackgroundColorStyle | TPaddingStyle | TMarginStyle | TBorderStyle | 'Align.Center' | 'Align.Right' | 'Small' | 'Size.Tiny';
 export type TViewStyle = TBackgroundColorStyle | TPaddingStyle | TMarginStyle | TBorderStyle;`}
             </CodeSnippet>
             <Paragraph>
@@ -285,62 +287,71 @@ export const Theme = {
                 After all, these are just React Native components.&nbsp;
               </mark>
             </Paragraph>
-            <CodeSnippet>
-              {`import { View, Text, TouchableOpacity } from 'react-native-stylo';
+            <ShowCaseBox
+              renderCode={() => `import React from 'react';
+import { Image, SafeAreaView, Text, View } from 'react-native-stylo';
 
 // styles defined inside your app
-import { TViewStyle, TTextStyle, TTouchableStyle } from '../themes/types';
+import { TImageStyle, TSafeAreaViewStyle, TStyleNamespace, TTextStyle, TViewStyle } from '../../stylo/themes/types';
 
-const List = React.FC = () => (
-  <View<TViewStyle> styleNames={['List', 'Border', 'Border.Radius', 'BackgroundColor.Grey1']}>
-    <TouchableOpacity<TTouchableStyle>
-      styleNames={['List.Item', 'Border.Bottom']}
-      onPress={() => { navigation.navigateTo('ThemeProvider'); }}
-    >
-      <View<TViewStyle> styleNames={['List.Item.Left']}>
-        <Text<TTextStyle> styleNames={['Bold']}>
-          1
-        </Text>
+const data = [
+  { name: 'Narayan Naresh Nathani', profileUrl: require('../../images/face-icon-1.png'), role: 'UI Developer' },
+  { name: 'Sumitra Suresh Sundaram', profileUrl: require('../../images/face-icon-2.png'), role: 'UX Designer' },
+  { name: 'Indumati Indraneel Iyengar', profileUrl: require('../../images/face-icon-3.png'), role: 'Software Developer' },
+];
+
+const StylishComponents = () => (
+  <View<TViewStyle, TStyleNamespace> styleNames={['Screen', 'BackgroundColor.Primary1']}>
+    <SafeAreaView<TSafeAreaViewStyle, TStyleNamespace> />
+    <View<TViewStyle, TStyleNamespace> styleNames={['Screen.Header', 'Padding']}>
+      <Text<TTextStyle, TStyleNamespace> styleNames={['H1']}>
+        Stylish Components
+      </Text>
+    </View>
+    <View<TViewStyle, TStyleNamespace> styleNames={['Screen.Body', 'Padding']}>
+      <View<TViewStyle, TStyleNamespace> styleNames={['List', 'Border.Radius', 'BackgroundColor.White', 'Margin.Bottom.Large']}>
+        {data.map((it, index) => (
+          <View<TViewStyle, TStyleNamespace> key={index} styleNames={index > 0 ? ['List.Item', 'Border.Top'] : ['List.Item']}>
+            <View<TViewStyle, TStyleNamespace> styleNames={['List.Item.Left']}>
+              <Image<TImageStyle, TStyleNamespace> styleNames={['Avatar']} source={it.profileUrl} />
+            </View>
+            <View<TViewStyle, TStyleNamespace> styleNames={['List.Item.Body']}>
+              <Text<TTextStyle, TStyleNamespace> styleNames={['Bold.Semi']}>
+                {it.name}
+              </Text>
+              <Text<TTextStyle, TStyleNamespace> styleNames={['Color.Secondary', 'Small']}>
+                {it.role}
+              </Text>
+            </View>
+          </View>
+        ))}
       </View>
-      <View<TViewStyle> styleNames={['List.Item.Body']}>
-        <Text>
-          Theme provider
-        </Text>
+
+      <View<TViewStyle, TStyleNamespace> styleNames={['List', 'Margin.Top.Large']}>
+        {data.map((it, index) => (
+          <View<TViewStyle, TStyleNamespace>
+            key={index}
+            styleNames={['List.Item', 'Border.Radius', 'BackgroundColor.White', 'Margin.Bottom']}>
+            <View<TViewStyle, TStyleNamespace> styleNames={['List.Item.Left']}>
+              <Image<TImageStyle, TStyleNamespace> styleNames={['Avatar', 'Avatar.Large', 'Avatar.Square']} source={it.profileUrl} />
+            </View>
+            <View<TViewStyle, TStyleNamespace> styleNames={['List.Item.Body', 'Flex.JustifyContent.Center']}>
+              <Text<TTextStyle, TStyleNamespace> styleNames={['Large', 'Bold.Semi']}>
+                {it.name}
+              </Text>
+              <Text<TTextStyle, TStyleNamespace> styleNames={['Color.Secondary']}>
+                {it.role}
+              </Text>
+            </View>
+          </View>
+        ))}
       </View>
-    </TouchableOpacity>
-    <TouchableOpacity<TTouchableStyle>
-      styleNames={['List.Item', 'Border.Bottom']}
-      onPress={() => { navigation.navigateTo('UseStylesHook'); }}
-    >
-      <View<TViewStyle> styleNames={['List.Item.Left']}>
-        <Text<TTextStyle> styleNames={['Bold']}>
-          2
-        </Text>
-      </View>
-      <View<TViewStyle> styleNames={['List.Item.Body']}>
-        <Text>
-          useStyles hook
-        </Text>
-      </View>
-    </TouchableOpacity>
-    <TouchableOpacity<TTouchableStyle>
-      styleNames={['List.Item']}
-      onPress={() => { navigation.navigateTo('StylesComponent'); }}
-    >
-      <View<TViewStyle> styleNames={['List.Item.Left']}>
-        <Text<TTextStyle> styleNames={['Bold']}>
-          3
-        </Text>
-      </View>
-      <View<TViewStyle> styleNames={['List.Item.Body']}>
-        <Text>
-          Styles component
-        </Text>
-      </View>
-    </TouchableOpacity>
+    </View>
   </View>
 );`}
-            </CodeSnippet>
+              imageAlt="Stylish Components"
+              imageUrl="showcase-core-concept-stylish-react-native-components.png"
+            />
           </section>
         </article>
       </React.Fragment>

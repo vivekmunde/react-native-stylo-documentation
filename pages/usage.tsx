@@ -10,6 +10,7 @@ import Layout from '../components/layout';
 import MainNavigation from '../components/main-navigation';
 import Paragraph from '../components/paragraph';
 import SectionHeading from '../components/section-heading';
+import ShowCaseBox from '../components/showcase-box';
 import { STYLO_THEME_STYLERS_STYLISH_LOCATION } from '../constants/stylo-locations';
 
 const sections = {
@@ -106,7 +107,7 @@ const Usage: React.FC = () => (
               {sections.styloConfiguration.title}
             </SectionHeading>
             <Paragraph>
-              Stylo provides a default theme &amp; its <Link href="/tight-coupling">tightly coupled</Link> styling elements, <Link href="/stylish">Stylish</Link> components &amp; <Link href="/stylers">Styler</Link> hooks, which are located at <strong className="font-semibold">{STYLO_THEME_STYLERS_STYLISH_LOCATION}</strong>.
+              Stylo provides a <Link href="/stylo-theme">default theme</Link> &amp; its <Link href="/tight-coupling">tightly coupled</Link> styling elements, <Link href="/stylish">Stylish</Link> components &amp; <Link href="/stylers">Styler</Link> hooks, which are located at <strong className="font-semibold">{STYLO_THEME_STYLERS_STYLISH_LOCATION}</strong>.
               Just copy the these to your project.
               You can freely modify the theme as per your needs.
             </Paragraph>
@@ -169,49 +170,50 @@ const App = () => (
               Property <InlineCode>styleNames</InlineCode> accepts the eligible styles for the component which are defined in the theme.
               Property <InlineCode>styleNamespace</InlineCode> is optional and use only when you need to override the <Link href="/theme#default-namespaces">default StyleNamespaces</Link>.
             </Paragraph>
-            <CodeSnippet>
-              {`import React from 'react';
-import Stylish from '../stylo/stylish';
+            <ShowCaseBox
+              renderCode={() => `import React from 'react';
+import Stylish from '../../stylo/stylish';
 
-const Home = () => (
-  <Stylish.View styleNames={['Screen']}>
-    <Stylish.View styleNames={['Screen.Header', 'Flex.Column', 'Flex.AlignItems.Center', 'Flex.JustifyContent.Center', 'Padding']}>
-      <Stylish.Text styleNames={['H1', 'Align.Center']}>
-        React Native Stylo
-      </Stylish.Text>
-      <Stylish.Text styleNames={['Align.Center']}>
-        Highly composable & scalable themes
-      </Stylish.Text>
+const data = [
+  { name: 'Narayan Naresh Nathani', profileUrl: require('../../images/face-icon-1.png'), role: 'UI Developer' },
+  { name: 'Sumitra Suresh Sundaram', profileUrl: require('../../images/face-icon-2.png'), role: 'UX Designer' },
+  { name: 'Indumati Indraneel Iyengar', profileUrl: require('../../images/face-icon-3.png'), role: 'Software Developer' },
+];
+
+const UsageStylishComponents = () => (
+  <Stylish.View styleNames={['Screen', 'BackgroundColor.Primary1']}>
+    <Stylish.SafeAreaView />
+    <Stylish.View styleNames={['Screen.Header', 'Padding']}>
+      <Stylish.Text styleNames={['H1']}>Usage</Stylish.Text>
     </Stylish.View>
-    <Stylish.View styleNames={['Screen.Body']}>
-      <Stylish.View styleNames={['List', 'Border', 'Border.Radius', 'Border.Color.Grey2']}>
-        <Stylish.TouchableOpacity styleNames={['List.Item', 'Border.Bottom']} onPress={() => /*some action */}>
-          <Stylish.View styleNames={['List.Item.Left']}>
-            <Stylish.Image styleNames={['Avatar', 'Avatar.Size.Small']} source={...} />
+    <Stylish.View styleNames={['Screen.Body', 'Padding']}>
+      <Stylish.Text styleNames={['H3', 'Margin.Bottom.Large']}>
+        Stylish Components
+      </Stylish.Text>
+      <Stylish.View
+        styleNames={['List', 'Border.Radius', 'BackgroundColor.White', 'Margin.Bottom.Large']}>
+        {data.map((it, index) => (
+          <Stylish.View
+            key={index}
+            styleNames={index > 0 ? ['List.Item', 'Border.Top'] : ['List.Item']}>
+            <Stylish.View styleNames={['List.Item.Left']}>
+              <Stylish.Image styleNames={['Avatar']} source={it.profileUrl} />
+            </Stylish.View>
+            <Stylish.View styleNames={['List.Item.Body']}>
+              <Stylish.Text styleNames={['Bold.Semi']}>{it.name}</Stylish.Text>
+              <Stylish.Text styleNames={['Color.Secondary', 'Small']}>
+                {it.role}
+              </Stylish.Text>
+            </Stylish.View>
           </Stylish.View>
-          <Stylish.View styleNames={['List.Item.Body']}>
-            <Stylish.Text>
-              Strongly typed & intellisense friendly styles
-            </Stylish.Text>
-          </Stylish.View>
-        </Stylish.TouchableOpacity>
-        <Stylish.TouchableOpacity styleNames={['List.Item', 'Border.Bottom']} onPress={() => /*some action */}>
-          <Stylish.View styleNames={['List.Item.Left']}>
-            <Stylish.Image styleNames={['Avatar', 'Avatar.Size.Small']} source={...} />
-          </Stylish.View>
-          <Stylish.View styleNames={['List.Item.Body']}>
-            <Stylish.Text>
-              Infinitely scalable
-            </Stylish.Text>
-          </Stylish.View>
-        </Stylish.TouchableOpacity>
+        ))}
       </Stylish.View>
     </Stylish.View>
   </Stylish.View>
-);
-
-export default Home;`}
-            </CodeSnippet>
+);`}
+              imageAlt="Stylish Components"
+              imageUrl="showcase-usage-stylish-components.png"
+            />
             <Paragraph>
               Please refer the <Link href="/stylish">Stylish</Link> documentation for more details.
             </Paragraph>
@@ -224,71 +226,68 @@ export default Home;`}
             <Paragraph>
               <strong className="font-semibold">Stylers</strong> are styling hooks which are used to define the styles for the components.
               Use these stylers in case you like to use the core React Native components instead of {`Stylo's`} stylish components.
-              The styler hooks accept two arguments <InlineCode>styleNames</InlineCode> &amp <InlineCode>styleNamespace</InlineCode>(optional).;
+              The styler hooks accept two arguments <InlineCode>styleNames</InlineCode> &amp <InlineCode>styleNamespace</InlineCode>(optional).
               First argument <InlineCode>styleNames</InlineCode> accepts the eligible styles for the component which are defined in the theme.
               Second argument <InlineCode>styleNamespace</InlineCode> is optional, and use only when you need to override the default namespaces.
             </Paragraph>
-            <CodeSnippet>
-              {`import React, { useRef } from 'react';
-import { Image, Text, TouchableOpacity, View } from 'react-native';
-import { useImageStyles, useTextStyles, useTouchableStyles, useViewStyles } from '../stylo/stylers';
+            <ShowCaseBox
+              renderCode={() => `import React, { useRef } from 'react';
+import { Image, SafeAreaView, Text, View } from 'react-native';
+import Stylers from '../../stylo/stylers';
 
-const Home = () => {
+const data = [
+  { name: 'Narayan Naresh Nathani', profileUrl: require('../../images/face-icon-1.png'), role: 'UI Developer' },
+  { name: 'Sumitra Suresh Sundaram', profileUrl: require('../../images/face-icon-2.png'), role: 'UX Designer' },
+  { name: 'Indumati Indraneel Iyengar', profileUrl: require('../../images/face-icon-3.png'), role: 'Software Developer' },
+];
+
+const UsageStylersShowCase = () => {
   const styles = useRef({
-    screen: useViewStyles(['Screen']),
-    screenHeader: useViewStyles(['Screen.Header', 'Flex.Column', 'Flex.AlignItems.Center', 'Flex.JustifyContent.Center', 'Padding']),
-    screenBody: useViewStyles(['Screen.Body']),
-    screenFooter: useViewStyles(['Screen.Footer']),
-    screenTitle: useTextStyles(['H1', 'Align.Center']),
-    screenSubTitle: useTextStyles(['Align.Center']),
-    list: useViewStyles(['List', 'Border', 'Border.Radius', 'Border.Color.Grey2']),
-    listItem: useTouchableStyles(['List.Item', 'Border.Bottom']),
-    listLastItem: useTouchableStyles(['List.Item']),
-    listItemLeft: useViewStyles(['List.Item.Left']),
-    listItemBody: useViewStyles(['List.Item.Body']),
-    listItemAvatar: useImageStyles(['Avatar', 'Avatar.Size.Small']),
+    screen: Stylers.useViewStyles(['Screen', 'BackgroundColor.Primary1']),
+    screenHeader: Stylers.useViewStyles(['Screen.Header', 'Padding']),
+    screenTitle: Stylers.useTextStyles(['H1']),
+    screenBody: Stylers.useViewStyles(['Screen.Body', 'Padding']),
+    listTitle: Stylers.useTextStyles(['H3', 'Margin.Bottom.Large']),
+    list: Stylers.useViewStyles(['List', 'Border.Radius', 'BackgroundColor.White', 'Margin.Bottom.Large']),
+    listItem: Stylers.useViewStyles(['List.Item', 'Border.Top']),
+    listLastItem: Stylers.useViewStyles(['List.Item']),
+    listItemLeft: Stylers.useViewStyles(['List.Item.Left']),
+    listItemBody: Stylers.useViewStyles(['List.Item.Body']),
+    name: Stylers.useTextStyles(['Bold.Semi']),
+    role: Stylers.useTextStyles(['Color.Secondary', 'Small']),
+    avatar: Stylers.useImageStyles(['Avatar']),
   }).current;
 
   return (
     <View style={styles.screen}>
+      <SafeAreaView />
       <View style={styles.screenHeader}>
-        <Text style={styles.screenTitle}>
-          React Native Stylo
-        </Text>
-        <Text style={styles.screenSubTitle}>
-          Highly composable & infinitely scalable themes
-        </Text>
+        <Text style={styles.screenTitle}>Usage</Text>
       </View>
       <View style={styles.screenBody}>
+        <Text style={styles.listTitle}>Stylers</Text>
         <View style={styles.list}>
-          <TouchableOpacity style={styles.listItem} onPress={()=> /* some action */}>
-            <View style={styles.listItemLeft}>
-              <Image style={styles.listItemAvatar} source={...} />
+          {data.map((it, index) => (
+            <View
+              key={index}
+              style={index > 0 ? styles.listItem : styles.listLastItem}>
+              <View style={styles.listItemLeft}>
+                <Image style={styles.avatar} source={it.profileUrl} />
+              </View>
+              <View style={styles.listItemBody}>
+                <Text style={styles.name}>{it.name}</Text>
+                <Text style={styles.role}>{it.role}</Text>
+              </View>
             </View>
-            <View style={styles.listItemBody}>
-              <Text>
-                Strongly typed & intellisense friendly styles
-              </Text>
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.listLastItem} onPress={()=> /* some action */}>
-            <View style={styles.listItemLeft}>
-              <Image style={styles.listItemAvatar} source={...} />
-            </View>
-            <View style={styles.listItemBody}>
-              <Text>
-                Infinitely scalable
-              </Text>
-            </View>
-          </TouchableOpacity>
+          ))}
         </View>
       </View>
     </View>
   );
-};
-
-export default Home;`}
-            </CodeSnippet>
+};`}
+              imageAlt="Stylers"
+              imageUrl="showcase-usage-stylers.png"
+            />
             <Paragraph>
               Please refer the <Link href="/stylers">Stylers</Link> documentation for more details.
             </Paragraph>
@@ -302,49 +301,49 @@ export default Home;`}
               Variables are the core configuration values which are used to define the themes. Like, colors, paddings, margins etc.&nbsp;
               <strong className="font-semibold">useVariables()</strong> hook is used to access the theme configuration values to create your own custom page specific styles.
             </Paragraph>
-            <CodeSnippet>
-              {`import { Text, View } from 'react-native';
-import { useVariables } from '../stylo/stylers';
+            <ShowCaseBox
+              renderCode={() => `import React, { useRef } from 'react';
+import { StyleSheet, View, Text, SafeAreaView } from 'react-native';
+import Stylers from '../../stylo/stylers';
 
-const ComponentA = () => {
-  const [
-    paddingLarge,
-    borderRadius,
-    colorPink,
-    colorWhite,
-  ] = useVariables([
-    'Padding.Large',
-    'Border.Radius',
-    'Color.Pink',
-    'Color.White',
-  ]);
+const UsageUseVariablesShowCase = () => {
+  const [ padding, paddingLarge, margin, marginLarge, borderRadius, fontColor, fontSize, colorPrimary1, colorWhite ]
+    = Stylers.useVariables([ 'Padding', 'Padding.Large', 'Margin', 'Margin.Large', 'Border.Radius', 'Font.Color', 'Font.Size', 'Color.Primary1', 'Color.White' ]);
+
   const styles = useRef(
     StyleSheet.create({
-      card: {
-        padding: paddingLarge,
-        borderRadius,
-        backgroundColor: colorPink,
-        display: 'flex',
-        flexDirection: 'column',
-      },
-      cardTitle: {
-        fontSize: 24,
-        lineHeight: 32,
-        color: colorWhite,
-      },
-      ...,
+      screen: { flex: 1, backgroundColor: colorPrimary1.toString(), padding: Number(paddingLarge) },
+      screenHeader: { paddingVertical: Number(paddingLarge) },
+      screenBody: { padding: Number(padding) },
+      text: { color: fontColor.toString(), fontSize: Number(fontSize) },
+      h1: { fontWeight: '500', fontSize: 48, marginBottom: Number(marginLarge) },
+      h2: { fontWeight: '600', fontSize: 32, marginBottom: Number(marginLarge) },
+      paragraph: { marginBottom: Number(margin) },
+      card: { padding: Number(padding), borderRadius: Number(borderRadius), backgroundColor: colorWhite.toString() },
     }),
   ).current;
 
   return (
-    <View style={styles.card}>
-      <Text style={styles.cardTitle}>
-        {title goes here}
-      </Text>
-      ...
+    <View style={styles.screen}>
+      <SafeAreaView />
+      <View style={styles.screenHeader}>
+        <Text style={[styles.text, styles.h1]}>Usage</Text>
+      </View>
+      <Text style={[styles.text, styles.h2]}>useVariables()</Text>
+      <View style={styles.card}>
+        <Text style={[styles.text, styles.paragraph]}>
+          Variables are the core configuration values which are used to define the themes. Like, colors, paddings, margins etc.
+        </Text>
+        <Text style={styles.text}>
+          The useVariables() hook is used to access the Theme Variables. A practical use of the useVariables() hook can be accessing & using the theme variable values to define styles inside the StyleSheet.create() API.
+        </Text>
+      </View>
     </View>
-  );`}
-            </CodeSnippet>
+  );
+};`}
+              imageAlt="useVariables()"
+              imageUrl="showcase-usage-use-variables.png"
+            />
             <Paragraph>
               Please refer the <Link href="/use-variables">useVariables()</Link> documentation for more details.
             </Paragraph>

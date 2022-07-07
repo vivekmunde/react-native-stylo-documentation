@@ -40,14 +40,14 @@ const Theme: React.FC = () => (
               A common good practice is to group the style definitions per React Native component.
             </Paragraph>
             <Paragraph>
-              In the code snippet below <InlineCode>{`'Align.Center'`}</InlineCode>, <InlineCode>H1</InlineCode>, <InlineCode>{`'Size.Small'`}</InlineCode> are the style names.
+              In the code snippet below <InlineCode>{`'Align.Center'`}</InlineCode>, <InlineCode>H1</InlineCode>, <InlineCode>Small</InlineCode> are the style names.
             </Paragraph>
             <Paragraph>
               <strong className="font-semibold">Type definition</strong>
             </Paragraph>
             <CodeSnippet>
-              {`type TTextStyle = 'Align.Center' | 'Align.Right' | 'H1' | 'H2' | 'H3' | 'Size.Small' | 'Size.Tiny';
-type TInputTextStyle = 'Align.Center' | 'Align.Right' | 'Size.Small' | 'Size.Tiny';`}
+              {`type TTextStyle = 'Align.Center' | 'Align.Right' | 'H1' | 'H2' | 'H3' | 'Small' | 'Size.Tiny';
+type TInputTextStyle = 'Align.Center' | 'Align.Right' | 'Small' | 'Size.Tiny';`}
             </CodeSnippet>
             <Paragraph>
               The document explains the significance &amp; usage of the type definitions in the theme in the later section.
@@ -65,7 +65,7 @@ type TInputTextStyle = 'Align.Center' | 'Align.Right' | 'Size.Small' | 'Size.Tin
   H1: { fontSize: 32, fontWeight: '400', lineHeight: 40, marginBottom: 16 },
   H2: { fontSize: 28, fontWeight: '400', lineHeight: 36, marginBottom: 16 },
   H3: { fontSize: 24, fontWeight: '400', lineHeight: 32, marginBottom: 8 },
-  'Size.Small': { fontSize: 12, lineHeight: 18 },
+  Small: { fontSize: 12, lineHeight: 18 },
   'Size.Tiny': { fontSize: 8, lineHeight: 14 },
 });
 
@@ -73,8 +73,8 @@ const TextInputStyles = StyleSheet.create({
   Default: { borderRadius: 8, color: '#000000', fontSize: 16, paddingTop: 12, paddingBottom: 12, paddingLeft: 8, paddingRight: 8 },
   'Align.Center': { textAlign: 'center' },
   'Align.Right': { textAlign: 'right' },
-  'Size.Small': { fontSize: 12, paddingTop: 8, paddingBottom: 8 },
-  'Size.Large': { fontSize: 24, paddingTop: 16, paddingBottom: 16, paddingLeft: 10, paddingRight: 10 },
+  Small: { fontSize: 12, paddingTop: 8, paddingBottom: 8 },
+  Large: { fontSize: 24, paddingTop: 16, paddingBottom: 16, paddingLeft: 10, paddingRight: 10 },
 });`}
             </CodeSnippet>
           </section>
@@ -117,8 +117,8 @@ const ComponentA = () => (
               StyleNamespaces are used to organize the style definitions by logically grouping them together.
               Means, all style definitions for React {`Native's`} Text component can be grouped together under a namespace called <InlineCode>TextStyles</InlineCode>, likewise <InlineCode>ViewStyles</InlineCode>, <InlineCode>TouchableStyles</InlineCode>, <InlineCode>TextInputStyles</InlineCode> etc.
               This prevents collisions of the StyleName &amp; eventually the collisions of styles.
-              For example, a StyleName <InlineCode>{`'Size.Small'`}</InlineCode> can exist for both Text &amp; View and can have different style definitions for each.
-              So placing these different stye definitions with same StyleName <InlineCode>{`'Size.Small'`}</InlineCode> under separate namespaces <InlineCode>TextStyles</InlineCode> &amp; <InlineCode>ViewStyles</InlineCode> will avoid the collision or accidental overriding of style definitions.
+              For example, a StyleName <InlineCode>Small</InlineCode> can exist for both Text &amp; View and can have different style definitions for each.
+              So placing these different stye definitions with same StyleName <InlineCode>Small</InlineCode> under separate namespaces <InlineCode>TextStyles</InlineCode> &amp; <InlineCode>ViewStyles</InlineCode> will avoid the collision or accidental overriding of style definitions.
             </Paragraph>
             <Paragraph>
               Stylo considers each React Native component as one StyleNamespace.
@@ -276,7 +276,7 @@ export type TTouchableStyle = TBackgroundColorStyle | TPaddingStyle | TMarginSty
             <Paragraph>
               Stylo provides a <Link href="/stylo-theme">default theme</Link> which is located at <strong className="font-semibold">{STYLO_THEME_LOCATION}</strong>.
               The theme can be simply copied into the app &amp; used as is or freely modified as per the needs.
-              Or simply use the default theme just as a guideline &amp; create your own from scratch.
+              Or simply use the <Link href="/stylo-theme">default theme</Link> just as a guideline &amp; create your own from scratch.
             </Paragraph>
           </section>
 
@@ -400,7 +400,7 @@ export const TextStyles = StyleSheet.create({
   H1: { fontSize: 32, fontWeight: '400', lineHeight: 40, marginBottom: 16 },
   H2: { fontSize: 28, fontWeight: '400', lineHeight: 36, marginBottom: 16 },
   H3: { fontSize: 24, fontWeight: '400', lineHeight: 32, marginBottom: 8 },
-  'Size.Small': { fontSize: 12, lineHeight: 18 },
+  Small: { fontSize: 12, lineHeight: 18 },
   'Size.Tiny': { fontSize: 8, lineHeight: 14 },
   ...
 });

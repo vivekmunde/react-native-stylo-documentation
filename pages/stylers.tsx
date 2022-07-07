@@ -38,6 +38,7 @@ const Stylers: React.FC = () => (
           </Paragraph>
           <Blockquote>
             All styler hooks use the <Link href="/use-styles">useStyles()</Link> hook internally to create &amp; return the style object from <InlineCode>styleNames</InlineCode> &amp; <InlineCode>styleNamespace</InlineCode> supplied to them as arguments.
+            Use Styler hooks in cases where the use of <Link href="/stylish">Stylish</Link> components is not possible.
           </Blockquote>
 
           <section className="no-vertical-margin-collapse">

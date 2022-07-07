@@ -96,10 +96,24 @@ const Usage: React.FC = () => (
               Stylo uses <ExternalLink href="https://www.npmjs.com/package/react-native-vector-icons">Vector Icons</ExternalLink>, so it has a peer dependency of <InlineCode>react-native-vector-icons</InlineCode>@^9.1.0.
             </Paragraph>
             <Paragraph>
-              <InlineCode>npm install --save react-native-stylo react-native-vector-icons@^9.1.0</InlineCode>
+              Stylo is in BETA currently. So only available on GitBub for installation. Soon will be released on NPM.
             </Paragraph>
             <Paragraph>
-              <InlineCode>yarn add react-native-stylo react-native-vector-icons@^9.1.0</InlineCode>
+              <InlineCode>npm install --save react-native-vector-icons@^9.1.0</InlineCode>
+              <br />
+              <InlineCode>npm install --save react-native-stylo@git+https://github.com/vivekmunde/react-native-stylo.git#0.3.0</InlineCode>
+              {/* <InlineCode>npm install --save react-native-vector-icons@^9.1.0 react-native-stylo</InlineCode> */}
+              <br />
+              {' '}
+              <br />
+              OR
+              <br />
+              {' '}
+              <br />
+              <InlineCode>yarn add react-native-vector-icons@^9.1.0</InlineCode>
+              <br />
+              <InlineCode>yarn add react-native-stylo@git+https://github.com/vivekmunde/react-native-stylo.git#0.3.0</InlineCode>
+              {/* <InlineCode>yarn add react-native-vector-icons@^9.1.0 react-native-stylo</InlineCode> */}
             </Paragraph>
           </section>
           <section className="no-vertical-margin-collapse">

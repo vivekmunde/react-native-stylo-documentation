@@ -112,6 +112,41 @@ const FlexShowCase: React.FC = () => (
   <Stylish.Text>Flex Column</Stylish.Text>
   <Stylish.Text>Align Items</Stylish.Text>
   <Stylish.Text>Cender</Stylish.Text>
+</Stylish.View>
+
+<Stylish.View
+  styleNames={[
+    'Flex.Row',
+    'Border',
+    'Border.Radius',
+    'BackgroundColor.White',
+    'Border.Color.Primary2',
+    'Margin.Bottom',
+  ]}>
+  <Stylish.View
+    styleNames={[
+      'Flex.1',
+      'Flex.AlignItems.Center',
+      'Padding',
+      'Border.Right',
+      'Border.Color.Primary2',
+    ]}>
+    <Stylish.Text>Flex.1</Stylish.Text>
+  </Stylish.View>
+  <Stylish.View
+    styleNames={[
+      'Flex.2',
+      'Flex.AlignItems.Center',
+      'Padding',
+      'Border.Right',
+      'Border.Color.Primary2',
+    ]}>
+    <Stylish.Text>Flex.2</Stylish.Text>
+  </Stylish.View>
+  <Stylish.View
+    styleNames={['Flex.3', 'Flex.AlignItems.Center', 'Padding']}>
+    <Stylish.Text>Flex.3</Stylish.Text>
+  </Stylish.View>
 </Stylish.View>`}
     imageAlt="Flex"
     imageUrl="showcase-flex.png"

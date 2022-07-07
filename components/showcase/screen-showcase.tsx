@@ -5,8 +5,8 @@ import ShowCaseBox from '../showcase-box';
 const ScreenShowCase: React.FC = () => (
   <ShowCaseBox
     renderCode={() => `<Stylish.View styleNames={['Screen', 'BackgroundColor.Primary1']}>
-  <Stylish.SafeAreaView styleNames={['BackgroundColor.Primary1']} />
-  <Stylish.View styleNames={['Screen.Header', 'BackgroundColor.Primary1']}>
+  <Stylish.SafeAreaView />
+  <Stylish.View styleNames={['Screen.Header']}>
     <Stylish.View styleNames={['Screen.Header.Left', 'Padding']}>
       <Stylish.TouchableOpacity styleNames={['Button', 'Button.Circle', 'BackgroundColor.White']}>
         <Stylish.Icon.SimpleLineIcons name="menu" styleNames={['Button.Icon', 'Button.Circle.Icon']} />
@@ -19,7 +19,7 @@ const ScreenShowCase: React.FC = () => (
       <Stylish.Image source={require('../../images/face-icon-1.png')} styleNames={['Avatar']} />
     </Stylish.TouchableOpacity>
   </Stylish.View>
-  <Stylish.View styleNames={['Screen.Body', 'Padding', 'BackgroundColor.Primary1']}>
+  <Stylish.View styleNames={['Screen.Body', 'Padding']}>
     <Stylish.Text styleNames={['Paragraph']}>
       Theme is nothing but a collection of styles defined using the React Native's StyleSheet.create() API. The theme is used by the library and its hooks/components to apply styles to the React Native components. There is no restriction on the format of the style names, these can be defined as per the needs.
     </Stylish.Text>

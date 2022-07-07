@@ -12,7 +12,7 @@ const StyloThemeTouchableStyleTypeDefinition: React.FC = () => (
     <StyloThemeTypeDefinitionReferences
       display={[
         'TBackgroundColorStyle', 'TBorderStyle', 'TPaddingStyle', 'TMarginStyle', 'TFlexStyle', 'THorizontalStyle',
-        'TBadgeStyle', 'TListStyle', 'TScreenStyle', 'TTagStyle', 'TButtonStyle']}
+        'TBadgeStyle', 'TFormStyle', 'TListStyle', 'TScreenStyle', 'TTagStyle', 'TButtonStyle']}
     />
     <CodeSnippet>
       {`type TTouchableStyle =
@@ -25,6 +25,7 @@ const StyloThemeTouchableStyleTypeDefinition: React.FC = () => (
   | TBadgeStyle
   | TButtonStyle
   | THorizontalStyle
+  | TFormStyle
   | TListStyle
   | TScreenStyle
   | TTagStyle;`}

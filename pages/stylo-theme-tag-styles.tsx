@@ -5,6 +5,7 @@ import ArticleHeading from '../components/article-heading';
 import CodeSnippet from '../components/code-snippet';
 import Layout from '../components/layout';
 import SectionHeading from '../components/section-heading';
+import TagShowCase from '../components/showcase/tag-showcase';
 import StyloThemeNavigation from '../components/stylo-theme-navigation';
 
 const StyloThemeTagStyles: React.FC = () => (
@@ -29,10 +30,12 @@ const StyloThemeTagStyles: React.FC = () => (
 
 export type TTagTextStyle = 'Tag.Text' | 'Tag.Text.Left' | 'Tag.Text.Right';
 
-type TTagIconStyle = 'Tag.Icon.Left' | 'Tag.Icon.Right';
+type TTagIconStyle = 'Tag.Icon | 'Tag.Icon.Left' | 'Tag.Icon.Right';
 
 type TTagAvatarImageStyle =
   | 'Tag.Avatar'
+  | 'Tag.Avatar.Small'
+  | 'Tag.Avatar.Large'
   | 'Tag.Avatar.Left'
   | 'Tag.Avatar.Right';`}
             </CodeSnippet>
@@ -54,16 +57,7 @@ type TTagAvatarImageStyle =
             <SectionHeading id="usage" level={5}>
               Usage
             </SectionHeading>
-            <CodeSnippet>
-              {`import { Image, Text, View } from '../stylo/stylish';
-
-<View styleNames={['Tag', 'BackgroundColor.Primary']}>
-  <Image styleNames={['Tag.Avatar']} ... />
-  <Text styleNames={['Tag.Text', 'Color.White']}>
-    Name
-  </Text>
-</View>;`}
-            </CodeSnippet>
+            <TagShowCase />
           </section>
         </article>
       </React.Fragment>

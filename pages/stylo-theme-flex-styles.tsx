@@ -45,7 +45,17 @@ const StyloThemeFlex: React.FC = () => (
   | 'Flex.JustifyContent.End'
   | 'Flex.JustifyContent.SpaceAround'
   | 'Flex.JustifyContent.SpaceBetween'
-  | 'Flex.JustifyContent.SpaceEvenly';`}
+  | 'Flex.JustifyContent.SpaceEvenly'
+  | 'Flex.1'
+  | 'Flex.2'
+  | 'Flex.3'
+  | 'Flex.4'
+  | 'Flex.5'
+  | 'Flex.6'
+  | 'Flex.7'
+  | 'Flex.8'
+  | 'Flex.9'
+  | 'Flex.10';`}
             </CodeSnippet>
           </section>
 

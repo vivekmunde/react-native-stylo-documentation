@@ -2,7 +2,7 @@ type TColor = { [name: string]: string };
 
 export const bodyColor = '#ffffff';
 export const fontColor = '#434343';
-export const borderColor = '#f0f0f0';
+export const borderColor = '#e4e4e4';
 
 export const primaryColor = '#ec4899';
 export const secondaryColor = '#8c8c8c';

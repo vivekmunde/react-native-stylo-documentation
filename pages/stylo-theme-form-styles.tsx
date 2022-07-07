@@ -5,6 +5,7 @@ import ArticleHeading from '../components/article-heading';
 import CodeSnippet from '../components/code-snippet';
 import Layout from '../components/layout';
 import SectionHeading from '../components/section-heading';
+import FormShowCase from '../components/showcase/form-showcase';
 import StyloThemeNavigation from '../components/stylo-theme-navigation';
 
 const StyloThemeFormStyles: React.FC = () => (
@@ -69,43 +70,7 @@ const StyloThemeFormStyles: React.FC = () => (
             <SectionHeading id="usage" level={5}>
               Usage
             </SectionHeading>
-            <CodeSnippet>
-              {`import { Text, TextInput, View } from '../stylo/stylish';
-
-<View styleNames={['Form']}>
-  <View styleNames={['Form.Item']}>
-    <View styleNames={['Form.Item.Label']}>
-      <Text styleNames={['Secondary']}>
-        Name
-      </Text>
-    </View>
-    <View styleNames={['Form.Item.Input']}>
-      <TextInput />
-    </View>
-  </View>
-</View>`}
-            </CodeSnippet>
-            <CodeSnippet>
-              {`import { Text, TextInput, View } from '../stylo/stylish';
-
-<View styleNames={['Form']}>
-  <View styleNames={['Form.Item']}>
-    <View styleNames={['Form.Item.Label']}>
-      <Text styleNames={['Color.Danger']}>
-        Name
-      </Text>
-    </View>
-    <View styleNames={['Form.Item.Input', 'Border.Color.Danger']}>
-      <TextInput />
-    </View>
-    <View styleNames={['Form.Item.Help']}>
-      <Text styleNames={['Color.Danger']}>
-        Please enter name
-      </Text>
-    </View>
-  </View>
-</View>`}
-            </CodeSnippet>
+            <FormShowCase />
           </section>
         </article>
       </React.Fragment>

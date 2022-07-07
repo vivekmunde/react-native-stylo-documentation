@@ -12,6 +12,7 @@ import MainNavigation from '../components/main-navigation';
 import Paragraph from '../components/paragraph';
 import RequiredTag from '../components/required-tag';
 import SectionHeading from '../components/section-heading';
+import ShowCaseBox from '../components/showcase-box';
 
 const UseStyles: React.FC = () => (
   <Layout
@@ -125,22 +126,37 @@ const UseStyles: React.FC = () => (
             <Paragraph>
               Below example shows the use of <InlineCode>useStyles()</InlineCode> hook to create a styled card.
             </Paragraph>
-            <CodeSnippet>
-              {`import React, { useRef } from 'react';
-import { Text, TextStyle, TouchableOpacity, View, ViewStyle } from 'react-native';
+            <ShowCaseBox
+              renderCode={() => `import React, { useRef } from 'react';
+import { SafeAreaView, Text, TextStyle, TouchableOpacity, View, ViewStyle } from 'react-native';
 import { useStyles } from 'react-native-stylo';
+import { TStyleNamespace, TTextStyle, TTouchableStyle, TViewStyle } from '../../stylo/themes/types';
 
-import { TStyleNamespace, TTextStyle, TTouchableStyle, TViewStyle } from '../themes/types';
-
-const ComponentA:React.FC = () => {
-  const styles = useRef(
+const UseStylesShowCase: React.FC = () => {
+  const styles = useRef({
+    screen: useStyles<ViewStyle, TViewStyle, TStyleNamespace>({
+      styleNamespace: 'ViewStyles',
+      styleNames: ['Screen', 'BackgroundColor.Primary1'],
+    }),
+    screenHeader: useStyles<ViewStyle, TViewStyle, TStyleNamespace>({
+      styleNamespace: 'ViewStyles',
+      styleNames: ['Screen.Header', 'Padding'],
+    }),
+    screenTitle: useStyles<TextStyle, TTextStyle, TStyleNamespace>({
+      styleNamespace: 'TextStyles',
+      styleNames: ['Color.Primary', 'H1', 'Margin.Top.Small', 'Margin.Bottom.Small'],
+    }),
+    screenBody: useStyles<ViewStyle, TViewStyle, TStyleNamespace>({
+      styleNamespace: 'ViewStyles',
+      styleNames: ['Screen.Body', 'Padding'],
+    }),
     card: useStyles<ViewStyle, TViewStyle, TStyleNamespace>({
       styleNamespace: 'ViewStyles',
-      styleNames: ['Border', 'Border.Radius', 'Border.Color.Primary', 'Flex', 'Flex.Column'],
+      styleNames: ['BackgroundColor.White', 'Border.Radius', 'Margin.Bottom.Large'],
     }),
     cardHeader: useStyles<ViewStyle, TViewStyle, TStyleNamespace>({
       styleNamespace: 'ViewStyles',
-      styleNames: ['Padding', 'Background.Color.Primary1'],
+      styleNames: ['Padding.Top', 'Padding.Left', 'Padding.Right'],
     }),
     cardBody: useStyles<ViewStyle, TViewStyle, TStyleNamespace>({
       styleNamespace: 'ViewStyles',
@@ -150,57 +166,70 @@ const ComponentA:React.FC = () => {
       styleNamespace: 'ViewStyles',
       styleNames: ['Padding', 'Border.Top', 'Border.Color.Primary1'],
     }),
-    header: useStyles<TextStyle, TTextStyle, TStyleNamespace>({
+    cardTitle: useStyles<TextStyle, TTextStyle, TStyleNamespace>({
       styleNamespace: 'TextStyles',
-      styleNames: ['Color.Primary', 'H2'],
+      styleNames: ['Large', 'Bold'],
+    }),
+    code: useStyles<TextStyle, TTextStyle, TStyleNamespace>({
+      styleNamespace: 'TextStyles',
+      styleNames: ['Color.Grey7', 'Bold.Semi'],
     }),
     description: useStyles<TextStyle, TTextStyle, TStyleNamespace>({
       styleNamespace: 'TextStyles',
-      styleNames: ['Color.Secondary'],
-    }),
-    highlightedText: useStyles<TextStyle, TTextStyle, TStyleNamespace>({
-      styleNamespace: 'TextStyles',
-      styleNames: ['Bold'],
+      styleNames: ['Color.Grey8'],
     }),
     footerButton: useStyles<ViewStyle, TTouchableStyle, TStyleNamespace>({
       styleNamespace: 'TouchableStyles',
-      styleNames: ['Button', 'BackgroundColor.Primary'],
+      styleNames: ['Button', 'Border', 'Border.Color.Primary'],
     }),
     footerButtonText: useStyles<TextStyle, TTextStyle, TStyleNamespace>({
       styleNamespace: 'TextStyles',
       styleNames: ['Color.Primary'],
     }),
-  ).current;
+  }).current;
 
   return (
-    <View style={styles.card}>
-      <View style={styles.cardHeader}>
-        <Text style={styles.header}>
-          useStyles() hook
-        </Text>
+    <View style={styles.screen}>
+      <SafeAreaView />
+      <View style={styles.screenHeader}>
+        <Text style={styles.screenTitle}>useStyles() hook</Text>
       </View>
-      <View style={styles.cardBody}>
-        <Text style={styles.highlightedText}>
-          useStyles()
-        </Text>
-        <Text style={styles.description}>
-          is main hook which is used by the Stylo library to read styles from theme.
-          It accepts StyleNames & optional StyleNamespace as its arguments.
-          It then reads the styles defined for those StyleNames under that StyleNamespace in the theme,
-          combines these styles into one & returns the final style.
-        </Text>
-      </View>
-      <View style={styles.cardFooter}>
-        <TouchableOpacity style={styles.footerButton} onPress={() => /* some action */}>
-          <Text style={styles.footerButtonText}>
-            Read more ...
-          </Text>
-        </TouchableOpacity>
+      <View style={styles.screenBody}>
+        <View style={styles.card}>
+          <View style={styles.cardHeader}>
+            <Text style={styles.cardTitle}>Type definition</Text>
+          </View>
+          <View style={styles.cardBody}>
+            <Text style={styles.code}>
+              {
+                'function useStyles<TStyleProp, TStyleName extends string, TStyleNamespace extends string>({ styleNamespace, styleNames }: { styleNamespace: TStyleNamespace; styleNames: TStyleName[]; }): StyleProp<TStyleProp>'
+              }
+            </Text>
+          </View>
+        </View>
+        <View style={styles.card}>
+          <View style={styles.cardBody}>
+            <Text style={styles.description}>
+              useStyles() is main hook which is used by the Stylo library to
+              read styles from theme. It accepts StyleNames & optional
+              StyleNamespace as its arguments. It then reads the styles defined
+              for those StyleNames under that StyleNamespace in the theme,
+              combines these styles into one & returns the final style.
+            </Text>
+          </View>
+          <View style={styles.cardFooter}>
+            <TouchableOpacity style={styles.footerButton}>
+              <Text style={styles.footerButtonText}>Read more ...</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
       </View>
     </View>
   );
 };`}
-            </CodeSnippet>
+              imageAlt="useStyles()"
+              imageUrl="showcase-use-styles.png"
+            />
           </section>
         </article>
       </React.Fragment>

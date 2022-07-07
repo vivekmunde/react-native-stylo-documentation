@@ -7,8 +7,11 @@ import CodeSnippet from '../components/code-snippet';
 import InlineCode from '../components/inline-code';
 import Layout from '../components/layout';
 import Paragraph from '../components/paragraph';
+import SectionHeading from '../components/section-heading';
 import StyloThemeNavigation from '../components/stylo-theme-navigation';
-import { STYLO_THEME_LOCATION } from '../constants/stylo-locations';
+import {
+  STYLO_THEME_LOCATION, STYLO_THEME_STYLERS_STYLISH_LOCATION
+} from '../constants/stylo-locations';
 
 const StyloTheme: React.FC = () => (
   <Layout
@@ -31,29 +34,34 @@ const StyloTheme: React.FC = () => (
             So {`it's`} easy to create your own theme flavour or multiple flavours by just making some changes to these variables.
           </Paragraph>
 
-          <Paragraph>
-            The theme is located at <strong className="font-semibold">{STYLO_THEME_LOCATION}</strong>.
-            Just copy the the theme to your project &amp; start using it.
-            You can freely modify the theme as per your needs.
-          </Paragraph>
-
-          <Paragraph>
-            <InlineCode>cp -R [root]{STYLO_THEME_LOCATION} [root]/app/stylo/themes</InlineCode>
-          </Paragraph>
-
-          <CodeSnippet>
-            {`[root]
+          <section className="no-vertical-margin-collapse">
+            <SectionHeading id="setup" level={4}>
+              Setup
+            </SectionHeading>
+            <Paragraph>
+              Stylo theme &amp; its <Link href="/tight-coupling">tightly coupled</Link> styling elements, <Link href="/stylish">Stylish</Link> components &amp; <Link href="/stylers">Styler</Link> hooks, which are located at <strong className="font-semibold">{STYLO_THEME_STYLERS_STYLISH_LOCATION}</strong>.
+              Just copy the these to your project.
+              You can freely modify the theme as per your needs.
+            </Paragraph>
+            <Paragraph>
+              E.g. <InlineCode>cp -R [root]{STYLO_THEME_STYLERS_STYLISH_LOCATION} [root]/app/stylo</InlineCode>
+            </Paragraph>
+            <CodeSnippet>
+              {`[root]
   |- app
     |- components
     |- screens
     |- stylo
+      |- stylers
+      |- stylish
       |- themes
         |- types
         |- default`}
-          </CodeSnippet>
+            </CodeSnippet>
+          </section>
 
           <div className="pt-[1px]">
-            <div className="grid grid-cols-3 gap-4 mt-4">
+            <div className="grid grid-cols-3 gap-4 mt-8">
               <div className="bg-pink-50 rounded p-4">
                 <h5 className="m-0">
                   <Link href="/stylo-theme-colors">

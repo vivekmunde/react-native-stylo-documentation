@@ -67,6 +67,15 @@ const Stylers: React.FC = () => (
             </section>
           </section>
 
+          <div className="mt-8 mb-8">
+            <Blockquote>
+              All the code samples below use <Link href="/stylo-theme">Stylo theme</Link>.
+              The code samples below do not display the pictorial outcomes.
+              Also, the code samples below are not tightly coupled to the <Link href="/theme#style-name">StyleName</Link> &amp; <Link href="/theme#namespace">StyleNamespace</Link> types.
+              If you have not yet gone through the tight coupling of style types then you can read the document <Link href="/tight-coupling">Tightly coupled</Link>.
+            </Blockquote>
+          </div>
+
           <section className="no-vertical-margin-collapse">
             <SectionHeading id="use-icon-styles" level={4}>
               <InlineCode>useIconStyles()</InlineCode>

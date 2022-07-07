@@ -70,6 +70,16 @@ const Stylish: React.FC = () => (
             </section>
           </section>
 
+          <div className="mt-8 mb-8">
+            <Blockquote>
+              All the code samples below use <Link href="/stylo-theme">Stylo theme</Link>.
+              The code samples below do not display the pictorial outcomes.
+              Please refer to <Link href="/stylo-theme">Stylo theme</Link> for detailed code samples &amp; their pictorial appearances.
+              Also, the code samples below are not tightly coupled to the <Link href="/theme#style-name">StyleName</Link> &amp; <Link href="/theme#namespace">StyleNamespace</Link> types.
+              If you have not yet gone through the tight coupling of style types then you can read the document <Link href="/tight-coupling">Tightly coupled</Link>.
+            </Blockquote>
+          </div>
+
           <section className="no-vertical-margin-collapse">
             <SectionHeading id="icon" level={4}>
               <InlineCode>{`<Icon />`}</InlineCode>
@@ -101,11 +111,11 @@ const Stylish: React.FC = () => (
             <CodeSnippet>
               {`import React from 'react';
 import { Icon } from 'react-native-stylo';
-import { TIconStyle } from '../themes/types';
+import { TIconStyle, TStyleNamespace } from '../stylo/themes/types';
 
 const ComponentA = () => {
   return (
-    <Icon.AntDesign<TIconStyle> styleNames={['Color.Grey2', 'Large]} name="home" {...otherProps} />
+    <Icon.AntDesign<TIconStyle, TStyleNamespace> styleNames={['Color.Grey2', 'Large]} name="home" {...otherProps} />
   );
 }`}
             </CodeSnippet>
@@ -131,11 +141,11 @@ const ComponentA = () => {
             <CodeSnippet>
               {`import React from 'react';
 import { ImageBackground } from 'react-native-stylo';
-import { TImageBackgroundStyle } from '../themes/types';
+import { TImageBackgroundStyle, TStyleNamespace } from '../stylo/themes/types';
 
 const ComponentA = () => {
   return (
-    <ImageBackground<TImageBackgroundStyle> styleNames={['BackgroundColor.Grey2']} {...otherProps} />
+    <ImageBackground<TImageBackgroundStyle, TStyleNamespace> styleNames={['BackgroundColor.Grey2']} {...otherProps} />
   );
 }`}
             </CodeSnippet>
@@ -161,11 +171,11 @@ const ComponentA = () => {
             <CodeSnippet>
               {`import React from 'react';
 import { Image } from 'react-native-stylo';
-import { TImageStyle } from '../themes/types';
+import { TImageStyle, TStyleNamespace } from '../stylo/themes/types';
 
 const ComponentA = () => {
   return (
-    <Image<TImageStyle> styleNames={['Avatar', 'Avatar.Square', 'Avatar.Large']} {...otherProps} />
+    <Image<TImageStyle, TStyleNamespace> styleNames={['Avatar', 'Avatar.Square', 'Avatar.Large']} {...otherProps} />
   );
 }`}
             </CodeSnippet>
@@ -191,11 +201,11 @@ const ComponentA = () => {
             <CodeSnippet>
               {`import React from 'react';
 import { SafeAreaView } from 'react-native-stylo';
-import { TSafeAreaViewStyle } from '../themes/types';
+import { TSafeAreaViewStyle, TStyleNamespace } from '../stylo/themes/types';
 
 const ComponentA = () => {
   return (
-    <SafeAreaView<TSafeAreaViewStyle> styleNames={['BackgroundColor.Body']} {...otherProps} />
+    <SafeAreaView<TSafeAreaViewStyle, TStyleNamespace> styleNames={['BackgroundColor.Body']} {...otherProps} />
   );
 }`}
             </CodeSnippet>
@@ -230,7 +240,7 @@ const ComponentA = () => {
             <CodeSnippet>
               {`import React from 'react';
 import { ScrollView } from 'react-native-stylo';
-import { TScrollViewStyle } from '../themes/types';
+import { TScrollViewStyle, TStyleNamespace } from '../stylo/themes/types';
 
 const ComponentA = () => {
   return (
@@ -264,11 +274,11 @@ const ComponentA = () => {
             <CodeSnippet>
               {`import React from 'react';
 import { TextInput } from 'react-native-stylo';
-import { TTextInputStyle } from '../themes/types';
+import { TTextInputStyle, TStyleNamespace } from '../stylo/themes/types';
 
 const ComponentA = () => {
   return (
-    <TextInput<TTextInputStyle> styleNames={['Border', 'Border.Color.Primary']} {...otherProps} />
+    <TextInput<TTextInputStyle, TStyleNamespace> styleNames={['Border', 'Border.Color.Primary']} {...otherProps} />
   );
 }`}
             </CodeSnippet>
@@ -294,11 +304,11 @@ const ComponentA = () => {
             <CodeSnippet>
               {`import React from 'react';
 import { Text } from 'react-native-stylo';
-import { TTextStyle } from '../themes/types';
+import { TTextStyle, TStyleNamespace } from '../stylo/themes/types';
 
 const ComponentA = () => {
   return (
-    <Text<TTextStyle> styleNames={['Border', 'Border.Color.Primary']} {...otherProps} />
+    <Text<TTextStyle, TStyleNamespace> styleNames={['Border', 'Border.Color.Primary']} {...otherProps} />
   );
 }`}
             </CodeSnippet>
@@ -324,11 +334,11 @@ const ComponentA = () => {
             <CodeSnippet>
               {`import React from 'react';
 import { Pressable } from 'react-native-stylo';
-import { TTouchableStyle } from '../themes/types';
+import { TTouchableStyle, TStyleNamespace } from '../stylo/themes/types';
 
 const ComponentA = () => {
   return (
-    <Pressable<TTouchableStyle> styleNames={['Button', 'Button.Large', 'BackgroundColor.Primary']} {...otherProps} />
+    <Pressable<TTouchableStyle, TStyleNamespace> styleNames={['Button', 'Button.Large', 'BackgroundColor.Primary']} {...otherProps} />
   );
 }`}
             </CodeSnippet>
@@ -354,11 +364,11 @@ const ComponentA = () => {
             <CodeSnippet>
               {`import React from 'react';
 import { TouchableHighlight } from 'react-native-stylo';
-import { TTouchableStyle } from '../themes/types';
+import { TTouchableStyle, TStyleNamespace } from '../stylo/themes/types';
 
 const ComponentA = () => {
   return (
-    <TouchableHighlight<TTouchableStyle> styleNames={['Button', 'Button.Large', 'BackgroundColor.Primary']} {...otherProps} />
+    <TouchableHighlight<TTouchableStyle, TStyleNamespace> styleNames={['Button', 'Button.Large', 'BackgroundColor.Primary']} {...otherProps} />
   );
 }`}
             </CodeSnippet>
@@ -384,11 +394,11 @@ const ComponentA = () => {
             <CodeSnippet>
               {`import React from 'react';
 import { TouchableOpacity } from 'react-native-stylo';
-import { TTouchableStyle } from '../themes/types';
+import { TTouchableStyle, TStyleNamespace } from '../stylo/themes/types';
 
 const ComponentA = () => {
   return (
-    <TouchableOpacity<TTouchableStyle> styleNames={['Button', 'Button.Large', 'BackgroundColor.Primary']} {...otherProps} />
+    <TouchableOpacity<TTouchableStyle, TStyleNamespace> styleNames={['Button', 'Button.Large', 'BackgroundColor.Primary']} {...otherProps} />
   );
 }`}
             </CodeSnippet>
@@ -414,11 +424,11 @@ const ComponentA = () => {
             <CodeSnippet>
               {`import React from 'react';
 import { View } from 'react-native-stylo';
-import { TViewStyle } from '../themes/types';
+import { TViewStyle, TStyleNamespace } from '../stylo/themes/types';
 
 const ComponentA = () => {
   return (
-    <View<TViewStyle> styleNames={['Padding', 'Border', 'Border.Radius.Large', 'Border.Color.Primary2', 'BackgroundColor.Primary1']} {...otherProps} />
+    <View<TViewStyle, TStyleNamespace> styleNames={['Padding', 'Border', 'Border.Radius.Large', 'Border.Color.Primary2', 'BackgroundColor.Primary1']} {...otherProps} />
   );
 }`}
             </CodeSnippet>

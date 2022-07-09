@@ -96,7 +96,7 @@ const Usage: React.FC = () => (
               Stylo uses <ExternalLink href="https://www.npmjs.com/package/react-native-vector-icons">Vector Icons</ExternalLink>, so it has a peer dependency of <InlineCode>react-native-vector-icons</InlineCode>@^9.1.0.
             </Paragraph>
             <Paragraph>
-              Stylo is in BETA currently. So only available on GitBub for installation. Soon will be released on NPM.
+              Stylo is in BETA currently &amp; available on GitHub for installation. Soon will be released on NPM.
             </Paragraph>
             <Paragraph>
               <InlineCode>npm install --save react-native-vector-icons@^9.1.0</InlineCode>

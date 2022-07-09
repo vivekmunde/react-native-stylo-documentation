@@ -6,11 +6,13 @@ import Paragraph from './paragraph';
 const DefaultStyleNamespacesCodeSnippet: React.FC = () => (
   <React.Fragment>
     <CodeSnippet>
-      {`export type TStyleNamespace =
+      {`type TStyleNamespace =
   | 'IconStyles'
   | 'ImageBackgroundStyles'
   | 'ImageStyles'
   | 'SafeAreaViewStyles'
+  | 'ScrollViewStyles'
+  | 'ScrollViewContentContainerStyles'
   | 'TextInputStyles'
   | 'TextStyles'
   | 'TouchableStyles'

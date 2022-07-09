@@ -22,7 +22,7 @@ const TightCoupling: React.FC = () => (
         <article>
           <ArticleHeading>Tightly coupled</ArticleHeading>
           <Paragraph>
-            To avoid passing the <Link href="/theme#style-name">StyleNames</Link> &amp; <Link href="theme#namespace">StyleNamespace</Link> each time to the <Link href="/stylish">Stylish</Link> components &amp; <Link href="/stylers">Styler</Link> hooks, you can tightly couple the types to the <strong className="font-semibold">Stylish</strong> components &amp; <strong className="font-semibold">Styler</strong> hooks easily.
+            To avoid passing the type of the <Link href="/theme#style-name">StyleNames</Link> each time to the <Link href="/stylish">Stylish</Link> components &amp; <Link href="/stylers">Styler</Link> hooks, you can tightly couple the types to the <strong className="font-semibold">Stylish</strong> components &amp; <strong className="font-semibold">Styler</strong> hooks easily.
             Simply create wrapper components &amp; hooks which will internally pass the desired style type and then use these components &amp; hooks without need to pass the style types.
           </Paragraph>
           <Paragraph>
@@ -47,10 +47,7 @@ export default Text;
 
 import { TTextStyle } from '../themes/types';
 
-const useTextStyles = (
-  styleNames: TTextStyle[] | undefined,
-  styleNamespace?: string,
-) => useStyloTextStyles<TTextStyle>(styleNames, styleNamespace);
+const useTextStyles = (styleNames: TTextStyle[] | undefined) => useStyloTextStyles<TTextStyle>(styleNames);
 
 export default useTextStyles;
 `}
@@ -65,11 +62,10 @@ const ComponentA = () => (
   <Text styleNames={['H1', 'Bold', 'Align.Center']}>
     {...}
   </Text>
-);
-
-OR
-
-import useTextStyles from '../stylers/useTextStyles';
+);`}
+          </CodeSnippet>
+          <CodeSnippet>
+            {`import useTextStyles from '../stylers/useTextStyles';
 
 const ComponentA = () => {
   const styles = useRef(
@@ -134,7 +130,6 @@ const ComponentA = () => {
             <CodeSnippet>
               {`import React from 'react';
 import Stylish from '../stylo/stylish';
-import { styles, variables } from './stylo/themes/default';
 
 const ComponentA = () => {
   return (
@@ -147,7 +142,7 @@ const ComponentA = () => {
       <Stylish.View>
         <Stylish.Text styleNames={['Bold']}>
           Stylish components are nothing but enhanced React Native components.
-          Stylo adds two extra properties styleNames & styleNamespace to the React Native components,
+          Stylo adds an extra property styleNamesto the React Native components,
           on top of core properties provided by React Native.
         </Stylish.Text>
       </Stylish.View>

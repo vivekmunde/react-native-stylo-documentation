@@ -18,8 +18,8 @@ const sections = {
     title: 'Styles only',
   },
   themes: {
-    id: 'theme-stylename-namespace',
-    title: 'Theme, StyleName & StyleNamespace',
+    id: 'theme-style-name',
+    title: 'Theme & StyleName',
   },
   stylesDetachedOwnedByApp: {
     id: 'detached-styles-owned-by-app',
@@ -116,13 +116,6 @@ const CoreConcept: React.FC = () => (
               <strong className="font-semibold">StyleName</strong> is the name of a standard style definition provided to the <InlineCode>StyleSheet.create</InlineCode> API.
               In the code snippet below <InlineCode>{`'Align.Center'`}</InlineCode>, <InlineCode>H1</InlineCode>, <InlineCode>Small</InlineCode> are the style names.
             </Paragraph>
-            <Paragraph>
-              <strong className="font-semibold">StyleNamespaces</strong> are used to organize the style definitions by logically grouping them together.
-              This prevents the style name/style collisions, like <InlineCode>Small</InlineCode> can have different style definitions for <InlineCode>Text</InlineCode> &amp; <InlineCode>View</InlineCode> components.
-              In the code snippet below <InlineCode>TextStyles</InlineCode>, <InlineCode>TextInputStyles</InlineCode>, <InlineCode>ViewStyles</InlineCode> are the StyleNamespaces.
-              The library has default StyleNamespaces defined per React Native component in its themes.
-              The app can define its own StyleNamespaces, which will override the default ones.
-            </Paragraph>
             <CodeSnippet>
               {`const TextStyles = StyleSheet.create({
   Default: { color: '#000000', fontSize: 16, fontWeight: '400', lineHeight: 24 },
@@ -165,25 +158,26 @@ export const Theme = {
               {`MobileApp
   |- components
   |- screens
-  |- themes
-      |- types
-        |- text-style-types.ts
-        |- text-input-style-types.ts
-        |- touchable-style-types.ts
-        |- view-style-types.ts
-        |- ...
-      |- light
-        |- text-styles.ts
-        |- text-input-styles.ts
-        |- touchable-styles.ts
-        |- view-styles.ts
-        |- ...
-      |- dark
-        |- text-styles.ts
-        |- text-input-styles.ts
-        |- touchable-styles.ts
-        |- view-styles.ts
-        |- ...`}
+  |- stylo
+    |- themes
+        |- types
+          |- text-style-types.ts
+          |- text-input-style-types.ts
+          |- touchable-style-types.ts
+          |- view-style-types.ts
+          |- ...
+        |- light
+          |- text-styles.ts
+          |- text-input-styles.ts
+          |- touchable-styles.ts
+          |- view-styles.ts
+          |- ...
+        |- dark
+          |- text-styles.ts
+          |- text-input-styles.ts
+          |- touchable-styles.ts
+          |- view-styles.ts
+          |- ...`}
             </CodeSnippet>
             <Paragraph>
               The library provides a set of predefined style types &amp; themes.
@@ -217,15 +211,17 @@ export type TViewStyle = TBackgroundColorStyle | TPaddingStyle | TMarginStyle | 
               This adds an extra level of strong typing with which only the styles names which are intended for the component can be used.
             </Paragraph>
             <Paragraph>
-              E.g. Alignment styles for Text &amp; View are different.
-              As you start typing the alignment styles, the editor intellisense helps you choose correct styles for Text &amp; View.
+              E.g. Alignment styles for <InlineCode>View</InlineCode> &amp; <InlineCode>Text</InlineCode> are different.
+              As you start typing the alignment styles, the editor intellisense helps you choose correct styles for <InlineCode>View</InlineCode> &amp; <InlineCode>Text</InlineCode>.
             </Paragraph>
-            <Paragraph className="border rounded p-2">
-              <img alt='Strongly typed styles: Text' src={`${process.env.NEXT_PUBLIC_ASSET_PREFIX}/images/style-names-intellisense-1.png`} style={{ maxWidth: '920px' }} />
-            </Paragraph>
-            <Paragraph className="border rounded p-2">
-              <img alt='Strongly typed styles: View' src={`${process.env.NEXT_PUBLIC_ASSET_PREFIX}/images/style-names-intellisense-2.png`} style={{ maxWidth: '920px' }} />
-            </Paragraph>
+            <div className="grid grid-cols-12">
+              <Paragraph className="border rounded p-2 lg:col-span-11 xl:col-span-10">
+                <img alt='Strongly typed styles: View' src={`${process.env.NEXT_PUBLIC_ASSET_PREFIX}/images/style-names-intellisense-1.png`} />
+              </Paragraph>
+              <Paragraph className="border rounded p-2 lg:col-span-11 xl:col-span-10">
+                <img alt='Strongly typed styles: Text' src={`${process.env.NEXT_PUBLIC_ASSET_PREFIX}/images/style-names-intellisense-2.png`} />
+              </Paragraph>
+            </div>
             <Paragraph>
               The Stylo library provides default style types, which can be copied into the app and can be easily customized, if needed.
             </Paragraph>
@@ -292,7 +288,7 @@ export const Theme = {
 import { Image, SafeAreaView, Text, View } from 'react-native-stylo';
 
 // styles defined inside your app
-import { TImageStyle, TSafeAreaViewStyle, TStyleNamespace, TTextStyle, TViewStyle } from '../../stylo/themes/types';
+import { TImageStyle, TSafeAreaViewStyle, TTextStyle, TViewStyle } from '../../stylo/themes/types';
 
 const data = [
   { name: 'Narayan Naresh Nathani', profileUrl: require('../../images/face-icon-1.png'), role: 'UI Developer' },
@@ -301,25 +297,25 @@ const data = [
 ];
 
 const StylishComponents = () => (
-  <View<TViewStyle, TStyleNamespace> styleNames={['Screen', 'BackgroundColor.Primary1']}>
-    <SafeAreaView<TSafeAreaViewStyle, TStyleNamespace> />
-    <View<TViewStyle, TStyleNamespace> styleNames={['Screen.Header', 'Padding']}>
-      <Text<TTextStyle, TStyleNamespace> styleNames={['H1']}>
+  <View<TViewStyle> styleNames={['Screen', 'BackgroundColor.Primary1']}>
+    <SafeAreaView<TSafeAreaViewStyle> />
+    <View<TViewStyle> styleNames={['Screen.Header', 'Padding']}>
+      <Text<TTextStyle> styleNames={['H1']}>
         Stylish Components
       </Text>
     </View>
-    <View<TViewStyle, TStyleNamespace> styleNames={['Screen.Body', 'Padding']}>
-      <View<TViewStyle, TStyleNamespace> styleNames={['List', 'Border.Radius', 'BackgroundColor.White', 'Margin.Bottom.Large']}>
+    <View<TViewStyle> styleNames={['Screen.Body', 'Padding']}>
+      <View<TViewStyle> styleNames={['List', 'Border.Radius', 'BackgroundColor.White', 'Margin.Bottom.Large']}>
         {data.map((it, index) => (
-          <View<TViewStyle, TStyleNamespace> key={index} styleNames={index > 0 ? ['List.Item', 'Border.Top'] : ['List.Item']}>
-            <View<TViewStyle, TStyleNamespace> styleNames={['List.Item.Left']}>
-              <Image<TImageStyle, TStyleNamespace> styleNames={['Avatar']} source={it.profileUrl} />
+          <View<TViewStyle> key={index} styleNames={index > 0 ? ['List.Item', 'Border.Top'] : ['List.Item']}>
+            <View<TViewStyle> styleNames={['List.Item.Left']}>
+              <Image<TImageStyle> styleNames={['Avatar']} source={it.profileUrl} />
             </View>
-            <View<TViewStyle, TStyleNamespace> styleNames={['List.Item.Body']}>
-              <Text<TTextStyle, TStyleNamespace> styleNames={['Bold.Semi']}>
+            <View<TViewStyle> styleNames={['List.Item.Body']}>
+              <Text<TTextStyle> styleNames={['Bold.Semi']}>
                 {it.name}
               </Text>
-              <Text<TTextStyle, TStyleNamespace> styleNames={['Color.Secondary', 'Small']}>
+              <Text<TTextStyle> styleNames={['Color.Secondary', 'Small']}>
                 {it.role}
               </Text>
             </View>
@@ -327,19 +323,19 @@ const StylishComponents = () => (
         ))}
       </View>
 
-      <View<TViewStyle, TStyleNamespace> styleNames={['List', 'Margin.Top.Large']}>
+      <View<TViewStyle> styleNames={['List', 'Margin.Top.Large']}>
         {data.map((it, index) => (
-          <View<TViewStyle, TStyleNamespace>
+          <View<TViewStyle>
             key={index}
             styleNames={['List.Item', 'Border.Radius', 'BackgroundColor.White', 'Margin.Bottom']}>
-            <View<TViewStyle, TStyleNamespace> styleNames={['List.Item.Left']}>
-              <Image<TImageStyle, TStyleNamespace> styleNames={['Avatar', 'Avatar.Large', 'Avatar.Square']} source={it.profileUrl} />
+            <View<TViewStyle> styleNames={['List.Item.Left']}>
+              <Image<TImageStyle> styleNames={['Avatar', 'Avatar.Large', 'Avatar.Square']} source={it.profileUrl} />
             </View>
-            <View<TViewStyle, TStyleNamespace> styleNames={['List.Item.Body', 'Flex.JustifyContent.Center']}>
-              <Text<TTextStyle, TStyleNamespace> styleNames={['Large', 'Bold.Semi']}>
+            <View<TViewStyle> styleNames={['List.Item.Body', 'Flex.JustifyContent.Center']}>
+              <Text<TTextStyle> styleNames={['Large', 'Bold.Semi']}>
                 {it.name}
               </Text>
-              <Text<TTextStyle, TStyleNamespace> styleNames={['Color.Secondary']}>
+              <Text<TTextStyle> styleNames={['Color.Secondary']}>
                 {it.role}
               </Text>
             </View>

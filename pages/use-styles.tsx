@@ -5,6 +5,7 @@ import React from 'react';
 import ArticleHeading from '../components/article-heading';
 import Blockquote from '../components/blockquote';
 import CodeSnippet from '../components/code-snippet';
+import DefaultStyleNamespacesCodeSnippet from '../components/default-style-namespaces-code-snippet';
 import ExternalLink from '../components/external-link';
 import InlineCode from '../components/inline-code';
 import Layout from '../components/layout';
@@ -27,13 +28,26 @@ const UseStyles: React.FC = () => (
 
           <Paragraph>
             <InlineCode><strong className="font-semibold">useStyles()</strong></InlineCode> is core hook which is used by the Stylo library to read styles from theme.
-            It accepts <InlineCode>StyleNames</InlineCode> &amp; optional <InlineCode>StyleNamespace</InlineCode> as its arguments.
+            It accepts <InlineCode>StyleNames</InlineCode> &amp; <InlineCode>StyleNamespace</InlineCode> as its arguments.
             It then reads the styles defined for those <InlineCode>StyleNames</InlineCode> under that <InlineCode>StyleNamespace</InlineCode> in the theme, combines these styles into one &amp; returns the final style, a standard React Native style object.
           </Paragraph>
 
+          <Paragraph>
+            <strong className="font-semibold">StyleNamespaces</strong> are used to organize the style definitions by logically grouping them together.
+            This prevents the style name/style collisions, like <InlineCode>Small</InlineCode> can have different style definitions for <InlineCode>Text</InlineCode> &amp; <InlineCode>View</InlineCode> components.
+            In the code snippet below <InlineCode>TextStyles</InlineCode>, <InlineCode>TextInputStyles</InlineCode>, <InlineCode>ViewStyles</InlineCode> are the StyleNamespaces.
+          </Paragraph>
+          <Paragraph>
+            Stylo considers each React Native component as one StyleNamespace.
+            To keep it simple &amp; easily understandable, Stylo uses a pattern <InlineCode>[ReactNativeComponentName]Styles</InlineCode> to name the StyleNamespace.
+            The library uses following StyleNamespaces defined for each React Native component.
+          </Paragraph>
+
+          <DefaultStyleNamespacesCodeSnippet />
+
           <Blockquote>
-            Stylo recommends to use the <Link href="/stylers">Styler</Link> hooks &amp; <Link href="/stylish">Stylish</Link> components instead of <InlineCode>useStyles()</InlineCode> hook.
-            The <InlineCode>useStyles()</InlineCode> hook is used inside all the <Link href="/stylers">Styler</Link> hooks &amp; <Link href="/stylish">Stylish</Link> components.
+            Stylo recommends to use the <Link href="/stylish">Stylish</Link> components &amp; <Link href="/stylers">Styler</Link> hooks instead of <InlineCode>useStyles()</InlineCode> hook.
+            The <InlineCode>useStyles()</InlineCode> hook is used inside all the <Link href="/stylish">Stylish</Link> components &amp; <Link href="/stylers">Styler</Link> hooks.
             So technically, using only this <InlineCode>useStyles()</InlineCode> hook any style definition defined in the theme can be accessed &amp; applied to the components.
             In practice, one may not need to use the <InlineCode>useStyles()</InlineCode> hook directly.
           </Blockquote>
@@ -43,7 +57,11 @@ const UseStyles: React.FC = () => (
               Type definition
             </SectionHeading>
             <CodeSnippet>
-              {`function useStyles<TStyleProp, TStyleName extends string, TStyleNamespace extends string>({ styleNamespace, styleNames }: {
+              {`function useStyles<
+  TStyleProp,
+  TStyleName extends string,
+  TStyleNamespace extends string
+>({ styleNamespace, styleNames }: {
   styleNamespace: TStyleNamespace;
   styleNames: TStyleName[];
 }): StyleProp<TStyleProp>`}
@@ -61,7 +79,7 @@ const UseStyles: React.FC = () => (
                 <InlineCode>TStyleName</InlineCode>
               </h5>
               <Paragraph>
-                <Link href="/theme#type-definitions">StyleName type</Link> defined in the theme.
+                <Link href="/theme#style-name">StyleName type</Link> defined in the theme.
               </Paragraph>
             </section>
             <section>
@@ -69,7 +87,7 @@ const UseStyles: React.FC = () => (
                 <InlineCode>TStyleNamespace</InlineCode>
               </h5>
               <Paragraph>
-                <Link href="/theme#type-definitions">StyleNamespace type</Link> defined in the theme.
+                <Link href="/theme#style-namespace">StyleNamespace type</Link> defined in the theme.
               </Paragraph>
             </section>
             <section>
@@ -97,7 +115,7 @@ const UseStyles: React.FC = () => (
                 <InlineCode>styleNamespace</InlineCode> <RequiredTag />
               </h5>
               <Paragraph>
-                The <Link href="/theme#namespace">StyleNamespace</Link> to be used which holds the style definitions for the <InlineCode>StyleNames</InlineCode> supplied to the hook.
+                The <Link href="/theme#style-namespace">StyleNamespace</Link> to be used which holds the style definitions for the <InlineCode>StyleNames</InlineCode> supplied to the hook.
               </Paragraph>
             </section>
             <section>

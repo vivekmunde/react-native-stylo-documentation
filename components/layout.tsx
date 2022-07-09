@@ -22,7 +22,7 @@ const Layout: React.FC<{
           {renderNavigation()}
           {/* <footer>Footer</footer> */}
         </div>
-        <main className="border-l p-4 lg:pr-8 xl:pr-8 col-span-5 xl:col-span-4" style={{ minHeight: '100vh' }}>
+        <main className="border-l p-4 pb-16 lg:pr-8 xl:pr-8 col-span-5 xl:col-span-4" style={{ minHeight: '100vh' }}>
           {renderContent()}
         </main>
       </div>

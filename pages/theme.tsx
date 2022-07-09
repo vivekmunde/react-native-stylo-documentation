@@ -110,7 +110,7 @@ const ComponentA = () => (
           </section>
 
           <section className="no-vertical-margin-collapse">
-            <SectionHeading id="namespace" level={4}>
+            <SectionHeading id="style-namespace" level={4}>
               StyleNamespace
             </SectionHeading>
             <Paragraph>
@@ -122,17 +122,10 @@ const ComponentA = () => (
             </Paragraph>
             <Paragraph>
               Stylo considers each React Native component as one StyleNamespace.
+              To keep it simple &amp; easily understandable, Stylo uses a pattern <InlineCode>[ReactNativeComponentName]Styles</InlineCode> to name the StyleNamespace.
+              The library uses following StyleNamespaces defined for each React Native component.
             </Paragraph>
-            <CodeSnippet>
-              {`export type TStyleNamespace =
-  | 'IconStyles'
-  | 'ImageBackgroundStyles'
-  | 'ImageStyles'
-  | 'TextInputStyles'
-  | 'TextStyles'
-  | 'TouchableStyles'
-  | 'ViewStyles';`}
-            </CodeSnippet>
+            <DefaultStyleNamespacesCodeSnippet />
             <Paragraph>
               The styles are defined and assigned to these namespaces. And then are used to define a theme.
             </Paragraph>
@@ -154,21 +147,6 @@ const Theme = {
               New namespaces for remaining or new ReactNative components can be added without impacting existing onces.
               Stylo uses these namespaces by default.
             </Paragraph>
-            <Paragraph>
-              However, {`it's`} not mandatory for the apps to follow this naming convention.
-              Apps can use any naming convention to define the StyleNamespaces.
-              If other naming convention is used, then just make sure to pass the correct namespace names to the <Link href="/stylers">Styler</Link> hooks &amp; <Link href="/stylish">Stylish</Link> components.
-            </Paragraph>
-          </section>
-
-          <section className="no-vertical-margin-collapse">
-            <SectionHeading id="default-namespaces" level={4}>
-              Default StyleNamespaces
-            </SectionHeading>
-            <Paragraph>
-              Stylo provides default strongly typed StyleNamespaces.
-            </Paragraph>
-            <DefaultStyleNamespacesCodeSnippet />
           </section>
 
           <section className="no-vertical-margin-collapse">
@@ -216,10 +194,10 @@ const Theme = {
               Type definitions
             </SectionHeading>
             <Paragraph>
-              Thanks to <ExternalLink href="https://www.typescriptlang.org">TypeScript</ExternalLink>, the <InlineCode>StyleNames</InlineCode>, <InlineCode>StyleNamespaces</InlineCode> &amp; <InlineCode>Variables</InlineCode> are strongly typed.
+              Thanks to <ExternalLink href="https://www.typescriptlang.org">TypeScript</ExternalLink>, the <InlineCode>StyleNames</InlineCode> &amp; <InlineCode>Variables</InlineCode> are strongly typed.
               The type definitions are passed to &amp; used by <Link href="/use-variables">useVariables()</Link> hook, <Link href="/stylers">Styler</Link> hooks &amp; <Link href="/stylish">Stylish</Link> components.
-              This completely avoids accidental usage of wrong <InlineCode>StyleNames</InlineCode>, <InlineCode>StyleNamespaces</InlineCode> &amp; <InlineCode>Variables</InlineCode>, out of the box.
-              On top of that, the <InlineCode>StyleNames</InlineCode> &amp; <InlineCode>StyleNamespaces</InlineCode> are strongly typed against each React Native component, like <InlineCode>View</InlineCode>, <InlineCode>Text</InlineCode>, <InlineCode>TouchableOpacity</InlineCode> etc.
+              This completely avoids accidental usage of wrong <InlineCode>StyleNames</InlineCode> &amp; <InlineCode>Variables</InlineCode>, out of the box.
+              On top of that, the <InlineCode>StyleNames</InlineCode> are strongly typed against each React Native component, like <InlineCode>View</InlineCode>, <InlineCode>Text</InlineCode>, <InlineCode>TouchableOpacity</InlineCode> etc.
               This adds an extra level of strong typing which forces to use only those values which are intended for a particular component.
             </Paragraph>
             <Paragraph>
@@ -234,12 +212,6 @@ type TBorderStyle = 'Border.Radius' | 'Border.Radius.Small' | 'Border.Radius.Lar
 ...
 
 export type TVariable = TFontColorStyle | TBackgroundColorStyle | TPaddingStyle | TMarginStyle | TBorderStyle | ...;`}
-            </CodeSnippet>
-            <Paragraph>
-              <strong className="font-semibold">StyleNamespaces type definition</strong>
-            </Paragraph>
-            <CodeSnippet>
-              {`export type TStyleNamespace = 'IconStyles' | 'ImageBackgroundStyles' | 'ImageStyles' | 'KeyboardAvoidingViewStyles' | 'SafeAreaViewStyles' | 'ScrollViewStyles' | 'TextInputStyles' | 'TextStyles' | 'TouchableStyles' | 'ViewStyles' | ...;`}
             </CodeSnippet>
             <Paragraph>
               <strong className="font-semibold">StyleName type definition</strong>
@@ -258,14 +230,20 @@ export type TTouchableStyle = TBackgroundColorStyle | TPaddingStyle | TMarginSty
                 </a>
               </h5>
               <Paragraph>
-                The <InlineCode>Variables</InlineCode>, <InlineCode>StyleNames</InlineCode> &amp; <InlineCode>StyleNamespaces</InlineCode> are intellisense friendly, it helps you choose correct styles &amp; values.
+                The <InlineCode>Variables</InlineCode> &amp; <InlineCode>StyleNames</InlineCode> are intellisense friendly, it helps you choose correct styles &amp; values.
               </Paragraph>
-              <Paragraph className="border rounded p-1">
-                <img alt='Strongly typed styles: Text' src={`${process.env.NEXT_PUBLIC_ASSET_PREFIX}/images/style-names-intellisense-1.png`} />
+              <Paragraph>
+                E.g. Alignment styles for <InlineCode>View</InlineCode> &amp; <InlineCode>Text</InlineCode> are different.
+                As you start typing the alignment styles, the editor intellisense helps you choose correct styles for <InlineCode>View</InlineCode> &amp; <InlineCode>Text</InlineCode>.
               </Paragraph>
-              <Paragraph className="border rounded p-1">
-                <img alt='Strongly typed styles: View' src={`${process.env.NEXT_PUBLIC_ASSET_PREFIX}/images/style-names-intellisense-2.png`} />
-              </Paragraph>
+              <div className="grid grid-cols-12">
+                <Paragraph className="border rounded p-2 lg:col-span-11 xl:col-span-10">
+                  <img alt='Strongly typed styles: View' src={`${process.env.NEXT_PUBLIC_ASSET_PREFIX}/images/style-names-intellisense-1.png`} />
+                </Paragraph>
+                <Paragraph className="border rounded p-2 lg:col-span-11 xl:col-span-10">
+                  <img alt='Strongly typed styles: Text' src={`${process.env.NEXT_PUBLIC_ASSET_PREFIX}/images/style-names-intellisense-2.png`} />
+                </Paragraph>
+              </div>
             </section>
           </section>
 
@@ -284,175 +262,7 @@ export type TTouchableStyle = TBackgroundColorStyle | TPaddingStyle | TMarginSty
             <SectionHeading id="create-theme" level={4}>
               Creating a theme
             </SectionHeading>
-            <section>
-              <h5 className="text-lg">
-                1. Define types
-              </h5>
-              <Paragraph>
-                First things first, define the types for Variables, StyleNamespaces &amp; StyleNames.
-                {` It's`} very important to define these types clearly by using a thoughtful naming convention which can offer better scalability and easier maintenance ahead.
-                {` It's`} not practically possible to define all the types at once, because the theme may keep growing as the app grows.
-                So always follow the practice of defining the types first and then style definitions, when adding new styles to the theme.
-              </Paragraph>
-              <CodeSnippet>
-                {`// Variables
-type TFontColorStyle = 'Color.Primary' | 'Color.Secondary' | 'Color.Info' | 'Color.Warning' | 'Color.Danger' | 'Color.Border' | 'Color.Grey1' | 'Color.Grey2' | 'Color.Grey1' | ... ;
-type TBackgroundColorStyle = 'BackgroundColor.Primary' | 'BackgroundColor.Secondary' | 'BackgroundColor.Info' | 'BackgroundColor.Warning' | 'BackgroundColor.Danger' | 'BackgroundColor.Grey1' | 'BackgroundColor.Grey2' | 'BackgroundColor.Grey1' | ... ;
-type TPaddingStyle = 'Padding' | 'Padding.Small' | 'Padding.Large';
-type TMarginStyle = 'Margin' | 'Margin.Small' | 'Margin.Large';
-type TBorderStyle = 'Border.Radius' | 'Border.Radius.Small' | 'Border.Radius.Large';
-export type TVariable = TFontColorStyle | TBackgroundColorStyle | TPaddingStyle | TMarginStyle | TBorderStyle;
-
-// StyleNamespaces
-export type TStyleNamespace = 'IconStyles' | 'ImageBackgroundStyles' | 'ImageStyles' | 'KeyboardAvoidingViewStyles' | 'SafeAreaViewStyles' | 'ScrollViewStyles' | 'TextInputStyles' | 'TextStyles' | 'TouchableStyles' | 'ViewStyles';
-  
-// StyleNames
-type TBorderStyle = 'Border' | 'Border.Top' | 'Border.Right' | 'Border.Bottom' | 'Border.Left' | 'Border.Radius' | 'Border.Radius.Small' | 'Border.Radius.Large' | 'Border.Color.Primary' | 'Border.Color.Secondary' | 'Border.Color.Info' | 'Border.Color.Warning' | 'Border.Color.Danger' | 'Border.Color.Grey1' | 'Border.Color.Grey2' | ...;
-export type TTextStyle = TFontColorStyle | 'Align.Center' | 'Align.Right' | 'Bold' | 'H1' | 'H2' | 'H3' | 'H4' | 'Small' | 'Large' | 'Paragraph' | 'Margin' | 'Margin.Top' | 'Margin.Right' | 'Margin.Bottom' | 'Margin.Left' | 'Margin.Mini' | 'Margin.Small' | 'Margin.Large' | 'Margin.Top.Small' | 'Margin.Right.Small' | 'Margin.Bottom.Small' | 'Margin.Left.Small' | 'Margin.Top.Mini' | 'Margin.Right.Mini' | 'Margin.Bottom.Mini' | 'Margin.Left.Mini' | 'Margin.Top.Large' | 'Margin.Right.Large' | 'Margin.Bottom.Large' | 'Margin.Left.Large';
-export type TViewStyle = TBackgroundColorStyle | TPaddingStyle | TMarginStyle | TBorderStyle | ...;
-export type TTouchableStyle = TBackgroundColorStyle | TPaddingStyle | TMarginStyle | TBorderStyle | 'Button' | 'Button.Small' | 'Button.Large' | 'Button.Round' | 'Button.Circle' | ...;
-// & so on ...`}
-              </CodeSnippet>
-            </section>
-            <section>
-              <h5 className="text-lg">
-                2. Define Variables
-              </h5>
-              <Paragraph>
-                Define the variables with their values.
-                These will be used across the theme to maintain the consistency of style.
-              </Paragraph>
-              <CodeSnippet>
-                {`const variables {
-  'Color.Primary': '#000000',
-  'Color.Secondary': '#888888',
-  'Color.Grey1': '#FEFEFE',
-  'Color.Grey2': '#F4F4F4',
-  ...
-  'Border.Radius': 8,
-  'Border.Radius.Small': 4,
-  'Border.Radius.Large': 16,
-  ...
-  Padding: 16,
-  'Padding.Small': 8,
-  'Padding.Large': 24,
-  ...
-};`}
-              </CodeSnippet>
-            </section>
-            <section>
-              <h5 className="text-lg">
-                3. Define styles
-              </h5>
-              <Paragraph>
-                A good practice is to define the common styles separately &amp; reuse them.
-                Like, border related styles can be defined separately &amp; can be reused to define styles for View, TouchableOpacity, ScrollView etc.
-              </Paragraph>
-              <CodeSnippet>
-                {`const BorderStyles = StyleSheet.create({
-  Border: {
-    borderColor: Variables['Color.Border'],
-    borderStyle: 'solid',
-    borderWidth: 1,
-  },
-  'Border.Top': {
-    borderColor: Variables['Color.Border'],
-    borderStyle: 'solid',
-    borderTopWidth: 1,
-  },
-  'Border.Right': {
-    borderColor: Variables['Color.Border'],
-    borderRightWidth: 1,
-    borderStyle: 'solid',
-  },
-  'Border.Bottom': {
-    borderBottomWidth: 1,
-    borderColor: Variables['Color.Border'],
-    borderStyle: 'solid',
-  },
-  'Border.Left': {
-    borderColor: Variables['Color.Border'],
-    borderLeftWidth: 1,
-    borderStyle: 'solid',
-  },
-  ...
-};
-
-const PaddingStyles = StyleSheet.create({
-  Padding: { padding: Variables.Padding },
-  'Padding.Small': { padding: Variables['Padding.Small'] },
-  'Padding.Large': { padding: Variables['Padding.Large'] },
-  ...
-};
-
-const MarginStyles = StyleSheet.create({
-  Margin: { margin: Variables.Margin },
-  'Margin.Small': { margin: Variables['Margin.Small'] },
-  'Margin.Large': { margin: Variables['Margin.Large'] },
-  ...
-};
-
-export const TextStyles = StyleSheet.create({
-  ...MarginStyles,
-  Default: { color: Variables['Color.Grey8'], fontSize: 16, fontWeight: '400', lineHeight: 24 },
-  'Align.Center': { textAlign: 'center' },
-  'Align.Right': { textAlign: 'right' },
-  H1: { fontSize: 32, fontWeight: '400', lineHeight: 40, marginBottom: 16 },
-  H2: { fontSize: 28, fontWeight: '400', lineHeight: 36, marginBottom: 16 },
-  H3: { fontSize: 24, fontWeight: '400', lineHeight: 32, marginBottom: 8 },
-  Small: { fontSize: 12, lineHeight: 18 },
-  'Size.Tiny': { fontSize: 8, lineHeight: 14 },
-  ...
-});
-
-export const ViewStyles = StyleSheet.create({
-  ...BorderStyles,
-  ...PaddingStyles,
-  ...MarginStyles,
-  ...
-});
-
-export const TouchableStyles = StyleSheet.create({
-  ...BorderStyles,
-  ...PaddingStyles,
-  ...MarginStyles,
-  Button: {
-    padding: Variables.Padding,
-    borderRadius: Variables['Border.Radius'],
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  'Button.Small': {
-    padding: Variables['Padding.Small'],
-  },
-  'Button.Large': {
-    padding: Variables['Padding.Large'],
-  },
-  ...
-});
-
-// & so on ...`}
-              </CodeSnippet>
-            </section>
-            <section>
-              <h5 className="text-lg">
-                4. Fuse them in a theme
-              </h5>
-              <Paragraph>
-                Collect all the style definitions into one object which will be used as the theme.
-                {` It's`} important to use the same namespaces that have been defined in the types.
-              </Paragraph>
-              <CodeSnippet>
-                {`const Styles = {
-  TextStyles,
-  TouchableStyles,
-  ViewStyles,
-  ...
-};`}
-              </CodeSnippet>
-            </section>
+            Please refer the document <Link href="/creating-theme">Creating a theme</Link>.
           </section>
         </article>
       </React.Fragment>

@@ -8,7 +8,6 @@ import CodeSnippet from '../components/code-snippet';
 import InlineCode from '../components/inline-code';
 import Layout from '../components/layout';
 import MainNavigation from '../components/main-navigation';
-import OptionalTag from '../components/optional-tag';
 import Paragraph from '../components/paragraph';
 import RequiredTag from '../components/required-tag';
 import SectionHeading from '../components/section-heading';
@@ -24,8 +23,8 @@ const Stylers: React.FC = () => (
         <article>
           <ArticleHeading>Stylers</ArticleHeading>
           <Paragraph>
-            <strong className="font-semibold">Stylers</strong> are the styling hooks. Stylers accept <Link href="/theme#style-name">StyleNames</Link> &amp; optional <Link href="/theme#namespace">StyleNamespace</Link> as its arguments &amp; return the style object.
-            They read the styles defined for the <InlineCode>StyleNames</InlineCode> under the <InlineCode>StyleNamespace</InlineCode> in the theme, combines these styles into one &amp; returns the final style, a standard React Native style object.
+            <strong className="font-semibold">Stylers</strong> are the styling hooks. Stylers accept <Link href="/theme#style-name">StyleNames</Link> as its argument &amp; return the style object.
+            They read the styles defined for the <InlineCode>StyleNames</InlineCode> in the theme, combines these styles into one &amp; returns the final style, a standard React Native style object.
           </Paragraph>
           <Paragraph>
             {`Stylo's`} objective is to provide a styling hook for each React Native component.
@@ -37,8 +36,8 @@ const Stylers: React.FC = () => (
             So each styler is tightly coupled with a React Native component which returns a style object specific to that component.
           </Paragraph>
           <Blockquote>
-            All styler hooks use the <Link href="/use-styles">useStyles()</Link> hook internally to create &amp; return the style object from <InlineCode>styleNames</InlineCode> &amp; <InlineCode>styleNamespace</InlineCode> supplied to them as arguments.
-            Use Styler hooks in cases where the use of <Link href="/stylish">Stylish</Link> components is not possible.
+            All styler hooks use the <Link href="/use-styles">useStyles()</Link> hook internally to create &amp; return the style object from <InlineCode>styleNames</InlineCode> supplied to them as an argument.
+            A rule of thumb, prefer <Link href="/stylish">Stylish</Link> components over Stylers, use Styler hooks in cases where the use of <Link href="/stylish">Stylish</Link> components is not possible.
           </Blockquote>
 
           <section className="no-vertical-margin-collapse">
@@ -56,26 +55,14 @@ const Stylers: React.FC = () => (
                 The <Link href="/theme#style-name">StyleNames</Link> which define the styles.
               </Paragraph>
             </section>
-            <section>
-              <h5 className="text-lg">
-                <InlineCode>styleNamespace</InlineCode> <OptionalTag />
-              </h5>
-              <Paragraph>
-                The <Link href="/theme#namespace">StyleNamespace</Link> to be used which holds the style definitions for the <InlineCode>StyleNames</InlineCode> supplied to the hook.
-                <br />
-                If not provided then the styler hook uses a matching default namespace from the collection of {`it's`} <Link href="/theme#default-namespaces">Default StyleNamespaces</Link>.
-              </Paragraph>
-            </section>
           </section>
 
-          <div className="mt-8 mb-8">
-            <Blockquote>
-              All the code samples below use <Link href="/stylo-theme">Stylo theme</Link>.
-              The code samples below do not display the pictorial outcomes.
-              Also, the code samples below are not tightly coupled to the <Link href="/theme#style-name">StyleName</Link> &amp; <Link href="/theme#namespace">StyleNamespace</Link> types.
-              If you have not yet gone through the tight coupling of style types then you can read the document <Link href="/tight-coupling">Tightly coupled</Link>.
-            </Blockquote>
-          </div>
+          <Blockquote>
+            All the code samples below use <Link href="/stylo-theme">Stylo theme</Link>.
+            The code samples below do not display the pictorial outcomes.
+            Also, the code samples below are not tightly coupled to the <Link href="/theme#style-name">StyleName</Link> types.
+            If you have not yet gone through the tight coupling of style types then you can read the document <Link href="/tight-coupling">Tightly coupled</Link>.
+          </Blockquote>
 
           <section className="no-vertical-margin-collapse">
             <SectionHeading id="use-icon-styles" level={4}>
@@ -85,12 +72,10 @@ const Stylers: React.FC = () => (
               <strong className="font-semibold">Type definition</strong>
             </Paragraph>
             <CodeSnippet>
-              {`function useIconStyles<TStyleName extends string, TStyleNamespace extends string>(
-  styleNames: TStyleName[], styleNamespace?: TStyleNamespace
-): StyleProp<TextStyle>`}
+              {`function useIconStyles<TStyleName extends string>(styleNames: TStyleName[]): StyleProp<TextStyle>`}
             </CodeSnippet>
             <Paragraph>
-              <strong className="font-semibold">Default StyleNamespace:</strong> <InlineCode>IconStyles</InlineCode>
+              <strong className="font-semibold">StyleNamespace:</strong> <InlineCode>IconStyles</InlineCode>
             </Paragraph>
             <Paragraph>
               <strong className="font-semibold">Usage</strong>
@@ -124,12 +109,10 @@ const ComponentA = () => {
               <strong className="font-semibold">Type definition</strong>
             </Paragraph>
             <CodeSnippet>
-              {`function useImageBackgroundStyles<TStyleName extends string, TStyleNamespace extends string>(
-  styleNames: TStyleName[], styleNamespace?: TStyleNamespace
-): StyleProp<ViewStyle>`}
+              {`function useImageBackgroundStyles<TStyleName extends string>(styleNames: TStyleName[]): StyleProp<ViewStyle>`}
             </CodeSnippet>
             <Paragraph>
-              <strong className="font-semibold">Default StyleNamespace:</strong> <InlineCode>ImageBackgroundStyles</InlineCode>
+              <strong className="font-semibold">StyleNamespace:</strong> <InlineCode>ImageBackgroundStyles</InlineCode>
             </Paragraph>
             <Paragraph>
               <strong className="font-semibold">Usage</strong>
@@ -162,12 +145,10 @@ const ComponentA = () => {
               <strong className="font-semibold">Type definition</strong>
             </Paragraph>
             <CodeSnippet>
-              {`function useImageStyles<TStyleName extends string, TStyleNamespace extends string>(
-  styleNames: TStyleName[], styleNamespace?: TStyleNamespace
-): StyleProp<ImageStyle>`}
+              {`function useImageStyles<TStyleName extends string>(styleNames: TStyleName[]): StyleProp<ImageStyle>`}
             </CodeSnippet>
             <Paragraph>
-              <strong className="font-semibold">Default StyleNamespace:</strong> <InlineCode>ImageStyles</InlineCode>
+              <strong className="font-semibold">StyleNamespace:</strong> <InlineCode>ImageStyles</InlineCode>
             </Paragraph>
             <Paragraph>
               <strong className="font-semibold">Usage</strong>
@@ -200,12 +181,10 @@ const ComponentA = () => {
               <strong className="font-semibold">Type definition</strong>
             </Paragraph>
             <CodeSnippet>
-              {`function useSafeAreaViewStyles<TStyleName extends string, TStyleNamespace extends string>(
-  styleNames: TStyleName[], styleNamespace?: TStyleNamespace
-): StyleProp<ViewStyle>`}
+              {`function useSafeAreaViewStyles<TStyleName extends string>(styleNames: TStyleName[]): StyleProp<ViewStyle>`}
             </CodeSnippet>
             <Paragraph>
-              <strong className="font-semibold">Default StyleNamespace:</strong> <InlineCode>SafeAreaViewStyles</InlineCode>
+              <strong className="font-semibold">StyleNamespace:</strong> <InlineCode>SafeAreaViewStyles</InlineCode>
             </Paragraph>
             <Paragraph>
               <strong className="font-semibold">Usage</strong>
@@ -238,12 +217,10 @@ const ComponentA = () => {
               <strong className="font-semibold">Type definition</strong>
             </Paragraph>
             <CodeSnippet>
-              {`export function useScrollViewStyles<TStyleName extends string, TStyleNamespace extends string>(
-  styleNames: TStyleName[], styleNamespace?: TStyleNamespace
-): StyleProp<ViewStyle>`}
+              {`export function useScrollViewStyles<TStyleName extends string>(styleNames: TStyleName[]): StyleProp<ViewStyle>`}
             </CodeSnippet>
             <Paragraph>
-              <strong className="font-semibold">Default StyleNamespace:</strong> <InlineCode>ScrollViewStyles</InlineCode>
+              <strong className="font-semibold">StyleNamespace:</strong> <InlineCode>ScrollViewStyles</InlineCode>
             </Paragraph>
             <Paragraph>
               <strong className="font-semibold">Usage</strong>
@@ -276,12 +253,10 @@ const ComponentA = () => {
               <strong className="font-semibold">Type definition</strong>
             </Paragraph>
             <CodeSnippet>
-              {`export function useScrollViewContentContainerStyles<TStyleName extends string, TStyleNamespace extends string>(
-  styleNames: TStyleName[], styleNamespace?: TStyleNamespace
-): StyleProp<ViewStyle>`}
+              {`export function useScrollViewContentContainerStyles<TStyleName extends string>(styleNames: TStyleName[]): StyleProp<ViewStyle>`}
             </CodeSnippet>
             <Paragraph>
-              <strong className="font-semibold">Default StyleNamespace:</strong> <InlineCode>ScrollViewContentContainerStyles</InlineCode>
+              <strong className="font-semibold">StyleNamespace:</strong> <InlineCode>ScrollViewContentContainerStyles</InlineCode>
             </Paragraph>
             <Paragraph>
               <strong className="font-semibold">Usage</strong>
@@ -315,12 +290,10 @@ const ComponentA = () => {
               <strong className="font-semibold">Type definition</strong>
             </Paragraph>
             <CodeSnippet>
-              {`function useImageStyles<TStyleName extends string, TStyleNamespace extends string>(
-  styleNames: TStyleName[], styleNamespace?: TStyleNamespace
-): StyleProp<TextStyle>`}
+              {`function useImageStyles<TStyleName extends string>(styleNames: TStyleName[]): StyleProp<TextStyle>`}
             </CodeSnippet>
             <Paragraph>
-              <strong className="font-semibold">Default StyleNamespace:</strong> <InlineCode>TextInputStyles</InlineCode>
+              <strong className="font-semibold">StyleNamespace:</strong> <InlineCode>TextInputStyles</InlineCode>
             </Paragraph>
             <Paragraph>
               <strong className="font-semibold">Usage</strong>
@@ -353,12 +326,10 @@ const ComponentA = () => {
               <strong className="font-semibold">Type definition</strong>
             </Paragraph>
             <CodeSnippet>
-              {`function useTextStyles<TStyleName extends string, TStyleNamespace extends string>(
-  styleNames: TStyleName[], styleNamespace?: TStyleNamespace
-): StyleProp<TextStyle>`}
+              {`function useTextStyles<TStyleName extends string>(styleNames: TStyleName[]): StyleProp<TextStyle>`}
             </CodeSnippet>
             <Paragraph>
-              <strong className="font-semibold">Default StyleNamespace:</strong> <InlineCode>TextStyles</InlineCode>
+              <strong className="font-semibold">StyleNamespace:</strong> <InlineCode>TextStyles</InlineCode>
             </Paragraph>
             <Paragraph>
               <strong className="font-semibold">Usage</strong>
@@ -391,12 +362,10 @@ const ComponentA = () => {
               <strong className="font-semibold">Type definition</strong>
             </Paragraph>
             <CodeSnippet>
-              {`function useTouchableStyles<TStyleName extends string, TStyleNamespace extends string>(
-  styleNames: TStyleName[], styleNamespace?: TStyleNamespace
-): StyleProp<ViewStyle>`}
+              {`function useTouchableStyles<TStyleName extends string>(styleNames: TStyleName[]): StyleProp<ViewStyle>`}
             </CodeSnippet>
             <Paragraph>
-              <strong className="font-semibold">Default StyleNamespace:</strong> <InlineCode>TouchableStyles</InlineCode>
+              <strong className="font-semibold">StyleNamespace:</strong> <InlineCode>TouchableStyles</InlineCode>
             </Paragraph>
             <Paragraph>
               The <InlineCode>useTouchableStyles()</InlineCode> hook can be used for <InlineCode>TouchableOpacity</InlineCode>, <InlineCode>TouchableHighlight</InlineCode> &amp; <InlineCode>Pressable</InlineCode> component.
@@ -429,12 +398,10 @@ const ComponentA = () => {
               <strong className="font-semibold">Type definition</strong>
             </Paragraph>
             <CodeSnippet>
-              {`function useViewStyles<TStyleName extends string, TStyleNamespace extends string>(
-  styleNames: TStyleName[], styleNamespace?: TStyleNamespace
-): StyleProp<ViewStyle>`}
+              {`function useViewStyles<TStyleName extends string>(styleNames: TStyleName[]): StyleProp<ViewStyle>`}
             </CodeSnippet>
             <Paragraph>
-              <strong className="font-semibold">Default StyleNamespace:</strong> <InlineCode>ViewStyles</InlineCode>
+              <strong className="font-semibold">StyleNamespace:</strong> <InlineCode>ViewStyles</InlineCode>
             </Paragraph>
             <Paragraph>
               <strong className="font-semibold">Usage</strong>

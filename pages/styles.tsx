@@ -30,7 +30,7 @@ const Styles: React.FC = () => (
           </Paragraph>
 
           <Blockquote>
-            Stylo recommends to use the <Link href="/stylers">Styler</Link> hooks &amp; <Link href="/stylish">Stylish</Link> components instead of the <InlineCode>{`<Styles />`}</InlineCode> component.
+            Stylo recommends to use the <Link href="/stylish">Stylish</Link> components &amp; <Link href="/stylers">Styler</Link> hooks instead of the <InlineCode>{`<Styles />`}</InlineCode> component.
             In practice, one may not need to use the <InlineCode>{`<Styles />`}</InlineCode> component directly.
           </Blockquote>
 
@@ -39,7 +39,11 @@ const Styles: React.FC = () => (
               Type definition
             </SectionHeading>
             <CodeSnippet>
-              {`type TProps<TStyleProp, TStyleName extends string, TStyleNamespace extends string> = {
+              {`type TProps<
+  TStyleProp,
+  TStyleName extends string,
+  TStyleNamespace extends string
+> = {
   styleNamespace: TStyleNamespace;
   styleNames: TStyleName[];
   children: (style: StyleProp<TStyleProp>) => React.ReactNode;
@@ -80,7 +84,7 @@ const Styles: React.FC = () => (
                 <InlineCode>styleNamespace</InlineCode> <RequiredTag />
               </h5>
               <Paragraph>
-                The <Link href="/theme#namespace">StyleNamespace</Link> to be used which holds the style definitions for the <InlineCode>StyleNames</InlineCode> supplied to the hook.
+                The <Link href="/theme#style-namespace">StyleNamespace</Link> to be used which holds the style definitions for the <InlineCode>StyleNames</InlineCode> supplied to the hook.
               </Paragraph>
             </section>
             <section>

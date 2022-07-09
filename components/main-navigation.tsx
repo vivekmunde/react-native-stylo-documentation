@@ -86,6 +86,11 @@ const MainNavigation: React.FC = () => {
                 Tightly coupled
               </NavLink>
             </li>
+            <li>
+              <NavLink href="/creating-theme">
+                Creating a theme
+              </NavLink>
+            </li>
             {/* <li>
               <NavLink href="/showcase">
                 Showcase

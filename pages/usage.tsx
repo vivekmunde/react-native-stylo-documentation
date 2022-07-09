@@ -180,9 +180,8 @@ const App = () => (
               {sections.stylishComponents.title}
             </SectionHeading>
             <Paragraph>
-              <strong className="font-semibold">Stylish</strong> components are nothing but enhanced React Native components with added properties called <InlineCode>styleNames</InlineCode> &amp; <InlineCode>styleNamespace</InlineCode>.
+              <strong className="font-semibold">Stylish</strong> components are nothing but enhanced React Native components with added property called <InlineCode>styleNames</InlineCode>.
               Property <InlineCode>styleNames</InlineCode> accepts the eligible styles for the component which are defined in the theme.
-              Property <InlineCode>styleNamespace</InlineCode> is optional and use only when you need to override the <Link href="/theme#default-namespaces">default StyleNamespaces</Link>.
             </Paragraph>
             <ShowCaseBox
               renderCode={() => `import React from 'react';
@@ -240,9 +239,8 @@ const UsageStylishComponents = () => (
             <Paragraph>
               <strong className="font-semibold">Stylers</strong> are styling hooks which are used to define the styles for the components.
               Use these stylers in case you like to use the core React Native components instead of {`Stylo's`} stylish components.
-              The styler hooks accept two arguments <InlineCode>styleNames</InlineCode> &amp <InlineCode>styleNamespace</InlineCode>(optional).
-              First argument <InlineCode>styleNames</InlineCode> accepts the eligible styles for the component which are defined in the theme.
-              Second argument <InlineCode>styleNamespace</InlineCode> is optional, and use only when you need to override the default namespaces.
+              The styler hooks accept an argument <InlineCode>styleNames</InlineCode>.
+              The argument <InlineCode>styleNames</InlineCode> accepts the eligible styles for the component which are defined in the theme.
             </Paragraph>
             <ShowCaseBox
               renderCode={() => `import React, { useRef } from 'react';

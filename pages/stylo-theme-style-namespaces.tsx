@@ -4,7 +4,6 @@ import React from 'react';
 import ArticleHeading from '../components/article-heading';
 import DefaultStyleNamespacesCodeSnippet from '../components/default-style-namespaces-code-snippet';
 import Layout from '../components/layout';
-import Paragraph from '../components/paragraph';
 import SectionHeading from '../components/section-heading';
 import StyloThemeNavigation from '../components/stylo-theme-navigation';
 

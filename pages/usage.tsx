@@ -101,7 +101,7 @@ const Usage: React.FC = () => (
             <Paragraph>
               <InlineCode>npm install --save react-native-vector-icons@^9.1.0</InlineCode>
               <br />
-              <InlineCode>npm install --save react-native-stylo@git+https://github.com/vivekmunde/react-native-stylo.git#0.3.0</InlineCode>
+              <InlineCode>npm install --save react-native-stylo@git+https://github.com/vivekmunde/react-native-stylo.git</InlineCode>
               {/* <InlineCode>npm install --save react-native-vector-icons@^9.1.0 react-native-stylo</InlineCode> */}
               <br />
               {' '}
@@ -112,7 +112,7 @@ const Usage: React.FC = () => (
               <br />
               <InlineCode>yarn add react-native-vector-icons@^9.1.0</InlineCode>
               <br />
-              <InlineCode>yarn add react-native-stylo@git+https://github.com/vivekmunde/react-native-stylo.git#0.3.0</InlineCode>
+              <InlineCode>yarn add react-native-stylo@git+https://github.com/vivekmunde/react-native-stylo.git</InlineCode>
               {/* <InlineCode>yarn add react-native-vector-icons@^9.1.0 react-native-stylo</InlineCode> */}
             </Paragraph>
           </section>

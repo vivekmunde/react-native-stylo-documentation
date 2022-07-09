@@ -9,7 +9,7 @@ const StyloThemeColorBox: React.FC<{
   <div
     className="rounded flex flex-row items-center p-2 justify-between"
     style={{
-      width: width ?? '200px',
+      // width: width ?? '200px',
       height: height ?? '40px',
       backgroundColor: color,
     }}

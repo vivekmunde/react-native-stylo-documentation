@@ -79,19 +79,6 @@ export const dangerColors: TColor = {
   Danger10: '#5c0011',
 };
 
-export const goldColors: TColor = {
-  Gold1: '#fffbe6',
-  Gold2: '#fff1b8',
-  Gold3: '#ffe58f',
-  Gold4: '#ffd666',
-  Gold5: '#ffc53d',
-  Gold6: '#faad14',
-  Gold7: '#d48806',
-  Gold8: '#ad6800',
-  Gold9: '#874d00',
-  Gold10: '#613400',
-};
-
 export const greenColors: TColor = {
   Green1: '#f6ffed',
   Green2: '#d9f7be',
@@ -131,30 +118,17 @@ export const infoColors: TColor = {
   Info10: '#002329',
 };
 
-export const limeColors: TColor = {
-  Lime1: '#fcffe6',
-  Lime2: '#f4ffb8',
-  Lime3: '#eaff8f',
-  Lime4: '#d3f261',
-  Lime5: '#bae637',
-  Lime6: '#a0d911',
-  Lime7: '#7cb305',
-  Lime8: '#5b8c00',
-  Lime9: '#3f6600',
-  Lime10: '#254000',
-};
-
 export const magentaColors: TColor = {
-  Magenta1: '#fff0f6',
-  Magenta2: '#ffd6e7',
-  Magenta3: '#ffadd2',
-  Magenta4: '#ff85c0',
-  Magenta5: '#f759ab',
-  Magenta6: '#eb2f96',
-  Magenta7: '#c41d7f',
-  Magenta8: '#9e1068',
-  Magenta9: '#780650',
-  Magenta10: '#520339',
+  Magenta1: '#fff0f5',
+  Magenta2: '#ffc9df',
+  Magenta3: '#ffa1ca',
+  Magenta4: '#fa75b3',
+  Magenta5: '#ec4899',
+  Magenta6: '#c73482',
+  Magenta7: '#a1226a',
+  Magenta8: '#7a1451',
+  Magenta9: '#540d3a',
+  Magenta10: '#2e0520',
 };
 
 export const orangeColors: TColor = {
@@ -220,19 +194,6 @@ export const successColors: TColor = {
   Success8: '#237804',
   Success9: '#135200',
   Success10: '#092b00',
-};
-
-export const volcanoColors: TColor = {
-  Volcano1: '#fff2e8',
-  Volcano2: '#ffd8bf',
-  Volcano3: '#ffbb96',
-  Volcano4: '#ff9c6e',
-  Volcano5: '#ff7a45',
-  Volcano6: '#fa541c',
-  Volcano7: '#d4380d',
-  Volcano8: '#ad2102',
-  Volcano9: '#871400',
-  Volcano10: '#610b00',
 };
 
 export const warningColors: TColor = {

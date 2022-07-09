@@ -11,10 +11,10 @@ import StyloThemeColorBox from '../components/stylo-theme-colors/stylo-theme-col
 import StyloThemeColorShadesSection from '../components/stylo-theme-colors/stylo-theme-color-shades-section';
 import StyloThemeNavigation from '../components/stylo-theme-navigation';
 import {
-    blueColors, bodyColor, borderColor, cyanColors, dangerColor, dangerColors, fontColor,
-    goldColors, greenColors, greyColors, infoColor, infoColors, limeColors, magentaColors,
-    orangeColors, primaryColor, primaryColors, purpleColors, redColors, secondaryColor,
-    volcanoColors, warningColor, warningColors, whiteColor, yellowColors
+  blueColors, bodyColor, borderColor, cyanColors, dangerColor, dangerColors, fontColor,
+  greenColors, greyColors, infoColor, infoColors, magentaColors, orangeColors, primaryColor,
+  primaryColors, purpleColors, redColors, secondaryColor, warningColor, warningColors, whiteColor,
+  yellowColors
 } from '../constants/stylo-theme-colors';
 
 const StyloThemeColors: React.FC = () => (
@@ -33,7 +33,7 @@ const StyloThemeColors: React.FC = () => (
             <SectionHeading id="principal-colors" level={4}>
               Principal colors
             </SectionHeading>
-            <div className="grid grid-cols-4 mb-4">
+            <div className="grid grid-cols-4 gap-x-12 mb-4">
               <StyloThemeColorBox color={bodyColor}>
                 <span style={{ color: '#000' }}>
                   Body
@@ -53,7 +53,7 @@ const StyloThemeColors: React.FC = () => (
               </StyloThemeColorBox>
             </div>
 
-            <div className="grid grid-cols-4 mb-4">
+            <div className="grid grid-cols-4 gap-x-12 mb-4">
               <StyloThemeColorBox color={fontColor}>
                 <span style={{ color: '#FFF' }}>
                   Font
@@ -82,7 +82,7 @@ const StyloThemeColors: React.FC = () => (
               </StyloThemeColorBox>
             </div>
 
-            <div className="grid grid-cols-4 mb-4">
+            <div className="grid grid-cols-4 gap-x-12 mb-4">
               <StyloThemeColorBox color={primaryColor}>
                 <span style={{ color: '#FFF' }}>
                   Primary
@@ -125,7 +125,7 @@ const StyloThemeColors: React.FC = () => (
             <SectionHeading id="principal-color-shades" level={4}>
               Principal color shades
             </SectionHeading>
-            <div className="grid grid-cols-4">
+            <div className="grid grid-cols-4 gap-x-12">
               <StyloThemeColorShadesSection id="primary-colors" title="Primary" colors={primaryColors} />
               <StyloThemeColorShadesSection id="info-colors" title="Info" colors={infoColors} />
               <StyloThemeColorShadesSection id="warning-colors" title="Warning" colors={warningColors} />
@@ -137,18 +137,15 @@ const StyloThemeColors: React.FC = () => (
             <SectionHeading id="color-palette" level={4}>
               Color palette
             </SectionHeading>
-            <div className="grid grid-cols-4">
+            <div className="grid grid-cols-3 gap-x-12">
+              <StyloThemeColorShadesSection id="grey-colors" title="Grey" colors={greyColors} />
               <StyloThemeColorShadesSection id="blue-colors" title="Blue" colors={blueColors} />
               <StyloThemeColorShadesSection id="cyan-colors" title="Cyan" colors={cyanColors} />
-              <StyloThemeColorShadesSection id="gold-colors" title="Gold" colors={goldColors} />
               <StyloThemeColorShadesSection id="green-colors" title="Green" colors={greenColors} />
-              <StyloThemeColorShadesSection id="grey-colors" title="Grey" colors={greyColors} />
-              <StyloThemeColorShadesSection id="lime-colors" title="Lime" colors={limeColors} />
               <StyloThemeColorShadesSection id="magenta-colors" title="Magenta" colors={magentaColors} />
               <StyloThemeColorShadesSection id="orange-colors" title="Orange" colors={orangeColors} />
               <StyloThemeColorShadesSection id="purple-colors" title="Purple" colors={purpleColors} />
               <StyloThemeColorShadesSection id="red-colors" title="Red" colors={redColors} />
-              <StyloThemeColorShadesSection id="volcano-colors" title="Volcano" colors={volcanoColors} />
               <StyloThemeColorShadesSection id="yellow-colors" title="Yellow" colors={yellowColors} />
             </div>
           </section>
@@ -203,16 +200,6 @@ const StyloThemeColors: React.FC = () => (
   | 'Color.Danger8'
   | 'Color.Danger9'
   | 'Color.Danger10'
-  | 'Color.Gold1'
-  | 'Color.Gold2'
-  | 'Color.Gold3'
-  | 'Color.Gold4'
-  | 'Color.Gold5'
-  | 'Color.Gold6'
-  | 'Color.Gold7'
-  | 'Color.Gold8'
-  | 'Color.Gold9'
-  | 'Color.Gold10'
   | 'Color.Green1'
   | 'Color.Green2'
   | 'Color.Green3'
@@ -244,16 +231,6 @@ const StyloThemeColors: React.FC = () => (
   | 'Color.Info8'
   | 'Color.Info9'
   | 'Color.Info10'
-  | 'Color.Lime1'
-  | 'Color.Lime2'
-  | 'Color.Lime3'
-  | 'Color.Lime4'
-  | 'Color.Lime5'
-  | 'Color.Lime6'
-  | 'Color.Lime7'
-  | 'Color.Lime8'
-  | 'Color.Lime9'
-  | 'Color.Lime10'
   | 'Color.Magenta1'
   | 'Color.Magenta2'
   | 'Color.Magenta3'
@@ -317,16 +294,6 @@ const StyloThemeColors: React.FC = () => (
   | 'Color.Success8'
   | 'Color.Success9'
   | 'Color.Success10'
-  | 'Color.Volcano1'
-  | 'Color.Volcano2'
-  | 'Color.Volcano3'
-  | 'Color.Volcano4'
-  | 'Color.Volcano5'
-  | 'Color.Volcano6'
-  | 'Color.Volcano7'
-  | 'Color.Volcano8'
-  | 'Color.Volcano9'
-  | 'Color.Volcano10'
   | 'Color.Warning'
   | 'Color.Warning1'
   | 'Color.Warning2'

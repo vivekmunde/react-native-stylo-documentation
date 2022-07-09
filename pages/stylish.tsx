@@ -47,8 +47,8 @@ const Stylish: React.FC = () => (
               Stylish props
             </SectionHeading>
             <Paragraph>
-              All stylish components have two extra props other than the default props provided by React Native.
-              Both of these props are purposefully made optional, so that these Stylish components can still be used as plain React Native components.
+              All stylish components have an extra prop called <InlineCode>styleNames</InlineCode> other than the default props provided by React Native.
+              The <InlineCode>styleNames</InlineCode> prop is purposefully made optional, so that these Stylish components can still be used as plain React Native components.
             </Paragraph>
             <section>
               <h5 className="text-lg">

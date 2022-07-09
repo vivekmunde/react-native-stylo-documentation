@@ -45,7 +45,7 @@ const Stylers: React.FC = () => (
               Styler arguments
             </SectionHeading>
             <Paragraph>
-              All stylers accept two arguments.
+              All stylers accept one argument.
             </Paragraph>
             <section>
               <h5 className="text-lg">

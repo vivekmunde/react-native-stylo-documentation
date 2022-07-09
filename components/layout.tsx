@@ -10,7 +10,7 @@ const Layout: React.FC<{
   <React.Fragment>
     <Head>
       <title>React Native Stylo</title>
-      <meta name="description" content="Completely detached and highly scalable React Native styles" />
+      <meta name="description" content="Infinitely scalable strongly typed themes, styling hooks & stylish components for React Native mobile applications" />
       <link rel="icon" href={`${process.env.NEXT_PUBLIC_ASSET_PREFIX}/favicon.ico`} />
     </Head>
     <div className="flex flex-col">

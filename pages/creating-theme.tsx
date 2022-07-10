@@ -40,16 +40,18 @@ const CreatingTheme: React.FC = () => (
             </Paragraph>
             <CodeSnippet>
               {`// Variables
+type TColor = 'Color.Body' | 'Color.White' | 'Color.Primary' | 'Color.Info' | 'Color.Warning' | 'Color.Danger' | 'Color.Grey1' | 'Color.Grey2' | ...;
+type TVariable = 'Body.Color' | 'Font.Color' | 'Font.Size' | 'Border.Color' | 'Border.Width' | 'Border.Radius' | 'Margin' | 'Padding': 12 | 'Avatar.Size': 40 | ...;
+
+// Reusable common StyleName types
 type TFontColorStyle = 'Color.Primary' | 'Color.Secondary' | 'Color.Info' | 'Color.Warning' | 'Color.Danger' | 'Color.Border' | 'Color.Grey1' | 'Color.Grey2' | 'Color.Grey1' | ... ;
 type TBackgroundColorStyle = 'BackgroundColor.Primary' | 'BackgroundColor.Secondary' | 'BackgroundColor.Info' | 'BackgroundColor.Warning' | 'BackgroundColor.Danger' | 'BackgroundColor.Grey1' | 'BackgroundColor.Grey2' | 'BackgroundColor.Grey1' | ... ;
-type TPaddingStyle = 'Padding' | 'Padding.Small' | 'Padding.Large';
-type TMarginStyle = 'Margin' | 'Margin.Small' | 'Margin.Large';
-type TBorderStyle = 'Border.Radius' | 'Border.Radius.Small' | 'Border.Radius.Large';
-export type TVariable = TFontColorStyle | TBackgroundColorStyle | TPaddingStyle | TMarginStyle | TBorderStyle;
+type TPaddingStyle = 'Padding' | 'Padding.Small' | 'Padding.Large' | ...;
+type TMarginStyle = 'Margin' | 'Margin.Small' | 'Margin.Large' | ...;
   
 // StyleNames
 type TBorderStyle = 'Border' | 'Border.Top' | 'Border.Right' | 'Border.Bottom' | 'Border.Left' | 'Border.Radius' | 'Border.Radius.Small' | 'Border.Radius.Large' | 'Border.Color.Primary' | 'Border.Color.Secondary' | 'Border.Color.Info' | 'Border.Color.Warning' | 'Border.Color.Danger' | 'Border.Color.Grey1' | 'Border.Color.Grey2' | ...;
-export type TTextStyle = TFontColorStyle | 'Align.Center' | 'Align.Right' | 'Bold' | 'H1' | 'H2' | 'H3' | 'H4' | 'Small' | 'Large' | 'Paragraph' | 'Margin' | 'Margin.Top' | 'Margin.Right' | 'Margin.Bottom' | 'Margin.Left' | 'Margin.Mini' | 'Margin.Small' | 'Margin.Large' | 'Margin.Top.Small' | 'Margin.Right.Small' | 'Margin.Bottom.Small' | 'Margin.Left.Small' | 'Margin.Top.Mini' | 'Margin.Right.Mini' | 'Margin.Bottom.Mini' | 'Margin.Left.Mini' | 'Margin.Top.Large' | 'Margin.Right.Large' | 'Margin.Bottom.Large' | 'Margin.Left.Large';
+export type TTextStyle = TFontColorStyle | 'Align.Center' | 'Align.Right' | 'Bold' | 'H1' | 'H2' | 'H3' | 'H4' | 'Small' | 'Large' | 'Paragraph' | 'Margin' | 'Margin.Top' | 'Margin.Right' | 'Margin.Bottom' | 'Margin.Left' | 'Margin.Mini' | 'Margin.Small' | 'Margin.Large' | 'Margin.Top.Small' | 'Margin.Right.Small' | 'Margin.Bottom.Small' | 'Margin.Left.Small' | 'Margin.Top.Mini' | 'Margin.Right.Mini' | 'Margin.Bottom.Mini' | 'Margin.Left.Mini' | 'Margin.Top.Large' | 'Margin.Right.Large' | 'Margin.Bottom.Large' | 'Margin.Left.Large' | ...;
 export type TViewStyle = TBackgroundColorStyle | TPaddingStyle | TMarginStyle | TBorderStyle | ...;
 export type TTouchableStyle = TBackgroundColorStyle | TPaddingStyle | TMarginStyle | TBorderStyle | 'Button' | 'Button.Small' | 'Button.Large' | 'Button.Round' | 'Button.Circle' | ...;
 // & so on ...`}
@@ -70,6 +72,13 @@ export type TTouchableStyle = TBackgroundColorStyle | TPaddingStyle | TMarginSty
   'Color.Secondary': '#888888',
   'Color.Grey1': '#FEFEFE',
   'Color.Grey2': '#F4F4F4',
+  ...
+  'Body.Color': '#FFFFFF',
+  'Font.Color': '#333333',
+  'Font.Size': 16,
+  'Font.Size.Small': 12,
+  'Font.Size.Large': 20,
+  'Font.Weight': '400',
   ...
   'Border.Radius': 8,
   'Border.Radius.Small': 4,

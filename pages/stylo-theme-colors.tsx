@@ -33,7 +33,7 @@ const StyloThemeColors: React.FC = () => (
             <SectionHeading id="principal-colors" level={4}>
               Principal colors
             </SectionHeading>
-            <div className="grid grid-cols-4 gap-x-12 mb-4">
+            <div className="grid lg:grid-cols-4 lg:gap-x-12 mb-4">
               <StyloThemeColorBox color={bodyColor}>
                 <span style={{ color: '#000' }}>
                   Body
@@ -53,7 +53,7 @@ const StyloThemeColors: React.FC = () => (
               </StyloThemeColorBox>
             </div>
 
-            <div className="grid grid-cols-4 gap-x-12 mb-4">
+            <div className="grid lg:grid-cols-4 gap-1 lg:gap-x-12 mb-4">
               <StyloThemeColorBox color={fontColor}>
                 <span style={{ color: '#FFF' }}>
                   Font
@@ -82,7 +82,7 @@ const StyloThemeColors: React.FC = () => (
               </StyloThemeColorBox>
             </div>
 
-            <div className="grid grid-cols-4 gap-x-12 mb-4">
+            <div className="grid lg:grid-cols-4 gap-1 lg:gap-x-12 mb-4">
               <StyloThemeColorBox color={primaryColor}>
                 <span style={{ color: '#FFF' }}>
                   Primary
@@ -125,7 +125,7 @@ const StyloThemeColors: React.FC = () => (
             <SectionHeading id="principal-color-shades" level={4}>
               Principal color shades
             </SectionHeading>
-            <div className="grid grid-cols-4 gap-x-12">
+            <div className="grid lg:grid-cols-4 gap-x-12">
               <StyloThemeColorShadesSection id="primary-colors" title="Primary" colors={primaryColors} />
               <StyloThemeColorShadesSection id="info-colors" title="Info" colors={infoColors} />
               <StyloThemeColorShadesSection id="warning-colors" title="Warning" colors={warningColors} />
@@ -137,7 +137,7 @@ const StyloThemeColors: React.FC = () => (
             <SectionHeading id="color-palette" level={4}>
               Color palette
             </SectionHeading>
-            <div className="grid grid-cols-3 gap-x-12">
+            <div className="grid lg:grid-cols-3 gap-x-12">
               <StyloThemeColorShadesSection id="grey-colors" title="Grey" colors={greyColors} />
               <StyloThemeColorShadesSection id="blue-colors" title="Blue" colors={blueColors} />
               <StyloThemeColorShadesSection id="cyan-colors" title="Cyan" colors={cyanColors} />

@@ -27,7 +27,7 @@ const StyloThemeComponentStyles: React.FC = () => (
           </Paragraph>
 
           <div className="pt-[1px] mb-4">
-            <div className="grid grid-cols-3 gap-4 mt-4">
+            <div className="grid lg:grid-cols-3 gap-1 lg:gap-4 mt-4">
               <Link href="/stylo-theme-image-styles">
                 <a className="bg-pink-50 rounded p-4" style={{ display: 'block' }}>
                   Image

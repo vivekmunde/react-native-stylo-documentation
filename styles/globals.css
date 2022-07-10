@@ -54,3 +54,34 @@ small {
 .heading>a {
   color: inherit;
 }
+
+.left-nav {
+  display: none;
+}
+
+@media screen and (min-width: 1024px) {
+  .left-nav {
+    display: block;
+    position: relative;
+    width: auto;
+  }
+
+  .left-nav-hamburger {
+    display: none;
+  }
+}
+
+.left-nav-visible {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  overflow: auto;
+}
+
+.main-content-no-scroll {
+  height: 100vh;
+  overflow: hidden;
+}

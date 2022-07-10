@@ -61,7 +61,7 @@ const StyloTheme: React.FC = () => (
           </section>
 
           <div className="pt-[1px]">
-            <div className="grid grid-cols-3 gap-4 mt-8">
+            <div className="grid lg:grid-cols-3 gap-1 lg:gap-4 mt-8">
               <div className="bg-pink-50 rounded p-4">
                 <h5 className="m-0">
                   <Link href="/stylo-theme-colors">
@@ -92,7 +92,7 @@ const StyloTheme: React.FC = () => (
             </div>
           </div>
 
-          <div className="grid grid-cols-3 gap-4 mt-4">
+          <div className="grid lg:grid-cols-3 gap-1 lg:gap-4 mt-4">
             <div className="bg-pink-50 rounded pl-4 pr-4 pb-4 pt-[1px]">
               <h5>
                 <Link href="/stylo-theme-generic-styles">

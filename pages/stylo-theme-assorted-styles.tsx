@@ -33,7 +33,7 @@ const StyloThemeAssortedStyles: React.FC = () => (
           </Paragraph>
 
           <div className="pt-[1px]">
-            <div className="grid grid-cols-4 gap-4 mt-4">
+            <div className="grid lg:grid-cols-4 gap-1 lg:gap-4 mt-4">
               <Link href="/stylo-theme-avatar-styles">
                 <a className="bg-pink-50 rounded p-4" style={{ display: 'block' }}>
                   Avatar

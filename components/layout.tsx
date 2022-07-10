@@ -44,12 +44,15 @@ const Layout: React.FC<{
       <div className="flex flex-col">
         <div className="grid grid-cols-7 xl:grid-cols-5 grid-flow-col">
           <div ref={refLeftNavDiv} className="p-4 pl-8 lg:col-span-2 xl:col-span-1 bg-white left-nav">
-            <button
-              className="left-nav-hamburger bg-gray-100 border-0 rounded p-2 mb-4"
-              onClick={() => { onToggleLeftNav(); }}>
-              <i className="fas fa-xmark fa-fw text-xl text-gray-400" />
-            </button>
-            <div className="mt-4 mb-8">
+            <div className="flex flex-row items-center justify-between sm-logo-wrapper mb-4">
+              <HeaderLogo />
+              <button
+                className="left-nav-hamburger bg-transparent border-0 rounded p-1 mb-4"
+                onClick={() => { onToggleLeftNav(); }}>
+                <i className="fas fa-xmark fa-fw text-2xl text-gray-400" />
+              </button>
+            </div>
+            <div className="mt-4 mb-8 lg-logo-wrapper">
               <HeaderLogo />
             </div>
             {renderNavigation()}
@@ -60,11 +63,14 @@ const Layout: React.FC<{
             </footer>
           </div>
           <main ref={refContentDiv} className="border-l p-4 pb-16 lg:pr-8 xl:pr-8 col-span-7 lg:col-span-5 xl:col-span-4" style={{ minHeight: '100vh' }}>
-            <button
-              className="left-nav-hamburger bg-pink-50 border-0 rounded p-2"
-              onClick={() => { onToggleLeftNav(); }}>
-              <i className="fas fa-bars fa-fw text-xl text-pink-500" />
-            </button>
+            <div className="flex flex-row items-center sm-logo-wrapper mb-4">
+              <button
+                className="bg-pink-50 border-0 rounded p-2 mr-4"
+                onClick={() => { onToggleLeftNav(); }}>
+                <i className="fas fa-bars fa-fw text-xl text-pink-500" />
+              </button>
+              <HeaderLogo />
+            </div>
             {renderContent()}
           </main>
         </div>

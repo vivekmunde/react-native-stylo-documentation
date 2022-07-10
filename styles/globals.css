@@ -59,6 +59,10 @@ small {
   display: none;
 }
 
+.lg-logo-wrapper {
+  display: none;
+}
+
 @media screen and (min-width: 1024px) {
   .left-nav {
     display: block;
@@ -66,7 +70,11 @@ small {
     width: auto;
   }
 
-  .left-nav-hamburger {
+  .lg-logo-wrapper {
+    display: block;
+  }
+
+  .sm-logo-wrapper {
     display: none;
   }
 }

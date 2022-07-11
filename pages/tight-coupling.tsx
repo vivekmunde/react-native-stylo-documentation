@@ -17,10 +17,10 @@ const TightCoupling: React.FC = () => (
     renderContent={() => (
       <React.Fragment>
         <Head>
-          <title>Tightly coupled | React Native Stylo</title>
+          <title>Tight coupling | React Native Stylo</title>
         </Head>
         <article>
-          <ArticleHeading>Tightly coupled</ArticleHeading>
+          <ArticleHeading>Tight coupling</ArticleHeading>
           <Paragraph>
             To avoid passing the type of the <Link href="/theme#style-name">StyleNames</Link> each time to the <Link href="/stylish">Stylish</Link> components &amp; <Link href="/stylers">Styler</Link> hooks, you can tightly couple the types to the <strong className="font-semibold">Stylish</strong> components &amp; <strong className="font-semibold">Styler</strong> hooks easily.
             Simply create wrapper components &amp; hooks which will internally pass the desired style type and then use these components &amp; hooks without need to pass the style types.

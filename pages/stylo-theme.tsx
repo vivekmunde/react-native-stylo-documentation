@@ -22,7 +22,18 @@ const StyloTheme: React.FC = () => (
           <title>Stylo theme | React Native Stylo</title>
         </Head>
         <article>
-          <ArticleHeading>Stylo theme</ArticleHeading>
+          <ArticleHeading>
+            <span className="text-pink-600">S</span>
+            <span className="text-blue-600">t</span>
+            <span className="text-red-600">y</span>
+            <span className="text-purple-600">l</span>
+            <span className="text-green-600">o</span>
+            <span className="text-blue-600">{` t`}</span>
+            <span className="text-pink-600">h</span>
+            <span className="text-green-600">e</span>
+            <span className="text-red-600">m</span>
+            <span className="text-purple-600">e</span>
+          </ArticleHeading>
 
           <Paragraph>
             Stylo provides a default strongly typed theme.

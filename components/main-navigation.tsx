@@ -90,11 +90,6 @@ const MainNavigation: React.FC = () => {
               </NavLink>
             </li>
             <li>
-              <NavLink href="/use-variables">
-                {`useVariables()`}
-              </NavLink>
-            </li>
-            <li>
               <NavLink href="/stylish">
                 Stylish
               </NavLink>
@@ -105,8 +100,13 @@ const MainNavigation: React.FC = () => {
               </NavLink>
             </li>
             <li>
+              <NavLink href="/use-variables">
+                {`useVariables()`}
+              </NavLink>
+            </li>
+            <li>
               <NavLink href="/tight-coupling">
-                Tightly coupled
+                Tight coupling
               </NavLink>
             </li>
           </ul>

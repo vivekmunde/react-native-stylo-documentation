@@ -61,7 +61,7 @@ const Stylers: React.FC = () => (
             All the code samples below use <Link href="/stylo-theme">Stylo theme</Link>.
             The code samples below do not display the pictorial outcomes.
             Also, the code samples below are not tightly coupled to the <Link href="/theme#style-name">StyleName</Link> types.
-            If you have not yet gone through the tight coupling of style types then you can read the document <Link href="/tight-coupling">Tightly coupled</Link>.
+            If you have not yet gone through the tight coupling of style types then you can read the document <Link href="/tight-coupling">Tight coupling</Link>.
           </Blockquote>
 
           <section className="no-vertical-margin-collapse">

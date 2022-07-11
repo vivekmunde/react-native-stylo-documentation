@@ -111,6 +111,11 @@ const MainNavigation: React.FC = () => {
             </li>
           </ul>
         </li>
+        <li className="mb-8 font-bold">
+          <NavLink href="/built-using-stylo">
+            Built using Stylo
+          </NavLink>
+        </li>
       </ul>
     </nav>
   );

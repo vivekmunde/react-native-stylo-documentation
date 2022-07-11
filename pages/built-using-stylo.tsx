@@ -2,6 +2,7 @@ import Head from 'next/head';
 import React from 'react';
 
 import ArticleHeading from '../components/article-heading';
+import ExternalLink from '../components/external-link';
 import Layout from '../components/layout';
 import MainNavigation from '../components/main-navigation';
 
@@ -16,17 +17,6 @@ const ImageShowcase: React.FC<{
     style={{ maxHeight: '90vh' }} />
 );
 
-const VideoShowcase: React.FC<{
-  url: string;
-}> = ({ url }) => (
-  <video
-    controls
-    className="rounded-2xl border-4 border-gray-600"
-    style={{ maxHeight: '90vh' }}>
-    <source src={`${process.env.NEXT_PUBLIC_ASSET_PREFIX}/videos/${url}`} type="video/mp4" />
-  </video >
-);
-
 const BuiltUsingStylo: React.FC = () => (
   <Layout
     renderNavigation={() => <MainNavigation />}
@@ -39,7 +29,17 @@ const BuiltUsingStylo: React.FC = () => (
           <ArticleHeading>Built using Stylo &amp; its theme</ArticleHeading>
 
           <section className="pt-[1px] pb-[1px] mb-12">
-            <h3 className="font-light text-center md:text-left">Zaycare Admin</h3>
+            <div className="flex flex-row justify-between items-center">
+              <h3 className="font-light text-center md:text-left">Zaycare Admin</h3>
+              <div>
+                <ExternalLink href="https://apps.apple.com/sr/app/zaycare/id1558651732">
+                  <i className="fab fa-apple fa-fw text-4xl mr-4" />
+                </ExternalLink>
+                <ExternalLink href="https://play.google.com/store/apps/details?id=zay.works.zaycare">
+                  <i className="fab fa-android fa-fw text-4xl" />
+                </ExternalLink>
+              </div>
+            </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 place-items-center">
               <ImageShowcase imageAlt="Home" imageUrl="built-using-stylo/admin-home-1.png" />
               <ImageShowcase imageAlt="Home" imageUrl="built-using-stylo/admin-children-attendance-1.png" />
@@ -66,7 +66,17 @@ const BuiltUsingStylo: React.FC = () => (
           </section>
 
           <section className="pt-[1px] pb-[1px] mb-12">
-            <h3 className="font-light text-center md:text-left">Zaycare Parent</h3>
+          <div className="flex flex-row justify-between items-center">
+              <h3 className="font-light text-center md:text-left">Zaycare Parent</h3>
+              <div>
+                <ExternalLink href="https://apps.apple.com/sr/app/zaycare-parent/id1566116225">
+                  <i className="fab fa-apple fa-fw text-4xl mr-4" />
+                </ExternalLink>
+                <ExternalLink href="https://play.google.com/store/apps/details?id=com.zaycare.parent">
+                  <i className="fab fa-android fa-fw text-4xl" />
+                </ExternalLink>
+              </div>
+            </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
               <ImageShowcase imageAlt="Home" imageUrl="built-using-stylo/parent-home-1.png" />
               <ImageShowcase imageAlt="Home" imageUrl="built-using-stylo/parent-home-2.png" />

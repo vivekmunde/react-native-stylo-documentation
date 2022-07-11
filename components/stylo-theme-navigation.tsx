@@ -183,7 +183,7 @@ const StyloThemeNavigation: React.FC = () => (
       <li>
         <NavLink href="/">
           <h5 className="mb-4">
-            Stylo documentation
+            Documentation
           </h5>
         </NavLink>
       </li>

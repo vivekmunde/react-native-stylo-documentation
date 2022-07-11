@@ -9,9 +9,7 @@ import Layout from '../components/layout';
 import Paragraph from '../components/paragraph';
 import SectionHeading from '../components/section-heading';
 import StyloThemeNavigation from '../components/stylo-theme-navigation';
-import {
-  STYLO_THEME_LOCATION, STYLO_THEME_STYLERS_STYLISH_LOCATION
-} from '../constants/stylo-locations';
+import { STYLO_THEME_STYLERS_STYLISH_LOCATION } from '../constants/stylo-locations';
 
 const StyloTheme: React.FC = () => (
   <Layout
@@ -39,7 +37,7 @@ const StyloTheme: React.FC = () => (
               Setup
             </SectionHeading>
             <Paragraph>
-              Stylo theme &amp; its <Link href="/tight-coupling">tightly coupled</Link> styling elements, <Link href="/stylish">Stylish</Link> components &amp; <Link href="/stylers">Styler</Link> hooks, which are located at <strong className="font-semibold">{STYLO_THEME_STYLERS_STYLISH_LOCATION}</strong>.
+              Stylo theme &amp; its <Link href="/tight-coupling">tightly coupled</Link> styling elements, <Link href="/stylish">Stylish</Link> components &amp; <Link href="/stylers">Styler</Link> hooks, are located at <strong className="font-semibold">{STYLO_THEME_STYLERS_STYLISH_LOCATION}</strong>.
               Just copy the these to your project.
               You can freely modify the theme as per your needs.
             </Paragraph>

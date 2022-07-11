@@ -40,7 +40,7 @@ const MainNavigation: React.FC = () => {
         </li>
         <li>
           <h5 className="text-base m-0">
-            Hooks &amp; components
+            Theming
           </h5>
           <ul className="mb-8">
             <li>
@@ -48,6 +48,42 @@ const MainNavigation: React.FC = () => {
                 Theme
               </NavLink>
             </li>
+            <li>
+              <NavLink href="/creating-theme">
+                Creating a theme
+              </NavLink>
+            </li>
+            <li>
+              <NavLink href="/default-styles">
+                Default styles
+              </NavLink>
+            </li>
+            <li>
+              <NavLink href="/style-names-sequence">
+                StyleNames sequence
+              </NavLink>
+            </li>
+          </ul>
+        </li>
+        <li className="mb-8 font-bold">
+          <NavLink href="/stylo-theme">
+            <span className="text-pink-600">S</span>
+            <span className="text-blue-600">t</span>
+            <span className="text-red-600">y</span>
+            <span className="text-purple-600">l</span>
+            <span className="text-green-600">o</span>
+            <span className="text-blue-600">{` t`}</span>
+            <span className="text-pink-600">h</span>
+            <span className="text-green-600">e</span>
+            <span className="text-red-600">m</span>
+            <span className="text-purple-600">e</span>
+          </NavLink>
+        </li>
+        <li>
+          <h5 className="text-base m-0">
+            Hooks &amp; components
+          </h5>
+          <ul className="mb-8">
             <li>
               <NavLink href="/theme-provider">
                 {`<ThemeProvider />`}
@@ -68,48 +104,12 @@ const MainNavigation: React.FC = () => {
                 Stylers
               </NavLink>
             </li>
-          </ul>
-        </li>
-        <li>
-          <ul className="mb-8">
-            <li>
-              <NavLink href="/default-styles">
-                Default styles
-              </NavLink>
-            </li>
-            <li>
-              <NavLink href="/style-names-sequence">
-                StyleNames sequence
-              </NavLink>
-            </li>
             <li>
               <NavLink href="/tight-coupling">
                 Tightly coupled
               </NavLink>
             </li>
-            <li>
-              <NavLink href="/creating-theme">
-                Creating a theme
-              </NavLink>
-            </li>
-            {/* <li>
-              <NavLink href="/showcase">
-                Showcase
-              </NavLink>
-            </li>
-            <li>
-              <NavLink href="/caveats">
-                Caveats
-              </NavLink>
-            </li> */}
           </ul>
-        </li>
-        <li>
-          <h5 className="text-base m-0">
-            <NavLink href="/stylo-theme">
-              Stylo theme
-            </NavLink>
-          </h5>
         </li>
       </ul>
     </nav>

@@ -65,7 +65,7 @@ const Stylish: React.FC = () => (
             The code samples below do not display the pictorial outcomes.
             Please refer to <Link href="/stylo-theme">Stylo theme</Link> for detailed code samples &amp; their pictorial appearances.
             Also, the code samples below are not tightly coupled to the <Link href="/theme#style-name">StyleName</Link> types.
-            If you have not yet gone through the tight coupling of style types then you can read the document <Link href="/tight-coupling">Tightly coupled</Link>.
+            If you have not yet gone through the tight coupling of style types then you can read the document <Link href="/tight-coupling">Tight coupling</Link>.
           </Blockquote>
 
           <section className="no-vertical-margin-collapse">

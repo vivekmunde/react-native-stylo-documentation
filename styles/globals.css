@@ -93,3 +93,8 @@ small {
   height: 100vh;
   overflow: hidden;
 }
+
+.bus-store-image {
+  height: 24px;
+  cursor: pointer;
+}

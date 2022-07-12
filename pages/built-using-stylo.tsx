@@ -29,14 +29,20 @@ const BuiltUsingStylo: React.FC = () => (
           <ArticleHeading>Built using Stylo &amp; its theme</ArticleHeading>
 
           <section className="pt-[1px] pb-[1px] mb-12">
-            <div className="flex flex-row justify-between items-center">
+            <div className="grid gird-cols-1 lg:grid-cols-2">
               <h3 className="font-light text-center md:text-left">Zaycare Admin</h3>
-              <div>
+              <div className="flex flex-row justify-center lg:justify-end items-center mb-4 lg:mt-4 lg:mb-0">
                 <ExternalLink href="https://apps.apple.com/sr/app/zaycare/id1558651732">
-                  <i className="fab fa-apple fa-fw text-4xl mr-4" />
+                  <img
+                    className="mr-1 bus-store-image"
+                    alt="App Store"
+                    src={`${process.env.NEXT_PUBLIC_ASSET_PREFIX}/images/app-store.png`} />
                 </ExternalLink>
                 <ExternalLink href="https://play.google.com/store/apps/details?id=zay.works.zaycare">
-                  <i className="fab fa-android fa-fw text-4xl" />
+                  <img
+                    className="bus-store-image"
+                    alt="Play Store"
+                    src={`${process.env.NEXT_PUBLIC_ASSET_PREFIX}/images/play-store.png`} />
                 </ExternalLink>
               </div>
             </div>
@@ -66,18 +72,24 @@ const BuiltUsingStylo: React.FC = () => (
           </section>
 
           <section className="pt-[1px] pb-[1px] mb-12">
-          <div className="flex flex-row justify-between items-center">
+            <div className="grid gird-cols-1 lg:grid-cols-2">
               <h3 className="font-light text-center md:text-left">Zaycare Parent</h3>
-              <div>
+              <div className="flex flex-row justify-center lg:justify-end items-center mb-4 lg:mt-4 lg:mb-0">
                 <ExternalLink href="https://apps.apple.com/sr/app/zaycare-parent/id1566116225">
-                  <i className="fab fa-apple fa-fw text-4xl mr-4" />
+                  <img
+                    className="mr-1 bus-store-image"
+                    alt="App Store"
+                    src={`${process.env.NEXT_PUBLIC_ASSET_PREFIX}/images/app-store.png`} />
                 </ExternalLink>
                 <ExternalLink href="https://play.google.com/store/apps/details?id=com.zaycare.parent">
-                  <i className="fab fa-android fa-fw text-4xl" />
+                  <img
+                    className="bus-store-image"
+                    alt="Play Store"
+                    src={`${process.env.NEXT_PUBLIC_ASSET_PREFIX}/images/play-store.png`} />
                 </ExternalLink>
               </div>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 place-items-center">
               <ImageShowcase imageAlt="Home" imageUrl="built-using-stylo/parent-home-1.png" />
               <ImageShowcase imageAlt="Home" imageUrl="built-using-stylo/parent-home-2.png" />
               <ImageShowcase imageAlt="Home" imageUrl="built-using-stylo/parent-home-3.png" />

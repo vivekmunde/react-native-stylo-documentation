@@ -214,13 +214,15 @@ export type TViewStyle = TBackgroundColorStyle | TPaddingStyle | TMarginStyle | 
               E.g. Alignment styles for <InlineCode>View</InlineCode> &amp; <InlineCode>Text</InlineCode> are different.
               As you start typing the alignment styles, the editor intellisense helps you choose correct styles for <InlineCode>View</InlineCode> &amp; <InlineCode>Text</InlineCode>.
             </Paragraph>
-            <div className="grid grid-cols-12">
-              <Paragraph className="border rounded p-2 lg:col-span-11 xl:col-span-10">
-                <img alt='Strongly typed styles: View' src={`${process.env.NEXT_PUBLIC_ASSET_PREFIX}/images/style-names-intellisense-1.png`} />
-              </Paragraph>
-              <Paragraph className="border rounded p-2 lg:col-span-11 xl:col-span-10">
-                <img alt='Strongly typed styles: Text' src={`${process.env.NEXT_PUBLIC_ASSET_PREFIX}/images/style-names-intellisense-2.png`} />
-              </Paragraph>
+            <div className="grid grid-cols-1 grid-cols-12 gap-4 mb-4">
+              <img
+                className="border rounded p-2 col-span-12 lg:col-span-11 xl:col-span-10"
+                alt='Strongly typed styles: View'
+                src={`${process.env.NEXT_PUBLIC_ASSET_PREFIX}/images/style-names-intellisense-1.png`} />
+              <img
+                className="border rounded p-2 col-span-12 lg:col-span-11 xl:col-span-10"
+                alt='Strongly typed styles: Text'
+                src={`${process.env.NEXT_PUBLIC_ASSET_PREFIX}/images/style-names-intellisense-2.png`} />
             </div>
             <Paragraph>
               The Stylo library provides default style types, which can be copied into the app and can be easily customized, if needed.

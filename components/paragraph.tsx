@@ -5,7 +5,7 @@ const Paragraph: React.FC<{
   className?: string;
   style?: CSSProperties;
 }> = ({ children, className, style }) => (
-  <p className={`mb-4 ${className}`} style={style}>
+  <p className={`mb-4 ${className ?? ''}`} style={style}>
     {children}
   </p>
 );

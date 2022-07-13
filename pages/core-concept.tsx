@@ -63,11 +63,6 @@ const CoreConcept: React.FC = () => (
                 </a>
               </li>
               <li>
-                <a href={`#${sections.stylesDetachedOwnedByApp.id}`}>
-                  {sections.stylesDetachedOwnedByApp.title}
-                </a>
-              </li>
-              <li>
                 <a href={`#${sections.stronglyTypedIntellisenseFriendlyStyles.id}`}>
                   {sections.stronglyTypedIntellisenseFriendlyStyles.title}
                 </a>
@@ -80,6 +75,11 @@ const CoreConcept: React.FC = () => (
               <li>
                 <a href={`#${sections.stylishReactNativeComponents.id}`}>
                   {sections.stylishReactNativeComponents.title}
+                </a>
+              </li>
+              <li>
+                <a href={`#${sections.stylesDetachedOwnedByApp.id}`}>
+                  {sections.stylesDetachedOwnedByApp.title}
                 </a>
               </li>
             </ul>
@@ -99,7 +99,18 @@ const CoreConcept: React.FC = () => (
               The library provides extensive style definitions enough to style/create all kinds of components, right from simple Text to complicated Pickers &amp; Forms.
             </Paragraph>
             <Paragraph>
-              Stylo provides a <Link href="/stylo-theme">default theme</Link> with pre-defined style types and styles. App can copy these &amp; then can immediately start using it or even modify them as per needs.
+              Instead of providing components like <InlineCode>Button</InlineCode>, <InlineCode>Badge</InlineCode>, <InlineCode>Avatar</InlineCode>, <InlineCode>Form</InlineCode> etc, Stylo provides all the Styles needed for these components.
+              By simply applying these styles to React Native components, <InlineCode>TouchableOpacity</InlineCode>, <InlineCode>View</InlineCode>, <InlineCode>Text</InlineCode> etc, one can create beautiful Buttons, Badges, Forms &amp; so on.
+            </Paragraph>
+            <Paragraph>
+              In practice, a Badge can either be a <InlineCode>View</InlineCode> or be a <InlineCode>TouchableOpacity</InlineCode>.
+              Similarly, a list item can be a non-touchable <InlineCode>View</InlineCode> or <InlineCode>TouchableOpacity</InlineCode>.
+              Footer of a screen can either be a <InlineCode>TouchableOpacity</InlineCode> with some submit action or be a <InlineCode>View</InlineCode> with multiple <InlineCode>TouchableOpacity</InlineCode> buttons inside it, so on &amp; so forth.
+              With Stylo, you can easily define &amp; configure the styles such a way that it allows applying same styles or selected styles to <InlineCode>View</InlineCode> &amp; <InlineCode>TouchableOpacity</InlineCode>.
+            </Paragraph>
+            <Paragraph>
+              Stylo provides a beautifully crafted <Link href="/stylo-theme">default theme</Link> with all the pre-defined style types &amp; styles with which you can create Avatar, Badge, Form, List etc.
+              You can easily <Link href="/usage">install &amp; setup</Link> the theme &amp; then can immediately start using it or even modify it as per needs.
             </Paragraph>
           </section>
 
@@ -142,47 +153,6 @@ export const Theme = {
   ViewStyles,
 };`}
             </CodeSnippet>
-          </section>
-
-          <section className="no-vertical-margin-collapse">
-            <SectionHeading id={sections.stylesDetachedOwnedByApp.id} level={4}>
-              {sections.stylesDetachedOwnedByApp.title}
-            </SectionHeading>
-            <Paragraph>
-              The style definitions or themes are completely detached from the Stylo library.
-              The style types &amp; styles/themes reside inside the app not inside the library.
-              The library only provides a set of hooks and extended React Native components.&nbsp;
-              <mark className="font-medium bg-pink-100 rounded text-black">&nbsp;The consumer application has the entire ownership &amp; liberty of defining the style types, styles &amp; their names (any naming pattern/convention).&nbsp;</mark>
-            </Paragraph>
-            <CodeSnippet>
-              {`MobileApp
-  |- components
-  |- screens
-  |- stylo
-    |- themes
-        |- types
-          |- text-style-types.ts
-          |- text-input-style-types.ts
-          |- touchable-style-types.ts
-          |- view-style-types.ts
-          |- ...
-        |- light
-          |- text-styles.ts
-          |- text-input-styles.ts
-          |- touchable-styles.ts
-          |- view-styles.ts
-          |- ...
-        |- dark
-          |- text-styles.ts
-          |- text-input-styles.ts
-          |- touchable-styles.ts
-          |- view-styles.ts
-          |- ...`}
-            </CodeSnippet>
-            <Paragraph>
-              The library provides a set of predefined style types &amp; themes.
-              These can be used as is or can be considered as a guidelines or can be simply copied into the app &amp; customized/modified easily as per the needs.
-            </Paragraph>
           </section>
 
           <section className="no-vertical-margin-collapse">
@@ -350,6 +320,47 @@ const StylishComponents = () => (
               imageAlt="Stylish Components"
               imageUrl="showcase-core-concept-stylish-react-native-components.png"
             />
+          </section>
+
+          <section className="no-vertical-margin-collapse">
+            <SectionHeading id={sections.stylesDetachedOwnedByApp.id} level={4}>
+              {sections.stylesDetachedOwnedByApp.title}
+            </SectionHeading>
+            <Paragraph>
+              The style definitions or themes are completely detached from the Stylo library.
+              The style types &amp; styles/themes reside inside the app not inside the library.
+              The library only provides a set of hooks and extended React Native components.&nbsp;
+              <mark className="font-medium bg-pink-100 rounded text-black">&nbsp;The consumer application has the entire ownership &amp; liberty of defining the style types, styles &amp; their names (any naming pattern/convention).&nbsp;</mark>
+            </Paragraph>
+            <CodeSnippet>
+              {`MobileApp
+  |- components
+  |- screens
+  |- stylo
+    |- themes
+        |- types
+          |- text-style-types.ts
+          |- text-input-style-types.ts
+          |- touchable-style-types.ts
+          |- view-style-types.ts
+          |- ...
+        |- light
+          |- text-styles.ts
+          |- text-input-styles.ts
+          |- touchable-styles.ts
+          |- view-styles.ts
+          |- ...
+        |- dark
+          |- text-styles.ts
+          |- text-input-styles.ts
+          |- touchable-styles.ts
+          |- view-styles.ts
+          |- ...`}
+            </CodeSnippet>
+            <Paragraph>
+              The library provides a set of predefined style types &amp; themes.
+              These can be used as is or can be considered as a guidelines or can be simply copied into the app &amp; customized/modified easily as per the needs.
+            </Paragraph>
           </section>
         </article>
       </React.Fragment>

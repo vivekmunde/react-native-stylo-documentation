@@ -16,7 +16,7 @@ const MainNavigation: React.FC = () => {
             </li>
             <li>
               <NavLink href="/usage">
-                Usage
+                Setup &amp; usage
               </NavLink>
             </li>
           </ul>

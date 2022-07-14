@@ -49,7 +49,7 @@ const Usage: React.FC = () => (
           <title>Usage | React Native Stylo</title>
         </Head>
         <article>
-          <ArticleHeading>Usage</ArticleHeading>
+          <ArticleHeading>Setup &amp; usage</ArticleHeading>
 
           <nav className="p-4 mt-8 mb-4 bg-pink-50 rounded">
             <ul>

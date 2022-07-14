@@ -11,7 +11,6 @@ import Layout from '../components/layout';
 import MainNavigation from '../components/main-navigation';
 import Paragraph from '../components/paragraph';
 import SectionHeading from '../components/section-heading';
-import { STYLO_THEME_LOCATION } from '../constants/stylo-locations';
 
 const Theme: React.FC = () => (
   <Layout
@@ -247,24 +246,6 @@ export type TTouchableStyle = TBackgroundColorStyle | TPaddingStyle | TMarginSty
                   src={`${process.env.NEXT_PUBLIC_ASSET_PREFIX}/images/style-names-intellisense-2.png`} />
               </div>
             </section>
-          </section>
-
-          <section className="no-vertical-margin-collapse">
-            <SectionHeading id="stylo-themes" level={4}>
-              Stylo theme
-            </SectionHeading>
-            <Paragraph>
-              Stylo provides a <Link href="/stylo-theme">default theme</Link> which is located at <strong className="font-semibold">{STYLO_THEME_LOCATION}</strong>.
-              The theme can be simply copied into the app &amp; used as is or freely modified as per the needs.
-              Or simply use the <Link href="/stylo-theme">default theme</Link> just as a guideline &amp; create your own from scratch.
-            </Paragraph>
-          </section>
-
-          <section className="no-vertical-margin-collapse">
-            <SectionHeading id="create-theme" level={4}>
-              Creating a theme
-            </SectionHeading>
-            Please refer the document <Link href="/creating-theme">Creating a theme</Link>.
           </section>
         </article>
       </React.Fragment>

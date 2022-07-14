@@ -254,30 +254,30 @@ const ComponentA = () => {
           </section>
 
           <section className="no-vertical-margin-collapse">
-            <SectionHeading id="text-input" level={4}>
-              <InlineCode>{`<TextInput />`}</InlineCode>
+            <SectionHeading id="pressable" level={4}>
+              <InlineCode>{`<Pressable />`}</InlineCode>
             </SectionHeading>
             <Paragraph>
               <strong className="font-semibold">Props type definition</strong>
             </Paragraph>
             <CodeSnippet>
-              {`type TTextInputProps<TStyleName extends string> 
- = ReactNative.TextInputProps & { styleNames?: TStyleName[]; }`}
+              {`type TPressableProps<TStyleName extends string> 
+ = ReactNative.PressableProps & { styleNames?: TStyleName[]; }`}
             </CodeSnippet>
             <Paragraph>
-              <strong className="font-semibold">StyleNamespace:</strong> <InlineCode>TextInputStyles</InlineCode>
+              <strong className="font-semibold">StyleNamespace:</strong> <InlineCode>TouchableStyles</InlineCode>
             </Paragraph>
             <Paragraph>
               <strong className="font-semibold">Usage</strong>
             </Paragraph>
             <CodeSnippet>
               {`import React from 'react';
-import { TextInput } from 'react-native-stylo';
-import { TTextInputStyle } from '../themes/types';
+import { Pressable } from 'react-native-stylo';
+import { TTouchableStyle } from '../themes/types';
 
 const ComponentA = () => {
   return (
-    <TextInput<TTextInputStyle> styleNames={['Border', 'Border.Color.Primary']} {...otherProps} />
+    <Pressable<TTouchableStyle> styleNames={['Button', 'Button.Large', 'BackgroundColor.Primary']} {...otherProps} />
   );
 }`}
             </CodeSnippet>
@@ -314,30 +314,30 @@ const ComponentA = () => {
           </section>
 
           <section className="no-vertical-margin-collapse">
-            <SectionHeading id="pressable" level={4}>
-              <InlineCode>{`<Pressable />`}</InlineCode>
+            <SectionHeading id="text-input" level={4}>
+              <InlineCode>{`<TextInput />`}</InlineCode>
             </SectionHeading>
             <Paragraph>
               <strong className="font-semibold">Props type definition</strong>
             </Paragraph>
             <CodeSnippet>
-              {`type TPressableProps<TStyleName extends string> 
- = ReactNative.PressableProps & { styleNames?: TStyleName[]; }`}
+              {`type TTextInputProps<TStyleName extends string> 
+ = ReactNative.TextInputProps & { styleNames?: TStyleName[]; }`}
             </CodeSnippet>
             <Paragraph>
-              <strong className="font-semibold">StyleNamespace:</strong> <InlineCode>TouchableStyles</InlineCode>
+              <strong className="font-semibold">StyleNamespace:</strong> <InlineCode>TextInputStyles</InlineCode>
             </Paragraph>
             <Paragraph>
               <strong className="font-semibold">Usage</strong>
             </Paragraph>
             <CodeSnippet>
               {`import React from 'react';
-import { Pressable } from 'react-native-stylo';
-import { TTouchableStyle } from '../themes/types';
+import { TextInput } from 'react-native-stylo';
+import { TTextInputStyle } from '../themes/types';
 
 const ComponentA = () => {
   return (
-    <Pressable<TTouchableStyle> styleNames={['Button', 'Button.Large', 'BackgroundColor.Primary']} {...otherProps} />
+    <TextInput<TTextInputStyle> styleNames={['Border', 'Border.Color.Primary']} {...otherProps} />
   );
 }`}
             </CodeSnippet>

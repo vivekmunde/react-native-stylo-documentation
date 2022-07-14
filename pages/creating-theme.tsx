@@ -191,7 +191,7 @@ export const TouchableStyles = StyleSheet.create({
 
           <section className="no-vertical-margin-collapse">
             <SectionHeading id="define-theme" level={4}>
-              4. Fuse them in a theme
+              4. Define theme
             </SectionHeading>
             <Paragraph>
               Collect all the style definitions into one object which will be used as the theme.

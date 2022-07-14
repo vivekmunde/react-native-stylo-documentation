@@ -63,6 +63,11 @@ const CoreConcept: React.FC = () => (
                 </a>
               </li>
               <li>
+                <a href={`#${sections.stylishReactNativeComponents.id}`}>
+                  {sections.stylishReactNativeComponents.title}
+                </a>
+              </li>
+              <li>
                 <a href={`#${sections.stronglyTypedIntellisenseFriendlyStyles.id}`}>
                   {sections.stronglyTypedIntellisenseFriendlyStyles.title}
                 </a>
@@ -70,11 +75,6 @@ const CoreConcept: React.FC = () => (
               <li>
                 <a href={`#${sections.scalableStyles.id}`}>
                   {sections.scalableStyles.title}
-                </a>
-              </li>
-              <li>
-                <a href={`#${sections.stylishReactNativeComponents.id}`}>
-                  {sections.stylishReactNativeComponents.title}
                 </a>
               </li>
               <li>
@@ -106,7 +106,7 @@ const CoreConcept: React.FC = () => (
               In practice, there are scenarios where a Badge can technically either be a <InlineCode>View</InlineCode> or be a <InlineCode>TouchableOpacity</InlineCode>.
               Similarly, a list item can be a non-touchable <InlineCode>View</InlineCode> or <InlineCode>TouchableOpacity</InlineCode>.
               Footer of a screen can either be a <InlineCode>TouchableOpacity</InlineCode> with some submit action or be a <InlineCode>View</InlineCode> with multiple <InlineCode>TouchableOpacity</InlineCode> buttons inside it, so on &amp; so forth.
-              With Stylo, you can easily define &amp; configure the styles such a way that it allows applying same styles or selected styles to <InlineCode>View</InlineCode> <InlineCode>TouchableOpacity</InlineCode>, <InlineCode>Text</InlineCode> or <InlineCode>Image</InlineCode> etc.
+              With Stylo, you can easily define &amp; configure the styles such a way that it allows applying same styles or selected styles to <InlineCode>View</InlineCode>, <InlineCode>TouchableOpacity</InlineCode>, <InlineCode>Text</InlineCode> or <InlineCode>Image</InlineCode> etc.
             </Paragraph>
             <Paragraph>
               Stylo provides a beautifully crafted <Link href="/stylo-theme">default theme</Link> with all the pre-defined style types &amp; styles with which you can create Avatar, Badge, Form, List etc.
@@ -153,6 +153,88 @@ export const Theme = {
   ViewStyles,
 };`}
             </CodeSnippet>
+          </section>
+
+          <section className="no-vertical-margin-collapse">
+            <SectionHeading id={sections.stylishReactNativeComponents.id} level={4}>
+              {sections.stylishReactNativeComponents.title}
+            </SectionHeading>
+            <Paragraph>
+              The library just adds a new property called <InlineCode>styleNames</InlineCode> to the <ExternalLink href="https://reactnative.dev">React Native components</ExternalLink>.
+              The property <InlineCode>styleNames</InlineCode> in React Native mobile app is just like <InlineCode>class</InlineCode> in web app.
+              The style names are defined in the theme, e.g. <InlineCode>List</InlineCode>, <InlineCode>List.Item</InlineCode>, <InlineCode>Color.Primary</InlineCode>, <InlineCode>Border</InlineCode>, <InlineCode>Size.Large</InlineCode> etc.
+              Just supply these names of the styles to the prop <InlineCode>styleNames</InlineCode> and it will pick the style definitions from theme and apply to the React Native component.
+              The library does not add any other behavior or action to the React Native components.&nbsp;
+              <mark className="font-medium bg-pink-100 rounded text-black">
+                &nbsp;This keeps the React Native components as pure as they are defined by React Native.
+                After all, these are just React Native components.&nbsp;
+              </mark>
+            </Paragraph>
+            <ShowCaseBox
+              renderCode={() => `import React from 'react';
+import { Image, SafeAreaView, Text, View } from 'react-native-stylo';
+
+// styles defined inside your app
+import { TImageStyle, TSafeAreaViewStyle, TTextStyle, TViewStyle } from '../../stylo/themes/types';
+
+const data = [
+  { name: 'Narayan Naresh Nathani', profileUrl: require('../../images/face-icon-1.png'), role: 'UI Developer' },
+  { name: 'Sumitra Suresh Sundaram', profileUrl: require('../../images/face-icon-2.png'), role: 'UX Designer' },
+  { name: 'Indumati Indraneel Iyengar', profileUrl: require('../../images/face-icon-3.png'), role: 'Software Developer' },
+];
+
+const StylishComponents = () => (
+  <View<TViewStyle> styleNames={['Screen', 'BackgroundColor.Primary1']}>
+    <SafeAreaView<TSafeAreaViewStyle> />
+    <View<TViewStyle> styleNames={['Screen.Header', 'Padding']}>
+      <Text<TTextStyle> styleNames={['H1']}>
+        Stylish Components
+      </Text>
+    </View>
+    <View<TViewStyle> styleNames={['Screen.Body', 'Padding']}>
+      <View<TViewStyle> styleNames={['List', 'Border.Radius', 'BackgroundColor.White', 'Margin.Bottom.Large']}>
+        {data.map((it, index) => (
+          <View<TViewStyle> key={index} styleNames={index > 0 ? ['List.Item', 'Border.Top'] : ['List.Item']}>
+            <View<TViewStyle> styleNames={['List.Item.Left']}>
+              <Image<TImageStyle> styleNames={['Avatar']} source={it.profileUrl} />
+            </View>
+            <View<TViewStyle> styleNames={['List.Item.Body']}>
+              <Text<TTextStyle> styleNames={['Bold.Semi']}>
+                {it.name}
+              </Text>
+              <Text<TTextStyle> styleNames={['Color.Secondary', 'Small']}>
+                {it.role}
+              </Text>
+            </View>
+          </View>
+        ))}
+      </View>
+
+      <View<TViewStyle> styleNames={['List', 'Margin.Top.Large']}>
+        {data.map((it, index) => (
+          <View<TViewStyle>
+            key={index}
+            styleNames={['List.Item', 'Border.Radius', 'BackgroundColor.White', 'Margin.Bottom']}>
+            <View<TViewStyle> styleNames={['List.Item.Left']}>
+              <Image<TImageStyle> styleNames={['Avatar', 'Avatar.Large', 'Avatar.Square']} source={it.profileUrl} />
+            </View>
+            <View<TViewStyle> styleNames={['List.Item.Body', 'Flex.JustifyContent.Center']}>
+              <Text<TTextStyle> styleNames={['Large', 'Bold.Semi']}>
+                {it.name}
+              </Text>
+              <Text<TTextStyle> styleNames={['Color.Secondary']}>
+                {it.role}
+              </Text>
+            </View>
+          </View>
+        ))}
+      </View>
+    </View>
+  </View>
+);`}
+              imageAlt="Stylish Components"
+              imageUrl="showcase-core-concept-stylish-react-native-components.png"
+            />
           </section>
 
           <section className="no-vertical-margin-collapse">
@@ -238,88 +320,6 @@ export const Theme = {
             <Paragraph>
               Stylo library provides predefined style types and styles. App can copy these and then extend them infinitely. It can add new types/styles, change names of existing types/styles or modify the style definitions.
             </Paragraph>
-          </section>
-
-          <section className="no-vertical-margin-collapse">
-            <SectionHeading id={sections.stylishReactNativeComponents.id} level={4}>
-              {sections.stylishReactNativeComponents.title}
-            </SectionHeading>
-            <Paragraph>
-              The library just adds a new property called <InlineCode>styleNames</InlineCode> to the <ExternalLink href="https://reactnative.dev">React Native components</ExternalLink>.
-              The property <InlineCode>styleNames</InlineCode> in React Native mobile app is just like <InlineCode>class</InlineCode> in web app.
-              The style names are defined in the theme, e.g. <InlineCode>List</InlineCode>, <InlineCode>List.Item</InlineCode>, <InlineCode>Color.Primary</InlineCode>, <InlineCode>Border</InlineCode>, <InlineCode>Size.Large</InlineCode> etc.
-              Just supply these names of the styles to the prop <InlineCode>styleNames</InlineCode> and it will pick the style definitions from theme and apply to the React Native component.
-              The library does not add any other behavior or action to the React Native components.&nbsp;
-              <mark className="font-medium bg-pink-100 rounded text-black">
-                &nbsp;This keeps the React Native components as pure as they are defined by React Native.
-                After all, these are just React Native components.&nbsp;
-              </mark>
-            </Paragraph>
-            <ShowCaseBox
-              renderCode={() => `import React from 'react';
-import { Image, SafeAreaView, Text, View } from 'react-native-stylo';
-
-// styles defined inside your app
-import { TImageStyle, TSafeAreaViewStyle, TTextStyle, TViewStyle } from '../../stylo/themes/types';
-
-const data = [
-  { name: 'Narayan Naresh Nathani', profileUrl: require('../../images/face-icon-1.png'), role: 'UI Developer' },
-  { name: 'Sumitra Suresh Sundaram', profileUrl: require('../../images/face-icon-2.png'), role: 'UX Designer' },
-  { name: 'Indumati Indraneel Iyengar', profileUrl: require('../../images/face-icon-3.png'), role: 'Software Developer' },
-];
-
-const StylishComponents = () => (
-  <View<TViewStyle> styleNames={['Screen', 'BackgroundColor.Primary1']}>
-    <SafeAreaView<TSafeAreaViewStyle> />
-    <View<TViewStyle> styleNames={['Screen.Header', 'Padding']}>
-      <Text<TTextStyle> styleNames={['H1']}>
-        Stylish Components
-      </Text>
-    </View>
-    <View<TViewStyle> styleNames={['Screen.Body', 'Padding']}>
-      <View<TViewStyle> styleNames={['List', 'Border.Radius', 'BackgroundColor.White', 'Margin.Bottom.Large']}>
-        {data.map((it, index) => (
-          <View<TViewStyle> key={index} styleNames={index > 0 ? ['List.Item', 'Border.Top'] : ['List.Item']}>
-            <View<TViewStyle> styleNames={['List.Item.Left']}>
-              <Image<TImageStyle> styleNames={['Avatar']} source={it.profileUrl} />
-            </View>
-            <View<TViewStyle> styleNames={['List.Item.Body']}>
-              <Text<TTextStyle> styleNames={['Bold.Semi']}>
-                {it.name}
-              </Text>
-              <Text<TTextStyle> styleNames={['Color.Secondary', 'Small']}>
-                {it.role}
-              </Text>
-            </View>
-          </View>
-        ))}
-      </View>
-
-      <View<TViewStyle> styleNames={['List', 'Margin.Top.Large']}>
-        {data.map((it, index) => (
-          <View<TViewStyle>
-            key={index}
-            styleNames={['List.Item', 'Border.Radius', 'BackgroundColor.White', 'Margin.Bottom']}>
-            <View<TViewStyle> styleNames={['List.Item.Left']}>
-              <Image<TImageStyle> styleNames={['Avatar', 'Avatar.Large', 'Avatar.Square']} source={it.profileUrl} />
-            </View>
-            <View<TViewStyle> styleNames={['List.Item.Body', 'Flex.JustifyContent.Center']}>
-              <Text<TTextStyle> styleNames={['Large', 'Bold.Semi']}>
-                {it.name}
-              </Text>
-              <Text<TTextStyle> styleNames={['Color.Secondary']}>
-                {it.role}
-              </Text>
-            </View>
-          </View>
-        ))}
-      </View>
-    </View>
-  </View>
-);`}
-              imageAlt="Stylish Components"
-              imageUrl="showcase-core-concept-stylish-react-native-components.png"
-            />
           </section>
 
           <section className="no-vertical-margin-collapse">

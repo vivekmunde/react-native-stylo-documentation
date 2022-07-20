@@ -90,26 +90,20 @@ const CoreConcept: React.FC = () => (
               {sections.stylesOnly.title}
             </SectionHeading>
             <Paragraph>
-              Each mobile app has its own requirements of components, so a set of predefined components, like Screen, Card, List, Form etc., cannot be completely suitable for mobiles apps.
-              Also, having predefined components cannot be highly scalable or flexible enough to serve all requirements.
-              These predefined components need to expose few props to add scalability &amp; behavioral flexibility, but again these extra props neither make them fully scalable nor completely suitable.
-              {` It's`} practically almost impossible to provide these kind of scalable components.
-            </Paragraph>
-            <Paragraph>
-              <strong className="font-semibold">Stylo</strong> follows a philosophy called <strong className="font-semibold">Styles only</strong>, with which it provides only the style definitions &amp; does not provide any behavioral/action components like Card, Badge, Picker etc.
-              Stylo believes that separating the styles from React Native components can provide the required flexibility &amp; scalability both.
-              Instead of providing components like <InlineCode>Button</InlineCode>, <InlineCode>Badge</InlineCode>, <InlineCode>Avatar</InlineCode>, <InlineCode>Form</InlineCode> etc, Stylo provides all the Styles needed for these components.
-              By simply applying these styles to React Native components, <InlineCode>TouchableOpacity</InlineCode>, <InlineCode>View</InlineCode>, <InlineCode>Text</InlineCode> etc, one can create beautiful Buttons, Badges, Forms &amp; so on.
+              <strong className="font-semibold">Stylo</strong> follows a philosophy called <strong className="font-semibold">Styles only</strong>, with which it provides a wide range of style definitions required for any React Native app.
+              Stylo believes that separating the styles from React Native components can provide the high flexibility &amp; infinite scalability.
+              Instead of providing components like <InlineCode>Button</InlineCode>, <InlineCode>Badge</InlineCode>, <InlineCode>Avatar</InlineCode>, <InlineCode>Form</InlineCode> etc,
+              Stylo provides all the styles needed for these components &amp; with the same naming convention <InlineCode>Button</InlineCode>, <InlineCode>Badge</InlineCode>, <InlineCode>Avatar</InlineCode>, <InlineCode>Form</InlineCode> etc.
+              By simply applying these styles to React Native components, like <InlineCode>TouchableOpacity</InlineCode>, <InlineCode>View</InlineCode>, <InlineCode>Text</InlineCode> etc, one can create beautiful Buttons, Badges, Forms &amp; so on.
               The library provides extensive style definitions enough to style/create all kinds of components, right from simple Text to complicated Pickers &amp; Forms.
             </Paragraph>
             <Paragraph>
               In practice, there are scenarios where a Badge can technically either be a <InlineCode>View</InlineCode> or be a <InlineCode>TouchableOpacity</InlineCode>.
-              Similarly, a list item can be a non-touchable <InlineCode>View</InlineCode> or <InlineCode>TouchableOpacity</InlineCode>.
-              Footer of a screen can either be a <InlineCode>TouchableOpacity</InlineCode> with some submit action or be a <InlineCode>View</InlineCode> with multiple <InlineCode>TouchableOpacity</InlineCode> buttons inside it, so on &amp; so forth.
+              Similarly, a list item can be a non-touchable <InlineCode>View</InlineCode> or <InlineCode>TouchableOpacity</InlineCode>, so on &amp; so forth.
               With Stylo, you can easily define &amp; configure the styles such a way that it allows applying same styles or selected styles to <InlineCode>View</InlineCode>, <InlineCode>TouchableOpacity</InlineCode>, <InlineCode>Text</InlineCode> or <InlineCode>Image</InlineCode> etc.
             </Paragraph>
             <Paragraph>
-              Stylo provides a beautifully crafted <Link href="/stylo-theme">default theme</Link> with all the pre-defined style types &amp; styles with which you can create Avatar, Badge, Form, List etc.
+              Stylo provides a <Link href="/stylo-theme">default theme</Link> with all the pre-defined style types &amp; styles with which you can create all kind of components like Avatar, Badge, Form, List etc.
               You can easily <Link href="/usage">install &amp; setup</Link> the theme &amp; then can immediately start using it or even modify it as per needs.
             </Paragraph>
           </section>

@@ -178,6 +178,13 @@ const StyloThemeNavigation: React.FC = () => (
               </li>
             </ul>
           </li>
+          <li>
+            <NavLink href="/stylo-theme-customization">
+              <h5 className="text-base m-0">
+                Customizing Stylo theme
+              </h5>
+            </NavLink>
+          </li>
         </ul>
       </li>
       <li>

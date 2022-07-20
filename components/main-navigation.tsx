@@ -53,7 +53,7 @@ const MainNavigation: React.FC = () => {
             Theming
           </h5>
           <ul className="mb-8">
-            <li className="mb-1">
+            <li className="mb-2">
               <NavLink href="/theme">
                 Theme
               </NavLink>
@@ -75,7 +75,26 @@ const MainNavigation: React.FC = () => {
                 </SubMenuLink>
               </ul>
             </li>
+            <li className="mb-1 font-medium">
+              <NavLink href="/stylo-theme">
+                <span className="text-pink-600">S</span>
+                <span className="text-blue-600">t</span>
+                <span className="text-red-600">y</span>
+                <span className="text-purple-600">l</span>
+                <span className="text-green-600">o</span>
+                <span className="text-blue-600">{` t`}</span>
+                <span className="text-pink-600">h</span>
+                <span className="text-green-600">e</span>
+                <span className="text-red-600">m</span>
+                <span className="text-purple-600">e</span>
+              </NavLink>
+            </li>
             <li className="mb-1">
+              <NavLink href="/stylo-theme-customization">
+                Customizing Stylo theme
+              </NavLink>
+            </li>
+            <li className="mb-2">
               <NavLink href="/creating-theme">
                 Creating a theme
               </NavLink>
@@ -105,20 +124,6 @@ const MainNavigation: React.FC = () => {
               </NavLink>
             </li>
           </ul>
-        </li>
-        <li className="mb-8 font-bold">
-          <NavLink href="/stylo-theme">
-            <span className="text-pink-600">S</span>
-            <span className="text-blue-600">t</span>
-            <span className="text-red-600">y</span>
-            <span className="text-purple-600">l</span>
-            <span className="text-green-600">o</span>
-            <span className="text-blue-600">{` t`}</span>
-            <span className="text-pink-600">h</span>
-            <span className="text-green-600">e</span>
-            <span className="text-red-600">m</span>
-            <span className="text-purple-600">e</span>
-          </NavLink>
         </li>
         <li>
           <h5 className="text-base mt-0 mb-1">

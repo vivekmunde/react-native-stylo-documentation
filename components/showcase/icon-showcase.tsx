@@ -34,7 +34,7 @@ const IconShowCase: React.FC = () => (
   </Stylish.TouchableOpacity>
 </Stylish.View>`}
     imageAlt="Icon"
-    imageUrl={{ light: "showcase-icon.png", dark: "showcase-icon-dark.png" }}
+    imageUrl={{ light: "showcase-icon-light.png", dark: "showcase-icon-dark.png" }}
   />
 );
 

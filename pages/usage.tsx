@@ -220,7 +220,7 @@ const UsageStylishComponentsShowCase = () => (
 export default UsageStylishComponentsShowCase;
 `}
               imageAlt="Stylish Components"
-              imageUrl={{ light: "showcase-usage-stylish-components.png", dark: "showcase-usage-stylish-components-dark.png" }}
+              imageUrl={{ light: "showcase-usage-stylish-components-light.png", dark: "showcase-usage-stylish-components-dark.png" }}
             />
             <Paragraph>
               Please refer the <Link href="/stylish">Stylish</Link> documentation for more details.
@@ -296,7 +296,7 @@ const UsageStylersShowCase = () => {
 export default UsageStylersShowCase;
 `}
               imageAlt="Stylers"
-              imageUrl={{ light: "showcase-usage-stylers.png", dark: "showcase-usage-stylers-dark.png" }}
+              imageUrl={{ light: "showcase-usage-stylers-light.png", dark: "showcase-usage-stylers-dark.png" }}
             />
             <Paragraph>
               Please refer the <Link href="/stylers">Stylers</Link> documentation for more details.
@@ -358,7 +358,7 @@ const UsageUseVariablesShowCase = () => {
 
 export default UsageUseVariablesShowCase;`}
               imageAlt="useVariables()"
-              imageUrl={{ light: "showcase-usage-use-variables.png", dark: "showcase-usage-use-variables-dark.png" }}
+              imageUrl={{ light: "showcase-usage-use-variables-light.png", dark: "showcase-usage-use-variables-dark.png" }}
             />
             <Paragraph>
               Please refer the <Link href="/use-variables">useVariables()</Link> documentation for more details.

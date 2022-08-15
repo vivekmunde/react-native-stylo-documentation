@@ -124,7 +124,7 @@ const TagShowCase: React.FC = () => (
   </Stylish.View>
 </Stylish.View>`}
     imageAlt="Tag"
-    imageUrl={{ light: "showcase-tag.png", dark: "showcase-tag-dark.png" }}
+    imageUrl={{ light: "showcase-tag-light.png", dark: "showcase-tag-dark.png" }}
   />
 );
 

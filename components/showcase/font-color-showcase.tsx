@@ -34,7 +34,7 @@ const FontColorShowCase: React.FC = () => (
   Color.Danger
 </Stylish.Text>`}
     imageAlt="FontColor"
-    imageUrl={{ light: "showcase-font-color.png", dark: "showcase-font-color-dark.png" }}
+    imageUrl={{ light: "showcase-font-color-light.png", dark: "showcase-font-color-dark.png" }}
   />
 );
 

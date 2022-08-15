@@ -105,7 +105,7 @@ const AvatarShowCase: React.FC = () => (
   </Stylish.TouchableOpacity>
 </Stylish.View>`}
     imageAlt="Avatar"
-    imageUrl={{ light: "showcase-avatar.png", dark: "showcase-avatar-dark.png" }}
+    imageUrl={{ light: "showcase-avatar-light.png", dark: "showcase-avatar-dark.png" }}
   />
 );
 

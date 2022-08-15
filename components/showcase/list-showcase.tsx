@@ -64,7 +64,7 @@ const ListShowCase: React.FC = () => (
   </Stylish.View>
 </Stylish.View>`}
       imageAlt="List"
-      imageUrl={{ light: "showcase-list-1.png", dark: "showcase-list-dark-1.png" }}
+      imageUrl={{ light: "showcase-list-light-1.png", dark: "showcase-list-dark-1.png" }}
     />
     <ShowCaseBox
       renderCode={() => `<Stylish.View styleNames={['List', 'Border', 'Border.Radius', 'BackgroundColor.White']}>
@@ -102,7 +102,7 @@ const ListShowCase: React.FC = () => (
   </Stylish.View>
 </Stylish.View>`}
       imageAlt="List"
-      imageUrl={{ light: "showcase-list-2.png", dark: "showcase-list-dark-2.png" }}
+      imageUrl={{ light: "showcase-list-light-2.png", dark: "showcase-list-dark-2.png" }}
     />
   </React.Fragment>
 );

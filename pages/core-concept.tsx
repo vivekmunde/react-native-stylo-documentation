@@ -236,7 +236,7 @@ const CoreConceptStylishComponentsShowCase = () => (
 export default CoreConceptStylishComponentsShowCase;
 `}
               imageAlt="Stylish Components"
-              imageUrl={{ light: "showcase-core-concept-stylish-react-native-components.png", dark: "showcase-core-concept-stylish-react-native-components-dark.png" }}
+              imageUrl={{ light: "showcase-core-concept-stylish-react-native-components-light.png", dark: "showcase-core-concept-stylish-react-native-components-dark.png" }}
             />
           </section>
 

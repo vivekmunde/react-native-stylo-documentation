@@ -108,9 +108,30 @@ const StyloThemeCustomization: React.FC = () => (
                 </h5>
                 <Paragraph>
                   <strong className="font-semibold">1. Add type definition</strong>
-                  <br />
-                  <br />
-                  Open the file <InlineCode>types/generic/background-color.ts</InlineCode>.
+                </Paragraph>
+                <Paragraph>
+                  1.1 Open the file <InlineCode>types/variables.ts</InlineCode>.
+                  Add new color names as per your need.
+                </Paragraph>
+                <CodeSnippet>
+                  {`/* -------------------------------------------------------------------------------- */
+/*                               react-native-stylo                                 */
+/*           GitHub: https://github.com/vivekmunde/react-native-stylo               */
+/*      Docs: https://vivekmunde.github.io/react-native-stylo-documentation/        */
+/* -------------------------------------------------------------------------------- */
+  
+/* -------------------------------------------------------------------------------- */
+/*                           Customize as per your needs                            */
+/* -------------------------------------------------------------------------------- */
+  
+import _TVariable from './__generated__/variable';
+
+type TVariable = _TVariable | 'Color.Pink' | 'Color.Violet';
+
+export default TVariable;`}
+                </CodeSnippet>
+                <Paragraph>
+                  1.2 Open the file <InlineCode>types/generic/background-color.ts</InlineCode>.
                   Add new background color names as per your need.
                 </Paragraph>
                 <CodeSnippet>
@@ -132,10 +153,10 @@ export default TBackgroundColorStyle;`}
                 </CodeSnippet>
                 <Paragraph>
                   <strong className="font-semibold">2. Add style definition</strong>
-                  <br />
-                  <br />
-                  Open the file <InlineCode>default/generic/background-color.ts</InlineCode>.
-                  Add new background colors, against the types defined in step 1, as per your need.
+                </Paragraph>
+                <Paragraph>
+                  2.1 Open the file <InlineCode>default/variables.ts</InlineCode>.
+                  Add new colors, against the types defined in step 1.1, as per your need.
                 </Paragraph>
                 <CodeSnippet>
                   {`/* -------------------------------------------------------------------------------- */
@@ -148,20 +169,57 @@ export default TBackgroundColorStyle;`}
 /*                           Customize as per your needs                            */
 /* -------------------------------------------------------------------------------- */
   
-import { StyleSheet } from 'react-native';
-import _BackgroundColorStyles from '../__generated__/generic/background-color-styles';
+import TVariable from '../types/variable';
+import _Variables from './__generated__/variables';
 
-const BackgroundColorStyles = StyleSheet.create({
-  ..._BackgroundColorStyles,
-  'BackgroundColor.Pink': {
-    backgroundColor: '#FF69B4',
+const Variables: Record<'light' | 'dark', Record<TVariable, string | number>> = {
+  light: {
+    ..._Variables.light,
+    'Color.Pink': '#FF69B4',
+    'Color.Violet': '#EE82EE',
   },
-  'BackgroundColor.Violet': {
-    backgroundColor: '#EE82EE',
-  }
-});
+  dark: {
+    ..._Variables.light,
+    'Color.Pink': '#FF69B4',
+    'Color.Violet': '#EE82EE',
+  },
+};
 
-export default BackgroundColorStyles;`}
+export default Variables;`}
+                </CodeSnippet>
+                <Paragraph>
+                  2.2 Open the file <InlineCode>default/generic/background-color.ts</InlineCode>.
+                  Add new background colors, against the types defined in step 1.2, as per your need.
+                </Paragraph>
+                <CodeSnippet>
+                  {`/* -------------------------------------------------------------------------------- */
+/*                               react-native-stylo                                 */
+/*           GitHub: https://github.com/vivekmunde/react-native-stylo               */
+/*      Docs: https://vivekmunde.github.io/react-native-stylo-documentation/        */
+/* -------------------------------------------------------------------------------- */
+  
+/* -------------------------------------------------------------------------------- */
+/*                           Customize as per your needs                            */
+/* -------------------------------------------------------------------------------- */
+  
+import { StyleSheet, ViewStyle } from 'react-native';
+import { TVariable } from '../../types';
+import TBackgroundColorStyle from '../../types/generic/background-color';
+import _getBackgroundColorStyles from '../__generated__/generic/background-color-styles';
+
+const getBackgroundColorStyles = (variables: Record<TVariable, string | number>) => (
+  StyleSheet.create<Record<TBackgroundColorStyle, ViewStyle>>({
+    ..._getBackgroundColorStyles(variables),
+    'BackgroundColor.Pink': {
+      backgroundColor: variables['Color.Pink'].toString(),
+    },
+    'BackgroundColor.Violet': {
+      backgroundColor: variables['Color.Violet'].toString(),
+    }
+  })
+);
+
+export default getBackgroundColorStyles;`}
                 </CodeSnippet>
               </section>
 
@@ -190,12 +248,12 @@ export default BackgroundColorStyles;`}
 /*                           Customize as per your needs                            */
 /* -------------------------------------------------------------------------------- */
   
-  export type TCardStyle = 'Card' | 'Card.Header' | 'Card.Body' | 'Card.Footer';`}
+export type TCardStyle = 'Card' | 'Card.Header' | 'Card.Body' | 'Card.Footer';`}
                 </CodeSnippet>
                 <Paragraph>
                   <strong className="font-semibold">2. Create style definitions</strong>
-                  <br />
-                  <br />
+                </Paragraph>
+                <Paragraph>
                   Create a new file under directory <InlineCode>default</InlineCode> as <InlineCode>default/assorted/card.ts</InlineCode>.
                 </Paragraph>
                 <CodeSnippet>
@@ -210,38 +268,39 @@ export default BackgroundColorStyles;`}
 /* -------------------------------------------------------------------------------- */
   
 import { StyleSheet } from 'react-native';
-import Variables from '../variables';
 
-const CardStyles = StyleSheet.create({
-  Card: {
-    borderRadius: Variables['Border.Radius'],
-    flexDirection: 'column',
-  },
-  'Card.Header': {
-    padding: Variables.Padding,
-    borderTopLeftRadius: Variables['Border.Radius'],
-    borderTopRightRadius: Variables['Border.Radius'],
-    borderBottomWidth: 1,
-    borderBottomColor: Variables['Border.Color'],
-  },
-  'Card.Body': {
-    padding: Variables.Padding,
-  },
-  'Card.Footer': {
-    padding: Variables.Padding,
-    borderBottomLeftRadius: Variables['Border.Radius'],
-    borderBottomRightRadius: Variables['Border.Radius'],
-    borderTopWidth: 1,
-    borderTopColor: Variables['Border.Color'],
-  },
-});
+const getCardStyles = (variables: Record<TVariable, string | number>) => (
+  StyleSheet.create({
+    Card: {
+      borderRadius: variables['Border.Radius'],
+      flexDirection: 'column',
+    },
+    'Card.Header': {
+      padding: variables.Padding,
+      borderTopLeftRadius: variables['Border.Radius'],
+      borderTopRightRadius: variables['Border.Radius'],
+      borderBottomWidth: 1,
+      borderBottomColor: variables['Border.Color'],
+    },
+    'Card.Body': {
+      padding: variables.Padding,
+    },
+    'Card.Footer': {
+      padding: variables.Padding,
+      borderBottomLeftRadius: variables['Border.Radius'],
+      borderBottomRightRadius: variables['Border.Radius'],
+      borderTopWidth: 1,
+      borderTopColor: variables['Border.Color'],
+    },
+  })
+);
 
-export default CardStyles;`}
+export default getCardStyles;`}
                 </CodeSnippet>
                 <Paragraph>
-                  <strong className="font-semibold">3. Add these styles to View &amp; Touchable styles</strong>
-                  <br />
-                  <br />
+                  <strong className="font-semibold">3. Add these styles to View styles</strong>
+                </Paragraph>
+                <Paragraph>
                   Open <InlineCode>default/components/view-styles.ts</InlineCode>
                 </Paragraph>
                 <CodeSnippet>
@@ -256,16 +315,21 @@ export default CardStyles;`}
 /* -------------------------------------------------------------------------------- */
   
 import { StyleSheet } from 'react-native';
-import CardStyles from '../assorted/card-styles';
+import getCardStyles from '../assorted/card-styles';
 ... // other imports
 
-const ViewStyles = StyleSheet.create({
-  ... // other styles
-  ...CardStyles,
-});
+const getViewStyles = (variables: Record<TVariable, string | number>) => (
+    StyleSheet.create<Record<TViewStyle, ViewStyle>>({
+    ... // other styles
+    ...getCardStyles(variables),
+  })
+);
 
-export default ViewStyles;`}
+export default getViewStyles;`}
                 </CodeSnippet>
+                <Paragraph>
+                  <strong className="font-semibold">4. Add these styles to Touchable styles</strong>
+                </Paragraph>
                 <Paragraph>
                   Open <InlineCode>default/components/touchable-styles.ts</InlineCode>
                 </Paragraph>
@@ -281,15 +345,17 @@ export default ViewStyles;`}
 /* -------------------------------------------------------------------------------- */
   
 import { StyleSheet } from 'react-native';
-import CardStyles from '../assorted/card-styles';
+import getCardStyles from '../assorted/card-styles';
 ... // other imports
 
-const TouchableStyles = StyleSheet.create({
-  ... // other styles
-  ...CardStyles,
-});
+const getTouchableStyles = (variables: Record<TVariable, string | number>) => (
+  StyleSheet.create<Record<TTouchableStyle, ViewStyle>>({
+    ... // other styles
+    ...getCardStyles(variables),
+  })
+);
 
-export default TouchableStyles;`}
+export default getTouchableStyles;`}
                 </CodeSnippet>
               </section>
 

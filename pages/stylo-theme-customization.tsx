@@ -104,7 +104,7 @@ const StyloThemeCustomization: React.FC = () => (
 
               <section className="no-vertical-margin-collapse">
                 <h5>
-                  Background colors
+                  Add new background colors
                 </h5>
                 <Paragraph>
                   <strong className="font-semibold">1. Add type definition</strong>
@@ -225,7 +225,9 @@ export default getBackgroundColorStyles;`}
 
               <section className="no-vertical-margin-collapse">
                 <h5>
-                  Extend theme by adding new styles: Card
+                  Extend theme by adding new styles
+                  <br />
+                  <small>Add style definitions for Card</small>
                 </h5>
                 <Paragraph>
                   You can easily add a new styles which do not exist in the theme.

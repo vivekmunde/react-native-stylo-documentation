@@ -28,12 +28,32 @@ const ThemeProvider: React.FC = () => (
           </Paragraph>
 
           <Paragraph>
+            <strong className="font-semibold">Props type definition</strong>
+          </Paragraph>
+          <CodeSnippet>
+            {`type TThemeProviderProps = {
+  variables: Record<string, string | number>,
+  styles: {
+    IconStyles: Record<string, ReactNative.TextStyle>,
+    ImageBackgroundStyles: Record<string, ReactNative.ViewStyle>,
+    ImageStyles: Record<string, ReactNative.ImageStyle>,
+    SafeAreaViewStyles: Record<string, ReactNative.ViewStyle>,
+    ScrollViewStyles: Record<string, ReactNative.ViewStyle>,
+    ScrollViewContentContainerStyles: Record<string, ReactNative.ViewStyle>,
+    TextInputStyles: Record<string, ReactNative.TextStyle>,
+    TextStyles: Record<string, ReactNative.TextStyle>,
+    TouchableStyles: Record<string, ReactNative.ViewStyle>,
+    ViewStyles: Record<string, ReactNative.ViewStyle>,
+  },
+};`}
+          </CodeSnippet>
+
+          <Paragraph>
             In the main file of the application, wrap the application inside the <InlineCode>ThemeProvider</InlineCode> &amp; supply the theme values to it.
           </Paragraph>
           <CodeSnippet>
             {`import { ThemeProvider } from 'react-native-stylo';
-
-import { variables, styles } from './themes/default';
+import { variables, styles } from './stylo/themes/default';
 
 const App = () => (
   <ThemeProvider variables={variables} styles={styles}>
@@ -51,6 +71,12 @@ const App = () => (
                 <InlineCode>variables</InlineCode> <RequiredTag />
               </h5>
               <Paragraph>
+                <strong className="font-semibold">Props type definition</strong>
+              </Paragraph>
+              <CodeSnippet>
+                {`TVariables = Record<string, string | number>;`}
+              </CodeSnippet>
+              <Paragraph>
                 The <Link href="/theme#variables">variables</Link> defined in the theme.
                 These variables can be accessed across the application using the hook <Link href="/use-variables">useVariables()</Link>.
               </Paragraph>
@@ -59,6 +85,23 @@ const App = () => (
               <h5 className="text-lg">
                 <InlineCode>styles</InlineCode> <RequiredTag />
               </h5>
+              <Paragraph>
+                <strong className="font-semibold">Props type definition</strong>
+              </Paragraph>
+              <CodeSnippet>
+                {`TStyles = {
+  IconStyles: Record<string, ReactNative.TextStyle>,
+  ImageBackgroundStyles: Record<string, ReactNative.ViewStyle>,
+  ImageStyles: Record<string, ReactNative.ImageStyle>,
+  SafeAreaViewStyles: Record<string, ViewStyle>,
+  ScrollViewStyles: Record<string, ReactNative.ViewStyle>,
+  ScrollViewContentContainerStyles: Record<string, ReactNative.ViewStyle>,
+  TextInputStyles: Record<string, ReactNative.TextStyle>,
+  TextStyles: Record<string, ReactNative.TextStyle>,
+  TouchableStyles: Record<string, ReactNative.ViewStyle>,
+  ViewStyles: Record<string, ReactNative.ViewStyle>,
+};`}
+              </CodeSnippet>
               <Paragraph>
                 The style definitions defined in the theme.
                 These styles are used by the <Link href="/stylish">Stylish</Link> components &amp; <Link href="/stylers">Styler</Link> hooks to apply them to components.

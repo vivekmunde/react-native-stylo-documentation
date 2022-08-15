@@ -73,23 +73,23 @@ const UseVariables: React.FC = () => (
             </SectionHeading>
             <ShowCaseBox
               renderCode={() => `import React, { useRef } from 'react';
-import { StyleSheet, View, Text, SafeAreaView } from 'react-native';
+import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
 import Stylers from '../../stylo/stylers';
 
 const UsageUseVariablesShowCase = () => {
-  const [ padding, paddingLarge, margin, marginLarge, borderRadius, fontColor, fontSize, colorPrimary1, colorWhite ]
-    = Stylers.useVariables([ 'Padding', 'Padding.Large', 'Margin', 'Margin.Large', 'Border.Radius', 'Font.Color', 'Font.Size', 'Color.Primary1', 'Color.White' ]);
+  const [padding, paddingLarge, margin, marginLarge, borderColor, borderRadius, fontColor, fontSize, screenColor, colorAlpha10]
+    = Stylers.useVariables(['Padding', 'Padding.Large', 'Margin', 'Margin.Large', 'Border.Color', 'Border.Radius', 'Font.Color', 'Font.Size', 'Screen.BackgroundColor', 'Color.Alpha10']);
 
   const styles = useRef(
     StyleSheet.create({
-      screen: { flex: 1, backgroundColor: colorPrimary1.toString(), padding: Number(paddingLarge) },
+      screen: { flex: 1, backgroundColor: screenColor.toString(), padding: Number(paddingLarge) },
       screenHeader: { paddingVertical: Number(paddingLarge) },
       screenBody: { padding: Number(padding) },
       text: { color: fontColor.toString(), fontSize: Number(fontSize) },
       h1: { fontWeight: '500', fontSize: 48, marginBottom: Number(marginLarge) },
       h2: { fontWeight: '600', fontSize: 32, marginBottom: Number(marginLarge) },
       paragraph: { marginBottom: Number(margin) },
-      card: { padding: Number(padding), borderRadius: Number(borderRadius), backgroundColor: colorWhite.toString() },
+      card: { padding: Number(padding), borderWidth: 1, borderColor: borderColor.toString(), borderRadius: Number(borderRadius), backgroundColor: colorAlpha10.toString() },
     }),
   ).current;
 
@@ -102,17 +102,24 @@ const UsageUseVariablesShowCase = () => {
       <Text style={[styles.text, styles.h2]}>useVariables()</Text>
       <View style={styles.card}>
         <Text style={[styles.text, styles.paragraph]}>
-          Variables are the core configuration values which are used to define the themes. Like, colors, paddings, margins etc.
+          Variables are the core configuration values which are used to define
+          the themes. Like, colors, paddings, margins etc.
         </Text>
         <Text style={styles.text}>
-          The useVariables() hook is used to access the Theme Variables. A practical use of the useVariables() hook can be accessing & using the theme variable values to define styles inside the StyleSheet.create() API.
+          The useVariables() hook is used to access the Theme Variables. A
+          practical use of the useVariables() hook can be accessing & using the
+          theme variable values to define styles inside the StyleSheet.create()
+          API.
         </Text>
       </View>
     </View>
   );
-};`}
+};
+
+export default UsageUseVariablesShowCase;`}
               imageAlt="useVariables()"
               imageUrl="showcase-use-variables.png"
+              imageUrlDark="showcase-use-variables-dark.png"
             />
           </section>
         </article>

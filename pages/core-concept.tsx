@@ -166,9 +166,7 @@ export const Theme = {
             </Paragraph>
             <ShowCaseBox
               renderCode={() => `import React from 'react';
-import { Image, SafeAreaView, Text, View } from 'react-native-stylo';
-
-// styles defined inside your app
+import { Image, SafeAreaView, Text, View } from '../../../stylo';
 import { TImageStyle, TSafeAreaViewStyle, TTextStyle, TViewStyle } from '../../stylo/themes/types';
 
 const data = [
@@ -177,25 +175,29 @@ const data = [
   { name: 'Indumati Indraneel Iyengar', profileUrl: require('../../images/face-icon-3.png'), role: 'Software Developer' },
 ];
 
-const StylishComponents = () => (
-  <View<TViewStyle> styleNames={['Screen', 'BackgroundColor.Primary1']}>
+const CoreConceptStylishComponentsShowCase = () => (
+  <View<TViewStyle> styleNames={['Screen']}>
     <SafeAreaView<TSafeAreaViewStyle> />
     <View<TViewStyle> styleNames={['Screen.Header', 'Padding']}>
-      <Text<TTextStyle> styleNames={['H1']}>
-        Stylish Components
-      </Text>
+      <Text<TTextStyle> styleNames={['H1']}>Stylish Components</Text>
     </View>
     <View<TViewStyle> styleNames={['Screen.Body', 'Padding']}>
-      <View<TViewStyle> styleNames={['List', 'Border.Radius', 'BackgroundColor.White', 'Margin.Bottom.Large']}>
+      <View<TViewStyle>
+        styleNames={['List', 'Border', 'Border.Radius', 'BackgroundColor.Alpha10', 'Margin.Bottom.Large']}>
         {data.map((it, index) => (
-          <View<TViewStyle> key={index} styleNames={index > 0 ? ['List.Item', 'Border.Top'] : ['List.Item']}>
+          <View<TViewStyle>
+            key={index}
+            styleNames={
+              index > 0 ? ['List.Item', 'Border.Top'] : ['List.Item']
+            }>
             <View<TViewStyle> styleNames={['List.Item.Left']}>
-              <Image<TImageStyle> styleNames={['Avatar']} source={it.profileUrl} />
+              <Image<TImageStyle>
+                styleNames={['Avatar']}
+                source={it.profileUrl}
+              />
             </View>
             <View<TViewStyle> styleNames={['List.Item.Body']}>
-              <Text<TTextStyle> styleNames={['Bold.Semi']}>
-                {it.name}
-              </Text>
+              <Text<TTextStyle> styleNames={['Bold.Semi']}>{it.name}</Text>
               <Text<TTextStyle> styleNames={['Color.Secondary', 'Small']}>
                 {it.role}
               </Text>
@@ -208,11 +210,15 @@ const StylishComponents = () => (
         {data.map((it, index) => (
           <View<TViewStyle>
             key={index}
-            styleNames={['List.Item', 'Border.Radius', 'BackgroundColor.White', 'Margin.Bottom']}>
+            styleNames={['List.Item', 'Border' ,'Border.Radius', 'BackgroundColor.Alpha10', 'Margin.Bottom']}>
             <View<TViewStyle> styleNames={['List.Item.Left']}>
-              <Image<TImageStyle> styleNames={['Avatar', 'Avatar.Large', 'Avatar.Square']} source={it.profileUrl} />
+              <Image<TImageStyle>
+                styleNames={['Avatar', 'Avatar.Large', 'Avatar.Square']}
+                source={it.profileUrl}
+              />
             </View>
-            <View<TViewStyle> styleNames={['List.Item.Body', 'Flex.JustifyContent.Center']}>
+            <View<TViewStyle>
+              styleNames={['List.Item.Body', 'Flex.JustifyContent.Center']}>
               <Text<TTextStyle> styleNames={['Large', 'Bold.Semi']}>
                 {it.name}
               </Text>
@@ -225,9 +231,13 @@ const StylishComponents = () => (
       </View>
     </View>
   </View>
-);`}
+);
+
+export default CoreConceptStylishComponentsShowCase;
+`}
               imageAlt="Stylish Components"
               imageUrl="showcase-core-concept-stylish-react-native-components.png"
+              imageUrlDark="showcase-core-concept-stylish-react-native-components-dark.png"
             />
           </section>
 

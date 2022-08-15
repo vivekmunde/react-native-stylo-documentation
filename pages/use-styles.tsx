@@ -148,59 +148,59 @@ const UseStyles: React.FC = () => (
               renderCode={() => `import React, { useRef } from 'react';
 import { SafeAreaView, Text, TextStyle, TouchableOpacity, View, ViewStyle } from 'react-native';
 import { useStyles } from 'react-native-stylo';
-import { TStyleNamespace, TTextStyle, TTouchableStyle, TViewStyle } from '../../stylo/themes/types';
+import { TTextStyle, TTouchableStyle, TViewStyle } from './stylo/themes/types';
 
 const UseStylesShowCase: React.FC = () => {
   const styles = useRef({
-    screen: useStyles<ViewStyle, TViewStyle, TStyleNamespace>({
+    screen: useStyles<ViewStyle, TViewStyle>({
       styleNamespace: 'ViewStyles',
-      styleNames: ['Screen', 'BackgroundColor.Primary1'],
+      styleNames: ['Screen'],
     }),
-    screenHeader: useStyles<ViewStyle, TViewStyle, TStyleNamespace>({
+    screenHeader: useStyles<ViewStyle, TViewStyle>({
       styleNamespace: 'ViewStyles',
       styleNames: ['Screen.Header', 'Padding'],
     }),
-    screenTitle: useStyles<TextStyle, TTextStyle, TStyleNamespace>({
+    screenTitle: useStyles<TextStyle, TTextStyle>({
       styleNamespace: 'TextStyles',
-      styleNames: ['Color.Primary', 'H1', 'Margin.Top.Small', 'Margin.Bottom.Small'],
+      styleNames: ['H1', 'Margin.Top.Small', 'Margin.Bottom.Small'],
     }),
-    screenBody: useStyles<ViewStyle, TViewStyle, TStyleNamespace>({
+    screenBody: useStyles<ViewStyle, TViewStyle>({
       styleNamespace: 'ViewStyles',
       styleNames: ['Screen.Body', 'Padding'],
     }),
-    card: useStyles<ViewStyle, TViewStyle, TStyleNamespace>({
+    card: useStyles<ViewStyle, TViewStyle>({
       styleNamespace: 'ViewStyles',
-      styleNames: ['BackgroundColor.White', 'Border.Radius', 'Margin.Bottom.Large'],
+      styleNames: ['Border', 'Border.Radius', 'BackgroundColor.Alpha10', 'Margin.Bottom.Large'],
     }),
-    cardHeader: useStyles<ViewStyle, TViewStyle, TStyleNamespace>({
+    cardHeader: useStyles<ViewStyle, TViewStyle>({
       styleNamespace: 'ViewStyles',
       styleNames: ['Padding.Top', 'Padding.Left', 'Padding.Right'],
     }),
-    cardBody: useStyles<ViewStyle, TViewStyle, TStyleNamespace>({
+    cardBody: useStyles<ViewStyle, TViewStyle>({
       styleNamespace: 'ViewStyles',
       styleNames: ['Padding'],
     }),
-    cardFooter: useStyles<ViewStyle, TViewStyle, TStyleNamespace>({
+    cardFooter: useStyles<ViewStyle, TViewStyle>({
       styleNamespace: 'ViewStyles',
-      styleNames: ['Padding', 'Border.Top', 'Border.Color.Primary1'],
+      styleNames: ['Padding', 'Border.Top'],
     }),
-    cardTitle: useStyles<TextStyle, TTextStyle, TStyleNamespace>({
+    cardTitle: useStyles<TextStyle, TTextStyle>({
       styleNamespace: 'TextStyles',
       styleNames: ['Large', 'Bold'],
     }),
-    code: useStyles<TextStyle, TTextStyle, TStyleNamespace>({
+    code: useStyles<TextStyle, TTextStyle>({
       styleNamespace: 'TextStyles',
-      styleNames: ['Color.Grey7', 'Bold.Semi'],
+      styleNames: ['Color.Grey8', 'Bold.Semi'],
     }),
-    description: useStyles<TextStyle, TTextStyle, TStyleNamespace>({
+    description: useStyles<TextStyle, TTextStyle>({
       styleNamespace: 'TextStyles',
-      styleNames: ['Color.Grey8'],
+      styleNames: ['Color.Grey9'],
     }),
-    footerButton: useStyles<ViewStyle, TTouchableStyle, TStyleNamespace>({
+    footerButton: useStyles<ViewStyle, TTouchableStyle>({
       styleNamespace: 'TouchableStyles',
       styleNames: ['Button', 'Border', 'Border.Color.Primary'],
     }),
-    footerButtonText: useStyles<TextStyle, TTextStyle, TStyleNamespace>({
+    footerButtonText: useStyles<TextStyle, TTextStyle>({
       styleNamespace: 'TextStyles',
       styleNames: ['Color.Primary'],
     }),
@@ -244,9 +244,13 @@ const UseStylesShowCase: React.FC = () => {
       </View>
     </View>
   );
-};`}
+};
+
+export default UseStylesShowCase;
+`}
               imageAlt="useStyles()"
               imageUrl="showcase-use-styles.png"
+              imageUrlDark="showcase-use-styles-dark.png"
             />
           </section>
         </article>

@@ -113,45 +113,45 @@ const Styles: React.FC = () => (
               renderCode={() => `import React from 'react';
 import { SafeAreaView, Text, TextStyle, View, ViewStyle } from 'react-native';
 import { Styles } from 'react-native-stylo';
-import { TStyleNamespace, TTextStyle, TViewStyle } from '../../stylo/themes/types';
+import { TTextStyle, TViewStyle } from './stylo/themes/types';
 
 const StylesShowCase: React.FC = () => (
-  <Styles<ViewStyle, TViewStyle, TStyleNamespace>
+  <Styles<ViewStyle, TViewStyle>
     styleNamespace="ViewStyles"
-    styleNames={['Screen', 'BackgroundColor.Primary1']}>
+    styleNames={['Screen']}>
     {screenStyle => (
       <View style={screenStyle}>
         <SafeAreaView />
-        <Styles<ViewStyle, TViewStyle, TStyleNamespace>
+        <Styles<ViewStyle, TViewStyle>
           styleNamespace="ViewStyles"
           styleNames={['Screen.Header', 'Padding']}>
           {screenHeaderStyle => (
             <React.Fragment>
               <View style={screenHeaderStyle}>
-                <Styles<TextStyle, TTextStyle, TStyleNamespace>
+                <Styles<TextStyle, TTextStyle>
                   styleNamespace="TextStyles"
-                  styleNames={['Color.Primary', 'H1', 'Margin.Top.Small', 'Margin.Bottom.Small' ]}>
+                  styleNames={['H1', 'Margin.Top.Small', 'Margin.Bottom.Small']}>
                   {screenTitleStyle => (
                     <Text style={screenTitleStyle}>{'<Styles />'}</Text>
                   )}
                 </Styles>
               </View>
-              <Styles<ViewStyle, TViewStyle, TStyleNamespace>
+              <Styles<ViewStyle, TViewStyle>
                 styleNamespace="ViewStyles"
                 styleNames={['Screen.Body', 'Padding']}>
                 {screenBodyStyle => (
                   <View style={screenBodyStyle}>
-                    <Styles<ViewStyle, TViewStyle, TStyleNamespace>
+                    <Styles<ViewStyle, TViewStyle>
                       styleNamespace="ViewStyles"
-                      styleNames={['BackgroundColor.White', 'Border.Radius', 'Margin.Bottom.Large']}>
+                      styleNames={['Border', 'Border.Radius', 'BackgroundColor.Alpha10', 'Margin.Bottom.Large']}>
                       {cardStyle => (
                         <View style={cardStyle}>
-                          <Styles<ViewStyle, TViewStyle, TStyleNamespace>
+                          <Styles<ViewStyle, TViewStyle>
                             styleNamespace="ViewStyles"
                             styleNames={['Padding.Top', 'Padding.Left', 'Padding.Right']}>
                             {cardHeaderStyle => (
                               <View style={cardHeaderStyle}>
-                                <Styles<TextStyle, TTextStyle, TStyleNamespace>
+                                <Styles<TextStyle, TTextStyle>
                                   styleNamespace="TextStyles"
                                   styleNames={['Large', 'Bold']}>
                                   {cardTitleStyle => (
@@ -163,12 +163,12 @@ const StylesShowCase: React.FC = () => (
                               </View>
                             )}
                           </Styles>
-                          <Styles<ViewStyle, TViewStyle, TStyleNamespace>
+                          <Styles<ViewStyle, TViewStyle>
                             styleNamespace="ViewStyles"
                             styleNames={['Padding']}>
                             {cardBodyStyle => (
                               <View style={cardBodyStyle}>
-                                <Styles<TextStyle, TTextStyle, TStyleNamespace>
+                                <Styles<TextStyle, TTextStyle>
                                   styleNamespace="TextStyles"
                                   styleNames={['Color.Grey8', 'Bold.Semi']}>
                                   {codeStyle => (
@@ -194,9 +194,12 @@ const StylesShowCase: React.FC = () => (
       </View>
     )}
   </Styles>
-);`}
+);
+
+export default StylesShowCase;`}
               imageAlt="<Styles />"
               imageUrl="showcase-styles.png"
+              imageUrlDark="showcase-styles-dark.png"
             />
           </section>
         </article>

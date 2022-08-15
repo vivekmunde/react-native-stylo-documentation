@@ -32,7 +32,7 @@ const MainNavigation: React.FC = () => {
           </ul>
         </li>
         <li>
-          <h5 className="text-base mt-0 mb-1">
+          <h5 className="text-base mt-0 mb-1 p-0">
             Core members
           </h5>
           <ul className="mb-8">
@@ -49,7 +49,7 @@ const MainNavigation: React.FC = () => {
           </ul>
         </li>
         <li>
-          <h5 className="text-base mt-0 mb-1">
+          <h5 className="text-base mt-0 mb-1 p-0">
             Theming
           </h5>
           <ul className="mb-8">
@@ -126,7 +126,7 @@ const MainNavigation: React.FC = () => {
           </ul>
         </li>
         <li>
-          <h5 className="text-base mt-0 mb-1">
+          <h5 className="text-base mt-0 mb-1 p-0">
             Hooks &amp; components
           </h5>
           <ul className="mb-8">

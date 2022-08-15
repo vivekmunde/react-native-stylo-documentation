@@ -8,7 +8,7 @@ const StyloThemeNavigation: React.FC = () => (
       <li>
         <ul className="mb-8">
           <NavLink href="/stylo-theme">
-            <h5 className="mb-4">
+            <h5 className="mb-4 p-0">
               Stylo theme
             </h5>
           </NavLink>
@@ -33,7 +33,7 @@ const StyloThemeNavigation: React.FC = () => (
           </li>
           <li>
             <NavLink href="/stylo-theme-generic-styles">
-              <h5 className="text-base m-0">
+              <h5 className="text-base m-0 p-0">
                 Generic styles
               </h5>
             </NavLink>
@@ -72,7 +72,7 @@ const StyloThemeNavigation: React.FC = () => (
           </li>
           <li>
             <NavLink href="/stylo-theme-component-styles">
-              <h5 className="text-base m-0">
+              <h5 className="text-base m-0 p-0">
                 Component styles
               </h5>
             </NavLink>
@@ -131,7 +131,7 @@ const StyloThemeNavigation: React.FC = () => (
           </li>
           <li>
             <NavLink href="/stylo-theme-assorted-styles">
-              <h5 className="text-base m-0">
+              <h5 className="text-base m-0 p-0">
                 Assorted styles
               </h5>
             </NavLink>
@@ -180,7 +180,7 @@ const StyloThemeNavigation: React.FC = () => (
           </li>
           <li>
             <NavLink href="/stylo-theme-customization">
-              <h5 className="text-base m-0">
+              <h5 className="text-base m-0 p-0">
                 Customizing Stylo theme
               </h5>
             </NavLink>
@@ -189,7 +189,7 @@ const StyloThemeNavigation: React.FC = () => (
       </li>
       <li>
         <NavLink href="/">
-          <h5 className="mb-4">
+          <h5 className="mb-4 p-0">
             Documentation
           </h5>
         </NavLink>

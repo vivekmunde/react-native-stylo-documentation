@@ -93,6 +93,7 @@ const ScrollViewShowCase: React.FC = () => (
 </Stylish.ScrollView>`}
     imageAlt="ScrollView"
     imageUrl="showcase-scroll-view.png"
+    imageUrlDark="showcase-scroll-view-dark.png"
   />
 );
 

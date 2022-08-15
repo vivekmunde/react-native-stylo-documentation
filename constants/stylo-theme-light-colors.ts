@@ -1,15 +1,15 @@
 type TColor = { [name: string]: string };
 
-export const bodyColor = '#ffffff';
-export const fontColor = '#434343';
-export const borderColor = '#e4e4e4';
+export const screenBackgroundColor = '#F5F5F5';
+export const fontColor = '#333333';
+export const fontColorSecondary = '#888888';
+export const borderColor = '#EEEEEE';
 
-export const primaryColor = '#ec4899';
-export const secondaryColor = '#8c8c8c';
-export const infoColor = '#36cfc9';
-export const successColor = '#73d13d';
-export const warningColor = '#fa8c16';
-export const dangerColor = '#ff4d4f';
+export const primaryColor = '#EC4899';
+export const infoColor = '#36CFC9';
+export const successColor = '#73D13D';
+export const warningColor = '#FA8C16';
+export const dangerColor = '#FF4D4F';
 
 export const opaqueColor = '#ffffff';
 export const whiteColor = '#ffffff';
@@ -93,16 +93,16 @@ export const greenColors: TColor = {
 };
 
 export const greyColors: TColor = {
-  Grey1: '#fafafa',
-  Grey2: '#f5f5f5',
-  Grey3: '#f0f0f0',
-  Grey4: '#e0e0e0',
-  Grey5: '#d9d9d9',
-  Grey6: '#bfbfbf',
-  Grey7: '#8c8c8c',
-  Grey8: '#595959',
-  Grey9: '#434343',
-  Grey10: '#262626',
+  Grey1: '#DDDDDD',
+  Grey2: '#CCCCCC',
+  Grey3: '#BBBBBB',
+  Grey4: '#AAAAAA',
+  Grey5: '#888888',
+  Grey6: '#777777',
+  Grey7: '#666666',
+  Grey8: '#555555',
+  Grey9: '#444444',
+  Grey10: '#333333',
 };
 
 export const infoColors: TColor = {

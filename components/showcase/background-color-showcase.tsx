@@ -18,6 +18,18 @@ const BackgroundColorsShowCase: React.FC = () => (
 
 <Stylish.View
   styleNames={[
+    'BackgroundColor.Success',
+    'Padding',
+    'Border.Radius',
+    'Margin.Bottom',
+  ]}>
+  <Stylish.Text styleNames={['Color.White']}>
+    BackgroundColor.Success
+  </Stylish.Text>
+</Stylish.View>
+
+<Stylish.View
+  styleNames={[
     'BackgroundColor.Info',
     'Padding',
     'Border.Radius',
@@ -53,6 +65,7 @@ const BackgroundColorsShowCase: React.FC = () => (
 </Stylish.View>`}
     imageAlt="BackgroundColor"
     imageUrl="showcase-background-color.png"
+    imageUrlDark="showcase-background-color-dark.png"
   />
 );
 

@@ -150,6 +150,7 @@ const FlexShowCase: React.FC = () => (
 </Stylish.View>`}
     imageAlt="Flex"
     imageUrl="showcase-flex.png"
+    imageUrlDark="showcase-flex-dark.png"
   />
 );
 

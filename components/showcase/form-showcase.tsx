@@ -4,7 +4,7 @@ import ShowCaseBox from '../showcase-box';
 
 const FormShowCase1: React.FC = () => (
   <ShowCaseBox
-    renderCode={() => `<Stylish.View styleNames={['Form', 'Padding', 'Border.Radius', 'BackgroundColor.White', 'Margin.Bottom.Large']}>
+    renderCode={() => `<Stylish.View styleNames={['Form', 'Padding', 'Border', 'Border.Radius', 'BackgroundColor.White', 'Margin.Bottom.Large']}>
   <Stylish.View styleNames={['Form.Item']}>
     <Stylish.View styleNames={['Form.Item.Label']}>
       <Stylish.View styleNames={['Form.Item.Label.Left']}>
@@ -99,12 +99,13 @@ const FormShowCase1: React.FC = () => (
 </Stylish.View>`}
     imageAlt="Form"
     imageUrl="showcase-form-1.png"
+    imageUrlDark="showcase-form-dark-1.png"
   />
 );
 
 const FormShowCase2: React.FC = () => (
   <ShowCaseBox
-    renderCode={() => `<Stylish.View styleNames={['Form', 'Padding', 'Border.Radius', 'BackgroundColor.White', 'Margin.Bottom.Large']}>
+    renderCode={() => `<Stylish.View styleNames={['Form', 'Padding', 'Border', 'Border.Radius', 'BackgroundColor.White', 'Margin.Bottom.Large']}>
   <Stylish.View styleNames={['Form.Item']}>
     <Stylish.View styleNames={['Flex.Row']}>
       <Stylish.View styleNames={['Form.Item.Label', 'Flex.2']}>
@@ -169,6 +170,7 @@ const FormShowCase2: React.FC = () => (
 </Stylish.View>`}
     imageAlt="Form"
     imageUrl="showcase-form-2.png"
+    imageUrlDark="showcase-form-dark-2.png"
   />
 );
 
@@ -177,7 +179,7 @@ const FormShowCase3: React.FC = () => (
     renderCode={() => `const colorDanger2 = Stylers.useVariables(['Color.Danger2']);
 
   return (
-    <Stylish.View styleNames={['Form', 'Padding', 'Border.Radius', 'BackgroundColor.White', 'Margin.Bottom.Large']}>
+    <Stylish.View styleNames={['Form', 'Padding', 'Border', 'Border.Radius', 'BackgroundColor.White', 'Margin.Bottom.Large']}>
       <Stylish.View styleNames={['Form.Item']}>
         <Stylish.View styleNames={['Form.Item.Label']}>
           <Stylish.Text styleNames={['Color.Danger']}>Name</Stylish.Text>
@@ -227,6 +229,7 @@ const FormShowCase3: React.FC = () => (
   );`}
     imageAlt="Form"
     imageUrl="showcase-form-3.png"
+    imageUrlDark="showcase-form-dark-3.png"
   />
 );
 
@@ -235,7 +238,7 @@ const FormShowCase4: React.FC = () => (
     renderCode={() => `const colorDanger2 = Stylers.useVariables(['Color.Danger2']);
 
   return (
-    <Stylish.View styleNames={['Form', 'Padding', 'Border.Radius', 'BackgroundColor.White', 'Margin.Bottom.Large']}>
+    <Stylish.View styleNames={['Form', 'Padding', 'Border', 'Border.Radius', 'BackgroundColor.White', 'Margin.Bottom.Large']}>
       <Stylish.View styleNames={['Form.Item']}>
         <Stylish.View styleNames={['Flex.Row']}>
           <Stylish.View styleNames={['Form.Item.Label', 'Flex.2']}>
@@ -284,12 +287,13 @@ const FormShowCase4: React.FC = () => (
   );`}
     imageAlt="Form"
     imageUrl="showcase-form-4.png"
+    imageUrlDark="showcase-form-dark-4.png"
   />
 );
 
 const FormShowCase5: React.FC = () => (
   <ShowCaseBox
-    renderCode={() => `<Stylish.View styleNames={['Form', 'Padding', 'Border.Radius', 'BackgroundColor.White', 'Margin.Bottom.Large']}>
+    renderCode={() => `<Stylish.View styleNames={['Form', 'Padding', 'Border', 'Border.Radius', 'BackgroundColor.White', 'Margin.Bottom.Large']}>
   <Stylish.View styleNames={['Form.Item']}>
     <Stylish.View styleNames={['Form.Item.Input']}>
       <Stylish.View styleNames={['Form.Item.Input.Left', 'Padding', 'BackgroundColor.Grey2']}>
@@ -321,12 +325,13 @@ const FormShowCase5: React.FC = () => (
 </Stylish.View>`}
     imageAlt="Form"
     imageUrl="showcase-form-5.png"
+    imageUrlDark="showcase-form-dark-5.png"
   />
 );
 
 const FormShowCase6: React.FC = () => (
   <ShowCaseBox
-    renderCode={() => `<Stylish.View styleNames={['Border.Radius', 'BackgroundColor.White', 'Margin.Bottom.Large']}>
+    renderCode={() => `<Stylish.View styleNames={['Border', 'Border.Radius', 'BackgroundColor.White', 'Margin.Bottom.Large']}>
   <Stylish.View styleNames={['Form', 'Padding', 'Margin.Bottom']}>
     <Stylish.Text styleNames={['H3']}>
       Add New Product
@@ -439,6 +444,7 @@ const FormShowCase6: React.FC = () => (
 </Stylish.View>`}
     imageAlt="Form"
     imageUrl="showcase-form-6.png"
+    imageUrlDark="showcase-form-dark-6.png"
   />
 );
 

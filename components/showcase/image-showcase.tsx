@@ -46,6 +46,7 @@ const ImageShowCase: React.FC = () => (
 </Stylish.View>`}
     imageAlt="Image"
     imageUrl="showcase-image.png"
+    imageUrlDark="showcase-image-dark.png"
   />
 );
 

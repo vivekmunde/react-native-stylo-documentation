@@ -106,6 +106,7 @@ const AvatarShowCase: React.FC = () => (
 </Stylish.View>`}
     imageAlt="Avatar"
     imageUrl="showcase-avatar.png"
+    imageUrlDark="showcase-avatar-dark.png"
   />
 );
 

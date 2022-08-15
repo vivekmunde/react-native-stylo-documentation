@@ -1,6 +1,6 @@
 import React from 'react';
 
-import SectionHeading from '../../components/section-heading';
+import SectionHeading from '../section-heading';
 import StyloThemeColorBox from './stylo-theme-color-box';
 
 const StyloThemeColorShadesSection: React.FC<{

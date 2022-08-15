@@ -29,6 +29,7 @@ const TextShowCase: React.FC = () => (
 </Stylish.Text>`}
     imageAlt="Text"
     imageUrl="showcase-text.png"
+    imageUrlDark="showcase-text-dark.png"
   />
 );
 

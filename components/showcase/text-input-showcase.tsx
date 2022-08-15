@@ -37,6 +37,7 @@ const TextInputShowCase: React.FC = () => (
   value="A relaxed input" />`}
     imageAlt="TextInput"
     imageUrl="showcase-text-input.png"
+    imageUrlDark="showcase-text-input-dark.png"
   />
 );
 

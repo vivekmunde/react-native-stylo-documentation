@@ -15,6 +15,11 @@ const FontColorShowCase: React.FC = () => (
 </Stylish.Text>
 
 <Stylish.Text
+  styleNames={['Color.Success', 'Margin.Bottom']}>
+  Color.Success
+</Stylish.Text>
+
+<Stylish.Text
   styleNames={['Color.Info', 'Margin.Bottom']}>
   Color.Info
 </Stylish.Text>
@@ -30,6 +35,7 @@ const FontColorShowCase: React.FC = () => (
 </Stylish.Text>`}
     imageAlt="FontColor"
     imageUrl="showcase-font-color.png"
+    imageUrlDark="showcase-font-color-dark.png"
   />
 );
 

@@ -35,6 +35,7 @@ const IconShowCase: React.FC = () => (
 </Stylish.View>`}
     imageAlt="Icon"
     imageUrl="showcase-icon.png"
+    imageUrlDark="showcase-icon-dark.png"
   />
 );
 

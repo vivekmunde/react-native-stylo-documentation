@@ -63,6 +63,7 @@ const MarginShowCase: React.FC = () => (
 </Stylish.View>`}
     imageAlt="Margin"
     imageUrl="showcase-margin.png"
+    imageUrlDark="showcase-margin-dark.png"
   />
 );
 

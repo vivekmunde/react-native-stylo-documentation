@@ -6,7 +6,7 @@ const ImageBackgroundShowCase: React.FC = () => (
   <ShowCaseBox
     renderCode={() => `<Stylish.ImageBackground
   style={{ flex: 1 }}
-  source={require('../images/screen-bg-1.png')}
+  source={require('../images/screen-bg-light-1.png')} // OR screen-bg-dark-1.png for Dark theme
   styleNames={['Padding.Large']}>
     <Stylish.Text styleNames={['H1']}>
       ImageBackground
@@ -27,6 +27,7 @@ const ImageBackgroundShowCase: React.FC = () => (
 </Stylish.ImageBackground>`}
     imageAlt="ImageBackground"
     imageUrl="showcase-image-background.png"
+    imageUrlDark="showcase-image-background-dark.png"
   />
 );
 

@@ -56,6 +56,7 @@ const ScreenShowCase: React.FC = () => (
 </Stylish.View>`}
     imageAlt="Screen"
     imageUrl="showcase-screen.png"
+    imageUrlDark="showcase-screen-dark.png"
   />
 );
 

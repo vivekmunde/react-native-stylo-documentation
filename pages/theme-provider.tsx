@@ -28,27 +28,6 @@ const ThemeProvider: React.FC = () => (
           </Paragraph>
 
           <Paragraph>
-            <strong className="font-semibold">Props type definition</strong>
-          </Paragraph>
-          <CodeSnippet>
-            {`type TThemeProviderProps = {
-  variables: Record<string, string | number>,
-  styles: {
-    IconStyles: Record<string, ReactNative.TextStyle>,
-    ImageBackgroundStyles: Record<string, ReactNative.ViewStyle>,
-    ImageStyles: Record<string, ReactNative.ImageStyle>,
-    SafeAreaViewStyles: Record<string, ReactNative.ViewStyle>,
-    ScrollViewStyles: Record<string, ReactNative.ViewStyle>,
-    ScrollViewContentContainerStyles: Record<string, ReactNative.ViewStyle>,
-    TextInputStyles: Record<string, ReactNative.TextStyle>,
-    TextStyles: Record<string, ReactNative.TextStyle>,
-    TouchableStyles: Record<string, ReactNative.ViewStyle>,
-    ViewStyles: Record<string, ReactNative.ViewStyle>,
-  },
-};`}
-          </CodeSnippet>
-
-          <Paragraph>
             In the main file of the application, wrap the application inside the <InlineCode>ThemeProvider</InlineCode> &amp; supply the theme values to it.
           </Paragraph>
           <CodeSnippet>
@@ -71,10 +50,10 @@ const App = () => (
                 <InlineCode>variables</InlineCode> <RequiredTag />
               </h5>
               <Paragraph>
-                <strong className="font-semibold">Props type definition</strong>
+                <strong className="font-semibold">Type definition</strong>
               </Paragraph>
               <CodeSnippet>
-                {`TVariables = Record<string, string | number>;`}
+                {`Record<string, string | number>;`}
               </CodeSnippet>
               <Paragraph>
                 The <Link href="/theme#variables">variables</Link> defined in the theme.
@@ -86,10 +65,10 @@ const App = () => (
                 <InlineCode>styles</InlineCode> <RequiredTag />
               </h5>
               <Paragraph>
-                <strong className="font-semibold">Props type definition</strong>
+                <strong className="font-semibold">Type definition</strong>
               </Paragraph>
               <CodeSnippet>
-                {`TStyles = {
+                {`{
   IconStyles: Record<string, ReactNative.TextStyle>,
   ImageBackgroundStyles: Record<string, ReactNative.ViewStyle>,
   ImageStyles: Record<string, ReactNative.ImageStyle>,

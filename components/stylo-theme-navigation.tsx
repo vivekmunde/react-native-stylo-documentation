@@ -2,6 +2,17 @@ import React from 'react';
 
 import NavLink from './nav-link';
 
+const SubMenuLink: React.FC<{ href: string; children: React.ReactNode }> = ({ href, children }) => (
+  <li className="mb-1">
+    <NavLink href={href}>
+      <span className="text-sm text-gray-300 mr-1 ml-[-1px] font-light">-</span>
+      <span className="text-sm">
+        {children}
+      </span>
+    </NavLink>
+  </li>
+);
+
 const StyloThemeNavigation: React.FC = () => (
   <nav>
     <ul>
@@ -18,11 +29,27 @@ const StyloThemeNavigation: React.FC = () => (
                 <NavLink href="/stylo-theme-colors">
                   Colors
                 </NavLink>
+                <ul className="ml-4 mt-1 border-l">
+                  <SubMenuLink href="/stylo-theme-colors#light-theme">
+                    Light
+                  </SubMenuLink>
+                  <SubMenuLink href="/stylo-theme-colors#dark-theme">
+                    Dark
+                  </SubMenuLink>
+                </ul>
               </li>
               <li>
                 <NavLink href="/stylo-theme-variables">
                   Variables
                 </NavLink>
+                <ul className="ml-4 mt-1 border-l">
+                  <SubMenuLink href="/stylo-theme-variables#light-theme">
+                    Light
+                  </SubMenuLink>
+                  <SubMenuLink href="/stylo-theme-variables#dark-theme">
+                    Dark
+                  </SubMenuLink>
+                </ul>
               </li>
               <li>
                 <NavLink href="/stylo-theme-style-namespaces">

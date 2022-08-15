@@ -64,8 +64,7 @@ const BackgroundColorsShowCase: React.FC = () => (
   </Stylish.Text>
 </Stylish.View>`}
     imageAlt="BackgroundColor"
-    imageUrl="showcase-background-color.png"
-    imageUrlDark="showcase-background-color-dark.png"
+    imageUrl={{ light: "showcase-background-color.png", dark: "showcase-background-color-dark.png" }}
   />
 );
 

@@ -4,9 +4,8 @@ import CodeSnippet from './code-snippet';
 
 const ShowCaseBoxImage: React.FC<{
   imageAlt: string;
-  imageUrl: string;
-  imageUrlDark?: string;
-}> = ({ imageAlt, imageUrl, imageUrlDark }) => {
+  imageUrl: { light: string; dark: string }
+}> = ({ imageAlt, imageUrl }) => {
   const [mode, setMode] = useState<'Light' | 'Dark'>('Light');
   const inactiveClassName = 'border';
   const activeClassName = 'border bg-pink-50 border-pink-100';
@@ -36,7 +35,7 @@ const ShowCaseBoxImage: React.FC<{
       <img
         className="rounded-3xl border-4 border-gray-700 mb-4"
         alt={imageAlt}
-        src={`${process.env.NEXT_PUBLIC_ASSET_PREFIX}/images/${mode === 'Light' ? imageUrl : imageUrlDark}`} />
+        src={`${process.env.NEXT_PUBLIC_ASSET_PREFIX}/images/${mode === 'Light' ? imageUrl.light : imageUrl.dark}`} />
     </div>
   );
 };
@@ -44,9 +43,8 @@ const ShowCaseBoxImage: React.FC<{
 const ShowCaseBox: React.FC<{
   renderCode: () => React.ReactNode;
   imageAlt: string;
-  imageUrl: string;
-  imageUrlDark?: string;
-}> = ({ renderCode, imageAlt, imageUrl, imageUrlDark }) => (
+  imageUrl: { light: string; dark: string } | string;
+}> = ({ renderCode, imageAlt, imageUrl }) => (
   <div className="grid grid-cols-12 lg:grid-cols-12 lg:grid-gap-4">
     <div className="col-span-12 md:col-span-7 lg:col-span-7 lg:col-span-8">
       <CodeSnippet>
@@ -54,14 +52,14 @@ const ShowCaseBox: React.FC<{
       </CodeSnippet>
     </div>
     <div className="pl-4 pr-4 col-span-12 md:col-span-5 lg:col-span-4">
-      {imageUrlDark
-        ? <ShowCaseBoxImage imageAlt={imageAlt} imageUrl={imageUrl} imageUrlDark={imageUrlDark} />
-        : (
+      {typeof imageUrl === 'string'
+        ? (
           <img
             className="rounded-3xl border-4 border-gray-700 mb-4"
             alt={imageAlt}
             src={`${process.env.NEXT_PUBLIC_ASSET_PREFIX}/images/${imageUrl}`} />
-        )}
+        )
+        : <ShowCaseBoxImage imageAlt={imageAlt} imageUrl={imageUrl} />}
     </div>
   </div>
 );

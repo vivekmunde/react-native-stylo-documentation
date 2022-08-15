@@ -69,8 +69,7 @@ const BorderShowCase: React.FC = () => (
   </Stylish.Text>
 </Stylish.View>`}
     imageAlt="Border"
-    imageUrl="showcase-border.png"
-    imageUrlDark="showcase-border-dark.png"
+    imageUrl={{ light: "showcase-border.png", dark: "showcase-border-dark.png" }}
   />
 );
 

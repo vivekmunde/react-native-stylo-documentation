@@ -183,8 +183,7 @@ const ButtonShowCase: React.FC = () => (
   <ActivityIndicator size="small" color={colorPrimary} />
 </Stylish.TouchableOpacity>`}
     imageAlt="Button"
-    imageUrl="showcase-button.png"
-    imageUrlDark="showcase-button-dark.png"
+    imageUrl={{ light: "showcase-button.png", dark: "showcase-button-dark.png" }}
   />
 );
 

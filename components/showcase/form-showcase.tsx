@@ -98,8 +98,7 @@ const FormShowCase1: React.FC = () => (
   </Stylish.View>
 </Stylish.View>`}
     imageAlt="Form"
-    imageUrl="showcase-form-1.png"
-    imageUrlDark="showcase-form-dark-1.png"
+    imageUrl={{ light: "showcase-form-1.png", dark: "showcase-form-dark-1.png" }}
   />
 );
 
@@ -169,8 +168,7 @@ const FormShowCase2: React.FC = () => (
   </Stylish.View>
 </Stylish.View>`}
     imageAlt="Form"
-    imageUrl="showcase-form-2.png"
-    imageUrlDark="showcase-form-dark-2.png"
+    imageUrl={{ light: "showcase-form-2.png", dark: "showcase-form-dark-2.png" }}
   />
 );
 
@@ -228,8 +226,7 @@ const FormShowCase3: React.FC = () => (
     </Stylish.View>
   );`}
     imageAlt="Form"
-    imageUrl="showcase-form-3.png"
-    imageUrlDark="showcase-form-dark-3.png"
+    imageUrl={{ light: "showcase-form-3.png", dark: "showcase-form-dark-3.png" }}
   />
 );
 
@@ -286,8 +283,7 @@ const FormShowCase4: React.FC = () => (
     </Stylish.View>
   );`}
     imageAlt="Form"
-    imageUrl="showcase-form-4.png"
-    imageUrlDark="showcase-form-dark-4.png"
+    imageUrl={{ light: "showcase-form-4.png", dark: "showcase-form-dark-4.png" }}
   />
 );
 
@@ -324,8 +320,7 @@ const FormShowCase5: React.FC = () => (
   </Stylish.TouchableOpacity>
 </Stylish.View>`}
     imageAlt="Form"
-    imageUrl="showcase-form-5.png"
-    imageUrlDark="showcase-form-dark-5.png"
+    imageUrl={{ light: "showcase-form-5.png", dark: "showcase-form-dark-5.png" }}
   />
 );
 
@@ -443,8 +438,7 @@ const FormShowCase6: React.FC = () => (
   </Stylish.TouchableOpacity>
 </Stylish.View>`}
     imageAlt="Form"
-    imageUrl="showcase-form-6.png"
-    imageUrlDark="showcase-form-dark-6.png"
+    imageUrl={{ light: "showcase-form-6.png", dark: "showcase-form-dark-6.png" }}
   />
 );
 

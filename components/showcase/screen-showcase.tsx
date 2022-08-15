@@ -55,8 +55,7 @@ const ScreenShowCase: React.FC = () => (
   <Stylish.SafeAreaView styleNames={['BackgroundColor.White']} />
 </Stylish.View>`}
     imageAlt="Screen"
-    imageUrl="showcase-screen.png"
-    imageUrlDark="showcase-screen-dark.png"
+    imageUrl={{ light: "showcase-screen.png", dark: "showcase-screen-dark.png" }}
   />
 );
 

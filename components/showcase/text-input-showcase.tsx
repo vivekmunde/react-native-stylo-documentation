@@ -36,8 +36,7 @@ const TextInputShowCase: React.FC = () => (
   styleNames={['Border', 'BackgroundColor.White', 'Padding.Large', 'Margin.Bottom.Large']}
   value="A relaxed input" />`}
     imageAlt="TextInput"
-    imageUrl="showcase-text-input.png"
-    imageUrlDark="showcase-text-input-dark.png"
+    imageUrl={{ light: "showcase-text-input.png", dark: "showcase-text-input-dark.png" }}
   />
 );
 

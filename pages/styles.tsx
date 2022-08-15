@@ -198,8 +198,7 @@ const StylesShowCase: React.FC = () => (
 
 export default StylesShowCase;`}
               imageAlt="<Styles />"
-              imageUrl="showcase-styles.png"
-              imageUrlDark="showcase-styles-dark.png"
+              imageUrl={{ light: "showcase-styles.png", dark: "showcase-styles-dark.png" }}
             />
           </section>
         </article>

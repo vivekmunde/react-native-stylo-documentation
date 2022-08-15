@@ -71,8 +71,7 @@ const PaddingShowCase: React.FC = () => (
   <Stylish.Text>Padding.Right.Large</Stylish.Text>
 </Stylish.View>`}
     imageAlt="Padding"
-    imageUrl="showcase-padding.png"
-    imageUrlDark="showcase-padding-dark.png"
+    imageUrl={{ light: "showcase-padding.png", dark: "showcase-padding-dark.png" }}
   />
 );
 

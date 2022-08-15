@@ -118,8 +118,7 @@ const UsageUseVariablesShowCase = () => {
 
 export default UsageUseVariablesShowCase;`}
               imageAlt="useVariables()"
-              imageUrl="showcase-use-variables.png"
-              imageUrlDark="showcase-use-variables-dark.png"
+              imageUrl={{ light: "showcase-use-variables.png", dark: "showcase-use-variables-dark.png" }}
             />
           </section>
         </article>

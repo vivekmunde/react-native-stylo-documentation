@@ -249,8 +249,7 @@ const UseStylesShowCase: React.FC = () => {
 export default UseStylesShowCase;
 `}
               imageAlt="useStyles()"
-              imageUrl="showcase-use-styles.png"
-              imageUrlDark="showcase-use-styles-dark.png"
+              imageUrl={{ light: "showcase-use-styles.png", dark: "showcase-use-styles-dark.png" }}
             />
           </section>
         </article>

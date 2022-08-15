@@ -149,8 +149,7 @@ const FlexShowCase: React.FC = () => (
   </Stylish.View>
 </Stylish.View>`}
     imageAlt="Flex"
-    imageUrl="showcase-flex.png"
-    imageUrlDark="showcase-flex-dark.png"
+    imageUrl={{ light: "showcase-flex.png", dark: "showcase-flex-dark.png" }}
   />
 );
 

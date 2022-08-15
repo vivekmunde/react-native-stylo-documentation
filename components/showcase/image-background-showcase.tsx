@@ -26,8 +26,7 @@ const ImageBackgroundShowCase: React.FC = () => (
     </Stylish.TouchableOpacity>
 </Stylish.ImageBackground>`}
     imageAlt="ImageBackground"
-    imageUrl="showcase-image-background.png"
-    imageUrlDark="showcase-image-background-dark.png"
+    imageUrl={{ light: "showcase-image-background.png", dark: "showcase-image-background-dark.png" }}
   />
 );
 

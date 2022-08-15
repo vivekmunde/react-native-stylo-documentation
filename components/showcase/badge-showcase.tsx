@@ -44,8 +44,7 @@ const BadgeShowCase: React.FC = () => (
   </Stylish.View>
 </Stylish.View>`}
     imageAlt="Badge"
-    imageUrl="showcase-badge.png"
-    imageUrlDark="showcase-badge-dark.png"
+    imageUrl={{ light: "showcase-badge.png", dark: "showcase-badge-dark.png" }}
   />
 );
 

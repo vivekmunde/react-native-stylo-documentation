@@ -91,8 +91,7 @@ const HorizontalShowCase: React.FC = () => (
   </Stylish.View>
 </Stylish.View>`}
     imageAlt="Horizontal"
-    imageUrl="showcase-horizontal.png"
-    imageUrlDark="showcase-horizontal-dark.png"
+    imageUrl={{ light: "showcase-horizontal.png", dark: "showcase-horizontal-dark.png" }}
   />
 );
 

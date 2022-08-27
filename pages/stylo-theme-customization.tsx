@@ -253,7 +253,58 @@ export default getBackgroundColorStyles;`}
 export type TCardStyle = 'Card' | 'Card.Header' | 'Card.Body' | 'Card.Footer';`}
                 </CodeSnippet>
                 <Paragraph>
-                  <strong className="font-semibold">2. Create style definitions</strong>
+                  <strong className="font-semibold">2. Apply the style types to desired components</strong>
+                </Paragraph>
+                <Paragraph>
+                  The <InlineCode>CardStyle</InlineCode> is expected to be applied to <InlineCode>View</InlineCode> &amp; <InlineCode>Touchable</InlineCode> components.
+                  <br />
+                  Open the file <InlineCode>types/components/view.ts</InlineCode>.
+                </Paragraph>
+                <CodeSnippet>
+                  {`/* -------------------------------------------------------------------------------- */
+/*                               react-native-stylo                                 */
+/*           GitHub: https://github.com/vivekmunde/react-native-stylo               */
+/*      Docs: https://vivekmunde.github.io/react-native-stylo-documentation/        */
+/* -------------------------------------------------------------------------------- */
+  
+/* -------------------------------------------------------------------------------- */
+/*                           Customize as per your needs                            */
+/* -------------------------------------------------------------------------------- */
+
+// Other imports
+import TCardStyle from '../assorted/card';
+
+type TViewStyle =
+  // other style types
+  | TCardStyle;
+
+export default TViewStyle;`}
+                </CodeSnippet>
+                <Paragraph>
+                  Open the file <InlineCode>types/components/touchable.ts</InlineCode>.
+                </Paragraph>
+                <CodeSnippet>
+                  {`/* -------------------------------------------------------------------------------- */
+/*                               react-native-stylo                                 */
+/*           GitHub: https://github.com/vivekmunde/react-native-stylo               */
+/*      Docs: https://vivekmunde.github.io/react-native-stylo-documentation/        */
+/* -------------------------------------------------------------------------------- */
+  
+/* -------------------------------------------------------------------------------- */
+/*                           Customize as per your needs                            */
+/* -------------------------------------------------------------------------------- */
+
+// Other imports
+import TCardStyle from '../assorted/card';
+
+type TTouchableStyle =
+  // other style types
+  | TCardStyle;
+
+export default TViewStyle;`}
+                </CodeSnippet>
+                <Paragraph>
+                  <strong className="font-semibold">3. Create style definitions</strong>
                 </Paragraph>
                 <Paragraph>
                   Create a new file under directory <InlineCode>default</InlineCode> as <InlineCode>default/assorted/card.ts</InlineCode>.
@@ -300,7 +351,7 @@ const getCardStyles = (variables: Record<TVariable, string | number>) => (
 export default getCardStyles;`}
                 </CodeSnippet>
                 <Paragraph>
-                  <strong className="font-semibold">3. Add these styles to View styles</strong>
+                  <strong className="font-semibold">4. Add these styles to View styles</strong>
                 </Paragraph>
                 <Paragraph>
                   Open <InlineCode>default/components/view-styles.ts</InlineCode>
@@ -330,7 +381,7 @@ const getViewStyles = (variables: Record<TVariable, string | number>) => (
 export default getViewStyles;`}
                 </CodeSnippet>
                 <Paragraph>
-                  <strong className="font-semibold">4. Add these styles to Touchable styles</strong>
+                  <strong className="font-semibold">5. Add these styles to Touchable styles</strong>
                 </Paragraph>
                 <Paragraph>
                   Open <InlineCode>default/components/touchable-styles.ts</InlineCode>

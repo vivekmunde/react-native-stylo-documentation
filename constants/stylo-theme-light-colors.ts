@@ -93,16 +93,16 @@ export const greenColors: TColor = {
 };
 
 export const greyColors: TColor = {
-  Grey1: '#DDDDDD',
-  Grey2: '#CCCCCC',
-  Grey3: '#BBBBBB',
-  Grey4: '#AAAAAA',
-  Grey5: '#888888',
-  Grey6: '#777777',
-  Grey7: '#666666',
-  Grey8: '#555555',
-  Grey9: '#444444',
-  Grey10: '#333333',
+  Grey1: '#EEEEEE',
+  Grey2: '#DDDDDD',
+  Grey3: '#CCCCCC',
+  Grey4: '#BBBBBB',
+  Grey5: '#AAAAAA',
+  Grey6: '#888888',
+  Grey7: '#777777',
+  Grey8: '#666666',
+  Grey9: '#555555',
+  Grey10: '#444444',
 };
 
 export const infoColors: TColor = {

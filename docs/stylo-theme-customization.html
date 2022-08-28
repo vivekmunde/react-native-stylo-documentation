@@ -1,141 +1,224 @@
-<!DOCTYPE html><html><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><meta name="description" content="Infinitely scalable strongly typed themes, styling hooks &amp; stylish components for React Native mobile applications"/><link rel="icon" href="/react-native-stylo-documentation/favicon.ico"/><link rel="stylesheet" href="/react-native-stylo-documentation/fontawesome-6.1.1/css/all.css"/><title>Customizing Stylo theme | React Native Stylo</title><meta name="next-head-count" content="6"/><link rel="preload" href="/react-native-stylo-documentation/_next/static/css/b83cddc7699b346f.css" as="style"/><link rel="stylesheet" href="/react-native-stylo-documentation/_next/static/css/b83cddc7699b346f.css" data-n-g=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/react-native-stylo-documentation/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/react-native-stylo-documentation/_next/static/chunks/webpack-f3b65fada3c03fc4.js" defer=""></script><script src="/react-native-stylo-documentation/_next/static/chunks/framework-0a3212f428d04f0c.js" defer=""></script><script src="/react-native-stylo-documentation/_next/static/chunks/main-0394d6767d1bc481.js" defer=""></script><script src="/react-native-stylo-documentation/_next/static/chunks/pages/_app-291420445f8923f7.js" defer=""></script><script src="/react-native-stylo-documentation/_next/static/chunks/9814-32eb552d35bc8b98.js" defer=""></script><script src="/react-native-stylo-documentation/_next/static/chunks/1447-0de0f6a34f95df08.js" defer=""></script><script src="/react-native-stylo-documentation/_next/static/chunks/pages/stylo-theme-customization-a22dbbd5c82ffe15.js" defer=""></script><script src="/react-native-stylo-documentation/_next/static/kmP-X0rIXFFnDHNMKlsQf/_buildManifest.js" defer=""></script><script src="/react-native-stylo-documentation/_next/static/kmP-X0rIXFFnDHNMKlsQf/_ssgManifest.js" defer=""></script><script src="/react-native-stylo-documentation/_next/static/kmP-X0rIXFFnDHNMKlsQf/_middlewareManifest.js" defer=""></script></head><body><div id="__next"><div class="flex flex-col"><div class="grid grid-cols-7 xl:grid-cols-5 grid-flow-col"><div class="p-4 pl-8 lg:col-span-2 xl:col-span-1 bg-white left-nav"><div class="flex flex-row items-center justify-between sm-logo-wrapper mb-4"><a style="font-size:20px;font-weight:200;line-height:1;white-space:nowrap;display:flex;flex-direction:row;align-items:center" href="/react-native-stylo-documentation"><span>react-native-</span><img alt="stylo" src="/react-native-stylo-documentation/logo.png" style="height:28px"/></a><button class="left-nav-hamburger bg-transparent border-0 rounded p-1 mb-4"><i class="fas fa-xmark fa-fw text-2xl text-gray-400"></i></button></div><div class="mt-4 mb-8 lg-logo-wrapper"><a style="font-size:20px;font-weight:200;line-height:1;white-space:nowrap;display:flex;flex-direction:row;align-items:center" href="/react-native-stylo-documentation"><span>react-native-</span><img alt="stylo" src="/react-native-stylo-documentation/logo.png" style="height:28px"/></a></div><nav><ul><li><ul class="mb-8"><a class="text-gray-800" style="display:block" href="/react-native-stylo-documentation/stylo-theme"><h5 class="mb-4">Stylo theme</h5></a><li><ul class="mb-4"><li><a class="text-gray-800" style="display:block" href="/react-native-stylo-documentation/stylo-theme-colors">Colors</a></li><li><a class="text-gray-800" style="display:block" href="/react-native-stylo-documentation/stylo-theme-variables">Variables</a></li><li><a class="text-gray-800" style="display:block" href="/react-native-stylo-documentation/stylo-theme-style-namespaces">StyleNamespaces</a></li></ul></li><li><a class="text-gray-800" style="display:block" href="/react-native-stylo-documentation/stylo-theme-generic-styles"><h5 class="text-base m-0">Generic styles</h5></a><ul class="mb-4"><li><a class="text-gray-800" style="display:block" href="/react-native-stylo-documentation/stylo-theme-background-color-styles">BackgroundColor</a></li><li><a class="text-gray-800" style="display:block" href="/react-native-stylo-documentation/stylo-theme-border-styles">Border</a></li><li><a class="text-gray-800" style="display:block" href="/react-native-stylo-documentation/stylo-theme-flex-styles">Flex</a></li><li><a class="text-gray-800" style="display:block" href="/react-native-stylo-documentation/stylo-theme-font-color-styles">FontColor</a></li><li><a class="text-gray-800" style="display:block" href="/react-native-stylo-documentation/stylo-theme-margin-styles">Margin</a></li><li><a class="text-gray-800" style="display:block" href="/react-native-stylo-documentation/stylo-theme-padding-styles">Padding</a></li></ul></li><li><a class="text-gray-800" style="display:block" href="/react-native-stylo-documentation/stylo-theme-component-styles"><h5 class="text-base m-0">Component styles</h5></a><ul class="mb-4"><li><a class="text-gray-800" style="display:block" href="/react-native-stylo-documentation/stylo-theme-icon-styles">Icon</a></li><li><a class="text-gray-800" style="display:block" href="/react-native-stylo-documentation/stylo-theme-image-styles">Image</a></li><li><a class="text-gray-800" style="display:block" href="/react-native-stylo-documentation/stylo-theme-image-background-styles">ImageBackground</a></li><li><a class="text-gray-800" style="display:block" href="/react-native-stylo-documentation/stylo-theme-pressable-styles">Pressable</a></li><li><a class="text-gray-800" style="display:block" href="/react-native-stylo-documentation/stylo-theme-scroll-view-styles">ScrollView</a></li><li><a class="text-gray-800" style="display:block" href="/react-native-stylo-documentation/stylo-theme-text-styles">Text</a></li><li><a class="text-gray-800" style="display:block" href="/react-native-stylo-documentation/stylo-theme-text-input-styles">TextInput</a></li><li><a class="text-gray-800" style="display:block" href="/react-native-stylo-documentation/stylo-theme-touchable-opacity-styles">TouchableOpacity</a></li><li><a class="text-gray-800" style="display:block" href="/react-native-stylo-documentation/stylo-theme-touchable-highlight-styles">TouchableHighlight</a></li><li><a class="text-gray-800" style="display:block" href="/react-native-stylo-documentation/stylo-theme-view-styles">View</a></li></ul></li><li><a class="text-gray-800" style="display:block" href="/react-native-stylo-documentation/stylo-theme-assorted-styles"><h5 class="text-base m-0">Assorted styles</h5></a><ul class="mb-4"><li><a class="text-gray-800" style="display:block" href="/react-native-stylo-documentation/stylo-theme-avatar-styles">Avatar</a></li><li><a class="text-gray-800" style="display:block" href="/react-native-stylo-documentation/stylo-theme-badge-styles">Badge</a></li><li><a class="text-gray-800" style="display:block" href="/react-native-stylo-documentation/stylo-theme-button-styles">Button</a></li><li><a class="text-gray-800" style="display:block" href="/react-native-stylo-documentation/stylo-theme-form-styles">Form</a></li><li><a class="text-gray-800" style="display:block" href="/react-native-stylo-documentation/stylo-theme-horizontal-styles">Horizontal</a></li><li><a class="text-gray-800" style="display:block" href="/react-native-stylo-documentation/stylo-theme-list-styles">List</a></li><li><a class="text-gray-800" style="display:block" href="/react-native-stylo-documentation/stylo-theme-screen-styles">Screen</a></li><li><a class="text-gray-800" style="display:block" href="/react-native-stylo-documentation/stylo-theme-tag-styles">Tag</a></li></ul></li><li><a class="font-medium" style="display:block" href="/react-native-stylo-documentation/stylo-theme-customization"><h5 class="text-base m-0">Customizing Stylo theme</h5></a></li></ul></li><li><a class="text-gray-800" style="display:block" href="/react-native-stylo-documentation"><h5 class="mb-4">Documentation</h5></a></li></ul></nav><footer class="mt-8"><a href="https://github.com/vivekmunde/react-native-stylo" target="_blank" rel="noopener noreferrer"><i class="text-gray-700 text-2xl fab fa-github fa-fw"></i></a></footer></div><main class="border-l p-4 pb-16 lg:pr-8 xl:pr-8 col-span-7 lg:col-span-5 xl:col-span-4" style="min-height:100vh"><div class="flex flex-row items-center sm-logo-wrapper mb-4"><button class="bg-pink-50 border-0 rounded p-2 mr-4"><i class="fas fa-bars fa-fw text-xl text-pink-500"></i></button><a style="font-size:20px;font-weight:200;line-height:1;white-space:nowrap;display:flex;flex-direction:row;align-items:center" href="/react-native-stylo-documentation"><span>react-native-</span><img alt="stylo" src="/react-native-stylo-documentation/logo.png" style="height:28px"/></a></div><article><h1 class="font-extralight">Customizing Stylo theme</h1><section class="no-vertical-margin-collapse"><h4 class="heading" id="theme-structure"><a href="#theme-structure">Theme structure</a></h4><p class="mb-4 p-4 bg-gray-100 rounded" style="overflow:auto;max-height:90vh"><code class="text-black text-xs" style="white-space:pre">themes
-    |- default
-      |- __generated__
-      |- assorted
-      |- components
-      |- generic
-    |- types
-      |- __generated__
-      |- assorted
-      |- components
-      |- generic</code></p><section class="no-vertical-margin-collapse"><h5 class="heading" id="types"><a href="#types">types</a></h5><p class="mb-4 ">All the types are defined under the directory called <!-- --><small><code class="text-black bg-gray-100 p-1 rounded">types</code></small>.<!-- --></p></section><section class="no-vertical-margin-collapse"><h5 class="heading" id="default"><a href="#default">default</a></h5><p class="mb-4 ">It&#x27;s<!-- --> the Stylo theme.<!-- --></p></section><section class="no-vertical-margin-collapse"><h5 class="heading" id="__generated__"><a href="#__generated__">__generated__</a></h5><p class="mb-4 ">The default style definitions, created by Stylo, are defined under directory called <!-- --><small><code class="text-black bg-gray-100 p-1 rounded">__generated__</code></small>. These style definitions are used across all the other files in the theme. Do not directly modify the files under <!-- --><small><code class="text-black bg-gray-100 p-1 rounded">__generated__</code></small>.<!-- --></p></section></section><section class="no-vertical-margin-collapse"><h3 class="heading" id="customize"><a href="#customize">How to customize?</a></h3><p class="mb-4 ">Any file which is outside of the directory <!-- --><small><code class="text-black bg-gray-100 p-1 rounded">__generated__</code></small> can be modified. All the files, which are meant to be modified, clearly state that they can be modified, like below.<!-- --></p><p class="mb-4 p-4 bg-gray-100 rounded" style="overflow:auto;max-height:90vh"><code class="text-black text-xs" style="white-space:pre">/* -------------------------------------------------------------------------------- */
-  /*                               react-native-stylo                                 */
-  /*           GitHub: https://github.com/vivekmunde/react-native-stylo               */
-  /*      Docs: https://vivekmunde.github.io/react-native-stylo-documentation/        */
-  /* -------------------------------------------------------------------------------- */
+<!DOCTYPE html><html><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><meta name="description" content="Infinitely scalable strongly typed themes, styling hooks &amp; stylish components for React Native mobile applications"/><link rel="icon" href="/react-native-stylo-documentation/favicon.ico"/><link rel="stylesheet" href="/react-native-stylo-documentation/fontawesome-6.1.1/css/all.css"/><title>Customizing Stylo theme | React Native Stylo</title><meta name="next-head-count" content="6"/><link rel="preload" href="/react-native-stylo-documentation/_next/static/css/97d0d3891995bb51.css" as="style"/><link rel="stylesheet" href="/react-native-stylo-documentation/_next/static/css/97d0d3891995bb51.css" data-n-g=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/react-native-stylo-documentation/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/react-native-stylo-documentation/_next/static/chunks/webpack-f3b65fada3c03fc4.js" defer=""></script><script src="/react-native-stylo-documentation/_next/static/chunks/framework-0a3212f428d04f0c.js" defer=""></script><script src="/react-native-stylo-documentation/_next/static/chunks/main-0394d6767d1bc481.js" defer=""></script><script src="/react-native-stylo-documentation/_next/static/chunks/pages/_app-291420445f8923f7.js" defer=""></script><script src="/react-native-stylo-documentation/_next/static/chunks/9814-32eb552d35bc8b98.js" defer=""></script><script src="/react-native-stylo-documentation/_next/static/chunks/1447-ef60dbf7ae327974.js" defer=""></script><script src="/react-native-stylo-documentation/_next/static/chunks/pages/stylo-theme-customization-d8e47230e4672514.js" defer=""></script><script src="/react-native-stylo-documentation/_next/static/r1mA0QlS5vbqDrcYazF7N/_buildManifest.js" defer=""></script><script src="/react-native-stylo-documentation/_next/static/r1mA0QlS5vbqDrcYazF7N/_ssgManifest.js" defer=""></script><script src="/react-native-stylo-documentation/_next/static/r1mA0QlS5vbqDrcYazF7N/_middlewareManifest.js" defer=""></script></head><body><div id="__next"><div class="flex flex-col"><div class="grid grid-cols-7 xl:grid-cols-5 grid-flow-col"><div class="p-4 pl-8 lg:col-span-2 xl:col-span-1 bg-white left-nav"><div class="flex flex-row items-center justify-between sm-logo-wrapper mb-4"><a style="font-size:20px;font-weight:200;line-height:1;white-space:nowrap;display:flex;flex-direction:row;align-items:center" href="/react-native-stylo-documentation"><span>react-native-</span><img alt="stylo" src="/react-native-stylo-documentation/logo.png" style="height:28px"/></a><button class="left-nav-hamburger bg-transparent border-0 rounded p-1 mb-4"><i class="fas fa-xmark fa-fw text-2xl text-gray-400"></i></button></div><div class="mt-4 mb-8 lg-logo-wrapper"><a style="font-size:20px;font-weight:200;line-height:1;white-space:nowrap;display:flex;flex-direction:row;align-items:center" href="/react-native-stylo-documentation"><span>react-native-</span><img alt="stylo" src="/react-native-stylo-documentation/logo.png" style="height:28px"/></a></div><nav><ul><li><ul class="mb-8"><a class="text-gray-800" style="display:block" href="/react-native-stylo-documentation/stylo-theme"><h5 class="mb-4 p-0">Stylo theme</h5></a><li><ul class="mb-4"><li><a class="text-gray-800" style="display:block" href="/react-native-stylo-documentation/stylo-theme-colors">Colors</a><ul class="ml-4 mt-1 border-l"><li class="mb-1"><a class="text-gray-800" style="display:block" href="/react-native-stylo-documentation/stylo-theme-colors#light-theme"><span class="text-sm text-gray-300 mr-1 ml-[-1px] font-light">-</span><span class="text-sm">Light</span></a></li><li class="mb-1"><a class="text-gray-800" style="display:block" href="/react-native-stylo-documentation/stylo-theme-colors#dark-theme"><span class="text-sm text-gray-300 mr-1 ml-[-1px] font-light">-</span><span class="text-sm">Dark</span></a></li></ul></li><li><a class="text-gray-800" style="display:block" href="/react-native-stylo-documentation/stylo-theme-variables">Variables</a><ul class="ml-4 mt-1 border-l"><li class="mb-1"><a class="text-gray-800" style="display:block" href="/react-native-stylo-documentation/stylo-theme-variables#light-theme"><span class="text-sm text-gray-300 mr-1 ml-[-1px] font-light">-</span><span class="text-sm">Light</span></a></li><li class="mb-1"><a class="text-gray-800" style="display:block" href="/react-native-stylo-documentation/stylo-theme-variables#dark-theme"><span class="text-sm text-gray-300 mr-1 ml-[-1px] font-light">-</span><span class="text-sm">Dark</span></a></li></ul></li><li><a class="text-gray-800" style="display:block" href="/react-native-stylo-documentation/stylo-theme-style-namespaces">StyleNamespaces</a></li></ul></li><li><a class="text-gray-800" style="display:block" href="/react-native-stylo-documentation/stylo-theme-generic-styles"><h5 class="text-base m-0 p-0">Generic styles</h5></a><ul class="mb-4"><li><a class="text-gray-800" style="display:block" href="/react-native-stylo-documentation/stylo-theme-background-color-styles">BackgroundColor</a></li><li><a class="text-gray-800" style="display:block" href="/react-native-stylo-documentation/stylo-theme-border-styles">Border</a></li><li><a class="text-gray-800" style="display:block" href="/react-native-stylo-documentation/stylo-theme-flex-styles">Flex</a></li><li><a class="text-gray-800" style="display:block" href="/react-native-stylo-documentation/stylo-theme-font-color-styles">FontColor</a></li><li><a class="text-gray-800" style="display:block" href="/react-native-stylo-documentation/stylo-theme-margin-styles">Margin</a></li><li><a class="text-gray-800" style="display:block" href="/react-native-stylo-documentation/stylo-theme-padding-styles">Padding</a></li></ul></li><li><a class="text-gray-800" style="display:block" href="/react-native-stylo-documentation/stylo-theme-component-styles"><h5 class="text-base m-0 p-0">Component styles</h5></a><ul class="mb-4"><li><a class="text-gray-800" style="display:block" href="/react-native-stylo-documentation/stylo-theme-icon-styles">Icon</a></li><li><a class="text-gray-800" style="display:block" href="/react-native-stylo-documentation/stylo-theme-image-styles">Image</a></li><li><a class="text-gray-800" style="display:block" href="/react-native-stylo-documentation/stylo-theme-image-background-styles">ImageBackground</a></li><li><a class="text-gray-800" style="display:block" href="/react-native-stylo-documentation/stylo-theme-pressable-styles">Pressable</a></li><li><a class="text-gray-800" style="display:block" href="/react-native-stylo-documentation/stylo-theme-scroll-view-styles">ScrollView</a></li><li><a class="text-gray-800" style="display:block" href="/react-native-stylo-documentation/stylo-theme-text-styles">Text</a></li><li><a class="text-gray-800" style="display:block" href="/react-native-stylo-documentation/stylo-theme-text-input-styles">TextInput</a></li><li><a class="text-gray-800" style="display:block" href="/react-native-stylo-documentation/stylo-theme-touchable-opacity-styles">TouchableOpacity</a></li><li><a class="text-gray-800" style="display:block" href="/react-native-stylo-documentation/stylo-theme-touchable-highlight-styles">TouchableHighlight</a></li><li><a class="text-gray-800" style="display:block" href="/react-native-stylo-documentation/stylo-theme-view-styles">View</a></li></ul></li><li><a class="text-gray-800" style="display:block" href="/react-native-stylo-documentation/stylo-theme-assorted-styles"><h5 class="text-base m-0 p-0">Assorted styles</h5></a><ul class="mb-4"><li><a class="text-gray-800" style="display:block" href="/react-native-stylo-documentation/stylo-theme-avatar-styles">Avatar</a></li><li><a class="text-gray-800" style="display:block" href="/react-native-stylo-documentation/stylo-theme-badge-styles">Badge</a></li><li><a class="text-gray-800" style="display:block" href="/react-native-stylo-documentation/stylo-theme-button-styles">Button</a></li><li><a class="text-gray-800" style="display:block" href="/react-native-stylo-documentation/stylo-theme-form-styles">Form</a></li><li><a class="text-gray-800" style="display:block" href="/react-native-stylo-documentation/stylo-theme-horizontal-styles">Horizontal</a></li><li><a class="text-gray-800" style="display:block" href="/react-native-stylo-documentation/stylo-theme-list-styles">List</a></li><li><a class="text-gray-800" style="display:block" href="/react-native-stylo-documentation/stylo-theme-screen-styles">Screen</a></li><li><a class="text-gray-800" style="display:block" href="/react-native-stylo-documentation/stylo-theme-tag-styles">Tag</a></li></ul></li><li><a class="font-medium" style="display:block" href="/react-native-stylo-documentation/stylo-theme-customization"><h5 class="text-base m-0 p-0">Customizing Stylo theme</h5></a></li></ul></li><li><a class="text-gray-800" style="display:block" href="/react-native-stylo-documentation"><h5 class="mb-4 p-0">Documentation</h5></a></li></ul></nav><footer class="mt-8"><a href="https://github.com/vivekmunde/react-native-stylo" target="_blank" rel="noopener noreferrer"><i class="text-gray-700 text-2xl fab fa-github fa-fw"></i></a></footer></div><main class="border-l p-4 pb-16 lg:pr-8 xl:pr-8 col-span-7 lg:col-span-5 xl:col-span-4" style="min-height:100vh"><div class="flex flex-row items-center sm-logo-wrapper mb-4"><button class="bg-pink-50 border-0 rounded p-2 mr-4"><i class="fas fa-bars fa-fw text-xl text-pink-500"></i></button><a style="font-size:20px;font-weight:200;line-height:1;white-space:nowrap;display:flex;flex-direction:row;align-items:center" href="/react-native-stylo-documentation"><span>react-native-</span><img alt="stylo" src="/react-native-stylo-documentation/logo.png" style="height:28px"/></a></div><article><h1 class="font-extralight">Customizing Stylo theme</h1><section class="no-vertical-margin-collapse"><h4 class="heading" id="theme-structure"><a href="#theme-structure">Theme structure</a></h4><p class="mb-4 p-4 bg-gray-100 rounded" style="overflow:auto;max-height:90vh"><code class="text-black text-xs" style="white-space:pre">themes
+  |- default
+    |- __generated__
+    |- assorted
+    |- components
+    |- generic
+  |- types
+    |- __generated__
+    |- assorted
+    |- components
+    |- generic</code></p><section class="no-vertical-margin-collapse"><h5 class="heading" id="types"><a href="#types">types</a></h5><p class="mb-4 ">All the types are defined under the directory called <!-- --><small><code class="text-black bg-gray-100 p-1 rounded">types</code></small>.<!-- --></p></section><section class="no-vertical-margin-collapse"><h5 class="heading" id="default"><a href="#default">default</a></h5><p class="mb-4 ">It&#x27;s<!-- --> the Stylo theme.<!-- --></p></section><section class="no-vertical-margin-collapse"><h5 class="heading" id="__generated__"><a href="#__generated__">__generated__</a></h5><p class="mb-4 ">The default style definitions, created by Stylo, are defined under directory called <!-- --><small><code class="text-black bg-gray-100 p-1 rounded">__generated__</code></small>. These style definitions are used across all the other files in the theme. Do not directly modify the files under <!-- --><small><code class="text-black bg-gray-100 p-1 rounded">__generated__</code></small>.<!-- --></p></section></section><section class="no-vertical-margin-collapse"><h3 class="heading" id="customize"><a href="#customize">How to customize?</a></h3><p class="mb-4 ">Any file which is outside of the directory <!-- --><small><code class="text-black bg-gray-100 p-1 rounded">__generated__</code></small> can be modified. All the files, which are meant to be modified, clearly state that they can be modified, like below.<!-- --></p><p class="mb-4 p-4 bg-gray-100 rounded" style="overflow:auto;max-height:90vh"><code class="text-black text-xs" style="white-space:pre">/* -------------------------------------------------------------------------------- */
+/*                               react-native-stylo                                 */
+/*           GitHub: https://github.com/vivekmunde/react-native-stylo               */
+/*      Docs: https://vivekmunde.github.io/react-native-stylo-documentation/        */
+/* -------------------------------------------------------------------------------- */
+
+/* -------------------------------------------------------------------------------- */
+/*                           Customize as per your needs                            */
+/* -------------------------------------------------------------------------------- */</code></p><section class="no-vertical-margin-collapse"><h5 class="heading" id="customize-variables"><a href="#customize-variables">Variables</a></h5><p class="mb-4 ">All the variables are defined in the file called <!-- --><small><code class="text-black bg-gray-100 p-1 rounded">variable.ts</code></small>. Open the <!-- --><small><code class="text-black bg-gray-100 p-1 rounded">variable.ts</code></small> file from the theme &amp; modify them as per your needs.<!-- --></p></section><section class="no-vertical-margin-collapse"><h3 class="heading" id="example-1"><a href="#example-1">Example 1: Add new background colors</a></h3><section class="no-vertical-margin-collapse"><h5>1. Add type definition</h5><p class="mb-4 "><strong class="font-semibold">1.1 Open the file <!-- --><small><code class="text-black bg-gray-100 p-1 rounded">types/variables.ts</code></small>.<!-- --></strong></p><p class="mb-4 ">Add new color names as per your need.</p><p class="mb-4 p-4 bg-gray-100 rounded" style="overflow:auto;max-height:90vh"><code class="text-black text-xs" style="white-space:pre">/* -------------------------------------------------------------------------------- */
+/*                               react-native-stylo                                 */
+/*           GitHub: https://github.com/vivekmunde/react-native-stylo               */
+/*      Docs: https://vivekmunde.github.io/react-native-stylo-documentation/        */
+/* -------------------------------------------------------------------------------- */
   
-  /* -------------------------------------------------------------------------------- */
-  /*                           Customize as per your needs                            */
-  /* -------------------------------------------------------------------------------- */</code></p><section class="no-vertical-margin-collapse"><h5 class="heading" id="customize-variables"><a href="#customize-variables">Variables</a></h5><p class="mb-4 ">All the variables are defined in the file called <!-- --><small><code class="text-black bg-gray-100 p-1 rounded">variable.ts</code></small>. Open the <!-- --><small><code class="text-black bg-gray-100 p-1 rounded">variable.ts</code></small> file from the theme &amp; modify them as per your needs.<!-- --></p></section><section class="no-vertical-margin-collapse"><h3 class="heading" id="customize-style-defs"><a href="#customize-style-defs">Examples</a></h3><section class="no-vertical-margin-collapse"><h5>Background colors</h5><p class="mb-4 "><strong class="font-semibold">1. Add type definition</strong><br/><br/>Open the file <!-- --><small><code class="text-black bg-gray-100 p-1 rounded">types/generic/background-color.ts</code></small>. Add new background color names as per your need.<!-- --></p><p class="mb-4 p-4 bg-gray-100 rounded" style="overflow:auto;max-height:90vh"><code class="text-black text-xs" style="white-space:pre">/* -------------------------------------------------------------------------------- */
-  /*                               react-native-stylo                                 */
-  /*           GitHub: https://github.com/vivekmunde/react-native-stylo               */
-  /*      Docs: https://vivekmunde.github.io/react-native-stylo-documentation/        */
-  /* -------------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------------- */
+/*                           Customize as per your needs                            */
+/* -------------------------------------------------------------------------------- */
   
-  /* -------------------------------------------------------------------------------- */
-  /*                           Customize as per your needs                            */
-  /* -------------------------------------------------------------------------------- */
+import _TVariable from &#x27;./__generated__/variable&#x27;;
+
+type TVariable = _TVariable | &#x27;Color.Pink&#x27; | &#x27;Color.Violet&#x27;;
+
+export default TVariable;</code></p><p class="mb-4 pt-4"><strong class="font-semibold">1.2 Open the file <!-- --><small><code class="text-black bg-gray-100 p-1 rounded">types/generic/background-color.ts</code></small>.<!-- --></strong></p><p class="mb-4 ">Add new background color names as per your need.</p><p class="mb-4 p-4 bg-gray-100 rounded" style="overflow:auto;max-height:90vh"><code class="text-black text-xs" style="white-space:pre">/* -------------------------------------------------------------------------------- */
+/*                               react-native-stylo                                 */
+/*           GitHub: https://github.com/vivekmunde/react-native-stylo               */
+/*      Docs: https://vivekmunde.github.io/react-native-stylo-documentation/        */
+/* -------------------------------------------------------------------------------- */
   
-  import _TBackgroundColorStyle from &#x27;../__generated__/generic/background-color&#x27;;
+/* -------------------------------------------------------------------------------- */
+/*                           Customize as per your needs                            */
+/* -------------------------------------------------------------------------------- */
   
-  type TBackgroundColorStyle = _TBackgroundColorStyle | &#x27;BackgroundColor.Pink&#x27; | &#x27;BackgroundColor.Violet&#x27;;
+import _TBackgroundColorStyle from &#x27;../__generated__/generic/background-color&#x27;;
+
+type TBackgroundColorStyle = _TBackgroundColorStyle | &#x27;BackgroundColor.Pink&#x27; | &#x27;BackgroundColor.Violet&#x27;;
+
+export default TBackgroundColorStyle;</code></p></section><section class="no-vertical-margin-collapse"><h5>2. Add style definition</h5><p class="mb-4 "><strong class="font-semibold">2.1 Open the file <!-- --><small><code class="text-black bg-gray-100 p-1 rounded">default/variables.ts</code></small>.<!-- --></strong></p><p class="mb-4 ">Add new colors, against the types defined in step 1.1, as per your need.</p><p class="mb-4 p-4 bg-gray-100 rounded" style="overflow:auto;max-height:90vh"><code class="text-black text-xs" style="white-space:pre">/* -------------------------------------------------------------------------------- */
+/*                               react-native-stylo                                 */
+/*           GitHub: https://github.com/vivekmunde/react-native-stylo               */
+/*      Docs: https://vivekmunde.github.io/react-native-stylo-documentation/        */
+/* -------------------------------------------------------------------------------- */
   
-  export default TBackgroundColorStyle;</code></p><p class="mb-4 "><strong class="font-semibold">2. Add style definition</strong><br/><br/>Open the file <!-- --><small><code class="text-black bg-gray-100 p-1 rounded">default/generic/background-color.ts</code></small>. Add new background colors, against the types defined in step 1, as per your need.<!-- --></p><p class="mb-4 p-4 bg-gray-100 rounded" style="overflow:auto;max-height:90vh"><code class="text-black text-xs" style="white-space:pre">/* -------------------------------------------------------------------------------- */
-  /*                               react-native-stylo                                 */
-  /*           GitHub: https://github.com/vivekmunde/react-native-stylo               */
-  /*      Docs: https://vivekmunde.github.io/react-native-stylo-documentation/        */
-  /* -------------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------------- */
+/*                           Customize as per your needs                            */
+/* -------------------------------------------------------------------------------- */
   
-  /* -------------------------------------------------------------------------------- */
-  /*                           Customize as per your needs                            */
-  /* -------------------------------------------------------------------------------- */
+import TVariable from &#x27;../types/variable&#x27;;
+import _Variables from &#x27;./__generated__/variables&#x27;;
+
+const Variables: Record&lt;&#x27;light&#x27; | &#x27;dark&#x27;, Record&lt;TVariable, string | number&gt;&gt; = {
+  light: {
+    ..._Variables.light,
+    &#x27;Color.Pink&#x27;: &#x27;#FF69B4&#x27;,
+    &#x27;Color.Violet&#x27;: &#x27;#EE82EE&#x27;,
+  },
+  dark: {
+    ..._Variables.light,
+    &#x27;Color.Pink&#x27;: &#x27;#FF69B4&#x27;,
+    &#x27;Color.Violet&#x27;: &#x27;#EE82EE&#x27;,
+  },
+};
+
+export default Variables;</code></p><p class="mb-4 pt-4"><strong class="font-semibold">2.2 Open the file <!-- --><small><code class="text-black bg-gray-100 p-1 rounded">default/generic/background-color.ts</code></small>.<!-- --></strong></p><p class="mb-4 ">Add new background colors, against the types defined in step 1.2, as per your need.</p><p class="mb-4 p-4 bg-gray-100 rounded" style="overflow:auto;max-height:90vh"><code class="text-black text-xs" style="white-space:pre">/* -------------------------------------------------------------------------------- */
+/*                               react-native-stylo                                 */
+/*           GitHub: https://github.com/vivekmunde/react-native-stylo               */
+/*      Docs: https://vivekmunde.github.io/react-native-stylo-documentation/        */
+/* -------------------------------------------------------------------------------- */
   
-  import { StyleSheet } from &#x27;react-native&#x27;;
-  import _BackgroundColorStyles from &#x27;../__generated__/generic/background-color-styles&#x27;;
+/* -------------------------------------------------------------------------------- */
+/*                           Customize as per your needs                            */
+/* -------------------------------------------------------------------------------- */
   
-  const BackgroundColorStyles = StyleSheet.create({
-    ..._BackgroundColorStyles,
+import { StyleSheet, ViewStyle } from &#x27;react-native&#x27;;
+import { TVariable } from &#x27;../../types&#x27;;
+import TBackgroundColorStyle from &#x27;../../types/generic/background-color&#x27;;
+import _getBackgroundColorStyles from &#x27;../__generated__/generic/background-color-styles&#x27;;
+
+const getBackgroundColorStyles = (variables: Record&lt;TVariable, string | number&gt;) =&gt; (
+  StyleSheet.create&lt;Record&lt;TBackgroundColorStyle, ViewStyle&gt;&gt;({
+    ..._getBackgroundColorStyles(variables),
     &#x27;BackgroundColor.Pink&#x27;: {
-      backgroundColor: &#x27;#FF69B4&#x27;,
+      backgroundColor: variables[&#x27;Color.Pink&#x27;].toString(),
     },
     &#x27;BackgroundColor.Violet&#x27;: {
-      backgroundColor: &#x27;#EE82EE&#x27;,
+      backgroundColor: variables[&#x27;Color.Violet&#x27;].toString(),
     }
-  });
+  })
+);
+
+export default getBackgroundColorStyles;</code></p></section></section><section class="no-vertical-margin-collapse"><h3 class="heading" id="example-2"><a href="#example-2">Example 2: Extend theme by adding new styles</a></h3><p class="mb-4 ">You can easily add a new styles which do not exist in the theme. For example, Card styles. Lets add a new style definitions for Card component.</p><p class="mb-4 pt-4"><strong class="font-semibold">1. Define style types</strong></p><p class="mb-4 ">Create a new file under directory <!-- --><small><code class="text-black bg-gray-100 p-1 rounded">types</code></small> as <!-- --><small><code class="text-black bg-gray-100 p-1 rounded">types/assorted/card.ts</code></small>.<!-- --></p><p class="mb-4 p-4 bg-gray-100 rounded" style="overflow:auto;max-height:90vh"><code class="text-black text-xs" style="white-space:pre">/* -------------------------------------------------------------------------------- */
+/*                               react-native-stylo                                 */
+/*           GitHub: https://github.com/vivekmunde/react-native-stylo               */
+/*      Docs: https://vivekmunde.github.io/react-native-stylo-documentation/        */
+/* -------------------------------------------------------------------------------- */
   
-  export default BackgroundColorStyles;</code></p></section><section class="no-vertical-margin-collapse"><h5>Extend theme by adding new styles: Card</h5><p class="mb-4 ">You can easily add a new styles which do not exist in the theme. For example, Card styles.<!-- --><br/><br/><strong class="font-semibold">1. Define style types</strong><br/><br/>Create a new file under directory <!-- --><small><code class="text-black bg-gray-100 p-1 rounded">types</code></small> as <!-- --><small><code class="text-black bg-gray-100 p-1 rounded">types/assorted/card.ts</code></small>.<!-- --></p><p class="mb-4 p-4 bg-gray-100 rounded" style="overflow:auto;max-height:90vh"><code class="text-black text-xs" style="white-space:pre">/* -------------------------------------------------------------------------------- */
-  /*                               react-native-stylo                                 */
-  /*           GitHub: https://github.com/vivekmunde/react-native-stylo               */
-  /*      Docs: https://vivekmunde.github.io/react-native-stylo-documentation/        */
-  /* -------------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------------- */
+/*                           Customize as per your needs                            */
+/* -------------------------------------------------------------------------------- */
   
-  /* -------------------------------------------------------------------------------- */
-  /*                           Customize as per your needs                            */
-  /* -------------------------------------------------------------------------------- */
+export type TCardStyle = &#x27;Card&#x27; | &#x27;Card.Header&#x27; | &#x27;Card.Body&#x27; | &#x27;Card.Footer&#x27;;</code></p><p class="mb-4 pt-4"><strong class="font-semibold">2. Apply the style types to desired components</strong></p><p class="mb-4 ">The <!-- --><small><code class="text-black bg-gray-100 p-1 rounded">CardStyle</code></small> is expected to be applied to <!-- --><small><code class="text-black bg-gray-100 p-1 rounded">View</code></small> &amp; <!-- --><small><code class="text-black bg-gray-100 p-1 rounded">Touchable</code></small> components.<!-- --><br/>Open the file <!-- --><small><code class="text-black bg-gray-100 p-1 rounded">types/components/view.ts</code></small>.<!-- --></p><p class="mb-4 p-4 bg-gray-100 rounded" style="overflow:auto;max-height:90vh"><code class="text-black text-xs" style="white-space:pre">/* -------------------------------------------------------------------------------- */
+/*                               react-native-stylo                                 */
+/*           GitHub: https://github.com/vivekmunde/react-native-stylo               */
+/*      Docs: https://vivekmunde.github.io/react-native-stylo-documentation/        */
+/* -------------------------------------------------------------------------------- */
   
-  export type TCardStyle = &#x27;Card&#x27; | &#x27;Card.Header&#x27; | &#x27;Card.Body&#x27; | &#x27;Card.Footer&#x27;;</code></p><p class="mb-4 "><strong class="font-semibold">2. Create style definitions</strong><br/><br/>Create a new file under directory <!-- --><small><code class="text-black bg-gray-100 p-1 rounded">default</code></small> as <!-- --><small><code class="text-black bg-gray-100 p-1 rounded">default/assorted/card.ts</code></small>.<!-- --></p><p class="mb-4 p-4 bg-gray-100 rounded" style="overflow:auto;max-height:90vh"><code class="text-black text-xs" style="white-space:pre">/* -------------------------------------------------------------------------------- */
-  /*                               react-native-stylo                                 */
-  /*           GitHub: https://github.com/vivekmunde/react-native-stylo               */
-  /*      Docs: https://vivekmunde.github.io/react-native-stylo-documentation/        */
-  /* -------------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------------- */
+/*                           Customize as per your needs                            */
+/* -------------------------------------------------------------------------------- */
+
+// Other imports
+import TCardStyle from &#x27;../assorted/card&#x27;;
+
+type TViewStyle =
+  // other style types
+  | TCardStyle;
+
+export default TViewStyle;</code></p><p class="mb-4 ">Open the file <!-- --><small><code class="text-black bg-gray-100 p-1 rounded">types/components/touchable.ts</code></small>.<!-- --></p><p class="mb-4 p-4 bg-gray-100 rounded" style="overflow:auto;max-height:90vh"><code class="text-black text-xs" style="white-space:pre">/* -------------------------------------------------------------------------------- */
+/*                               react-native-stylo                                 */
+/*           GitHub: https://github.com/vivekmunde/react-native-stylo               */
+/*      Docs: https://vivekmunde.github.io/react-native-stylo-documentation/        */
+/* -------------------------------------------------------------------------------- */
   
-  /* -------------------------------------------------------------------------------- */
-  /*                           Customize as per your needs                            */
-  /* -------------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------------- */
+/*                           Customize as per your needs                            */
+/* -------------------------------------------------------------------------------- */
+
+// Other imports
+import TCardStyle from &#x27;../assorted/card&#x27;;
+
+type TTouchableStyle =
+  // other style types
+  | TCardStyle;
+
+export default TViewStyle;</code></p><p class="mb-4 pt-4"><strong class="font-semibold">3. Create style definitions</strong></p><p class="mb-4 ">Create a new file under directory <!-- --><small><code class="text-black bg-gray-100 p-1 rounded">default</code></small> as <!-- --><small><code class="text-black bg-gray-100 p-1 rounded">default/assorted/card.ts</code></small>.<!-- --></p><p class="mb-4 p-4 bg-gray-100 rounded" style="overflow:auto;max-height:90vh"><code class="text-black text-xs" style="white-space:pre">/* -------------------------------------------------------------------------------- */
+/*                               react-native-stylo                                 */
+/*           GitHub: https://github.com/vivekmunde/react-native-stylo               */
+/*      Docs: https://vivekmunde.github.io/react-native-stylo-documentation/        */
+/* -------------------------------------------------------------------------------- */
   
-  import { StyleSheet } from &#x27;react-native&#x27;;
-  import Variables from &#x27;../variables&#x27;;
+/* -------------------------------------------------------------------------------- */
+/*                           Customize as per your needs                            */
+/* -------------------------------------------------------------------------------- */
   
-  const CardStyles = StyleSheet.create({
+import { StyleSheet } from &#x27;react-native&#x27;;
+
+const getCardStyles = (variables: Record&lt;TVariable, string | number&gt;) =&gt; (
+  StyleSheet.create({
     Card: {
-      borderRadius: Variables[&#x27;Border.Radius&#x27;],
+      borderRadius: variables[&#x27;Border.Radius&#x27;],
       flexDirection: &#x27;column&#x27;,
     },
     &#x27;Card.Header&#x27;: {
-      padding: Variables.Padding,
-      borderTopLeftRadius: Variables[&#x27;Border.Radius&#x27;],
-      borderTopRightRadius: Variables[&#x27;Border.Radius&#x27;],
+      padding: variables.Padding,
+      borderTopLeftRadius: variables[&#x27;Border.Radius&#x27;],
+      borderTopRightRadius: variables[&#x27;Border.Radius&#x27;],
       borderBottomWidth: 1,
-      borderBottomColor: Variables[&#x27;Border.Color&#x27;],
+      borderBottomColor: variables[&#x27;Border.Color&#x27;],
     },
     &#x27;Card.Body&#x27;: {
-      padding: Variables.Padding,
+      padding: variables.Padding,
     },
     &#x27;Card.Footer&#x27;: {
-      padding: Variables.Padding,
-      borderBottomLeftRadius: Variables[&#x27;Border.Radius&#x27;],
-      borderBottomRightRadius: Variables[&#x27;Border.Radius&#x27;],
+      padding: variables.Padding,
+      borderBottomLeftRadius: variables[&#x27;Border.Radius&#x27;],
+      borderBottomRightRadius: variables[&#x27;Border.Radius&#x27;],
       borderTopWidth: 1,
-      borderTopColor: Variables[&#x27;Border.Color&#x27;],
+      borderTopColor: variables[&#x27;Border.Color&#x27;],
     },
-  });
+  })
+);
+
+export default getCardStyles;</code></p><p class="mb-4 pt-4"><strong class="font-semibold">4. Add these styles to View styles</strong></p><p class="mb-4 ">Open <!-- --><small><code class="text-black bg-gray-100 p-1 rounded">default/components/view-styles.ts</code></small></p><p class="mb-4 p-4 bg-gray-100 rounded" style="overflow:auto;max-height:90vh"><code class="text-black text-xs" style="white-space:pre">/* -------------------------------------------------------------------------------- */
+/*                               react-native-stylo                                 */
+/*           GitHub: https://github.com/vivekmunde/react-native-stylo               */
+/*      Docs: https://vivekmunde.github.io/react-native-stylo-documentation/        */
+/* -------------------------------------------------------------------------------- */
   
-  export default CardStyles;</code></p><p class="mb-4 "><strong class="font-semibold">3. Add these styles to View &amp; Touchable styles</strong><br/><br/>Open <!-- --><small><code class="text-black bg-gray-100 p-1 rounded">default/components/view-styles.ts</code></small></p><p class="mb-4 p-4 bg-gray-100 rounded" style="overflow:auto;max-height:90vh"><code class="text-black text-xs" style="white-space:pre">/* -------------------------------------------------------------------------------- */
-  /*                               react-native-stylo                                 */
-  /*           GitHub: https://github.com/vivekmunde/react-native-stylo               */
-  /*      Docs: https://vivekmunde.github.io/react-native-stylo-documentation/        */
-  /* -------------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------------- */
+/*                           Customize as per your needs                            */
+/* -------------------------------------------------------------------------------- */
   
-  /* -------------------------------------------------------------------------------- */
-  /*                           Customize as per your needs                            */
-  /* -------------------------------------------------------------------------------- */
-  
-  import { StyleSheet } from &#x27;react-native&#x27;;
-  import CardStyles from &#x27;../assorted/card-styles&#x27;;
-  ... // other imports
-  
-  const ViewStyles = StyleSheet.create({
+import { StyleSheet } from &#x27;react-native&#x27;;
+import getCardStyles from &#x27;../assorted/card-styles&#x27;;
+... // other imports
+
+const getViewStyles = (variables: Record&lt;TVariable, string | number&gt;) =&gt; (
+    StyleSheet.create&lt;Record&lt;TViewStyle, ViewStyle&gt;&gt;({
     ... // other styles
-    ...CardStyles,
-  });
+    ...getCardStyles(variables),
+  })
+);
+
+export default getViewStyles;</code></p><p class="mb-4 pt-4"><strong class="font-semibold">5. Add these styles to Touchable styles</strong></p><p class="mb-4 ">Open <!-- --><small><code class="text-black bg-gray-100 p-1 rounded">default/components/touchable-styles.ts</code></small></p><p class="mb-4 p-4 bg-gray-100 rounded" style="overflow:auto;max-height:90vh"><code class="text-black text-xs" style="white-space:pre">/* -------------------------------------------------------------------------------- */
+/*                               react-native-stylo                                 */
+/*           GitHub: https://github.com/vivekmunde/react-native-stylo               */
+/*      Docs: https://vivekmunde.github.io/react-native-stylo-documentation/        */
+/* -------------------------------------------------------------------------------- */
   
-  export default ViewStyles;</code></p><p class="mb-4 ">Open <!-- --><small><code class="text-black bg-gray-100 p-1 rounded">default/components/touchable-styles.ts</code></small></p><p class="mb-4 p-4 bg-gray-100 rounded" style="overflow:auto;max-height:90vh"><code class="text-black text-xs" style="white-space:pre">/* -------------------------------------------------------------------------------- */
-  /*                               react-native-stylo                                 */
-  /*           GitHub: https://github.com/vivekmunde/react-native-stylo               */
-  /*      Docs: https://vivekmunde.github.io/react-native-stylo-documentation/        */
-  /* -------------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------------- */
+/*                           Customize as per your needs                            */
+/* -------------------------------------------------------------------------------- */
   
-  /* -------------------------------------------------------------------------------- */
-  /*                           Customize as per your needs                            */
-  /* -------------------------------------------------------------------------------- */
-  
-  import { StyleSheet } from &#x27;react-native&#x27;;
-  import CardStyles from &#x27;../assorted/card-styles&#x27;;
-  ... // other imports
-  
-  const TouchableStyles = StyleSheet.create({
+import { StyleSheet } from &#x27;react-native&#x27;;
+import getCardStyles from &#x27;../assorted/card-styles&#x27;;
+... // other imports
+
+const getTouchableStyles = (variables: Record&lt;TVariable, string | number&gt;) =&gt; (
+  StyleSheet.create&lt;Record&lt;TTouchableStyle, ViewStyle&gt;&gt;({
     ... // other styles
-    ...CardStyles,
-  });
-  
-  export default TouchableStyles;</code></p></section></section></section></article></main></div></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{}},"page":"/stylo-theme-customization","query":{},"buildId":"kmP-X0rIXFFnDHNMKlsQf","assetPrefix":"/react-native-stylo-documentation","nextExport":true,"autoExport":true,"isFallback":false,"scriptLoader":[]}</script></body></html>
+    ...getCardStyles(variables),
+  })
+);
+
+export default getTouchableStyles;</code></p></section></section></article></main></div></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{}},"page":"/stylo-theme-customization","query":{},"buildId":"r1mA0QlS5vbqDrcYazF7N","assetPrefix":"/react-native-stylo-documentation","nextExport":true,"autoExport":true,"isFallback":false,"scriptLoader":[]}</script></body></html>

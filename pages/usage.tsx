@@ -152,11 +152,10 @@ const Usage: React.FC = () => (
             </Paragraph>
             <CodeSnippet>
               {`import { ThemeProvider } from 'react-native-stylo';
-
-import { variables, styles } from './themes/default';
+import { variables, styles } from './stylo/themes/default';
 
 const App = () => (
-  <ThemeProvider variables={variables} styles={styles}>
+  <ThemeProvider variables={variables.light} styles={styles.light}> /* OR use variables.dark & styles.dark */
     // Application components
   </ThemeProvider>
 );`}
@@ -184,8 +183,8 @@ const data = [
   { name: 'Indumati Indraneel Iyengar', profileUrl: require('../../images/face-icon-3.png'), role: 'Software Developer' },
 ];
 
-const UsageStylishComponents = () => (
-  <Stylish.View styleNames={['Screen', 'BackgroundColor.Primary1']}>
+const UsageStylishComponentsShowCase = () => (
+  <Stylish.View styleNames={['Screen']}>
     <Stylish.SafeAreaView />
     <Stylish.View styleNames={['Screen.Header', 'Padding']}>
       <Stylish.Text styleNames={['H1']}>Usage</Stylish.Text>
@@ -195,11 +194,13 @@ const UsageStylishComponents = () => (
         Stylish Components
       </Stylish.Text>
       <Stylish.View
-        styleNames={['List', 'Border.Radius', 'BackgroundColor.White', 'Margin.Bottom.Large']}>
+        styleNames={['List', 'Border', 'Border.Radius', 'BackgroundColor.Alpha10', 'Margin.Bottom.Large']}>
         {data.map((it, index) => (
           <Stylish.View
             key={index}
-            styleNames={index > 0 ? ['List.Item', 'Border.Top'] : ['List.Item']}>
+            styleNames={
+              index > 0 ? ['List.Item', 'Border.Top'] : ['List.Item']
+            }>
             <Stylish.View styleNames={['List.Item.Left']}>
               <Stylish.Image styleNames={['Avatar']} source={it.profileUrl} />
             </Stylish.View>
@@ -214,9 +215,12 @@ const UsageStylishComponents = () => (
       </Stylish.View>
     </Stylish.View>
   </Stylish.View>
-);`}
+);
+
+export default UsageStylishComponentsShowCase;
+`}
               imageAlt="Stylish Components"
-              imageUrl="showcase-usage-stylish-components.png"
+              imageUrl={{ light: "showcase-usage-stylish-components-light.png", dark: "showcase-usage-stylish-components-dark.png" }}
             />
             <Paragraph>
               Please refer the <Link href="/stylish">Stylish</Link> documentation for more details.
@@ -246,12 +250,12 @@ const data = [
 
 const UsageStylersShowCase = () => {
   const styles = useRef({
-    screen: Stylers.useViewStyles(['Screen', 'BackgroundColor.Primary1']),
+    screen: Stylers.useViewStyles(['Screen']),
     screenHeader: Stylers.useViewStyles(['Screen.Header', 'Padding']),
     screenTitle: Stylers.useTextStyles(['H1']),
     screenBody: Stylers.useViewStyles(['Screen.Body', 'Padding']),
     listTitle: Stylers.useTextStyles(['H3', 'Margin.Bottom.Large']),
-    list: Stylers.useViewStyles(['List', 'Border.Radius', 'BackgroundColor.White', 'Margin.Bottom.Large']),
+    list: Stylers.useViewStyles(['List', 'Border', 'Border.Radius', 'BackgroundColor.Alpha10', 'Margin.Bottom.Large']),
     listItem: Stylers.useViewStyles(['List.Item', 'Border.Top']),
     listLastItem: Stylers.useViewStyles(['List.Item']),
     listItemLeft: Stylers.useViewStyles(['List.Item.Left']),
@@ -287,9 +291,12 @@ const UsageStylersShowCase = () => {
       </View>
     </View>
   );
-};`}
+};
+
+export default UsageStylersShowCase;
+`}
               imageAlt="Stylers"
-              imageUrl="showcase-usage-stylers.png"
+              imageUrl={{ light: "showcase-usage-stylers-light.png", dark: "showcase-usage-stylers-dark.png" }}
             />
             <Paragraph>
               Please refer the <Link href="/stylers">Stylers</Link> documentation for more details.
@@ -306,23 +313,23 @@ const UsageStylersShowCase = () => {
             </Paragraph>
             <ShowCaseBox
               renderCode={() => `import React, { useRef } from 'react';
-import { StyleSheet, View, Text, SafeAreaView } from 'react-native';
+import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
 import Stylers from '../../stylo/stylers';
 
 const UsageUseVariablesShowCase = () => {
-  const [ padding, paddingLarge, margin, marginLarge, borderRadius, fontColor, fontSize, colorPrimary1, colorWhite ]
-    = Stylers.useVariables([ 'Padding', 'Padding.Large', 'Margin', 'Margin.Large', 'Border.Radius', 'Font.Color', 'Font.Size', 'Color.Primary1', 'Color.White' ]);
+  const [padding, paddingLarge, margin, marginLarge, borderColor, borderRadius, fontColor, fontSize, screenColor, colorAlpha10]
+    = Stylers.useVariables(['Padding', 'Padding.Large', 'Margin', 'Margin.Large', 'Border.Color', 'Border.Radius', 'Font.Color', 'Font.Size', 'Screen.BackgroundColor', 'Color.Alpha10']);
 
   const styles = useRef(
     StyleSheet.create({
-      screen: { flex: 1, backgroundColor: colorPrimary1.toString(), padding: Number(paddingLarge) },
+      screen: { flex: 1, backgroundColor: screenColor.toString(), padding: Number(paddingLarge) },
       screenHeader: { paddingVertical: Number(paddingLarge) },
       screenBody: { padding: Number(padding) },
       text: { color: fontColor.toString(), fontSize: Number(fontSize) },
       h1: { fontWeight: '500', fontSize: 48, marginBottom: Number(marginLarge) },
       h2: { fontWeight: '600', fontSize: 32, marginBottom: Number(marginLarge) },
       paragraph: { marginBottom: Number(margin) },
-      card: { padding: Number(padding), borderRadius: Number(borderRadius), backgroundColor: colorWhite.toString() },
+      card: { padding: Number(padding), borderWidth: 1, borderColor: borderColor.toString(), borderRadius: Number(borderRadius), backgroundColor: colorAlpha10.toString() },
     }),
   ).current;
 
@@ -335,17 +342,23 @@ const UsageUseVariablesShowCase = () => {
       <Text style={[styles.text, styles.h2]}>useVariables()</Text>
       <View style={styles.card}>
         <Text style={[styles.text, styles.paragraph]}>
-          Variables are the core configuration values which are used to define the themes. Like, colors, paddings, margins etc.
+          Variables are the core configuration values which are used to define
+          the themes. Like, colors, paddings, margins etc.
         </Text>
         <Text style={styles.text}>
-          The useVariables() hook is used to access the Theme Variables. A practical use of the useVariables() hook can be accessing & using the theme variable values to define styles inside the StyleSheet.create() API.
+          The useVariables() hook is used to access the Theme Variables. A
+          practical use of the useVariables() hook can be accessing & using the
+          theme variable values to define styles inside the StyleSheet.create()
+          API.
         </Text>
       </View>
     </View>
   );
-};`}
+};
+
+export default UsageUseVariablesShowCase;`}
               imageAlt="useVariables()"
-              imageUrl="showcase-usage-use-variables.png"
+              imageUrl={{ light: "showcase-usage-use-variables-light.png", dark: "showcase-usage-use-variables-dark.png" }}
             />
             <Paragraph>
               Please refer the <Link href="/use-variables">useVariables()</Link> documentation for more details.

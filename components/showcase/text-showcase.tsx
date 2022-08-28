@@ -28,7 +28,7 @@ const TextShowCase: React.FC = () => (
   components, right from simple Text to complicated Pickers & Forms.
 </Stylish.Text>`}
     imageAlt="Text"
-    imageUrl="showcase-text.png"
+    imageUrl={{ light: "showcase-text-light.png", dark: "showcase-text-dark.png" }}
   />
 );
 

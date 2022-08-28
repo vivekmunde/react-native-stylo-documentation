@@ -97,7 +97,7 @@ const TouchableShowCase: React.FC<{
   </Stylish.Text>
 </Stylish.Touchable>`.replace(/Touchable/ig, type)}
     imageAlt="Touchable"
-    imageUrl="showcase-touchable.png"
+    imageUrl={{ light: "showcase-touchable-light.png", dark: "showcase-touchable-dark.png" }}
   />
 );
 

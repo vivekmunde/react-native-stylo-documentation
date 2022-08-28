@@ -72,7 +72,7 @@ const StyloTheme: React.FC = () => (
           <div className="pt-[1px]">
             <div className="grid lg:grid-cols-3 gap-1 lg:gap-4 mt-8">
               <div className="bg-pink-50 rounded p-4">
-                <h5 className="m-0">
+                <h5 className="m-0 p-0">
                   <Link href="/stylo-theme-colors">
                     <a className="font-medium" style={{ display: 'block' }}>
                       Colors
@@ -81,7 +81,7 @@ const StyloTheme: React.FC = () => (
                 </h5>
               </div>
               <div className="bg-pink-50 rounded p-4">
-                <h5 className="m-0">
+                <h5 className="m-0 p-0">
                   <Link href="/stylo-theme-variables">
                     <a className="font-medium" style={{ display: 'block' }}>
                       Variables
@@ -90,7 +90,7 @@ const StyloTheme: React.FC = () => (
                 </h5>
               </div>
               <div className="bg-pink-50 rounded p-4">
-                <h5 className="m-0">
+                <h5 className="m-0 p-0">
                   <Link href="/stylo-theme-style-namespaces">
                     <a className="font-medium" style={{ display: 'block' }}>
                       StyleNamespaces

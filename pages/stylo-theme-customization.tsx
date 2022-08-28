@@ -25,16 +25,16 @@ const StyloThemeCustomization: React.FC = () => (
             </SectionHeading>
             <CodeSnippet>
               {`themes
-    |- default
-      |- __generated__
-      |- assorted
-      |- components
-      |- generic
-    |- types
-      |- __generated__
-      |- assorted
-      |- components
-      |- generic`}
+  |- default
+    |- __generated__
+    |- assorted
+    |- components
+    |- generic
+  |- types
+    |- __generated__
+    |- assorted
+    |- components
+    |- generic`}
             </CodeSnippet>
 
             <section className="no-vertical-margin-collapse">
@@ -77,14 +77,14 @@ const StyloThemeCustomization: React.FC = () => (
             </Paragraph>
             <CodeSnippet>
               {`/* -------------------------------------------------------------------------------- */
-  /*                               react-native-stylo                                 */
-  /*           GitHub: https://github.com/vivekmunde/react-native-stylo               */
-  /*      Docs: https://vivekmunde.github.io/react-native-stylo-documentation/        */
-  /* -------------------------------------------------------------------------------- */
-  
-  /* -------------------------------------------------------------------------------- */
-  /*                           Customize as per your needs                            */
-  /* -------------------------------------------------------------------------------- */`}
+/*                               react-native-stylo                                 */
+/*           GitHub: https://github.com/vivekmunde/react-native-stylo               */
+/*      Docs: https://vivekmunde.github.io/react-native-stylo-documentation/        */
+/* -------------------------------------------------------------------------------- */
+
+/* -------------------------------------------------------------------------------- */
+/*                           Customize as per your needs                            */
+/* -------------------------------------------------------------------------------- */`}
             </CodeSnippet>
 
             <section className="no-vertical-margin-collapse">
@@ -98,202 +98,338 @@ const StyloThemeCustomization: React.FC = () => (
             </section>
 
             <section className="no-vertical-margin-collapse">
-              <SectionHeading id="customize-style-defs" level={3}>
-                Examples
+              <SectionHeading id="example-1" level={3}>
+                Example 1: Add new background colors
               </SectionHeading>
-
               <section className="no-vertical-margin-collapse">
-                <h5>
-                  Background colors
-                </h5>
+                <h5>1. Add type definition</h5>
                 <Paragraph>
-                  <strong className="font-semibold">1. Add type definition</strong>
-                  <br />
-                  <br />
-                  Open the file <InlineCode>types/generic/background-color.ts</InlineCode>.
+                  <strong className="font-semibold">
+                    1.1 Open the file <InlineCode>types/variables.ts</InlineCode>.
+                  </strong>
+                </Paragraph>
+                <Paragraph>
+                  Add new color names as per your need.
+                </Paragraph>
+                <CodeSnippet>
+                  {`/* -------------------------------------------------------------------------------- */
+/*                               react-native-stylo                                 */
+/*           GitHub: https://github.com/vivekmunde/react-native-stylo               */
+/*      Docs: https://vivekmunde.github.io/react-native-stylo-documentation/        */
+/* -------------------------------------------------------------------------------- */
+  
+/* -------------------------------------------------------------------------------- */
+/*                           Customize as per your needs                            */
+/* -------------------------------------------------------------------------------- */
+  
+import _TVariable from './__generated__/variable';
+
+type TVariable = _TVariable | 'Color.Pink' | 'Color.Violet';
+
+export default TVariable;`}
+                </CodeSnippet>
+
+                <Paragraph className="pt-4">
+                  <strong className="font-semibold">
+                    1.2 Open the file <InlineCode>types/generic/background-color.ts</InlineCode>.
+                  </strong>
+                </Paragraph>
+                <Paragraph>
                   Add new background color names as per your need.
                 </Paragraph>
                 <CodeSnippet>
                   {`/* -------------------------------------------------------------------------------- */
-  /*                               react-native-stylo                                 */
-  /*           GitHub: https://github.com/vivekmunde/react-native-stylo               */
-  /*      Docs: https://vivekmunde.github.io/react-native-stylo-documentation/        */
-  /* -------------------------------------------------------------------------------- */
+/*                               react-native-stylo                                 */
+/*           GitHub: https://github.com/vivekmunde/react-native-stylo               */
+/*      Docs: https://vivekmunde.github.io/react-native-stylo-documentation/        */
+/* -------------------------------------------------------------------------------- */
   
-  /* -------------------------------------------------------------------------------- */
-  /*                           Customize as per your needs                            */
-  /* -------------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------------- */
+/*                           Customize as per your needs                            */
+/* -------------------------------------------------------------------------------- */
   
-  import _TBackgroundColorStyle from '../__generated__/generic/background-color';
-  
-  type TBackgroundColorStyle = _TBackgroundColorStyle | 'BackgroundColor.Pink' | 'BackgroundColor.Violet';
-  
-  export default TBackgroundColorStyle;`}
-                </CodeSnippet>
-                <Paragraph>
-                  <strong className="font-semibold">2. Add style definition</strong>
-                  <br />
-                  <br />
-                  Open the file <InlineCode>default/generic/background-color.ts</InlineCode>.
-                  Add new background colors, against the types defined in step 1, as per your need.
-                </Paragraph>
-                <CodeSnippet>
-                  {`/* -------------------------------------------------------------------------------- */
-  /*                               react-native-stylo                                 */
-  /*           GitHub: https://github.com/vivekmunde/react-native-stylo               */
-  /*      Docs: https://vivekmunde.github.io/react-native-stylo-documentation/        */
-  /* -------------------------------------------------------------------------------- */
-  
-  /* -------------------------------------------------------------------------------- */
-  /*                           Customize as per your needs                            */
-  /* -------------------------------------------------------------------------------- */
-  
-  import { StyleSheet } from 'react-native';
-  import _BackgroundColorStyles from '../__generated__/generic/background-color-styles';
-  
-  const BackgroundColorStyles = StyleSheet.create({
-    ..._BackgroundColorStyles,
-    'BackgroundColor.Pink': {
-      backgroundColor: '#FF69B4',
-    },
-    'BackgroundColor.Violet': {
-      backgroundColor: '#EE82EE',
-    }
-  });
-  
-  export default BackgroundColorStyles;`}
+import _TBackgroundColorStyle from '../__generated__/generic/background-color';
+
+type TBackgroundColorStyle = _TBackgroundColorStyle | 'BackgroundColor.Pink' | 'BackgroundColor.Violet';
+
+export default TBackgroundColorStyle;`}
                 </CodeSnippet>
               </section>
 
               <section className="no-vertical-margin-collapse">
-                <h5>
-                  Extend theme by adding new styles: Card
-                </h5>
+                <h5>2. Add style definition</h5>
+
                 <Paragraph>
-                  You can easily add a new styles which do not exist in the theme.
-                  For example, Card styles.
-                  <br />
-                  <br />
-                  <strong className="font-semibold">1. Define style types</strong>
-                  <br />
-                  <br />
-                  Create a new file under directory <InlineCode>types</InlineCode> as <InlineCode>types/assorted/card.ts</InlineCode>.
+                  <strong className="font-semibold">
+                    2.1 Open the file <InlineCode>default/variables.ts</InlineCode>.
+                  </strong>
+                </Paragraph>
+                <Paragraph>
+                  Add new colors, against the types defined in step 1.1, as per your need.
                 </Paragraph>
                 <CodeSnippet>
                   {`/* -------------------------------------------------------------------------------- */
-  /*                               react-native-stylo                                 */
-  /*           GitHub: https://github.com/vivekmunde/react-native-stylo               */
-  /*      Docs: https://vivekmunde.github.io/react-native-stylo-documentation/        */
-  /* -------------------------------------------------------------------------------- */
+/*                               react-native-stylo                                 */
+/*           GitHub: https://github.com/vivekmunde/react-native-stylo               */
+/*      Docs: https://vivekmunde.github.io/react-native-stylo-documentation/        */
+/* -------------------------------------------------------------------------------- */
   
-  /* -------------------------------------------------------------------------------- */
-  /*                           Customize as per your needs                            */
-  /* -------------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------------- */
+/*                           Customize as per your needs                            */
+/* -------------------------------------------------------------------------------- */
   
-  export type TCardStyle = 'Card' | 'Card.Header' | 'Card.Body' | 'Card.Footer';`}
+import TVariable from '../types/variable';
+import _Variables from './__generated__/variables';
+
+const Variables: Record<'light' | 'dark', Record<TVariable, string | number>> = {
+  light: {
+    ..._Variables.light,
+    'Color.Pink': '#FF69B4',
+    'Color.Violet': '#EE82EE',
+  },
+  dark: {
+    ..._Variables.light,
+    'Color.Pink': '#FF69B4',
+    'Color.Violet': '#EE82EE',
+  },
+};
+
+export default Variables;`}
                 </CodeSnippet>
+
+                <Paragraph className="pt-4">
+                  <strong className="font-semibold">
+                    2.2 Open the file <InlineCode>default/generic/background-color.ts</InlineCode>.
+                  </strong>
+                </Paragraph>
                 <Paragraph>
-                  <strong className="font-semibold">2. Create style definitions</strong>
-                  <br />
-                  <br />
-                  Create a new file under directory <InlineCode>default</InlineCode> as <InlineCode>default/assorted/card.ts</InlineCode>.
+                  Add new background colors, against the types defined in step 1.2, as per your need.
                 </Paragraph>
                 <CodeSnippet>
                   {`/* -------------------------------------------------------------------------------- */
-  /*                               react-native-stylo                                 */
-  /*           GitHub: https://github.com/vivekmunde/react-native-stylo               */
-  /*      Docs: https://vivekmunde.github.io/react-native-stylo-documentation/        */
-  /* -------------------------------------------------------------------------------- */
+/*                               react-native-stylo                                 */
+/*           GitHub: https://github.com/vivekmunde/react-native-stylo               */
+/*      Docs: https://vivekmunde.github.io/react-native-stylo-documentation/        */
+/* -------------------------------------------------------------------------------- */
   
-  /* -------------------------------------------------------------------------------- */
-  /*                           Customize as per your needs                            */
-  /* -------------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------------- */
+/*                           Customize as per your needs                            */
+/* -------------------------------------------------------------------------------- */
   
-  import { StyleSheet } from 'react-native';
-  import Variables from '../variables';
+import { StyleSheet, ViewStyle } from 'react-native';
+import { TVariable } from '../../types';
+import TBackgroundColorStyle from '../../types/generic/background-color';
+import _getBackgroundColorStyles from '../__generated__/generic/background-color-styles';
+
+const getBackgroundColorStyles = (variables: Record<TVariable, string | number>) => (
+  StyleSheet.create<Record<TBackgroundColorStyle, ViewStyle>>({
+    ..._getBackgroundColorStyles(variables),
+    'BackgroundColor.Pink': {
+      backgroundColor: variables['Color.Pink'].toString(),
+    },
+    'BackgroundColor.Violet': {
+      backgroundColor: variables['Color.Violet'].toString(),
+    }
+  })
+);
+
+export default getBackgroundColorStyles;`}
+                </CodeSnippet>
+              </section>
+            </section>
+
+            <section className="no-vertical-margin-collapse">
+              <SectionHeading id="example-2" level={3}>
+                Example 2: Extend theme by adding new styles
+              </SectionHeading>
+              <Paragraph>
+                You can easily add a new styles which do not exist in the theme.
+                For example, Card styles.
+                Lets add a new style definitions for Card component.
+              </Paragraph>
+              <Paragraph className="pt-4">
+                <strong className="font-semibold">1. Define style types</strong>
+              </Paragraph>
+              <Paragraph>
+                Create a new file under directory <InlineCode>types</InlineCode> as <InlineCode>types/assorted/card.ts</InlineCode>.
+              </Paragraph>
+              <CodeSnippet>
+                {`/* -------------------------------------------------------------------------------- */
+/*                               react-native-stylo                                 */
+/*           GitHub: https://github.com/vivekmunde/react-native-stylo               */
+/*      Docs: https://vivekmunde.github.io/react-native-stylo-documentation/        */
+/* -------------------------------------------------------------------------------- */
   
-  const CardStyles = StyleSheet.create({
+/* -------------------------------------------------------------------------------- */
+/*                           Customize as per your needs                            */
+/* -------------------------------------------------------------------------------- */
+  
+export type TCardStyle = 'Card' | 'Card.Header' | 'Card.Body' | 'Card.Footer';`}
+              </CodeSnippet>
+
+              <Paragraph className="pt-4">
+                <strong className="font-semibold">2. Apply the style types to desired components</strong>
+              </Paragraph>
+              <Paragraph>
+                The <InlineCode>CardStyle</InlineCode> is expected to be applied to <InlineCode>View</InlineCode> &amp; <InlineCode>Touchable</InlineCode> components.
+                <br />
+                Open the file <InlineCode>types/components/view.ts</InlineCode>.
+              </Paragraph>
+              <CodeSnippet>
+                {`/* -------------------------------------------------------------------------------- */
+/*                               react-native-stylo                                 */
+/*           GitHub: https://github.com/vivekmunde/react-native-stylo               */
+/*      Docs: https://vivekmunde.github.io/react-native-stylo-documentation/        */
+/* -------------------------------------------------------------------------------- */
+  
+/* -------------------------------------------------------------------------------- */
+/*                           Customize as per your needs                            */
+/* -------------------------------------------------------------------------------- */
+
+// Other imports
+import TCardStyle from '../assorted/card';
+
+type TViewStyle =
+  // other style types
+  | TCardStyle;
+
+export default TViewStyle;`}
+              </CodeSnippet>
+              <Paragraph>
+                Open the file <InlineCode>types/components/touchable.ts</InlineCode>.
+              </Paragraph>
+              <CodeSnippet>
+                {`/* -------------------------------------------------------------------------------- */
+/*                               react-native-stylo                                 */
+/*           GitHub: https://github.com/vivekmunde/react-native-stylo               */
+/*      Docs: https://vivekmunde.github.io/react-native-stylo-documentation/        */
+/* -------------------------------------------------------------------------------- */
+  
+/* -------------------------------------------------------------------------------- */
+/*                           Customize as per your needs                            */
+/* -------------------------------------------------------------------------------- */
+
+// Other imports
+import TCardStyle from '../assorted/card';
+
+type TTouchableStyle =
+  // other style types
+  | TCardStyle;
+
+export default TViewStyle;`}
+              </CodeSnippet>
+
+              <Paragraph className="pt-4">
+                <strong className="font-semibold">3. Create style definitions</strong>
+              </Paragraph>
+              <Paragraph>
+                Create a new file under directory <InlineCode>default</InlineCode> as <InlineCode>default/assorted/card.ts</InlineCode>.
+              </Paragraph>
+              <CodeSnippet>
+                {`/* -------------------------------------------------------------------------------- */
+/*                               react-native-stylo                                 */
+/*           GitHub: https://github.com/vivekmunde/react-native-stylo               */
+/*      Docs: https://vivekmunde.github.io/react-native-stylo-documentation/        */
+/* -------------------------------------------------------------------------------- */
+  
+/* -------------------------------------------------------------------------------- */
+/*                           Customize as per your needs                            */
+/* -------------------------------------------------------------------------------- */
+  
+import { StyleSheet } from 'react-native';
+
+const getCardStyles = (variables: Record<TVariable, string | number>) => (
+  StyleSheet.create({
     Card: {
-      borderRadius: Variables['Border.Radius'],
+      borderRadius: variables['Border.Radius'],
       flexDirection: 'column',
     },
     'Card.Header': {
-      padding: Variables.Padding,
-      borderTopLeftRadius: Variables['Border.Radius'],
-      borderTopRightRadius: Variables['Border.Radius'],
+      padding: variables.Padding,
+      borderTopLeftRadius: variables['Border.Radius'],
+      borderTopRightRadius: variables['Border.Radius'],
       borderBottomWidth: 1,
-      borderBottomColor: Variables['Border.Color'],
+      borderBottomColor: variables['Border.Color'],
     },
     'Card.Body': {
-      padding: Variables.Padding,
+      padding: variables.Padding,
     },
     'Card.Footer': {
-      padding: Variables.Padding,
-      borderBottomLeftRadius: Variables['Border.Radius'],
-      borderBottomRightRadius: Variables['Border.Radius'],
+      padding: variables.Padding,
+      borderBottomLeftRadius: variables['Border.Radius'],
+      borderBottomRightRadius: variables['Border.Radius'],
       borderTopWidth: 1,
-      borderTopColor: Variables['Border.Color'],
+      borderTopColor: variables['Border.Color'],
     },
-  });
-  
-  export default CardStyles;`}
-                </CodeSnippet>
-                <Paragraph>
-                  <strong className="font-semibold">3. Add these styles to View &amp; Touchable styles</strong>
-                  <br />
-                  <br />
-                  Open <InlineCode>default/components/view-styles.ts</InlineCode>
-                </Paragraph>
-                <CodeSnippet>
-                  {`/* -------------------------------------------------------------------------------- */
-  /*                               react-native-stylo                                 */
-  /*           GitHub: https://github.com/vivekmunde/react-native-stylo               */
-  /*      Docs: https://vivekmunde.github.io/react-native-stylo-documentation/        */
-  /* -------------------------------------------------------------------------------- */
-  
-  /* -------------------------------------------------------------------------------- */
-  /*                           Customize as per your needs                            */
-  /* -------------------------------------------------------------------------------- */
-  
-  import { StyleSheet } from 'react-native';
-  import CardStyles from '../assorted/card-styles';
-  ... // other imports
-  
-  const ViewStyles = StyleSheet.create({
-    ... // other styles
-    ...CardStyles,
-  });
-  
-  export default ViewStyles;`}
-                </CodeSnippet>
-                <Paragraph>
-                  Open <InlineCode>default/components/touchable-styles.ts</InlineCode>
-                </Paragraph>
-                <CodeSnippet>
-                  {`/* -------------------------------------------------------------------------------- */
-  /*                               react-native-stylo                                 */
-  /*           GitHub: https://github.com/vivekmunde/react-native-stylo               */
-  /*      Docs: https://vivekmunde.github.io/react-native-stylo-documentation/        */
-  /* -------------------------------------------------------------------------------- */
-  
-  /* -------------------------------------------------------------------------------- */
-  /*                           Customize as per your needs                            */
-  /* -------------------------------------------------------------------------------- */
-  
-  import { StyleSheet } from 'react-native';
-  import CardStyles from '../assorted/card-styles';
-  ... // other imports
-  
-  const TouchableStyles = StyleSheet.create({
-    ... // other styles
-    ...CardStyles,
-  });
-  
-  export default TouchableStyles;`}
-                </CodeSnippet>
-              </section>
+  })
+);
 
+export default getCardStyles;`}
+              </CodeSnippet>
+
+              <Paragraph className="pt-4">
+                <strong className="font-semibold">4. Add these styles to View styles</strong>
+              </Paragraph>
+              <Paragraph>
+                Open <InlineCode>default/components/view-styles.ts</InlineCode>
+              </Paragraph>
+              <CodeSnippet>
+                {`/* -------------------------------------------------------------------------------- */
+/*                               react-native-stylo                                 */
+/*           GitHub: https://github.com/vivekmunde/react-native-stylo               */
+/*      Docs: https://vivekmunde.github.io/react-native-stylo-documentation/        */
+/* -------------------------------------------------------------------------------- */
+  
+/* -------------------------------------------------------------------------------- */
+/*                           Customize as per your needs                            */
+/* -------------------------------------------------------------------------------- */
+  
+import { StyleSheet } from 'react-native';
+import getCardStyles from '../assorted/card-styles';
+... // other imports
+
+const getViewStyles = (variables: Record<TVariable, string | number>) => (
+    StyleSheet.create<Record<TViewStyle, ViewStyle>>({
+    ... // other styles
+    ...getCardStyles(variables),
+  })
+);
+
+export default getViewStyles;`}
+              </CodeSnippet>
+
+              <Paragraph className="pt-4">
+                <strong className="font-semibold">5. Add these styles to Touchable styles</strong>
+              </Paragraph>
+              <Paragraph>
+                Open <InlineCode>default/components/touchable-styles.ts</InlineCode>
+              </Paragraph>
+              <CodeSnippet>
+                {`/* -------------------------------------------------------------------------------- */
+/*                               react-native-stylo                                 */
+/*           GitHub: https://github.com/vivekmunde/react-native-stylo               */
+/*      Docs: https://vivekmunde.github.io/react-native-stylo-documentation/        */
+/* -------------------------------------------------------------------------------- */
+  
+/* -------------------------------------------------------------------------------- */
+/*                           Customize as per your needs                            */
+/* -------------------------------------------------------------------------------- */
+  
+import { StyleSheet } from 'react-native';
+import getCardStyles from '../assorted/card-styles';
+... // other imports
+
+const getTouchableStyles = (variables: Record<TVariable, string | number>) => (
+  StyleSheet.create<Record<TTouchableStyle, ViewStyle>>({
+    ... // other styles
+    ...getCardStyles(variables),
+  })
+);
+
+export default getTouchableStyles;`}
+              </CodeSnippet>
             </section>
+
           </section>
         </article>
       </React.Fragment >)}

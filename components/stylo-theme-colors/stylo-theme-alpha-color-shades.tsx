@@ -2,7 +2,7 @@ import React from 'react';
 
 import {
   dangerColor, infoColor, primaryColor, warningColor
-} from '../../constants/stylo-theme-colors';
+} from '../../constants/stylo-theme-light-colors';
 import StyloThemeColorBox from './stylo-theme-color-box';
 
 const StyloThemeAlphaColorShades: React.FC<{

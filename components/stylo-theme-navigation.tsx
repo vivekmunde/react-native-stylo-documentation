@@ -2,13 +2,24 @@ import React from 'react';
 
 import NavLink from './nav-link';
 
+const SubMenuLink: React.FC<{ href: string; children: React.ReactNode }> = ({ href, children }) => (
+  <li className="mb-1">
+    <NavLink href={href}>
+      <span className="text-sm text-gray-300 mr-1 ml-[-1px] font-light">-</span>
+      <span className="text-sm">
+        {children}
+      </span>
+    </NavLink>
+  </li>
+);
+
 const StyloThemeNavigation: React.FC = () => (
   <nav>
     <ul>
       <li>
         <ul className="mb-8">
           <NavLink href="/stylo-theme">
-            <h5 className="mb-4">
+            <h5 className="mb-4 p-0">
               Stylo theme
             </h5>
           </NavLink>
@@ -18,11 +29,27 @@ const StyloThemeNavigation: React.FC = () => (
                 <NavLink href="/stylo-theme-colors">
                   Colors
                 </NavLink>
+                <ul className="ml-4 mt-1 border-l">
+                  <SubMenuLink href="/stylo-theme-colors#light-theme">
+                    Light
+                  </SubMenuLink>
+                  <SubMenuLink href="/stylo-theme-colors#dark-theme">
+                    Dark
+                  </SubMenuLink>
+                </ul>
               </li>
               <li>
                 <NavLink href="/stylo-theme-variables">
                   Variables
                 </NavLink>
+                <ul className="ml-4 mt-1 border-l">
+                  <SubMenuLink href="/stylo-theme-variables#light-theme">
+                    Light
+                  </SubMenuLink>
+                  <SubMenuLink href="/stylo-theme-variables#dark-theme">
+                    Dark
+                  </SubMenuLink>
+                </ul>
               </li>
               <li>
                 <NavLink href="/stylo-theme-style-namespaces">
@@ -33,7 +60,7 @@ const StyloThemeNavigation: React.FC = () => (
           </li>
           <li>
             <NavLink href="/stylo-theme-generic-styles">
-              <h5 className="text-base m-0">
+              <h5 className="text-base m-0 p-0">
                 Generic styles
               </h5>
             </NavLink>
@@ -72,7 +99,7 @@ const StyloThemeNavigation: React.FC = () => (
           </li>
           <li>
             <NavLink href="/stylo-theme-component-styles">
-              <h5 className="text-base m-0">
+              <h5 className="text-base m-0 p-0">
                 Component styles
               </h5>
             </NavLink>
@@ -131,7 +158,7 @@ const StyloThemeNavigation: React.FC = () => (
           </li>
           <li>
             <NavLink href="/stylo-theme-assorted-styles">
-              <h5 className="text-base m-0">
+              <h5 className="text-base m-0 p-0">
                 Assorted styles
               </h5>
             </NavLink>
@@ -180,7 +207,7 @@ const StyloThemeNavigation: React.FC = () => (
           </li>
           <li>
             <NavLink href="/stylo-theme-customization">
-              <h5 className="text-base m-0">
+              <h5 className="text-base m-0 p-0">
                 Customizing Stylo theme
               </h5>
             </NavLink>
@@ -189,7 +216,7 @@ const StyloThemeNavigation: React.FC = () => (
       </li>
       <li>
         <NavLink href="/">
-          <h5 className="mb-4">
+          <h5 className="mb-4 p-0">
             Documentation
           </h5>
         </NavLink>

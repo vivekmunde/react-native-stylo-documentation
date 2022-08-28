@@ -3,19 +3,18 @@ import React from 'react';
 
 import ArticleHeading from '../components/article-heading';
 import CodeSnippet from '../components/code-snippet';
+import InlineCode from '../components/inline-code';
 import Layout from '../components/layout';
+import Paragraph from '../components/paragraph';
 import SectionHeading from '../components/section-heading';
 import StyloThemeAlphaColors from '../components/stylo-theme-colors/stylo-theme-alpha-colors';
 import StyloThemeAlphaInvertedColors from '../components/stylo-theme-colors/stylo-theme-alpha-inverted-colors';
 import StyloThemeColorBox from '../components/stylo-theme-colors/stylo-theme-color-box';
-import StyloThemeColorShadesSection from '../components/stylo-theme-colors/stylo-theme-color-shades-section';
+import StyloThemeDarkColorShadesSection from '../components/stylo-theme-colors/stylo-theme-dark-color-shades-section';
+import StyloThemeLightColorShadesSection from '../components/stylo-theme-colors/stylo-theme-light-color-shades-section';
 import StyloThemeNavigation from '../components/stylo-theme-navigation';
-import {
-  blueColors, bodyColor, borderColor, cyanColors, dangerColor, dangerColors, fontColor,
-  greenColors, greyColors, infoColor, infoColors, magentaColors, orangeColors, primaryColor,
-  primaryColors, purpleColors, redColors, secondaryColor, warningColor, warningColors, whiteColor,
-  yellowColors
-} from '../constants/stylo-theme-colors';
+import * as darkColors from '../constants/stylo-theme-dark-colors';
+import * as lightColors from '../constants/stylo-theme-light-colors';
 
 const StyloThemeColors: React.FC = () => (
   <Layout
@@ -29,129 +28,6 @@ const StyloThemeColors: React.FC = () => (
         </Head>
         <article>
           <ArticleHeading>Colors</ArticleHeading>
-          <section className="no-vertical-margin-collapse">
-            <SectionHeading id="principal-colors" level={4}>
-              Principal colors
-            </SectionHeading>
-            <div className="grid lg:grid-cols-4 lg:gap-x-12 mb-4">
-              <StyloThemeColorBox color={bodyColor}>
-                <span style={{ color: '#000' }}>
-                  Body
-                </span>
-                <span style={{ color: '#000', textTransform: 'uppercase' }}>
-                  {bodyColor}
-                </span>
-              </StyloThemeColorBox>
-
-              <StyloThemeColorBox color={whiteColor}>
-                <span style={{ color: '#000' }}>
-                  White
-                </span>
-                <span style={{ color: '#000', textTransform: 'uppercase' }}>
-                  {whiteColor}
-                </span>
-              </StyloThemeColorBox>
-            </div>
-
-            <div className="grid lg:grid-cols-4 gap-1 lg:gap-x-12 mb-4">
-              <StyloThemeColorBox color={fontColor}>
-                <span style={{ color: '#FFF' }}>
-                  Font
-                </span>
-                <span style={{ color: '#FFF', textTransform: 'uppercase' }}>
-                  {fontColor}
-                </span>
-              </StyloThemeColorBox>
-
-              <StyloThemeColorBox color={secondaryColor}>
-                <span style={{ color: '#FFF' }}>
-                  Secondary
-                </span>
-                <span style={{ color: '#FFF', textTransform: 'uppercase' }}>
-                  {secondaryColor}
-                </span>
-              </StyloThemeColorBox>
-
-              <StyloThemeColorBox color={borderColor}>
-                <span style={{ color: '#000' }}>
-                  Border
-                </span>
-                <span style={{ color: '#000', textTransform: 'uppercase' }}>
-                  {borderColor}
-                </span>
-              </StyloThemeColorBox>
-            </div>
-
-            <div className="grid lg:grid-cols-4 gap-1 lg:gap-x-12 mb-4">
-              <StyloThemeColorBox color={primaryColor}>
-                <span style={{ color: '#FFF' }}>
-                  Primary
-                </span>
-                <span style={{ color: '#FFF', textTransform: 'uppercase' }}>
-                  {primaryColor}
-                </span>
-              </StyloThemeColorBox>
-
-              <StyloThemeColorBox color={infoColor}>
-                <span style={{ color: '#FFF' }}>
-                  Info
-                </span>
-                <span style={{ color: '#FFF', textTransform: 'uppercase' }}>
-                  {infoColor}
-                </span>
-              </StyloThemeColorBox>
-
-              <StyloThemeColorBox color={warningColor}>
-                <span style={{ color: '#FFF' }}>
-                  Warning
-                </span>
-                <span style={{ color: '#FFF', textTransform: 'uppercase' }}>
-                  {warningColor}
-                </span>
-              </StyloThemeColorBox>
-
-              <StyloThemeColorBox color={dangerColor}>
-                <span style={{ color: '#FFF' }}>
-                  Danger
-                </span>
-                <span style={{ color: '#FFF', textTransform: 'uppercase' }}>
-                  {dangerColor}
-                </span>
-              </StyloThemeColorBox>
-            </div>
-          </section>
-
-          <section className="no-vertical-margin-collapse">
-            <SectionHeading id="principal-color-shades" level={4}>
-              Principal color shades
-            </SectionHeading>
-            <div className="grid lg:grid-cols-4 gap-x-12">
-              <StyloThemeColorShadesSection id="primary-colors" title="Primary" colors={primaryColors} />
-              <StyloThemeColorShadesSection id="info-colors" title="Info" colors={infoColors} />
-              <StyloThemeColorShadesSection id="warning-colors" title="Warning" colors={warningColors} />
-              <StyloThemeColorShadesSection id="danger-colors" title="Danger" colors={dangerColors} />
-            </div>
-          </section>
-
-          <section className="no-vertical-margin-collapse">
-            <SectionHeading id="color-palette" level={4}>
-              Color palette
-            </SectionHeading>
-            <div className="grid lg:grid-cols-3 gap-x-12">
-              <StyloThemeColorShadesSection id="grey-colors" title="Grey" colors={greyColors} />
-              <StyloThemeColorShadesSection id="blue-colors" title="Blue" colors={blueColors} />
-              <StyloThemeColorShadesSection id="cyan-colors" title="Cyan" colors={cyanColors} />
-              <StyloThemeColorShadesSection id="green-colors" title="Green" colors={greenColors} />
-              <StyloThemeColorShadesSection id="magenta-colors" title="Magenta" colors={magentaColors} />
-              <StyloThemeColorShadesSection id="orange-colors" title="Orange" colors={orangeColors} />
-              <StyloThemeColorShadesSection id="purple-colors" title="Purple" colors={purpleColors} />
-              <StyloThemeColorShadesSection id="red-colors" title="Red" colors={redColors} />
-              <StyloThemeColorShadesSection id="yellow-colors" title="Yellow" colors={yellowColors} />
-            </div>
-          </section>
-
-          <StyloThemeAlphaColors />
-          <StyloThemeAlphaInvertedColors />
 
           <section className="no-vertical-margin-collapse">
             <SectionHeading id="type-definition" level={5}>
@@ -169,6 +45,16 @@ const StyloThemeColors: React.FC = () => (
   | 'Color.Alpha8'
   | 'Color.Alpha9'
   | 'Color.Alpha10'
+  | 'Color.AlphaInverted1'
+  | 'Color.AlphaInverted2'
+  | 'Color.AlphaInverted3'
+  | 'Color.AlphaInverted4'
+  | 'Color.AlphaInverted5'
+  | 'Color.AlphaInverted6'
+  | 'Color.AlphaInverted7'
+  | 'Color.AlphaInverted8'
+  | 'Color.AlphaInverted9'
+  | 'Color.AlphaInverted10'
   | 'Color.Blue1'
   | 'Color.Blue2'
   | 'Color.Blue3'
@@ -282,7 +168,6 @@ const StyloThemeColors: React.FC = () => (
   | 'Color.Red8'
   | 'Color.Red9'
   | 'Color.Red10'
-  | 'Color.Secondary'
   | 'Color.Success'
   | 'Color.Success1'
   | 'Color.Success2'
@@ -315,9 +200,276 @@ const StyloThemeColors: React.FC = () => (
   | 'Color.Yellow7'
   | 'Color.Yellow8'
   | 'Color.Yellow9'
-  | 'Color.Yellow10';`}
+  | 'Color.Yellow10'`}
             </CodeSnippet>
           </section>
+
+          <section className="no-vertical-margin-collapse">
+            <SectionHeading id="light-theme" level={3}>
+              Light Theme
+            </SectionHeading>
+            <section className="no-vertical-margin-collapse">
+              <SectionHeading id="light-theme-principal-colors" level={4}>
+                Principal colors
+              </SectionHeading>
+              <div className="grid lg:grid-cols-4 lg:gap-x-12 mb-4">
+                <StyloThemeColorBox color={lightColors.screenBackgroundColor}>
+                  <span style={{ color: '#000' }}>
+                    Body
+                  </span>
+                  <span style={{ color: '#000', textTransform: 'uppercase' }}>
+                    {lightColors.screenBackgroundColor}
+                  </span>
+                </StyloThemeColorBox>
+
+                <StyloThemeColorBox color={lightColors.whiteColor}>
+                  <span style={{ color: '#000' }}>
+                    White
+                  </span>
+                  <span style={{ color: '#000', textTransform: 'uppercase' }}>
+                    {lightColors.whiteColor}
+                  </span>
+                </StyloThemeColorBox>
+              </div>
+
+              <div className="grid lg:grid-cols-4 gap-1 lg:gap-x-12 mb-4">
+                <StyloThemeColorBox color={lightColors.fontColor}>
+                  <span style={{ color: '#FFF' }}>
+                    Font
+                  </span>
+                  <span style={{ color: '#FFF', textTransform: 'uppercase' }}>
+                    {lightColors.fontColor}
+                  </span>
+                </StyloThemeColorBox>
+
+                <StyloThemeColorBox color={lightColors.fontColorSecondary}>
+                  <span style={{ color: '#FFF' }}>
+                    Font Secondary
+                  </span>
+                  <span style={{ color: '#FFF', textTransform: 'uppercase' }}>
+                    {lightColors.fontColorSecondary}
+                  </span>
+                </StyloThemeColorBox>
+
+                <StyloThemeColorBox color={lightColors.borderColor}>
+                  <span style={{ color: '#000' }}>
+                    Border
+                  </span>
+                  <span style={{ color: '#000', textTransform: 'uppercase' }}>
+                    {lightColors.borderColor}
+                  </span>
+                </StyloThemeColorBox>
+              </div>
+
+              <div className="grid lg:grid-cols-4 gap-1 lg:gap-x-12 mb-4">
+                <StyloThemeColorBox color={lightColors.primaryColor}>
+                  <span style={{ color: '#FFF' }}>
+                    Primary
+                  </span>
+                  <span style={{ color: '#FFF', textTransform: 'uppercase' }}>
+                    {lightColors.primaryColor}
+                  </span>
+                </StyloThemeColorBox>
+
+                <StyloThemeColorBox color={lightColors.infoColor}>
+                  <span style={{ color: '#FFF' }}>
+                    Info
+                  </span>
+                  <span style={{ color: '#FFF', textTransform: 'uppercase' }}>
+                    {lightColors.infoColor}
+                  </span>
+                </StyloThemeColorBox>
+
+                <StyloThemeColorBox color={lightColors.warningColor}>
+                  <span style={{ color: '#FFF' }}>
+                    Warning
+                  </span>
+                  <span style={{ color: '#FFF', textTransform: 'uppercase' }}>
+                    {lightColors.warningColor}
+                  </span>
+                </StyloThemeColorBox>
+
+                <StyloThemeColorBox color={lightColors.dangerColor}>
+                  <span style={{ color: '#FFF' }}>
+                    Danger
+                  </span>
+                  <span style={{ color: '#FFF', textTransform: 'uppercase' }}>
+                    {lightColors.dangerColor}
+                  </span>
+                </StyloThemeColorBox>
+              </div>
+            </section>
+
+            <section className="no-vertical-margin-collapse">
+              <SectionHeading id="light-theme-principal-color-shades" level={4}>
+                Principal color shades
+              </SectionHeading>
+              <div className="grid lg:grid-cols-4 gap-x-12">
+                <StyloThemeLightColorShadesSection id="primary-colors" title="Primary" colors={lightColors.primaryColors} />
+                <StyloThemeLightColorShadesSection id="info-colors" title="Info" colors={lightColors.infoColors} />
+                <StyloThemeLightColorShadesSection id="warning-colors" title="Warning" colors={lightColors.warningColors} />
+                <StyloThemeLightColorShadesSection id="danger-colors" title="Danger" colors={lightColors.dangerColors} />
+              </div>
+            </section>
+
+            <section className="no-vertical-margin-collapse">
+              <SectionHeading id="light-theme-color-palette" level={4}>
+                Color palette
+              </SectionHeading>
+              <div className="grid lg:grid-cols-3 gap-x-12">
+                <StyloThemeLightColorShadesSection id="grey-colors" title="Grey" colors={lightColors.greyColors} />
+                <StyloThemeLightColorShadesSection id="blue-colors" title="Blue" colors={lightColors.blueColors} />
+                <StyloThemeLightColorShadesSection id="cyan-colors" title="Cyan" colors={lightColors.cyanColors} />
+                <StyloThemeLightColorShadesSection id="green-colors" title="Green" colors={lightColors.greenColors} />
+                <StyloThemeLightColorShadesSection id="magenta-colors" title="Magenta" colors={lightColors.magentaColors} />
+                <StyloThemeLightColorShadesSection id="orange-colors" title="Orange" colors={lightColors.orangeColors} />
+                <StyloThemeLightColorShadesSection id="purple-colors" title="Purple" colors={lightColors.purpleColors} />
+                <StyloThemeLightColorShadesSection id="red-colors" title="Red" colors={lightColors.redColors} />
+                <StyloThemeLightColorShadesSection id="yellow-colors" title="Yellow" colors={lightColors.yellowColors} />
+              </div>
+            </section>
+
+            <StyloThemeAlphaColors colors={lightColors.alphaColors} textColor="#000" idPrefix="light-theme" />
+            <StyloThemeAlphaInvertedColors colors={lightColors.alphaInvertedColors} textColor="#fff" idPrefix="light-theme" />
+          </section>
+
+          <section className="no-vertical-margin-collapse">
+            <SectionHeading id="dark-theme" level={3}>
+              Dark Theme
+            </SectionHeading>
+            <Paragraph>
+              Dark theme is built by simply reversing the order of the light theme colors.
+              <br />
+              Means, <InlineCode>Dark.Theme.Color.Primary1 = Light.Theme.Color.Primary10</InlineCode>, <InlineCode>Dark.Theme.Color.Primary2 = Light.Theme.Color.Primary9</InlineCode>, <InlineCode>Dark.Theme.Color.Primary3 = Light.Theme.Color.Primary7</InlineCode> &amp; so on for all the colors.
+              <br />
+              Similarly, alpha colors become, <InlineCode>Dark.Theme.Color.Alpha1 = Light.Theme.Color.AlphaInverted1</InlineCode>, <InlineCode>Dark.Theme.Color.AlphaInverted1 = Light.Theme.Color.Alpha1</InlineCode> &amp; so on.
+            </Paragraph>
+          </section>
+
+          <section className="no-vertical-margin-collapse">
+            <SectionHeading id="dark-theme-principal-colors" level={4}>
+              Principal colors
+            </SectionHeading>
+            <div className="grid lg:grid-cols-4 lg:gap-x-12 mb-4">
+              <StyloThemeColorBox color={darkColors.screenBackgroundColor}>
+                <span style={{ color: '#fff' }}>
+                  Body
+                </span>
+                <span style={{ color: '#fff', textTransform: 'uppercase' }}>
+                  {darkColors.screenBackgroundColor}
+                </span>
+              </StyloThemeColorBox>
+
+              <StyloThemeColorBox color={darkColors.whiteColor}>
+                <span style={{ color: '#000' }}>
+                  White
+                </span>
+                <span style={{ color: '#000', textTransform: 'uppercase' }}>
+                  {darkColors.whiteColor}
+                </span>
+              </StyloThemeColorBox>
+            </div>
+
+            <div className="grid lg:grid-cols-4 gap-1 lg:gap-x-12 mb-4">
+              <StyloThemeColorBox color={darkColors.fontColor}>
+                <span style={{ color: '#FFF' }}>
+                  Font
+                </span>
+                <span style={{ color: '#FFF', textTransform: 'uppercase' }}>
+                  {darkColors.fontColor}
+                </span>
+              </StyloThemeColorBox>
+
+              <StyloThemeColorBox color={darkColors.fontColorSecondary}>
+                <span style={{ color: '#FFF' }}>
+                  Font Secondary
+                </span>
+                <span style={{ color: '#FFF', textTransform: 'uppercase' }}>
+                  {darkColors.fontColorSecondary}
+                </span>
+              </StyloThemeColorBox>
+
+              <StyloThemeColorBox color={darkColors.borderColor}>
+                <span style={{ color: '#fff' }}>
+                  Border
+                </span>
+                <span style={{ color: '#fff', textTransform: 'uppercase' }}>
+                  {darkColors.borderColor}
+                </span>
+              </StyloThemeColorBox>
+            </div>
+
+            <div className="grid lg:grid-cols-4 gap-1 lg:gap-x-12 mb-4">
+              <StyloThemeColorBox color={darkColors.primaryColor}>
+                <span style={{ color: '#FFF' }}>
+                  Primary
+                </span>
+                <span style={{ color: '#FFF', textTransform: 'uppercase' }}>
+                  {darkColors.primaryColor}
+                </span>
+              </StyloThemeColorBox>
+
+              <StyloThemeColorBox color={darkColors.infoColor}>
+                <span style={{ color: '#FFF' }}>
+                  Info
+                </span>
+                <span style={{ color: '#FFF', textTransform: 'uppercase' }}>
+                  {darkColors.infoColor}
+                </span>
+              </StyloThemeColorBox>
+
+              <StyloThemeColorBox color={darkColors.warningColor}>
+                <span style={{ color: '#FFF' }}>
+                  Warning
+                </span>
+                <span style={{ color: '#FFF', textTransform: 'uppercase' }}>
+                  {darkColors.warningColor}
+                </span>
+              </StyloThemeColorBox>
+
+              <StyloThemeColorBox color={darkColors.dangerColor}>
+                <span style={{ color: '#FFF' }}>
+                  Danger
+                </span>
+                <span style={{ color: '#FFF', textTransform: 'uppercase' }}>
+                  {darkColors.dangerColor}
+                </span>
+              </StyloThemeColorBox>
+            </div>
+          </section>
+
+          <section className="no-vertical-margin-collapse">
+            <SectionHeading id="dark-theme-principal-color-shades" level={4}>
+              Principal color shades
+            </SectionHeading>
+            <div className="grid lg:grid-cols-4 gap-x-12">
+              <StyloThemeDarkColorShadesSection id="primary-colors" title="Primary" colors={darkColors.primaryColors} />
+              <StyloThemeDarkColorShadesSection id="info-colors" title="Info" colors={darkColors.infoColors} />
+              <StyloThemeDarkColorShadesSection id="warning-colors" title="Warning" colors={darkColors.warningColors} />
+              <StyloThemeDarkColorShadesSection id="danger-colors" title="Danger" colors={darkColors.dangerColors} />
+            </div>
+          </section>
+
+          <section className="no-vertical-margin-collapse">
+            <SectionHeading id="dark-theme-color-palette" level={4}>
+              Color palette
+            </SectionHeading>
+            <div className="grid lg:grid-cols-3 gap-x-12">
+              <StyloThemeDarkColorShadesSection id="grey-colors" title="Grey" colors={darkColors.greyColors} />
+              <StyloThemeDarkColorShadesSection id="blue-colors" title="Blue" colors={darkColors.blueColors} />
+              <StyloThemeDarkColorShadesSection id="cyan-colors" title="Cyan" colors={darkColors.cyanColors} />
+              <StyloThemeDarkColorShadesSection id="green-colors" title="Green" colors={darkColors.greenColors} />
+              <StyloThemeDarkColorShadesSection id="magenta-colors" title="Magenta" colors={darkColors.magentaColors} />
+              <StyloThemeDarkColorShadesSection id="orange-colors" title="Orange" colors={darkColors.orangeColors} />
+              <StyloThemeDarkColorShadesSection id="purple-colors" title="Purple" colors={darkColors.purpleColors} />
+              <StyloThemeDarkColorShadesSection id="red-colors" title="Red" colors={darkColors.redColors} />
+              <StyloThemeDarkColorShadesSection id="yellow-colors" title="Yellow" colors={darkColors.yellowColors} />
+            </div>
+          </section>
+
+          <StyloThemeAlphaColors colors={darkColors.alphaColors} textColor="#fff" idPrefix="dark-theme" />
+          <StyloThemeAlphaInvertedColors colors={darkColors.alphaInvertedColors} textColor="#000" idPrefix="dark-theme" />
+
         </article>
       </React.Fragment>
     )}

@@ -5,7 +5,7 @@ import ShowCaseBox from '../showcase-box';
 const ListShowCase: React.FC = () => (
   <React.Fragment>
     <ShowCaseBox
-      renderCode={() => `<Stylish.View styleNames={['List', 'Border.Radius', 'BackgroundColor.White', 'Margin.Bottom.Large']}>
+      renderCode={() => `<Stylish.View styleNames={['List', 'Border', 'Border.Radius', 'BackgroundColor.White', 'Margin.Bottom.Large']}>
   <Stylish.View styleNames={['List.Item', 'Border.Bottom']}>
     <Stylish.View styleNames={['List.Item.Left']}>
       <Stylish.Image styleNames={['Avatar']} source={require('../../images/angularjs-logo.png')} />
@@ -64,10 +64,10 @@ const ListShowCase: React.FC = () => (
   </Stylish.View>
 </Stylish.View>`}
       imageAlt="List"
-      imageUrl="showcase-list-1.png"
+      imageUrl={{ light: "showcase-list-light-1.png", dark: "showcase-list-dark-1.png" }}
     />
     <ShowCaseBox
-      renderCode={() => `<Stylish.View styleNames={['List', 'Border.Radius', 'BackgroundColor.White']}>
+      renderCode={() => `<Stylish.View styleNames={['List', 'Border', 'Border.Radius', 'BackgroundColor.White']}>
   <Stylish.View styleNames={['List.Item', 'Border.Bottom']}>
     <Stylish.View styleNames={['List.Item.Body']}>
       <Stylish.Text styleNames={['Color.Secondary']}>Name</Stylish.Text>
@@ -102,7 +102,7 @@ const ListShowCase: React.FC = () => (
   </Stylish.View>
 </Stylish.View>`}
       imageAlt="List"
-      imageUrl="showcase-list-2.png"
+      imageUrl={{ light: "showcase-list-light-2.png", dark: "showcase-list-dark-2.png" }}
     />
   </React.Fragment>
 );

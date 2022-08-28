@@ -91,7 +91,7 @@ const CoreConcept: React.FC = () => (
             </SectionHeading>
             <Paragraph>
               <strong className="font-semibold">Stylo</strong> follows a philosophy called <strong className="font-semibold">Styles only</strong>, with which it provides a wide range of style definitions required for any React Native app.
-              Stylo believes that separating the styles from React Native components can provide the high flexibility &amp; infinite scalability.
+              Stylo believes that separating the styles from React Native components can provide high flexibility &amp; infinite scalability.
               Instead of providing components like <InlineCode>Button</InlineCode>, <InlineCode>Badge</InlineCode>, <InlineCode>Avatar</InlineCode>, <InlineCode>Form</InlineCode> etc,
               Stylo provides all the styles needed for these components &amp; with the same naming convention <InlineCode>Button</InlineCode>, <InlineCode>Badge</InlineCode>, <InlineCode>Avatar</InlineCode>, <InlineCode>Form</InlineCode> etc.
               By simply applying these styles to React Native components, like <InlineCode>TouchableOpacity</InlineCode>, <InlineCode>View</InlineCode>, <InlineCode>Text</InlineCode> etc, one can create beautiful Buttons, Badges, Forms &amp; so on.
